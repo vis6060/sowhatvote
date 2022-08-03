@@ -1,0 +1,854 @@
+
+type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+
+type DatinguserdbStaging
+ {
+  age: String!
+  countyuser: String!
+  education: String!
+  email: String!
+  emailshareagree: String!
+  facebookbusername: String!
+  industrylevel2: String!
+  loyalty: String!
+  menteeagree: String!
+  mentoragree: String!
+  occup: String!
+  profilename: String!
+  s3file: String!
+  stateuser: String!
+  userdescription: String!
+  userid: String!
+  veteran: String!
+  unsubscribematchingme: String!
+  newWidth: String!
+  newHeight: String!
+  gender: String!
+}
+
+type DatinguserdbStagingConnection {
+  items: [DatinguserdbStaging]
+  nextToken: String
+}
+
+type DatingitemtrackingStaging {
+  userid: String
+}
+
+type DatingitemtrackingStagingConnection {
+  items: [DatingitemtrackingStaging]
+  nextToken: String
+}
+
+type DatinginteractionStaging {
+  eventtype: String!
+  interestcategory: String!
+  itemid: String!
+  timestamp: String!
+  userid: String!
+}
+
+type DatinginteractionStagingtab3 {
+	eventtype: String
+	interestcategory: [String]
+	itemid: String
+	timestamp: String
+	userid: String
+}
+
+type DatinginteractionStagingConnection {
+  items: [DatinginteractionStaging]
+  nextToken: String
+}
+
+type OneBigArrayDatinguserdbStagings {
+	OneBigArray: String
+	items: [DatinguserdbStaging]
+	InitialSearchArraySize: String!
+	FilteredSearchArraySize: String!
+	nextToken: String
+}
+
+type PaginatedDatinguserdbStagings {
+	DatinguserdbStagings: [DatinguserdbStaging!]!
+		InitialSearchArraySize: String!
+  	FilteredSearchArraySize: String!
+	nextToken: String
+}
+
+type LoyaltyDatinguserdbStagings {
+	DatinguserdbStagings: [DatinguserdbStaging!]
+	arraytabs: [String]
+	arrayindexes: [Int]
+	nextToken: String
+}
+
+type Loyaltytab3B6CIndex {
+	tab13B6Cname: String
+	indextab13B6C: Int
+}
+
+type Query {
+	allDatinguserdbStagingsByCountyAge(
+		searcharray: [String!],
+		agevalue: String,
+		ageflag: String,
+		filter: TableDatinguserdbStagingFilterInput,
+		countyuser: String!,
+		count: Int,
+		nextToken: String
+	): PaginatedDatinguserdbStagings
+		allDatinguserdbStagingsByCountyAge1(
+  		userid: String!,
+  		agevalue: String,
+  		ageflag: String,
+  		filter: TableDatinguserdbStagingFilterInput,
+  		countyuser: String!,
+  		count: Int,
+  		nextToken: String
+  	): PaginatedDatinguserdbStagings
+	allDatinguserdbStagingsByStateAge(
+		searcharray: [String!],
+		agevalue: String,
+		ageflag: String,
+		filter: TableDatinguserdbStagingFilterInput,
+		stateuser: String!,
+		count: Int,
+		nextToken: String
+	): PaginatedDatinguserdbStagings
+		allDatinguserdbStagingsByStateAge1(
+  		userid: String!,
+  		agevalue: String,
+  		ageflag: String,
+  		filter: TableDatinguserdbStagingFilterInput,
+  		stateuser: String!,
+  		count: Int,
+  		nextToken: String
+  	): PaginatedDatinguserdbStagings
+   	allDatinguserdbStagingsByCountyGender(
+     		searcharray: [String!],
+     		gendervalue: String,
+     		genderflag: String,
+     		filter: TableDatinguserdbStagingFilterInput,
+     		countyuser: String!,
+     		count: Int,
+     		nextToken: String
+     	): PaginatedDatinguserdbStagings
+     	   	allDatinguserdbStagingsByCountyGender1(
+           		userid: String!,
+           		gendervalue: String,
+           		genderflag: String,
+           		filter: TableDatinguserdbStagingFilterInput,
+           		countyuser: String!,
+           		count: Int,
+           		nextToken: String
+           	): PaginatedDatinguserdbStagings
+     	  	allDatinguserdbStagingsByStateGender(
+          		searcharray: [String!],
+          		gendervalue: String,
+          		genderflag: String,
+          		filter: TableDatinguserdbStagingFilterInput,
+          		stateuser: String!,
+          		count: Int,
+          		nextToken: String
+          	): PaginatedDatinguserdbStagings
+          	     	  	allDatinguserdbStagingsByStateGender1(
+                      		userid: String!,
+                      		gendervalue: String,
+                      		genderflag: String,
+                      		filter: TableDatinguserdbStagingFilterInput,
+                      		stateuser: String!,
+                      		count: Int,
+                      		nextToken: String
+                      	): PaginatedDatinguserdbStagings
+  	allDatinguserdbStagingsByOccupIndus(
+  		searcharray: [String!],
+  		indusvalue: String,
+  		indusflag: String,
+  		filter: TableDatinguserdbStagingFilterInput,
+  		occup: String!,
+  		count: Int,
+  		nextToken: String
+  	): PaginatedDatinguserdbStagings
+  	  	allDatinguserdbStagingsByOccupIndus1(
+      		userid: String!,
+      		indusvalue: String,
+      		indusflag: String,
+      		filter: TableDatinguserdbStagingFilterInput,
+      		occup: String!,
+      		count: Int,
+      		nextToken: String
+      	): PaginatedDatinguserdbStagings
+  	allDatinguserdbStagingsByOccupState(
+  		searcharray: [String!],
+  		statevalue: String,
+  		filter: TableDatinguserdbStagingFilterInput,
+  		occup: String!,
+  		count: Int,
+  		nextToken: String
+  	): PaginatedDatinguserdbStagings
+  	allDatinguserdbStagingsByOccupState1(
+      		userid: String!,
+      		statevalue: String,
+      		filter: TableDatinguserdbStagingFilterInput,
+      		occup: String!,
+      		count: Int,
+      		nextToken: String
+      	): PaginatedDatinguserdbStagings
+  	allDatinguserdbStagingsByStateIndus(
+  		searcharray: [String!],
+  		indusvalue: String,
+  		indusflag: String,
+  		filter: TableDatinguserdbStagingFilterInput,
+  		statevalue: String!,
+  		count: Int,
+  		nextToken: String
+  	): PaginatedDatinguserdbStagings
+  	  	allDatinguserdbStagingsByStateIndus1(
+      			userid: String!,
+      		indusvalue: String,
+      		indusflag: String,
+      		filter: TableDatinguserdbStagingFilterInput,
+      		statevalue: String!,
+      		count: Int,
+      		nextToken: String
+      	): PaginatedDatinguserdbStagings
+      		allDatinguserdbStagingsByGenderLoyalty(
+        		userid: String!,
+        		gendervalue: String!,
+        		filter: TableDatinguserdbStagingFilterInput,
+        		count: Int,
+        		nextToken: String
+        	): LoyaltyDatinguserdbStagings
+        	    		allDatinguserdbStagingsByStateLoyalty(
+                  		userid: String!,
+                  		statevalue: String!,
+                  		filter: TableDatinguserdbStagingFilterInput,
+                  		count: Int,
+                  		nextToken: String
+                  	): LoyaltyDatinguserdbStagings
+  	getLoyaltytab3B6Cindex(userid: String!, itemid: String): Loyaltytab3B6CIndex
+  getDatinguserdbStaging(userid: String): DatinguserdbStaging
+  getDatinguserdbStagingsfacebook(userid: String!, facebookvalue: String!, filter: TableDatinguserdbStagingFilterInput): LoyaltyDatinguserdbStagings
+  	getBatchDatinguserdbStaging(ids: [String!]): PaginatedDatinguserdbStagings
+  listDatinguserdbStagings(filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatinguserdbStagingConnection
+   listDatinguserdbStagingsOneBigArray1A(userid: String!, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+  listDatinguserdbStagingsOneBigArray(userid: String!, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+   listDatinguserdbStagingsOneBigArray1C(userid: String!, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+  getDatingitemtrackingStaging(userid: String!): DatingitemtrackingStaging
+  listDatingitemtrackingStagings(filter: TableDatingitemtrackingStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+  getHouseCands(CandName: String): HouseCands
+  getSenateCands(CandName: String): SenateCands
+  getStateCands(CandName: String): StateCands
+  getDatinginteractionStaging(userid: String!): DatinginteractionStaging
+  listDatinginteractionStagings(filter: TableDatinginteractionStagingFilterInput, limit: Int, nextToken: String): DatinginteractionStagingConnection
+	listVotedIdsflagshouse(userid: String): VotedIdsFlags
+	listVotedIdsIssuesflagshouse(userid: String,isscand:String): VotedIdsFlagsIssue
+	listVotedIdsIssuesflagssenate(userid: String,isscand:String): VotedIdsFlagsIssue
+	searchHouseCandInstate(filter:TableSearchFilterCands): CandNameOutArray
+	searchsenateCandInstate(filter:TableSearchFilterCands): CandNameOutArray
+}
+
+type Mutation {
+  createDatinguserdbStaging(input: CreateDatinguserdbStagingInput!): DatinguserdbStaging
+  deleteDatinguserdbStaging(input: DeleteDatinguserdbStagingInput!): DatinguserdbStaging
+  updateDatinguserdbStaging(input: UpdateDatinguserdbStagingInput!): DatinguserdbStaging
+  	updateDatinguserdbStaging1(userid: String!, age: String!): DatinguserdbStaging
+  		updateConnectButton(
+    		userid: String!,
+    		itemid: String,
+    		uuid: String,
+    		interestcategory: [String],
+    		timestamp: String,
+    		timeunix: Float
+    	): DatingitemtrackingStaging
+    		updateAcceptRequestatb3Button(
+      		userid: String!,
+      		itemid: String,
+      		uuid: String,
+      		interestcategory: [String],
+      		timestamp: String,
+      		timeunix: Float
+      	): DatingitemtrackingStaging
+      	updateDeclineRequestatb3Button(
+      		userid: String!,
+      		itemid: String,
+      		uuid: String,
+      		interestcategory: [String],
+      		timestamp: String,
+      		timeunix: Float
+      	): DatingitemtrackingStaging
+        	nextButtonDatingitemtrackingStagingtab1A(userid: String!, itemid: String): DatingitemtrackingStaging
+        	backinitializeButtonDatingitemtrackingStagingtab1A(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+            	nextButtonDatingitemtrackingStagingtab1B(userid: String!, itemid: String): DatingitemtrackingStaging
+            	backinitializeButtonDatingitemtrackingStagingtab1B(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+             	nextButtonDatingitemtrackingStagingtab1C(userid: String!, itemid: String): DatingitemtrackingStaging
+             	backinitializeButtonDatingitemtrackingStagingtab1C(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+        nextButtonDatingitemtrackingStagingtab2(userid: String!, itemid: String): DatingitemtrackingStaging
+                 	backinitializeButtonDatingitemtrackingStagingtab2(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+             	 	nextButtonDatingitemtrackingStagingtab3(userid: String!, itemid: String): DatingitemtrackingStaging
+             	backinitializeButtonDatingitemtrackingStagingtab3(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+        nextButtonDatingitemtrackingStagingtab3B(userid: String!, itemid: String): DatingitemtrackingStaging
+                 	backinitializeButtonDatingitemtrackingStagingtab3B(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+        nextButtonDatingitemtrackingStagingtab6(userid: String!, itemid: String): DatingitemtrackingStaging
+             	backinitializeButtonDatingitemtrackingStagingtab6(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+        nextButtonDatingitemtrackingStagingtab6B(userid: String!, itemid: String): DatingitemtrackingStaging
+             	backinitializeButtonDatingitemtrackingStagingtab6B(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+      nextButtonDatingitemtrackingStagingtab6C(userid: String!, itemid: String): DatingitemtrackingStaging
+             	backinitializeButtonDatingitemtrackingStagingtab6C(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+      nextButtonDatingitemtrackingStagingtab5(userid: String!, itemid: String): DatingitemtrackingStaging
+             	backinitializeButtonDatingitemtrackingStagingtab5(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+  	updateDatingitemtrackingStaging(userid: [String!]!, itemidupdate: [String!]!): DatingitemtrackingStaging
+  	updateDatingitemtrackingStagingSmallerArrays(userid: [String!]!, itemidupdate: [String!]!): DatingitemtrackingStaging
+    	createDatingitemtrackingOneBigArray(userid: String!, onebigitemidupdate: [String!]!): DatingitemtrackingStaging
+    	removeDatingitemtrackingStagingtab1B(userid: String!, itemid: String): DatingitemtrackingStaging
+    	removeDatingitemtrackingStagingtab1A(userid: String!, itemid: String): DatingitemtrackingStaging
+    		removeDatingitemtrackingStagingtab1C(userid: String!, itemid: String): DatingitemtrackingStaging
+    			listDatinguserdbStagingsQuery(
+        		userid: String,
+        		itemid: String,
+        		filter: TableDatinginteractionStagingFilterInput,
+        		limit: Int,
+        		nextToken: String
+        	): DatinginteractionStagingtab3
+        	updatetab3Expiration30days(userid: String, itemid: String): DatingitemtrackingStaging
+        	updatetab6Expiration30days(userid: String, itemid: String): DatingitemtrackingStaging
+        		updateDislikeButton(
+          		userid: String!,
+          		itemid: String,
+          		uuid: String,
+          		timestamp: String,
+          		timeunix: Float
+          	): DatingitemtrackingStaging
+  updateCandsArrayOneTime(filter: HouseCandsFilterInput): HouseCandsConnection
+    initializetabhouseinstate(userid1: String, userid2: String, state: String): DatingitemtrackingStaging
+    nextButtontabhouseinstate(userid: String!, itemid: String): DatingitemtrackingStaging
+    nextButtontabsenateinstate(userid: String!, itemid: String): DatingitemtrackingStaging
+    backinitializeButtontabhouseinstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+    backinitializeButtontabsenateinstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+    overallResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
+  	comResultUpdatetabhouseinstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
+  	issResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
+   overallResultUpdatetabsenateinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
+    	comResultUpdatetabsenateinstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
+    	issResultUpdatetabsenateinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
+  getCommiteeCateg(userid: String): ComCateg
+  getIssueCateg(userid: String): IssCateg
+  getIssueCategsenate(userid: String): IssCateg
+  getPreferCateg(userid: String): ComCateg
+  futureComPreferResult(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int,s3file:String,futurecomcandsvotedon:[String]): ComCateg
+   futureComPreferResultsenate(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int,s3file:String,futurecomcandsvotedon:[String]): ComCateg
+  comPreferInitializeA(slno: String): ComPreferOut
+
+    }
+
+input TableDatinguserdbStagingFilterInput {
+  age: TableStringFilterInput
+  countyuser: TableStringFilterInput
+  education: TableStringFilterInput
+  email: TableStringFilterInput
+  emailshareagree: TableStringFilterInput
+  facebookbusername: TableStringFilterInput
+  industrylevel2: TableStringFilterInput
+  loyalty: TableStringFilterInput
+  menteeagree: TableStringFilterInput
+  mentoragree: TableStringFilterInput
+  occup: TableStringFilterInput
+  profilename: TableStringFilterInput
+  s3file: TableStringFilterInput
+  stateuser: TableStringFilterInput
+  userdescription: TableStringFilterInput
+  userid: TableStringFilterInput
+  veteran: TableStringFilterInput
+  unsubscribematchingme: TableStringFilterInput
+   newWidth: TableStringFilterInput
+    newHeight: TableStringFilterInput
+	lastmeetupviewdate: TableIntFilterInput
+	timestamp:TableStringFilterInput
+	gender: TableStringFilterInput
+	profilecompPartF: TableStringFilterInput
+}
+
+input TableIntFilterInput {
+	ge: Int
+	gt: Int
+}
+
+input TableDatingitemtrackingStagingFilterInput {
+  userid: TableStringFilterInput
+}
+
+input TableDatinginteractionStagingFilterInput {
+  eventtype: TableStringFilterInput
+  interestcategory: TableStringFilterInput
+  itemid: TableStringFilterInput
+  timestamp: TableStringFilterInput
+  userid: TableStringFilterInput
+}
+
+input TableStringFilterInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+}
+
+input CreateDatinguserdbStagingInput {
+  age: String!
+  countyuser: String!
+  education: String!
+  email: String!
+  emailshareagree: String!
+  facebookbusername: String!
+  industrylevel2: String!
+  loyalty: String!
+  menteeagree: String!
+  mentoragree: String!
+  occup: String!
+  profilename: String!
+  s3file: String!
+  stateuser: String!
+  userdescription: String!
+  userid: String!
+  veteran: String!
+  unsubscribematchingme: String!
+    newWidth: String!
+    newHeight: String!
+    gender: String!
+}
+
+input DeleteDatinguserdbStagingInput {
+  userid: String!
+}
+
+input UpdateDatinguserdbStagingInput {
+  age: String
+  countyuser: String
+  education: String
+  email: String
+  emailshareagree: String
+  facebookbusername: String
+  industrylevel2: String
+  loyalty: String
+  menteeagree: String
+  mentoragree: String
+  occup: String
+  profilename: String
+  s3file: String
+  stateuser: String
+  userdescription: String
+  userid: String!
+  veteran: String
+  unsubscribematchingme: String!
+    newWidth: String!
+    newHeight: String!
+    gender: String!
+}
+
+
+type HouseCands {
+	CandName: String!
+	District: String
+	Party: String
+	State: String
+	Website: String
+	s3file: String
+	PictureAttribution: String
+	Coms: String
+	Motto: String
+	OverallYea: String
+	OverallNay: String
+	CAgricultureYea: String
+	CAgricultureNay: String
+	CFinancialYea: String
+	CFinancialNay: String
+	CEducationYea: String
+	CEducationNay: String
+	CAppropriationsYea: String
+	CAppropriationsNay: String
+	CAdminstrationYea: String
+	CAdminstrationNay: String
+	CForeignYea: String
+	CForeignNay: String
+	CTransportationYea: String
+	CTransportationNay: String
+	CVeteransYea: String
+	CVeteransNay: String
+	CClimateYea: String
+	CClimateNay: String
+	CEnergyYea: String
+	CEnergyNay: String
+	CEthicsYea: String
+	CEthicsNay: String
+	CWaysYea: String
+	CWaysNay: String
+	CScienceYea: String
+	CScienceNay: String
+	CArmedYea: String
+	CArmedNay: String
+	CJudiciaryYea: String
+	CJudiciaryNay: String
+	CHomelandYea: String
+	CHomelandNay: String
+	CBudgetYea: String
+	CBudgetNay: String
+	CNaturalYea: String
+	CNaturalNay: String
+	COversightYea: String
+	COversightNay: String
+	CSmallYea: String
+	CSmallNay: String
+	CTaxationYea: String
+	CTaxationNay: String
+	CIntelligenceYea: String
+	CIntelligenceNay: String
+	CAgricultureFuture: String
+	CFinancialFuture: String
+	CEducationFuture: String
+	CAppropriationsFuture: String
+	CAdminstrationFuture: String
+	CForeignFuture: String
+	CTransportationFuture: String
+	CVeteransFuture: String
+	CClimateFuture: String
+	CEnergyFuture: String
+	CEthicsFuture: String
+	CWaysFuture: String
+	CScienceFuture: String
+	CArmedFuture: String
+	CJudiciaryFuture: String
+	CHomelandFuture: String
+	CBudgetFuture: String
+	CNaturalFuture: String
+	COversightFuture: String
+	CSmallFuture: String
+	CTaxationFuture: String
+	CIntelligenceFuture: String
+IBorderYea: String
+IBorderNay: String
+IImmigrationYea: String
+IImmigrationNay: String
+IAbortionYes: String
+IAbortionNay: String
+ITransgenderYea: String
+ITransgenderNay: String
+ISafetyYea: String
+ISafetyNay: String
+IEducationYea: String
+IEducationNay: String
+IVeteransYea: String
+IVeteransNay: String
+IClimateYea: String
+IClimateNay: String
+IMentalYea: String
+IMentalNay: String
+IGunsYea: String
+IGunsNay: String
+ICostYea: String
+ICostNay: String
+IFarmersYea: String
+IFarmersNay: String
+IEconomyYea: String
+IEconomyNay: String
+IHealthcareYea: String
+IHealthcareNay: String
+IInfrastructureYea: String
+IInfrastructureNay: String
+IEnergyYea: String
+IEnergyNay: String
+INaturalYea: String
+INaturalNay: String
+ICannabisYea: String
+ICannabisNay: String
+ITaxesYea: String
+ITaxesNay: String
+ISeniorsYea: String
+ISeniorsNay: String
+IManufacturingYea: String
+IManufacturingNay: String
+IHousingYea: String
+IHousingNay: String
+IDefenceYea: String
+IDefenceNay: String
+IFinanceYea: String
+IFinanceNay: String
+}
+
+type HouseCandsConnection {
+	items: [HouseCands]
+		justcands: [String]
+}
+
+input HouseCandsFilterInput {
+	Incumbent: TableStringFilterInput
+	CandName: TableStringFilterInput
+	State: TableStringFilterInput
+	Office: TableStringFilterInput
+}
+
+type SenateCands {
+CandName: String
+Party: String
+State: String
+Website: String
+ImageKey: String
+PictureAttribution: String
+Coms: [String]
+Issues: [String]
+Motto: String
+OverallYea: String
+OverallNay: String
+CAgricultureYea: String
+CAgricultureNay: String
+AgricultureFuture: String
+CAppropriationsYea: String
+CAppropriationsNay: String
+AppropriationsFuture: String
+CArmedYea: String
+CArmedNay: String
+ArmedFuture: String
+CBankingYea: String
+CBankingNay: String
+BankingFuture: String
+CBudgetYea: String
+CBudgetNay: String
+BudgetFuture: String
+CCommerceYea: String
+CCommerceNay: String
+CommerceFuture: String
+CEnergyYea: String
+CEnergyNay: String
+EnergyFuture: String
+CEnvironmentYea: String
+CEnvironmentNay: String
+EnvironmentFuture: String
+CFinanceYea: String
+CFinanceNay: String
+FinanceFuture: String
+CForeignYea: String
+CForeignNay: String
+ForeignFuture: String
+CHealthYea: String
+CHealthNay: String
+HealthFuture: String
+CHomelandYea: String
+CHomelandNay: String
+HomelandFuture: String
+CIndianYea: String
+CIndianNay: String
+IndianFuture: String
+CPrintingYea: String
+CPrintingNay: String
+PrintingFuture: String
+CTaxationYea: String
+CTaxationNay: String
+TaxationFuture: String
+CLibraryYea: String
+CLibraryNay: String
+LibraryFuture: String
+CEconomicYea: String
+CEconomicNay: String
+EconomicFuture: String
+CJudiciaryYea: String
+CJudiciaryNay: String
+JudiciaryFuture: String
+CRulesYea: String
+CRulesNay: String
+RulesFuture: String
+CEthicsYea: String
+CEthicsNay: String
+EthicsFuture: String
+CIntelligenceYea: String
+CIntelligenceNay: String
+IntelligenceFuture: String
+CBusinessYea: String
+CBusinessNay: String
+BusinessFuture: String
+CAgingYea: String
+CAgingNay: String
+AgingFuture: String
+CVeteranYea: String
+CVeteranNay: String
+VeteranFuture: String
+IBorderYea: String
+IBorderNay: String
+IImmigrationYea: String
+IImmigrationNay: String
+IAbortionYes: String
+IAbortionNay: String
+ITransgenderYea: String
+ITransgenderNay: String
+ISafetyYea: String
+ISafetyNay: String
+IEducationYea: String
+IEducationNay: String
+IVeteransYea: String
+IVeteransNay: String
+IClimateYea: String
+IClimateNay: String
+IMentalYea: String
+IMentalNay: String
+IGunsYea: String
+IGunsNay: String
+ICostYea: String
+ICostNay: String
+IFarmersYea: String
+IFarmersNay: String
+IEconomyYea: String
+IEconomyNay: String
+IHealthcareYea: String
+IHealthcareNay: String
+IInfrastructureYea: String
+IInfrastructureNay: String
+IEnergyYea: String
+IEnergyNay: String
+INaturalYea: String
+INaturalNay: String
+ICannabisYea: String
+ICannabisNay: String
+ITaxesYea: String
+ITaxesNay: String
+ISeniorsYea: String
+ISeniorsNay: String
+IManufacturingYea: String
+IManufacturingNay: String
+IHousingYea: String
+IHousingNay: String
+IDefenceYea: String
+IDefenceNay: String
+IFinanceYea: String
+IFinanceNay: String
+}
+
+type StateCands {
+CandName: String
+Office: String
+Party: String
+State: String
+District: String
+Website: String
+s3file: String
+PictureAttribution: [String]
+Coms: String
+Motto: String
+OverallYea: String
+OverallNay: String
+IBorderYea: String
+IBorderNay: String
+IImmigrationYea: String
+IImmigrationNay: String
+IAbortionYes: String
+IAbortionNay: String
+ITransgenderYea: String
+ITransgenderNay: String
+IVotingYea: String
+IVotingNay: String
+IElectionYea: String
+IElectionNay: String
+ISafetyYea: String
+ISafetyNay: String
+IEducationYea: String
+IEducationNay: String
+IVeteransYea: String
+IVeteransNay: String
+IClimateYea: String
+IClimateNay: String
+IHomelessnessYea: String
+IHomelessnessNay: String
+IMentalYea: String
+IMentalNay: String
+IGunsYea: String
+IGunsNay: String
+ICostYea: String
+ICostNay: String
+IFarmersYea: String
+IFarmersNay: String
+IPermanentYea: String
+IPermanentNay: String
+IEconomyYea: String
+IEconomyNay: String
+IHealthcareYea: String
+IHealthcareNay: String
+IInfrastructureYea: String
+IInfrastructureNay: String
+IEnergyYea: String
+IEnergyNay: String
+ICannabisYea: String
+ICannabisNay: String
+ITaxesYea: String
+ITaxesNay: String
+ILandsYea: String
+ILandsNay: String
+ISeniorsYea: String
+ISeniorsNay: String
+IManufacturingYea: String
+IManufacturingNay: String
+IHousingYea: String
+IHousingNay: String
+}
+
+type VotedIdsFlags {
+	VotedIdsFlagArray: [String]
+}
+
+type VotedIdsFlagsIssue {
+	VotedIdsFlagArray: [Int]
+	VotedIdsFlagArrayCand: [String]
+	futurecomcandsvotedon: [String]
+	FutureComPreferArray: [String]
+	FutureComCandViewed: Int
+}
+
+type ComCateg {
+	comcateg: String
+}
+
+type IssCateg {
+VotedIdsFlagArray: [String]
+	isscateg: String
+	comcateg: String
+	prefercateg: String
+	searchcateg: String
+}
+
+type ComPreferOut {
+	numberarray: [Int]
+	candarray: [String]
+}
+
+input TableSearchFilterCands {
+  LastName: TableStringFilterInput
+  StateCand: TableStringFilterInput
+  }
+
+  type CandNameOut {
+  CandName: String
+  	District: String
+  	Party: String
+  	StateCand: String
+  	Website: String
+  	s3file: String
+  	PictureAttribution: String
+  	Coms: String
+  	Motto: String
+  	OverallYea: String
+  	OverallNay: String
+  	FirstComPrefer: [Int]
+  	SecondComPrefer: [Int]
+  	ThirdComPrefer: [Int]
+  }
+
+type CandNameOutArray {
+	items: [CandNameOut]
+}

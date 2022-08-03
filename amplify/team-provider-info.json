@@ -1,0 +1,85 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyd738dd6664444-staging-171405-authRole",
+      "UnauthRoleArn": "arn:aws:iam::564256529450:role/amplify-amplifyd738dd6664444-staging-171405-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::564256529450:role/amplify-amplifyd738dd6664444-staging-171405-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+      "UnauthRoleName": "amplify-amplifyd738dd6664444-staging-171405-unauthRole",
+      "StackName": "amplify-amplifyd738dd6664444-staging-171405",
+      "StackId": "arn:aws:cloudformation:us-west-2:564256529450:stack/amplify-amplifyd738dd6664444-staging-171405/83a2de00-1286-11ed-a705-0281886b628d",
+      "AmplifyAppId": "d22zf9zju15inn"
+    },
+    "categories": {
+      "auth": {
+        "test4cf5a54eb": {}
+      },
+      "storage": {
+        "ussenaterepcandsmain": {
+          "tableName": "ussenaterepcandsmain",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/ussenaterepcandsmain",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "ussenaterepcandsissues": {
+          "tableName": "ussenaterepcandsissues",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/ussenaterepcandsissues",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "ussenaterepcandscoms": {
+          "tableName": "ussenaterepcandscoms",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/ussenaterepcandscoms",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "usercandarraydisplaystaging": {
+          "tableName": "usercandarraydisplay-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/usercandarraydisplay-staging",
+          "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/usercandarraydisplay-staging/stream/2022-07-19T16:41:08.613",
+          "partitionKeyName": "userid",
+          "partitionKeyType": "S"
+        },
+        "datinguserdbstaging": {
+          "tableName": "datinguserdb-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/datinguserdb-staging",
+          "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/datinguserdb-staging/stream/2022-04-29T03:19:12.261",
+          "partitionKeyName": "userid",
+          "partitionKeyType": "S"
+        }
+      },
+      "function": {
+        "test47fa6be8b": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test47fa6be8b-4459716553536d433170-build.zip"
+        },
+        "test4224ccd61": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4224ccd61-476e2b422f6d594d4854-build.zip"
+        },
+        "test43287d290": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test43287d290-764d70525465436e3034-build.zip"
+        },
+        "test4bdb4125e": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4bdb4125e-7931756668455338436e-build.zip"
+        },
+        "test4e256f6a7": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4e256f6a7-6b794b555a41554c7568-build.zip"
+        },
+        "test4a09bdf2c": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4a09bdf2c-373162596b4a61713565-build.zip"
+        }
+      }
+    }
+  }
+}

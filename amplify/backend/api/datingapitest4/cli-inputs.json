@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/userdbapiage": {
+      "name": "/userdbapiage",
+      "lambdaFunction": "test47fa6be8b",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

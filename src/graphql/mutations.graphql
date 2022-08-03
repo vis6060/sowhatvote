@@ -1,0 +1,892 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateDatinguserdbStaging($input: CreateDatinguserdbStagingInput!) {
+  createDatinguserdbStaging(input: $input) {
+    age
+    countyuser
+    education
+    email
+    emailshareagree
+    facebookbusername
+    industrylevel2
+    loyalty
+    menteeagree
+    mentoragree
+    occup
+    profilename
+    s3file
+    stateuser
+    userdescription
+    userid
+    veteran
+    unsubscribematchingme
+    newWidth
+    newHeight
+    gender
+  }
+}
+mutation DeleteDatinguserdbStaging($input: DeleteDatinguserdbStagingInput!) {
+  deleteDatinguserdbStaging(input: $input) {
+    age
+    countyuser
+    education
+    email
+    emailshareagree
+    facebookbusername
+    industrylevel2
+    loyalty
+    menteeagree
+    mentoragree
+    occup
+    profilename
+    s3file
+    stateuser
+    userdescription
+    userid
+    veteran
+    unsubscribematchingme
+    newWidth
+    newHeight
+    gender
+  }
+}
+mutation UpdateDatinguserdbStaging($input: UpdateDatinguserdbStagingInput!) {
+  updateDatinguserdbStaging(input: $input) {
+    age
+    countyuser
+    education
+    email
+    emailshareagree
+    facebookbusername
+    industrylevel2
+    loyalty
+    menteeagree
+    mentoragree
+    occup
+    profilename
+    s3file
+    stateuser
+    userdescription
+    userid
+    veteran
+    unsubscribematchingme
+    newWidth
+    newHeight
+    gender
+  }
+}
+mutation UpdateDatinguserdbStaging1($userid: String!, $age: String!) {
+  updateDatinguserdbStaging1(userid: $userid, age: $age) {
+    age
+    countyuser
+    education
+    email
+    emailshareagree
+    facebookbusername
+    industrylevel2
+    loyalty
+    menteeagree
+    mentoragree
+    occup
+    profilename
+    s3file
+    stateuser
+    userdescription
+    userid
+    veteran
+    unsubscribematchingme
+    newWidth
+    newHeight
+    gender
+  }
+}
+mutation UpdateConnectButton(
+  $userid: String!
+  $itemid: String
+  $uuid: String
+  $interestcategory: [String]
+  $timestamp: String
+  $timeunix: Float
+) {
+  updateConnectButton(
+    userid: $userid
+    itemid: $itemid
+    uuid: $uuid
+    interestcategory: $interestcategory
+    timestamp: $timestamp
+    timeunix: $timeunix
+  ) {
+    userid
+  }
+}
+mutation UpdateAcceptRequestatb3Button(
+  $userid: String!
+  $itemid: String
+  $uuid: String
+  $interestcategory: [String]
+  $timestamp: String
+  $timeunix: Float
+) {
+  updateAcceptRequestatb3Button(
+    userid: $userid
+    itemid: $itemid
+    uuid: $uuid
+    interestcategory: $interestcategory
+    timestamp: $timestamp
+    timeunix: $timeunix
+  ) {
+    userid
+  }
+}
+mutation UpdateDeclineRequestatb3Button(
+  $userid: String!
+  $itemid: String
+  $uuid: String
+  $interestcategory: [String]
+  $timestamp: String
+  $timeunix: Float
+) {
+  updateDeclineRequestatb3Button(
+    userid: $userid
+    itemid: $itemid
+    uuid: $uuid
+    interestcategory: $interestcategory
+    timestamp: $timestamp
+    timeunix: $timeunix
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab1A(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab1A(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab1A(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab1A(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab1B(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab1B(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab1B(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab1B(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab1C(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab1C(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab1C(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab1C(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab2(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab2(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab2(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab2(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab3(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab3(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab3(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab3(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab3B(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab3B(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab3B(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab3B(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab6(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab6(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab6(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab6(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab6B(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab6B(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab6B(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab6B(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab6C(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab6C(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab6C(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab6C(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation NextButtonDatingitemtrackingStagingtab5(
+  $userid: String!
+  $itemid: String
+) {
+  nextButtonDatingitemtrackingStagingtab5(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtonDatingitemtrackingStagingtab5(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtonDatingitemtrackingStagingtab5(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation UpdateDatingitemtrackingStaging(
+  $userid: [String!]!
+  $itemidupdate: [String!]!
+) {
+  updateDatingitemtrackingStaging(
+    userid: $userid
+    itemidupdate: $itemidupdate
+  ) {
+    userid
+  }
+}
+mutation UpdateDatingitemtrackingStagingSmallerArrays(
+  $userid: [String!]!
+  $itemidupdate: [String!]!
+) {
+  updateDatingitemtrackingStagingSmallerArrays(
+    userid: $userid
+    itemidupdate: $itemidupdate
+  ) {
+    userid
+  }
+}
+mutation CreateDatingitemtrackingOneBigArray(
+  $userid: String!
+  $onebigitemidupdate: [String!]!
+) {
+  createDatingitemtrackingOneBigArray(
+    userid: $userid
+    onebigitemidupdate: $onebigitemidupdate
+  ) {
+    userid
+  }
+}
+mutation RemoveDatingitemtrackingStagingtab1B(
+  $userid: String!
+  $itemid: String
+) {
+  removeDatingitemtrackingStagingtab1B(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation RemoveDatingitemtrackingStagingtab1A(
+  $userid: String!
+  $itemid: String
+) {
+  removeDatingitemtrackingStagingtab1A(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation RemoveDatingitemtrackingStagingtab1C(
+  $userid: String!
+  $itemid: String
+) {
+  removeDatingitemtrackingStagingtab1C(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation ListDatinguserdbStagingsQuery(
+  $userid: String
+  $itemid: String
+  $filter: TableDatinginteractionStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatinguserdbStagingsQuery(
+    userid: $userid
+    itemid: $itemid
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    eventtype
+    interestcategory
+    itemid
+    timestamp
+    userid
+  }
+}
+mutation Updatetab3Expiration30days($userid: String, $itemid: String) {
+  updatetab3Expiration30days(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation Updatetab6Expiration30days($userid: String, $itemid: String) {
+  updatetab6Expiration30days(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation UpdateDislikeButton(
+  $userid: String!
+  $itemid: String
+  $uuid: String
+  $timestamp: String
+  $timeunix: Float
+) {
+  updateDislikeButton(
+    userid: $userid
+    itemid: $itemid
+    uuid: $uuid
+    timestamp: $timestamp
+    timeunix: $timeunix
+  ) {
+    userid
+  }
+}
+mutation UpdateCandsArrayOneTime($filter: HouseCandsFilterInput) {
+  updateCandsArrayOneTime(filter: $filter) {
+    items {
+      CandName
+      District
+      Party
+      State
+      Website
+      s3file
+      PictureAttribution
+      Coms
+      Motto
+      OverallYea
+      OverallNay
+      CAgricultureYea
+      CAgricultureNay
+      CFinancialYea
+      CFinancialNay
+      CEducationYea
+      CEducationNay
+      CAppropriationsYea
+      CAppropriationsNay
+      CAdminstrationYea
+      CAdminstrationNay
+      CForeignYea
+      CForeignNay
+      CTransportationYea
+      CTransportationNay
+      CVeteransYea
+      CVeteransNay
+      CClimateYea
+      CClimateNay
+      CEnergyYea
+      CEnergyNay
+      CEthicsYea
+      CEthicsNay
+      CWaysYea
+      CWaysNay
+      CScienceYea
+      CScienceNay
+      CArmedYea
+      CArmedNay
+      CJudiciaryYea
+      CJudiciaryNay
+      CHomelandYea
+      CHomelandNay
+      CBudgetYea
+      CBudgetNay
+      CNaturalYea
+      CNaturalNay
+      COversightYea
+      COversightNay
+      CSmallYea
+      CSmallNay
+      CTaxationYea
+      CTaxationNay
+      CIntelligenceYea
+      CIntelligenceNay
+      CAgricultureFuture
+      CFinancialFuture
+      CEducationFuture
+      CAppropriationsFuture
+      CAdminstrationFuture
+      CForeignFuture
+      CTransportationFuture
+      CVeteransFuture
+      CClimateFuture
+      CEnergyFuture
+      CEthicsFuture
+      CWaysFuture
+      CScienceFuture
+      CArmedFuture
+      CJudiciaryFuture
+      CHomelandFuture
+      CBudgetFuture
+      CNaturalFuture
+      COversightFuture
+      CSmallFuture
+      CTaxationFuture
+      CIntelligenceFuture
+      IBorderYea
+      IBorderNay
+      IImmigrationYea
+      IImmigrationNay
+      IAbortionYes
+      IAbortionNay
+      ITransgenderYea
+      ITransgenderNay
+      ISafetyYea
+      ISafetyNay
+      IEducationYea
+      IEducationNay
+      IVeteransYea
+      IVeteransNay
+      IClimateYea
+      IClimateNay
+      IMentalYea
+      IMentalNay
+      IGunsYea
+      IGunsNay
+      ICostYea
+      ICostNay
+      IFarmersYea
+      IFarmersNay
+      IEconomyYea
+      IEconomyNay
+      IHealthcareYea
+      IHealthcareNay
+      IInfrastructureYea
+      IInfrastructureNay
+      IEnergyYea
+      IEnergyNay
+      INaturalYea
+      INaturalNay
+      ICannabisYea
+      ICannabisNay
+      ITaxesYea
+      ITaxesNay
+      ISeniorsYea
+      ISeniorsNay
+      IManufacturingYea
+      IManufacturingNay
+      IHousingYea
+      IHousingNay
+      IDefenceYea
+      IDefenceNay
+      IFinanceYea
+      IFinanceNay
+    }
+    justcands
+  }
+}
+mutation Initializetabhouseinstate(
+  $userid1: String
+  $userid2: String
+  $state: String
+) {
+  initializetabhouseinstate(
+    userid1: $userid1
+    userid2: $userid2
+    state: $state
+  ) {
+    userid
+  }
+}
+mutation NextButtontabhouseinstate($userid: String!, $itemid: String) {
+  nextButtontabhouseinstate(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation NextButtontabsenateinstate($userid: String!, $itemid: String) {
+  nextButtontabsenateinstate(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
+mutation BackinitializeButtontabhouseinstate(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtontabhouseinstate(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation BackinitializeButtontabsenateinstate(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtontabsenateinstate(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation OverallResultUpdatetabhouseinstate(
+  $candname: String!
+  $userid: String
+  $isssel: String
+  $isscateg: String
+  $isscand: String
+  $points: Int
+) {
+  overallResultUpdatetabhouseinstate(
+    candname: $candname
+    userid: $userid
+    isssel: $isssel
+    isscateg: $isscateg
+    isscand: $isscand
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation ComResultUpdatetabhouseinstate(
+  $candname: String!
+  $userid: String
+  $comsel: String
+  $comcateg: String
+  $points: Int
+) {
+  comResultUpdatetabhouseinstate(
+    candname: $candname
+    userid: $userid
+    comsel: $comsel
+    comcateg: $comcateg
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation IssResultUpdatetabhouseinstate(
+  $candname: String!
+  $userid: String
+  $isssel: String
+  $isscateg: String
+  $isscand: String
+  $points: Int
+) {
+  issResultUpdatetabhouseinstate(
+    candname: $candname
+    userid: $userid
+    isssel: $isssel
+    isscateg: $isscateg
+    isscand: $isscand
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation OverallResultUpdatetabsenateinstate(
+  $candname: String!
+  $userid: String
+  $isssel: String
+  $isscateg: String
+  $isscand: String
+  $points: Int
+) {
+  overallResultUpdatetabsenateinstate(
+    candname: $candname
+    userid: $userid
+    isssel: $isssel
+    isscateg: $isscateg
+    isscand: $isscand
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation ComResultUpdatetabsenateinstate(
+  $candname: String!
+  $userid: String
+  $comsel: String
+  $comcateg: String
+  $points: Int
+) {
+  comResultUpdatetabsenateinstate(
+    candname: $candname
+    userid: $userid
+    comsel: $comsel
+    comcateg: $comcateg
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation IssResultUpdatetabsenateinstate(
+  $candname: String!
+  $userid: String
+  $isssel: String
+  $isscateg: String
+  $isscand: String
+  $points: Int
+) {
+  issResultUpdatetabsenateinstate(
+    candname: $candname
+    userid: $userid
+    isssel: $isssel
+    isscateg: $isscateg
+    isscand: $isscand
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation GetCommiteeCateg($userid: String) {
+  getCommiteeCateg(userid: $userid) {
+    comcateg
+  }
+}
+mutation GetIssueCateg($userid: String) {
+  getIssueCateg(userid: $userid) {
+    VotedIdsFlagArray
+    isscateg
+    comcateg
+    prefercateg
+    searchcateg
+  }
+}
+mutation GetIssueCategsenate($userid: String) {
+  getIssueCategsenate(userid: $userid) {
+    VotedIdsFlagArray
+    isscateg
+    comcateg
+    prefercateg
+    searchcateg
+  }
+}
+mutation GetPreferCateg($userid: String) {
+  getPreferCateg(userid: $userid) {
+    comcateg
+  }
+}
+mutation FutureComPreferResult(
+  $candname: String
+  $userid: String
+  $FirstComPrefer: [Int]
+  $SecondComPrefer: [Int]
+  $ThirdComPrefer: [Int]
+  $FutureCom1: String
+  $FutureCom2: String
+  $FutureCom3: String
+  $points: Int
+  $s3file: String
+  $futurecomcandsvotedon: [String]
+) {
+  futureComPreferResult(
+    candname: $candname
+    userid: $userid
+    FirstComPrefer: $FirstComPrefer
+    SecondComPrefer: $SecondComPrefer
+    ThirdComPrefer: $ThirdComPrefer
+    FutureCom1: $FutureCom1
+    FutureCom2: $FutureCom2
+    FutureCom3: $FutureCom3
+    points: $points
+    s3file: $s3file
+    futurecomcandsvotedon: $futurecomcandsvotedon
+  ) {
+    comcateg
+  }
+}
+mutation FutureComPreferResultsenate(
+  $candname: String
+  $userid: String
+  $FirstComPrefer: [Int]
+  $SecondComPrefer: [Int]
+  $ThirdComPrefer: [Int]
+  $FutureCom1: String
+  $FutureCom2: String
+  $FutureCom3: String
+  $points: Int
+  $s3file: String
+  $futurecomcandsvotedon: [String]
+) {
+  futureComPreferResultsenate(
+    candname: $candname
+    userid: $userid
+    FirstComPrefer: $FirstComPrefer
+    SecondComPrefer: $SecondComPrefer
+    ThirdComPrefer: $ThirdComPrefer
+    FutureCom1: $FutureCom1
+    FutureCom2: $FutureCom2
+    FutureCom3: $FutureCom3
+    points: $points
+    s3file: $s3file
+    futurecomcandsvotedon: $futurecomcandsvotedon
+  ) {
+    comcateg
+  }
+}
+mutation ComPreferInitializeA($slno: String) {
+  comPreferInitializeA(slno: $slno) {
+    numberarray
+    candarray
+  }
+}
+mutation CreateTodo(
+  $input: CreateTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  createTodo(input: $input, condition: $condition) {
+    id
+    name
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTodo(
+  $input: UpdateTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  updateTodo(input: $input, condition: $condition) {
+    id
+    name
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTodo(
+  $input: DeleteTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  deleteTodo(input: $input, condition: $condition) {
+    id
+    name
+    description
+    createdAt
+    updatedAt
+  }
+}

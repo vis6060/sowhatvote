@@ -1,0 +1,1384 @@
+# this is an auto generated file. This will be overwritten
+query AllDatinguserdbStagingsByCountyAge(
+  $searcharray: [String!]
+  $agevalue: String
+  $ageflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $countyuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByCountyAge(
+    searcharray: $searcharray
+    agevalue: $agevalue
+    ageflag: $ageflag
+    filter: $filter
+    countyuser: $countyuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByCountyAge1(
+  $userid: String!
+  $agevalue: String
+  $ageflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $countyuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByCountyAge1(
+    userid: $userid
+    agevalue: $agevalue
+    ageflag: $ageflag
+    filter: $filter
+    countyuser: $countyuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateAge(
+  $searcharray: [String!]
+  $agevalue: String
+  $ageflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $stateuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateAge(
+    searcharray: $searcharray
+    agevalue: $agevalue
+    ageflag: $ageflag
+    filter: $filter
+    stateuser: $stateuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateAge1(
+  $userid: String!
+  $agevalue: String
+  $ageflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $stateuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateAge1(
+    userid: $userid
+    agevalue: $agevalue
+    ageflag: $ageflag
+    filter: $filter
+    stateuser: $stateuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByCountyGender(
+  $searcharray: [String!]
+  $gendervalue: String
+  $genderflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $countyuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByCountyGender(
+    searcharray: $searcharray
+    gendervalue: $gendervalue
+    genderflag: $genderflag
+    filter: $filter
+    countyuser: $countyuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByCountyGender1(
+  $userid: String!
+  $gendervalue: String
+  $genderflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $countyuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByCountyGender1(
+    userid: $userid
+    gendervalue: $gendervalue
+    genderflag: $genderflag
+    filter: $filter
+    countyuser: $countyuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateGender(
+  $searcharray: [String!]
+  $gendervalue: String
+  $genderflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $stateuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateGender(
+    searcharray: $searcharray
+    gendervalue: $gendervalue
+    genderflag: $genderflag
+    filter: $filter
+    stateuser: $stateuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateGender1(
+  $userid: String!
+  $gendervalue: String
+  $genderflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $stateuser: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateGender1(
+    userid: $userid
+    gendervalue: $gendervalue
+    genderflag: $genderflag
+    filter: $filter
+    stateuser: $stateuser
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByOccupIndus(
+  $searcharray: [String!]
+  $indusvalue: String
+  $indusflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $occup: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByOccupIndus(
+    searcharray: $searcharray
+    indusvalue: $indusvalue
+    indusflag: $indusflag
+    filter: $filter
+    occup: $occup
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByOccupIndus1(
+  $userid: String!
+  $indusvalue: String
+  $indusflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $occup: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByOccupIndus1(
+    userid: $userid
+    indusvalue: $indusvalue
+    indusflag: $indusflag
+    filter: $filter
+    occup: $occup
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByOccupState(
+  $searcharray: [String!]
+  $statevalue: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $occup: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByOccupState(
+    searcharray: $searcharray
+    statevalue: $statevalue
+    filter: $filter
+    occup: $occup
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByOccupState1(
+  $userid: String!
+  $statevalue: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $occup: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByOccupState1(
+    userid: $userid
+    statevalue: $statevalue
+    filter: $filter
+    occup: $occup
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateIndus(
+  $searcharray: [String!]
+  $indusvalue: String
+  $indusflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $statevalue: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateIndus(
+    searcharray: $searcharray
+    indusvalue: $indusvalue
+    indusflag: $indusflag
+    filter: $filter
+    statevalue: $statevalue
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateIndus1(
+  $userid: String!
+  $indusvalue: String
+  $indusflag: String
+  $filter: TableDatinguserdbStagingFilterInput
+  $statevalue: String!
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateIndus1(
+    userid: $userid
+    indusvalue: $indusvalue
+    indusflag: $indusflag
+    filter: $filter
+    statevalue: $statevalue
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByGenderLoyalty(
+  $userid: String!
+  $gendervalue: String!
+  $filter: TableDatinguserdbStagingFilterInput
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByGenderLoyalty(
+    userid: $userid
+    gendervalue: $gendervalue
+    filter: $filter
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    arraytabs
+    arrayindexes
+    nextToken
+  }
+}
+query AllDatinguserdbStagingsByStateLoyalty(
+  $userid: String!
+  $statevalue: String!
+  $filter: TableDatinguserdbStagingFilterInput
+  $count: Int
+  $nextToken: String
+) {
+  allDatinguserdbStagingsByStateLoyalty(
+    userid: $userid
+    statevalue: $statevalue
+    filter: $filter
+    count: $count
+    nextToken: $nextToken
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    arraytabs
+    arrayindexes
+    nextToken
+  }
+}
+query GetLoyaltytab3B6Cindex($userid: String!, $itemid: String) {
+  getLoyaltytab3B6Cindex(userid: $userid, itemid: $itemid) {
+    tab13B6Cname
+    indextab13B6C
+  }
+}
+query GetDatinguserdbStaging($userid: String) {
+  getDatinguserdbStaging(userid: $userid) {
+    age
+    countyuser
+    education
+    email
+    emailshareagree
+    facebookbusername
+    industrylevel2
+    loyalty
+    menteeagree
+    mentoragree
+    occup
+    profilename
+    s3file
+    stateuser
+    userdescription
+    userid
+    veteran
+    unsubscribematchingme
+    newWidth
+    newHeight
+    gender
+  }
+}
+query GetDatinguserdbStagingsfacebook(
+  $userid: String!
+  $facebookvalue: String!
+  $filter: TableDatinguserdbStagingFilterInput
+) {
+  getDatinguserdbStagingsfacebook(
+    userid: $userid
+    facebookvalue: $facebookvalue
+    filter: $filter
+  ) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    arraytabs
+    arrayindexes
+    nextToken
+  }
+}
+query GetBatchDatinguserdbStaging($ids: [String!]) {
+  getBatchDatinguserdbStaging(ids: $ids) {
+    DatinguserdbStagings {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    InitialSearchArraySize
+    FilteredSearchArraySize
+    nextToken
+  }
+}
+query ListDatinguserdbStagings(
+  $filter: TableDatinguserdbStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatinguserdbStagings(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      age
+      countyuser
+      education
+      email
+      emailshareagree
+      facebookbusername
+      industrylevel2
+      loyalty
+      menteeagree
+      mentoragree
+      occup
+      profilename
+      s3file
+      stateuser
+      userdescription
+      userid
+      veteran
+      unsubscribematchingme
+      newWidth
+      newHeight
+      gender
+    }
+    nextToken
+  }
+}
+query ListDatinguserdbStagingsOneBigArray1A(
+  $userid: String!
+  $filter: TableDatinguserdbStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatinguserdbStagingsOneBigArray1A(
+    userid: $userid
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      userid
+    }
+    nextToken
+  }
+}
+query ListDatinguserdbStagingsOneBigArray(
+  $userid: String!
+  $filter: TableDatinguserdbStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatinguserdbStagingsOneBigArray(
+    userid: $userid
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      userid
+    }
+    nextToken
+  }
+}
+query ListDatinguserdbStagingsOneBigArray1C(
+  $userid: String!
+  $filter: TableDatinguserdbStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatinguserdbStagingsOneBigArray1C(
+    userid: $userid
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      userid
+    }
+    nextToken
+  }
+}
+query GetDatingitemtrackingStaging($userid: String!) {
+  getDatingitemtrackingStaging(userid: $userid) {
+    userid
+  }
+}
+query ListDatingitemtrackingStagings(
+  $filter: TableDatingitemtrackingStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatingitemtrackingStagings(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      userid
+    }
+    nextToken
+  }
+}
+query GetHouseCands($CandName: String) {
+  getHouseCands(CandName: $CandName) {
+    CandName
+    District
+    Party
+    State
+    Website
+    s3file
+    PictureAttribution
+    Coms
+    Motto
+    OverallYea
+    OverallNay
+    CAgricultureYea
+    CAgricultureNay
+    CFinancialYea
+    CFinancialNay
+    CEducationYea
+    CEducationNay
+    CAppropriationsYea
+    CAppropriationsNay
+    CAdminstrationYea
+    CAdminstrationNay
+    CForeignYea
+    CForeignNay
+    CTransportationYea
+    CTransportationNay
+    CVeteransYea
+    CVeteransNay
+    CClimateYea
+    CClimateNay
+    CEnergyYea
+    CEnergyNay
+    CEthicsYea
+    CEthicsNay
+    CWaysYea
+    CWaysNay
+    CScienceYea
+    CScienceNay
+    CArmedYea
+    CArmedNay
+    CJudiciaryYea
+    CJudiciaryNay
+    CHomelandYea
+    CHomelandNay
+    CBudgetYea
+    CBudgetNay
+    CNaturalYea
+    CNaturalNay
+    COversightYea
+    COversightNay
+    CSmallYea
+    CSmallNay
+    CTaxationYea
+    CTaxationNay
+    CIntelligenceYea
+    CIntelligenceNay
+    CAgricultureFuture
+    CFinancialFuture
+    CEducationFuture
+    CAppropriationsFuture
+    CAdminstrationFuture
+    CForeignFuture
+    CTransportationFuture
+    CVeteransFuture
+    CClimateFuture
+    CEnergyFuture
+    CEthicsFuture
+    CWaysFuture
+    CScienceFuture
+    CArmedFuture
+    CJudiciaryFuture
+    CHomelandFuture
+    CBudgetFuture
+    CNaturalFuture
+    COversightFuture
+    CSmallFuture
+    CTaxationFuture
+    CIntelligenceFuture
+    IBorderYea
+    IBorderNay
+    IImmigrationYea
+    IImmigrationNay
+    IAbortionYes
+    IAbortionNay
+    ITransgenderYea
+    ITransgenderNay
+    ISafetyYea
+    ISafetyNay
+    IEducationYea
+    IEducationNay
+    IVeteransYea
+    IVeteransNay
+    IClimateYea
+    IClimateNay
+    IMentalYea
+    IMentalNay
+    IGunsYea
+    IGunsNay
+    ICostYea
+    ICostNay
+    IFarmersYea
+    IFarmersNay
+    IEconomyYea
+    IEconomyNay
+    IHealthcareYea
+    IHealthcareNay
+    IInfrastructureYea
+    IInfrastructureNay
+    IEnergyYea
+    IEnergyNay
+    INaturalYea
+    INaturalNay
+    ICannabisYea
+    ICannabisNay
+    ITaxesYea
+    ITaxesNay
+    ISeniorsYea
+    ISeniorsNay
+    IManufacturingYea
+    IManufacturingNay
+    IHousingYea
+    IHousingNay
+    IDefenceYea
+    IDefenceNay
+    IFinanceYea
+    IFinanceNay
+  }
+}
+query GetSenateCands($CandName: String) {
+  getSenateCands(CandName: $CandName) {
+    CandName
+    Party
+    State
+    Website
+    ImageKey
+    PictureAttribution
+    Coms
+    Issues
+    Motto
+    OverallYea
+    OverallNay
+    CAgricultureYea
+    CAgricultureNay
+    AgricultureFuture
+    CAppropriationsYea
+    CAppropriationsNay
+    AppropriationsFuture
+    CArmedYea
+    CArmedNay
+    ArmedFuture
+    CBankingYea
+    CBankingNay
+    BankingFuture
+    CBudgetYea
+    CBudgetNay
+    BudgetFuture
+    CCommerceYea
+    CCommerceNay
+    CommerceFuture
+    CEnergyYea
+    CEnergyNay
+    EnergyFuture
+    CEnvironmentYea
+    CEnvironmentNay
+    EnvironmentFuture
+    CFinanceYea
+    CFinanceNay
+    FinanceFuture
+    CForeignYea
+    CForeignNay
+    ForeignFuture
+    CHealthYea
+    CHealthNay
+    HealthFuture
+    CHomelandYea
+    CHomelandNay
+    HomelandFuture
+    CIndianYea
+    CIndianNay
+    IndianFuture
+    CPrintingYea
+    CPrintingNay
+    PrintingFuture
+    CTaxationYea
+    CTaxationNay
+    TaxationFuture
+    CLibraryYea
+    CLibraryNay
+    LibraryFuture
+    CEconomicYea
+    CEconomicNay
+    EconomicFuture
+    CJudiciaryYea
+    CJudiciaryNay
+    JudiciaryFuture
+    CRulesYea
+    CRulesNay
+    RulesFuture
+    CEthicsYea
+    CEthicsNay
+    EthicsFuture
+    CIntelligenceYea
+    CIntelligenceNay
+    IntelligenceFuture
+    CBusinessYea
+    CBusinessNay
+    BusinessFuture
+    CAgingYea
+    CAgingNay
+    AgingFuture
+    CVeteranYea
+    CVeteranNay
+    VeteranFuture
+    IBorderYea
+    IBorderNay
+    IImmigrationYea
+    IImmigrationNay
+    IAbortionYes
+    IAbortionNay
+    ITransgenderYea
+    ITransgenderNay
+    ISafetyYea
+    ISafetyNay
+    IEducationYea
+    IEducationNay
+    IVeteransYea
+    IVeteransNay
+    IClimateYea
+    IClimateNay
+    IMentalYea
+    IMentalNay
+    IGunsYea
+    IGunsNay
+    ICostYea
+    ICostNay
+    IFarmersYea
+    IFarmersNay
+    IEconomyYea
+    IEconomyNay
+    IHealthcareYea
+    IHealthcareNay
+    IInfrastructureYea
+    IInfrastructureNay
+    IEnergyYea
+    IEnergyNay
+    INaturalYea
+    INaturalNay
+    ICannabisYea
+    ICannabisNay
+    ITaxesYea
+    ITaxesNay
+    ISeniorsYea
+    ISeniorsNay
+    IManufacturingYea
+    IManufacturingNay
+    IHousingYea
+    IHousingNay
+    IDefenceYea
+    IDefenceNay
+    IFinanceYea
+    IFinanceNay
+  }
+}
+query GetStateCands($CandName: String) {
+  getStateCands(CandName: $CandName) {
+    CandName
+    Office
+    Party
+    State
+    District
+    Website
+    s3file
+    PictureAttribution
+    Coms
+    Motto
+    OverallYea
+    OverallNay
+    IBorderYea
+    IBorderNay
+    IImmigrationYea
+    IImmigrationNay
+    IAbortionYes
+    IAbortionNay
+    ITransgenderYea
+    ITransgenderNay
+    IVotingYea
+    IVotingNay
+    IElectionYea
+    IElectionNay
+    ISafetyYea
+    ISafetyNay
+    IEducationYea
+    IEducationNay
+    IVeteransYea
+    IVeteransNay
+    IClimateYea
+    IClimateNay
+    IHomelessnessYea
+    IHomelessnessNay
+    IMentalYea
+    IMentalNay
+    IGunsYea
+    IGunsNay
+    ICostYea
+    ICostNay
+    IFarmersYea
+    IFarmersNay
+    IPermanentYea
+    IPermanentNay
+    IEconomyYea
+    IEconomyNay
+    IHealthcareYea
+    IHealthcareNay
+    IInfrastructureYea
+    IInfrastructureNay
+    IEnergyYea
+    IEnergyNay
+    ICannabisYea
+    ICannabisNay
+    ITaxesYea
+    ITaxesNay
+    ILandsYea
+    ILandsNay
+    ISeniorsYea
+    ISeniorsNay
+    IManufacturingYea
+    IManufacturingNay
+    IHousingYea
+    IHousingNay
+  }
+}
+query GetDatinginteractionStaging($userid: String!) {
+  getDatinginteractionStaging(userid: $userid) {
+    eventtype
+    interestcategory
+    itemid
+    timestamp
+    userid
+  }
+}
+query ListDatinginteractionStagings(
+  $filter: TableDatinginteractionStagingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDatinginteractionStagings(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      eventtype
+      interestcategory
+      itemid
+      timestamp
+      userid
+    }
+    nextToken
+  }
+}
+query ListVotedIdsflagshouse($userid: String) {
+  listVotedIdsflagshouse(userid: $userid) {
+    VotedIdsFlagArray
+  }
+}
+query ListVotedIdsIssuesflagshouse($userid: String, $isscand: String) {
+  listVotedIdsIssuesflagshouse(userid: $userid, isscand: $isscand) {
+    VotedIdsFlagArray
+    VotedIdsFlagArrayCand
+    futurecomcandsvotedon
+    FutureComPreferArray
+    FutureComCandViewed
+  }
+}
+query ListVotedIdsIssuesflagssenate($userid: String, $isscand: String) {
+  listVotedIdsIssuesflagssenate(userid: $userid, isscand: $isscand) {
+    VotedIdsFlagArray
+    VotedIdsFlagArrayCand
+    futurecomcandsvotedon
+    FutureComPreferArray
+    FutureComCandViewed
+  }
+}
+query SearchHouseCandInstate($filter: TableSearchFilterCands) {
+  searchHouseCandInstate(filter: $filter) {
+    items {
+      CandName
+      District
+      Party
+      StateCand
+      Website
+      s3file
+      PictureAttribution
+      Coms
+      Motto
+      OverallYea
+      OverallNay
+      FirstComPrefer
+      SecondComPrefer
+      ThirdComPrefer
+    }
+  }
+}
+query SearchsenateCandInstate($filter: TableSearchFilterCands) {
+  searchsenateCandInstate(filter: $filter) {
+    items {
+      CandName
+      District
+      Party
+      StateCand
+      Website
+      s3file
+      PictureAttribution
+      Coms
+      Motto
+      OverallYea
+      OverallNay
+      FirstComPrefer
+      SecondComPrefer
+      ThirdComPrefer
+    }
+  }
+}
+query GetTodo($id: ID!) {
+  getTodo(id: $id) {
+    id
+    name
+    description
+    createdAt
+    updatedAt
+  }
+}
+query ListTodos(
+  $filter: ModelTodoFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

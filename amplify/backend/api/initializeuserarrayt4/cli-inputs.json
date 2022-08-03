@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/init": {
+      "name": "/init",
+      "lambdaFunction": "test43287d290",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/index": {
+      "name": "/index",
+      "lambdaFunction": "test4bdb4125e",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
