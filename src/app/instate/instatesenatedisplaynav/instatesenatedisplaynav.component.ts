@@ -23,10 +23,10 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     this.router = _router; }
 
   ngOnInit(): void {
- //   this.gethompage1Binitialize()
- //  this.delaytabPutIndex(100)
+    this.gethompage1Binitialize();
+    this.delaytabPutIndex(100)
     this.zeroFormGroup = this._formBuilder.group({});
- //   this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
+    this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
