@@ -1,0 +1,33 @@
+
+<a *ngIf="loadflaghouse=='yes'">
+  <mat-tab-group animationDuration="0ms" class="menu-tab"  text-align="center" [selectedIndex]=this.tabinstateindex>
+
+    <mat-tab label="senatelabel">
+      <ng-template mat-tab-label>
+        US Senate &nbsp;
+        <!--   <a class="example-tab-icon"> ({{tab1Clength}} matches)</a>  -->
+      </ng-template>
+      <ng-template matTabContent>
+        <app-instatesenatedisplaynav></app-instatesenatedisplaynav>   <!--  senate code displays -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="houselabel" >
+      <ng-template mat-tab-label>
+        US House of Reps &nbsp;
+      </ng-template>
+      <ng-template matTabContent>
+        <app-instatehousedisplaynav></app-instatehousedisplaynav>   <!--  house code displays -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="statelabel">
+      <ng-template mat-tab-label>
+        State &nbsp;
+      </ng-template>
+      <ng-template matTabContent>
+        <app-instategovernordisplaynav></app-instategovernordisplaynav>   <!--  state code displays -->
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</a>
+
+<router-outlet></router-outlet>

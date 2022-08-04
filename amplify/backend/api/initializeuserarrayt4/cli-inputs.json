@@ -14,6 +14,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/initsenate": {
+      "name": "/initsenate",
+      "lambdaFunction": "test4f56c2b82",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

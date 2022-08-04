@@ -1261,6 +1261,12 @@ export type ComPreferInitializeAMutation = {
   candarray?: Array<string | null> | null;
 };
 
+export type ComPreferInitializeAsenateMutation = {
+  __typename: "ComPreferOut";
+  numberarray?: Array<number | null> | null;
+  candarray?: Array<string | null> | null;
+};
+
 export type CreateTodoMutation = {
   __typename: "Todo";
   id: string;
@@ -3839,11 +3845,10 @@ export class APIService {
     userid?: string,
     isssel?: string,
     isscateg?: string,
-    isscand?: string,
     points?: number
   ): Promise<OverallResultUpdatetabsenateinstateMutation> {
-    const statement = `mutation OverallResultUpdatetabsenateinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $isscand: String, $points: Int) {
-        overallResultUpdatetabsenateinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, isscand: $isscand, points: $points) {
+    const statement = `mutation OverallResultUpdatetabsenateinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $points: Int) {
+        overallResultUpdatetabsenateinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, points: $points) {
           __typename
           userid
         }
@@ -3859,9 +3864,6 @@ export class APIService {
     }
     if (isscateg) {
       gqlAPIServiceArguments.isscateg = isscateg;
-    }
-    if (isscand) {
-      gqlAPIServiceArguments.isscand = isscand;
     }
     if (points) {
       gqlAPIServiceArguments.points = points;
@@ -3913,11 +3915,10 @@ export class APIService {
     userid?: string,
     isssel?: string,
     isscateg?: string,
-    isscand?: string,
     points?: number
   ): Promise<IssResultUpdatetabsenateinstateMutation> {
-    const statement = `mutation IssResultUpdatetabsenateinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $isscand: String, $points: Int) {
-        issResultUpdatetabsenateinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, isscand: $isscand, points: $points) {
+    const statement = `mutation IssResultUpdatetabsenateinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $points: Int) {
+        issResultUpdatetabsenateinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, points: $points) {
           __typename
           userid
         }
@@ -3933,9 +3934,6 @@ export class APIService {
     }
     if (isscateg) {
       gqlAPIServiceArguments.isscateg = isscateg;
-    }
-    if (isscand) {
-      gqlAPIServiceArguments.isscand = isscand;
     }
     if (points) {
       gqlAPIServiceArguments.points = points;
@@ -3984,10 +3982,11 @@ export class APIService {
     return <GetIssueCategMutation>response.data.getIssueCateg;
   }
   async GetIssueCategsenate(
-    userid?: string
+    userid?: string,
+    candname?: string
   ): Promise<GetIssueCategsenateMutation> {
-    const statement = `mutation GetIssueCategsenate($userid: String) {
-        getIssueCategsenate(userid: $userid) {
+    const statement = `mutation GetIssueCategsenate($userid: String, $candname: String) {
+        getIssueCategsenate(userid: $userid, candname: $candname) {
           __typename
           VotedIdsFlagArray
           isscateg
@@ -3999,6 +3998,9 @@ export class APIService {
     const gqlAPIServiceArguments: any = {};
     if (userid) {
       gqlAPIServiceArguments.userid = userid;
+    }
+    if (candname) {
+      gqlAPIServiceArguments.candname = candname;
     }
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -4089,11 +4091,10 @@ export class APIService {
     FutureCom2?: string,
     FutureCom3?: string,
     points?: number,
-    s3file?: string,
-    futurecomcandsvotedon?: Array<string | null>
+    s3file?: string
   ): Promise<FutureComPreferResultsenateMutation> {
-    const statement = `mutation FutureComPreferResultsenate($candname: String, $userid: String, $FirstComPrefer: [Int], $SecondComPrefer: [Int], $ThirdComPrefer: [Int], $FutureCom1: String, $FutureCom2: String, $FutureCom3: String, $points: Int, $s3file: String, $futurecomcandsvotedon: [String]) {
-        futureComPreferResultsenate(candname: $candname, userid: $userid, FirstComPrefer: $FirstComPrefer, SecondComPrefer: $SecondComPrefer, ThirdComPrefer: $ThirdComPrefer, FutureCom1: $FutureCom1, FutureCom2: $FutureCom2, FutureCom3: $FutureCom3, points: $points, s3file: $s3file, futurecomcandsvotedon: $futurecomcandsvotedon) {
+    const statement = `mutation FutureComPreferResultsenate($candname: String, $userid: String, $FirstComPrefer: [Int], $SecondComPrefer: [Int], $ThirdComPrefer: [Int], $FutureCom1: String, $FutureCom2: String, $FutureCom3: String, $points: Int, $s3file: String) {
+        futureComPreferResultsenate(candname: $candname, userid: $userid, FirstComPrefer: $FirstComPrefer, SecondComPrefer: $SecondComPrefer, ThirdComPrefer: $ThirdComPrefer, FutureCom1: $FutureCom1, FutureCom2: $FutureCom2, FutureCom3: $FutureCom3, points: $points, s3file: $s3file) {
           __typename
           comcateg
         }
@@ -4129,9 +4130,6 @@ export class APIService {
     if (s3file) {
       gqlAPIServiceArguments.s3file = s3file;
     }
-    if (futurecomcandsvotedon) {
-      gqlAPIServiceArguments.futurecomcandsvotedon = futurecomcandsvotedon;
-    }
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
@@ -4157,6 +4155,27 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <ComPreferInitializeAMutation>response.data.comPreferInitializeA;
+  }
+  async ComPreferInitializeAsenate(
+    slno?: string
+  ): Promise<ComPreferInitializeAsenateMutation> {
+    const statement = `mutation ComPreferInitializeAsenate($slno: String) {
+        comPreferInitializeAsenate(slno: $slno) {
+          __typename
+          numberarray
+          candarray
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (slno) {
+      gqlAPIServiceArguments.slno = slno;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ComPreferInitializeAsenateMutation>(
+      response.data.comPreferInitializeAsenate
+    );
   }
   async CreateTodo(
     input: CreateTodoInput,

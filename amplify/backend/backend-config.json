@@ -63,6 +63,14 @@
             "Name",
             "Arn"
           ]
+        },
+        {
+          "category": "function",
+          "resourceName": "test4459eb1cc",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
         }
       ]
     },
@@ -81,6 +89,14 @@
         {
           "category": "function",
           "resourceName": "test4bdb4125e",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "test4f56c2b82",
           "attributes": [
             "Name",
             "Arn"
@@ -147,6 +163,11 @@
     "datinguserdbstaging": {
       "service": "DynamoDB",
       "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    },
+    "test4images": {
+      "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": []
     }
@@ -255,6 +276,44 @@
         {
           "category": "storage",
           "resourceName": "ussenaterepcandsissues",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
+    },
+    "test4459eb1cc": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "datinguserdbstaging",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
+    },
+    "test4f56c2b82": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "usercandarraydisplaystaging",
           "attributes": [
             "Name",
             "Arn"

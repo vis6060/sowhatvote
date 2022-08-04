@@ -31,6 +31,12 @@ export type AmplifyDependentResourcesAttributes = {
             "ApiId": "string"
         }
     },
+    "storage": {
+        "test4images": {
+            "BucketName": "string",
+            "Region": "string"
+        }
+    },
     "function": {
         "test47fa6be8b": {
             "Name": "string",
@@ -63,6 +69,18 @@ export type AmplifyDependentResourcesAttributes = {
             "LambdaExecutionRole": "string"
         },
         "test4a09bdf2c": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "test4459eb1cc": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "test4f56c2b82": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",

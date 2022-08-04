@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "test4cf5a54eb": {}
+        "test4cf5a54eb": {},
+        "true": {}
       },
       "storage": {
         "ussenaterepcandsmain": {
@@ -78,6 +79,14 @@
         "test4a09bdf2c": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
           "s3Key": "amplify-builds/test4a09bdf2c-373162596b4a61713565-build.zip"
+        },
+        "test4459eb1cc": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4459eb1cc-4c49764e2b544f53456b-build.zip"
+        },
+        "test4f56c2b82": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4f56c2b82-79752b31754476515659-build.zip"
         }
       }
     }

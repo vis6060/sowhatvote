@@ -7,6 +7,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/userdbapiname": {
+      "name": "/userdbapiname",
+      "lambdaFunction": "test4459eb1cc",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

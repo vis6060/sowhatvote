@@ -712,7 +712,6 @@ mutation OverallResultUpdatetabsenateinstate(
   $userid: String
   $isssel: String
   $isscateg: String
-  $isscand: String
   $points: Int
 ) {
   overallResultUpdatetabsenateinstate(
@@ -720,7 +719,6 @@ mutation OverallResultUpdatetabsenateinstate(
     userid: $userid
     isssel: $isssel
     isscateg: $isscateg
-    isscand: $isscand
     points: $points
   ) {
     userid
@@ -748,7 +746,6 @@ mutation IssResultUpdatetabsenateinstate(
   $userid: String
   $isssel: String
   $isscateg: String
-  $isscand: String
   $points: Int
 ) {
   issResultUpdatetabsenateinstate(
@@ -756,7 +753,6 @@ mutation IssResultUpdatetabsenateinstate(
     userid: $userid
     isssel: $isssel
     isscateg: $isscateg
-    isscand: $isscand
     points: $points
   ) {
     userid
@@ -776,8 +772,8 @@ mutation GetIssueCateg($userid: String) {
     searchcateg
   }
 }
-mutation GetIssueCategsenate($userid: String) {
-  getIssueCategsenate(userid: $userid) {
+mutation GetIssueCategsenate($userid: String, $candname: String) {
+  getIssueCategsenate(userid: $userid, candname: $candname) {
     VotedIdsFlagArray
     isscateg
     comcateg
@@ -830,7 +826,6 @@ mutation FutureComPreferResultsenate(
   $FutureCom3: String
   $points: Int
   $s3file: String
-  $futurecomcandsvotedon: [String]
 ) {
   futureComPreferResultsenate(
     candname: $candname
@@ -843,13 +838,18 @@ mutation FutureComPreferResultsenate(
     FutureCom3: $FutureCom3
     points: $points
     s3file: $s3file
-    futurecomcandsvotedon: $futurecomcandsvotedon
   ) {
     comcateg
   }
 }
 mutation ComPreferInitializeA($slno: String) {
   comPreferInitializeA(slno: $slno) {
+    numberarray
+    candarray
+  }
+}
+mutation ComPreferInitializeAsenate($slno: String) {
+  comPreferInitializeAsenate(slno: $slno) {
     numberarray
     candarray
   }

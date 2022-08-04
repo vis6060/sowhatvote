@@ -68,7 +68,9 @@ const awsmobile = {
             "tableName": "datinguserdb-staging",
             "region": "us-west-2"
         }
-    ]
+    ],
+    "aws_user_files_s3_bucket": "test4images171405-staging",
+    "aws_user_files_s3_bucket_region": "us-west-2"
 };
 
 
