@@ -7,7 +7,6 @@ import awsExports from "../../../aws-exports";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 import {MatDialog,} from '@angular/material/dialog';
-import {ConfdialogComponent} from "../confdialog/confdialog.component";
 import {ConfdialogsenateComponent} from "../confdialogsenate/confdialogsenate.component";
 
 @Component({
@@ -20,13 +19,14 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
   router: Router;
   constructor(public dialog: MatDialog, public authenticator: AuthenticatorService, private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router,private titlecasePipe:TitleCasePipe,private renderer: Renderer2) {
-    Amplify.configure(awsExports); this.router = _router; }
+    Amplify.configure(awsExports);
+    this.router = _router; }
 
   ngOnInit(): void {
-    this.gethompage1Binitialize()
-    this.delaytabPutIndex(100)
+ //   this.gethompage1Binitialize()
+ //  this.delaytabPutIndex(100)
     this.zeroFormGroup = this._formBuilder.group({});
-    this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
+ //   this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
@@ -34,7 +34,6 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   tabinstatedisplayitemidindex1:string=""; tabinstatedisplayitemidindex1next:string="";
   tabinstateendarrayitemid:string=""; tabinstateendarrayitemidnext:string=""; tabinstateendarrayitemidinitialize:string="";
   initializerflag=""; onetimenextflag=""; backflag=""; backflagnext=""; futureflag=""; initsearchflag=""; CandNeutralflag=""
-  public CandSearch: CandNameOutArray;
   tabinstatelength="0"; tabinstatelengthnext="0";
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle=""; urlA:string;   urlAnext:string; urlA1000:string; urlSearch:string; s3file10=""; s3file100=""; s3file1000=""; //signed url to the image stored in s3
@@ -170,20 +169,20 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     this.api.GetIssueCategsenate(user.attributes.sub,var1).then((event3) => {
       this.votedindexes = event3.VotedIdsFlagArray as unknown as any;
         //Com results. has the results of all categories from the ushouserepcandscoms table
-        let paramsp6 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
-        API.get("comsresultt4", "/comssenate/m", paramsp6).then(response6 => {this.CAgricultureYea=+response6.data[0].CAgricultureYea; this.CAgricultureNay=+response6.data[0].CAgricultureNay;	this.CAppropriationsYea=+response6.data[0].CAppropriationsYea;	this.CAppropriationsNay=+response6.data[0].CAppropriationsNay; this.CArmedYea=+response6.data[0].CArmedYea;	this.CArmedNay=+response6.data[0].CArmedNay;	this.CBankingYea=+response6.data[0].CBankingYea;	this.CBankingNay=+response6.data[0].CBankingNay;	this.CBudgetYea=+response6.data[0].CBudgetYea;	this.CBudgetNay=+response6.data[0].CBudgetNay;	this.CCommerceYea=+response6.data[0].CCommerceYea;	this.CCommerceNay=+response6.data[0].CCommerceNay;	this.CEnergyYea=+response6.data[0].CEnergyYea;	this.CEnergyNay=+response6.data[0].CEnergyNay;	this.CEnvironmentYea=+response6.data[0].CEnvironmentYea;	this.CEnvironmentNay=+response6.data[0].CEnvironmentNay;	this.CFinanceYea=+response6.data[0].CFinanceYea;	this.CFinanceNay=+response6.data[0].CFinanceNay;	this.CForeignYea=+response6.data[0].CForeignYea;	this.CForeignNay=+response6.data[0].CForeignNay;	this.CHealthYea=+response6.data[0].CHealthYea;	this.CHealthNay=+response6.data[0].CHealthNay;	this.CHomelandYea=+response6.data[0].CHomelandYea;	this.CHomelandNay=+response6.data[0].CHomelandNay;	this.CIndianYea=+response6.data[0].CIndianYea;	this.CIndianNay=+response6.data[0].CIndianNay;	this.CPrintingYea=+response6.data[0].CPrintingYea;	this.CPrintingNay=+response6.data[0].CPrintingNay;	this.CTaxationYea=+response6.data[0].CTaxationYea;	this.CTaxationNay=+response6.data[0].CTaxationNay;	this.CLibraryYea=+response6.data[0].CLibraryYea;	this.CLibraryNay=+response6.data[0].CLibraryNay;	this.CEconomicYea=+response6.data[0].CEconomicYea;	this.CEconomicNay=+response6.data[0].CEconomicNay;	this.CJudiciaryYea=+response6.data[0].CJudiciaryYea;	this.CJudiciaryNay=+response6.data[0].CJudiciaryNay;	this.CRulesYea=+response6.data[0].CRulesYea;	this.CRulesNay=+response6.data[0].CRulesNay;	this.CEthicsYea=+response6.data[0].CEthicsYea;	this.CEthicsNay=+response6.data[0].CEthicsNay;	this.CIntelligenceYea=+response6.data[0].CIntelligenceYea;	this.CIntelligenceNay=+response6.data[0].CIntelligenceNay;	this.CBusinessYea=+response6.data[0].CBusinessYea;	this.CBusinessNay=+response6.data[0].CBusinessNay;	this.CAgingYea=+response6.data[0].CAgingYea;	this.CAgingNay=+response6.data[0].CAgingNay;	this.CVeteranYea=+response6.data[0].CVeteranYea;	this.CVeteranNay=+response6.data[0].CVeteranNay;}).catch(error => {console.log(error.response6)});
-        //Issues results from the ushouserepcandsissues table
+    let paramsp6 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
+    API.get("comsresultt4", "/comssenate/m", paramsp6).then(response6 => {this.CAgricultureYea=+response6.data[0].CAgricultureYea; this.CAgricultureNay=+response6.data[0].CAgricultureNay;  this.CAppropriationsYea=+response6.data[0].CAppropriationsYea; this.CAppropriationsNay=+response6.data[0].CAppropriationsNay; this.CArmedYea=+response6.data[0].CArmedYea;  this.CArmedNay=+response6.data[0].CArmedNay; this.CBankingYea=+response6.data[0].CBankingYea; this.CBankingNay=+response6.data[0].CBankingNay; this.CBudgetYea=+response6.data[0].CBudgetYea; this.CBudgetNay=+response6.data[0].CBudgetNay; this.CCommerceYea=+response6.data[0].CCommerceYea; this.CCommerceNay=+response6.data[0].CCommerceNay; this.CEnergyYea=+response6.data[0].CEnergyYea; this.CEnergyNay=+response6.data[0].CEnergyNay; this.CEnvironmentYea=+response6.data[0].CEnvironmentYea; this.CEnvironmentNay=+response6.data[0].CEnvironmentNay; this.CFinanceYea=+response6.data[0].CFinanceYea; this.CFinanceNay=+response6.data[0].CFinanceNay; this.CForeignYea=+response6.data[0].CForeignYea; this.CForeignNay=+response6.data[0].CForeignNay; this.CHealthYea=+response6.data[0].CHealthYea; this.CHealthNay=+response6.data[0].CHealthNay; this.CHomelandYea=+response6.data[0].CHomelandYea; this.CHomelandNay=+response6.data[0].CHomelandNay; this.CIndianYea=+response6.data[0].CIndianYea; this.CIndianNay=+response6.data[0].CIndianNay; this.CPrintingYea=+response6.data[0].CPrintingYea; this.CPrintingNay=+response6.data[0].CPrintingNay; this.CTaxationYea=+response6.data[0].CTaxationYea; this.CTaxationNay=+response6.data[0].CTaxationNay; this.CLibraryYea=+response6.data[0].CLibraryYea; this.CLibraryNay=+response6.data[0].CLibraryNay; this.CEconomicYea=+response6.data[0].CEconomicYea; this.CEconomicNay=+response6.data[0].CEconomicNay; this.CJudiciaryYea=+response6.data[0].CJudiciaryYea; this.CJudiciaryNay=+response6.data[0].CJudiciaryNay; this.CRulesYea=+response6.data[0].CRulesYea; this.CRulesNay=+response6.data[0].CRulesNay; this.CEthicsYea=+response6.data[0].CEthicsYea; this.CEthicsNay=+response6.data[0].CEthicsNay; this.CIntelligenceYea=+response6.data[0].CIntelligenceYea; this.CIntelligenceNay=+response6.data[0].CIntelligenceNay; this.CBusinessYea=+response6.data[0].CBusinessYea; this.CBusinessNay=+response6.data[0].CBusinessNay; this.CAgingYea=+response6.data[0].CAgingYea; this.CAgingNay=+response6.data[0].CAgingNay; this.CVeteranYea=+response6.data[0].CVeteranYea; this.CVeteranNay=+response6.data[0].CVeteranNay;}).catch(error => {console.log(error.response6)});
+    //Issues results from the ushouserepcandsissues table
         let paramsp7 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
         API.get("issresultt4", "/isssenate/m", paramsp7).then(response7 => {this.IAbortionYea=+response7.data[0].IAbortionYea; this.IAbortionNay=+response7.data[0].IAbortionNay; this.IGunsYea=+response7.data[0].IGunsYea; this.IGunsNay=+response7.data[0].IGunsNay; this.IJobsYea=+response7.data[0].IJobsYea; this.IJobsNay=+response7.data[0].IJobsNay; this.IVeteransYea=+response7.data[0].IVeteransYea; this.IVeteransNay=+response7.data[0].IVeteransNay; this.IBorderYea=+response7.data[0].IBorderYea; this.IBorderNay=+response7.data[0].IBorderNay; this.IFarmersYea=+response7.data[0].IFarmersYea; this.IFarmersNay=+response7.data[0].IFarmersNay; this.IClimateYea=+response7.data[0].IClimateYea; this.IClimateNay=+response7.data[0].IClimateNay; this.ISeniorsYea=+response7.data[0].ISeniorsYea; this.ISeniorsNay=+response7.data[0].ISeniorsNay; this.IDefenseYea=+response7.data[0].IDefenseYea; this.IDefenseNay=+response7.data[0].IDefenseNay; this.IEnergyYea=+response7.data[0].IEnergyYea; this.IEnergyNay=+response7.data[0].IEnergyNay; this.IInfrastructureYea=+response7.data[0].IInfrastructureYea; this.IInfrastructureNay=+response7.data[0].IInfrastructureNay; this.INaturalYea=+response7.data[0].INaturalYea; this.INaturalNay=+response7.data[0].INaturalNay; this.IManufacturingYea=+response7.data[0].IManufacturingYea; this.IManufacturingNay=+response7.data[0].IManufacturingNay; this.ILandsYea=+response7.data[0].ILandsYea; this.ILandsNay=+response7.data[0].ILandsNay; this.IHealthcareYea=+response7.data[0].IHealthcareYea; this.IHealthcareNay=+response7.data[0].IHealthcareNay; this.IEducationYea=+response7.data[0].IEducationYea; this.IEducationNay=+response7.data[0].IEducationNay; this.IEconomyYea=+response7.data[0].IEconomyYea; this.IEconomyNay=+response7.data[0].IEconomyNay;}).catch(error => {console.log(error.response7)});
-        this.prefercateg = event3.prefercateg as unknown as any;
-        this.isscateg = event3.isscateg as unknown as any;this.comcateg = event3.comcateg as unknown as any;
-        });
+      this.prefercateg = event3.prefercateg as unknown as any;
+      this.isscateg = event3.isscateg as unknown as any;this.comcateg = event3.comcateg as unknown as any;
+    });
   }
 
   async getitem2initialize() {const user = await Auth.currentAuthenticatedUser();
-    //retrieves info in itemid2
+    //retrieves info in itemid2.
     let paramsp2 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemidnext} };
-    API.get("storeresult", "/storesenate/m", paramsp2).then(response2 => {
+    API.get("storeresultt4", "/storesenate/m", paramsp2).then(response2 => {
       this.CandName100=this.tabinstatedisplayitemidnext; this.Party100=response2.data[0].Party; this.State100=response2.data[0].StateCand;
       this.Website100=response2.data[0].Website; this.PictureAttribution100=response2.data[0].PictureAttribution;
       this.Motto100=response2.data[0].Motto; this.OverallYea100=response2.data[0].OverallYea;
@@ -193,7 +192,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       this.FirstComPrefer100=response2.data[0].FirstComPrefer;
       this.SecondComPrefer100=response2.data[0].SecondComPrefer; this.ThirdComPrefer100=response2.data[0].ThirdComPrefer;
       this.api.ListVotedIdsIssuesflagssenate(user.attributes.sub,this.tabinstatedisplayitemidnext).then((event5) => {
-        this.votedindexesissuecand100=event5.VotedIdsFlagArrayCand as unknown as any;});}).catch(error => {console.log(error.response2)});
+        this.votedindexesissuecand100=event5.VotedIdsFlagArrayCand as unknown as any;});
+    }).catch(error => {console.log(error.response2)});
   }
 
   //for tab1A start, extract the itemid from the array in the itemtracking table

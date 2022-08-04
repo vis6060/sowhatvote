@@ -44,6 +44,16 @@ const awsmobile = {
             "name": "storeresultt4",
             "endpoint": "https://dpmmdbiq45.execute-api.us-west-2.amazonaws.com/staging",
             "region": "us-west-2"
+        },
+        {
+            "name": "comsresultt4",
+            "endpoint": "https://c2109vucp4.execute-api.us-west-2.amazonaws.com/staging",
+            "region": "us-west-2"
+        },
+        {
+            "name": "issresultt4",
+            "endpoint": "https://u84fuih4rh.execute-api.us-west-2.amazonaws.com/staging",
+            "region": "us-west-2"
         }
     ],
     "aws_dynamodb_all_tables_region": "us-west-2",

@@ -21,6 +21,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfdialogsenateComponent } from './confdialogsenate/confdialogsenate.component';
 
+
 @NgModule({
   declarations: [
     ConfdialogComponent,

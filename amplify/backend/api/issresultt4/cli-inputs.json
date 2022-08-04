@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/isssenate": {
+      "name": "/isssenate",
+      "lambdaFunction": "test4a09bdf2c",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

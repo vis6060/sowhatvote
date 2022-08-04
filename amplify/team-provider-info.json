@@ -62,7 +62,7 @@
         },
         "test4224ccd61": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
-          "s3Key": "amplify-builds/test4224ccd61-476e2b422f6d594d4854-build.zip"
+          "s3Key": "amplify-builds/test4224ccd61-65342b764f686d346b6d-build.zip"
         },
         "test43287d290": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/comssenate": {
+      "name": "/comssenate",
+      "lambdaFunction": "test4224ccd61",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/storesenate1": {
+      "name": "/storesenate1",
+      "lambdaFunction": "test4e256f6a7",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
