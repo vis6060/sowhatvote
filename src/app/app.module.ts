@@ -24,7 +24,6 @@ import awsconfig from "src/aws-exports";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AmplifyAuthenticatorModule} from "@aws-amplify/ui-angular";
 
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 Amplify.configure(awsconfig);
 import aws_exports from "src/aws-exports";
@@ -68,7 +67,7 @@ import { LoginboxComponent } from './loginbox/loginbox.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [DirectAccessGuardService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [DirectAccessGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
