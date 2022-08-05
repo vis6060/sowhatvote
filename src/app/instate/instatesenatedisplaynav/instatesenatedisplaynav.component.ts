@@ -166,7 +166,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   async GetIssueInitialize(var1:string) {const user = await Auth.currentAuthenticatedUser();
     //Com category-gets kill flags on whether a com category has been voted. votedindexes is an array of indices, position0 index in this array is P0 categ, position1 index in this array is P1 categ
     //Issue category for whom the results need to be display as view results button was clicked and then there were two ad pages. this also sets the isscategory to blank after reading it.
-    this.api.GetIssueCategsenate(user.attributes.sub,var1).then((event3) => {
+    this.api.GetIssueCategsenate(user.attributes.sub,var1).then((event3) => {console.log(event3)
       this.votedindexes = event3.VotedIdsFlagArray as unknown as any;
         //Com results. has the results of all categories from the ushouserepcandscoms table
     let paramsp6 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
@@ -299,7 +299,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
   //store future committee assignments selection. var1 is cand name. var2 is array of firstpreference commitee with 22 indicies. var3 and var4 is secondpreference and thirdpreference committes. var5 is s3filename.
   async comprefer(var1:string, var2:number[],var3:number[],var4:number[],var5:string) {const user = await Auth.currentAuthenticatedUser(); console.log(var2); console.log(this.FutureCom1)
-    this.api.FutureComPreferResultsenate(var1,user.attributes.sub,var2,var3,var4,this.FutureCom1,this.FutureCom2,this.FutureCom3,100,var5).then((event8) => {});
+    this.api.FutureComPreferResultsenate(var1,user.attributes.sub,var2,var3,var4,this.FutureCom1,this.FutureCom2,this.FutureCom3,100).then((event8) => {});
   }
 
   // this will do a temp store of the webpagevalue and comcateg, so that after the ads we know where the user was. var2 is category of committee.

@@ -20,6 +20,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfdialogsenateComponent } from './confdialogsenate/confdialogsenate.component';
+import { ConfdialoggovernComponent } from './confdialoggovern/confdialoggovern.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ConfdialogsenateComponent } from './confdialogsenate/confdialogsenate.c
     InstatehousedisplaynavComponent,
     InstatesenatedisplaynavComponent,
     InstatenavComponent,
-    ConfdialogsenateComponent
+    ConfdialogsenateComponent,
+    ConfdialoggovernComponent
   ],
   imports: [
     CommonModule,

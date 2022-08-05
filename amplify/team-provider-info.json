@@ -53,6 +53,41 @@
           "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/datinguserdb-staging/stream/2022-04-29T03:19:12.261",
           "partitionKeyName": "userid",
           "partitionKeyType": "S"
+        },
+        "usstaterepcandsmain": {
+          "tableName": "usstaterepcandsmain",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/usstaterepcandsmain",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "usstaterepcandsissues": {
+          "tableName": "usstaterepcandsissues",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/usstaterepcandsissues",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "ushouserepcandsmain": {
+          "tableName": "ushouserepcandsmain",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/ushouserepcandsmain",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "ushouserepcandsissues": {
+          "tableName": "ushouserepcandsissues",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/ushouserepcandsissues",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
+        },
+        "ushouserepcandscoms": {
+          "tableName": "ushouserepcandscoms",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/ushouserepcandscoms",
+          "partitionKeyName": "CandName",
+          "partitionKeyType": "S"
         }
       },
       "function": {
@@ -87,6 +122,18 @@
         "test4f56c2b82": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
           "s3Key": "amplify-builds/test4f56c2b82-79752b31754476515659-build.zip"
+        },
+        "test44d18ccf4": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test44d18ccf4-5236445872476a527961-build.zip"
+        },
+        "test40679226c": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test40679226c-6a637943587179373070-build.zip"
+        },
+        "test446fdc495": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test446fdc495-7145464c41576f423835-build.zip"
         }
       }
     }

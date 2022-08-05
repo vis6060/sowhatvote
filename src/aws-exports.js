@@ -77,6 +77,26 @@ const awsmobile = {
         {
             "tableName": "datinguserdb-staging",
             "region": "us-west-2"
+        },
+        {
+            "tableName": "usstaterepcandsmain",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "usstaterepcandsissues",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "ushouserepcandsmain",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "ushouserepcandsissues",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "ushouserepcandscoms",
+            "region": "us-west-2"
         }
     ],
     "aws_user_files_s3_bucket": "test4images171405-staging",

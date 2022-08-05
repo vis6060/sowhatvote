@@ -250,6 +250,7 @@ type Query {
 	listVotedIdsflagshouse(userid: String): VotedIdsFlags
 	listVotedIdsIssuesflagshouse(userid: String,isscand:String): VotedIdsFlagsIssue
 	listVotedIdsIssuesflagssenate(userid: String,isscand:String): VotedIdsFlagsIssue
+	listVotedIdsIssuesflagsgovern(userid: String,isscand:String): VotedIdsFlagsIssue
 	searchHouseCandInstate(filter:TableSearchFilterCands): CandNameOutArray
 	searchsenateCandInstate(filter:TableSearchFilterCands): CandNameOutArray
 }
@@ -329,20 +330,25 @@ type Mutation {
     initializetabhouseinstate(userid1: String, userid2: String, state: String): DatingitemtrackingStaging
     nextButtontabhouseinstate(userid: String!, itemid: String): DatingitemtrackingStaging
     nextButtontabsenateinstate(userid: String!, itemid: String): DatingitemtrackingStaging
+     nextButtontabgoverninstate(userid: String!, itemid: String): DatingitemtrackingStaging
     backinitializeButtontabhouseinstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
     backinitializeButtontabsenateinstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
+    backinitializeButtontabgoverninstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
     overallResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
   	comResultUpdatetabhouseinstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
   	issResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
    overallResultUpdatetabsenateinstate(candname: String!,userid: String,isssel: String, isscateg:String, points: Int): DatingitemtrackingStaging
+   overallResultUpdatetabgoverninstate(candname: String!,userid: String,isssel: String, isscateg:String, points: Int): DatingitemtrackingStaging
     	comResultUpdatetabsenateinstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
+    	comResultUpdatetabgoverninstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
     	issResultUpdatetabsenateinstate(candname: String!,userid: String,isssel: String, isscateg:String,  points: Int): DatingitemtrackingStaging
   getCommiteeCateg(userid: String): ComCateg
   getIssueCateg(userid: String): IssCateg
   getIssueCategsenate(userid: String,candname:String): IssCateg
+  getIssueCateggovern(userid: String,candname:String): IssCateg
   getPreferCateg(userid: String): ComCateg
   futureComPreferResult(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int,s3file:String,futurecomcandsvotedon:[String]): ComCateg
-   futureComPreferResultsenate(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int,s3file:String): ComCateg
+   futureComPreferResultsenate(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int): ComCateg
   comPreferInitializeA(slno: String): ComPreferOut
  comPreferInitializeAsenate(slno: String): ComPreferOut
 

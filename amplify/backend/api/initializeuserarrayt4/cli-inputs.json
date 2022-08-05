@@ -21,6 +21,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/initgovern": {
+      "name": "/initgovern",
+      "lambdaFunction": "test44d18ccf4",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

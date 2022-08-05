@@ -1177,12 +1177,22 @@ export type NextButtontabsenateinstateMutation = {
   userid?: string | null;
 };
 
+export type NextButtontabgoverninstateMutation = {
+  __typename: "DatingitemtrackingStaging";
+  userid?: string | null;
+};
+
 export type BackinitializeButtontabhouseinstateMutation = {
   __typename: "DatingitemtrackingStaging";
   userid?: string | null;
 };
 
 export type BackinitializeButtontabsenateinstateMutation = {
+  __typename: "DatingitemtrackingStaging";
+  userid?: string | null;
+};
+
+export type BackinitializeButtontabgoverninstateMutation = {
   __typename: "DatingitemtrackingStaging";
   userid?: string | null;
 };
@@ -1207,7 +1217,17 @@ export type OverallResultUpdatetabsenateinstateMutation = {
   userid?: string | null;
 };
 
+export type OverallResultUpdatetabgoverninstateMutation = {
+  __typename: "DatingitemtrackingStaging";
+  userid?: string | null;
+};
+
 export type ComResultUpdatetabsenateinstateMutation = {
+  __typename: "DatingitemtrackingStaging";
+  userid?: string | null;
+};
+
+export type ComResultUpdatetabgoverninstateMutation = {
   __typename: "DatingitemtrackingStaging";
   userid?: string | null;
 };
@@ -1232,6 +1252,15 @@ export type GetIssueCategMutation = {
 };
 
 export type GetIssueCategsenateMutation = {
+  __typename: "IssCateg";
+  VotedIdsFlagArray?: Array<string | null> | null;
+  isscateg?: string | null;
+  comcateg?: string | null;
+  prefercateg?: string | null;
+  searchcateg?: string | null;
+};
+
+export type GetIssueCateggovernMutation = {
   __typename: "IssCateg";
   VotedIdsFlagArray?: Array<string | null> | null;
   isscateg?: string | null;
@@ -2322,6 +2351,15 @@ export type ListVotedIdsIssuesflagshouseQuery = {
 };
 
 export type ListVotedIdsIssuesflagssenateQuery = {
+  __typename: "VotedIdsFlagsIssue";
+  VotedIdsFlagArray?: Array<number | null> | null;
+  VotedIdsFlagArrayCand?: Array<string | null> | null;
+  futurecomcandsvotedon?: Array<string | null> | null;
+  FutureComPreferArray?: Array<string | null> | null;
+  FutureComCandViewed?: number | null;
+};
+
+export type ListVotedIdsIssuesflagsgovernQuery = {
   __typename: "VotedIdsFlagsIssue";
   VotedIdsFlagArray?: Array<number | null> | null;
   VotedIdsFlagArrayCand?: Array<string | null> | null;
@@ -3673,6 +3711,29 @@ export class APIService {
       response.data.nextButtontabsenateinstate
     );
   }
+  async NextButtontabgoverninstate(
+    userid: string,
+    itemid?: string
+  ): Promise<NextButtontabgoverninstateMutation> {
+    const statement = `mutation NextButtontabgoverninstate($userid: String!, $itemid: String) {
+        nextButtontabgoverninstate(userid: $userid, itemid: $itemid) {
+          __typename
+          userid
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      userid
+    };
+    if (itemid) {
+      gqlAPIServiceArguments.itemid = itemid;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <NextButtontabgoverninstateMutation>(
+      response.data.nextButtontabgoverninstate
+    );
+  }
   async BackinitializeButtontabhouseinstate(
     userid: string,
     itemid?: string,
@@ -3725,6 +3786,33 @@ export class APIService {
     )) as any;
     return <BackinitializeButtontabsenateinstateMutation>(
       response.data.backinitializeButtontabsenateinstate
+    );
+  }
+  async BackinitializeButtontabgoverninstate(
+    userid: string,
+    itemid?: string,
+    index?: number
+  ): Promise<BackinitializeButtontabgoverninstateMutation> {
+    const statement = `mutation BackinitializeButtontabgoverninstate($userid: String!, $itemid: String, $index: Int) {
+        backinitializeButtontabgoverninstate(userid: $userid, itemid: $itemid, index: $index) {
+          __typename
+          userid
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      userid
+    };
+    if (itemid) {
+      gqlAPIServiceArguments.itemid = itemid;
+    }
+    if (index) {
+      gqlAPIServiceArguments.index = index;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <BackinitializeButtontabgoverninstateMutation>(
+      response.data.backinitializeButtontabgoverninstate
     );
   }
   async OverallResultUpdatetabhouseinstate(
@@ -3875,6 +3963,41 @@ export class APIService {
       response.data.overallResultUpdatetabsenateinstate
     );
   }
+  async OverallResultUpdatetabgoverninstate(
+    candname: string,
+    userid?: string,
+    isssel?: string,
+    isscateg?: string,
+    points?: number
+  ): Promise<OverallResultUpdatetabgoverninstateMutation> {
+    const statement = `mutation OverallResultUpdatetabgoverninstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $points: Int) {
+        overallResultUpdatetabgoverninstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, points: $points) {
+          __typename
+          userid
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      candname
+    };
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (isssel) {
+      gqlAPIServiceArguments.isssel = isssel;
+    }
+    if (isscateg) {
+      gqlAPIServiceArguments.isscateg = isscateg;
+    }
+    if (points) {
+      gqlAPIServiceArguments.points = points;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <OverallResultUpdatetabgoverninstateMutation>(
+      response.data.overallResultUpdatetabgoverninstate
+    );
+  }
   async ComResultUpdatetabsenateinstate(
     candname: string,
     userid?: string,
@@ -3908,6 +4031,41 @@ export class APIService {
     )) as any;
     return <ComResultUpdatetabsenateinstateMutation>(
       response.data.comResultUpdatetabsenateinstate
+    );
+  }
+  async ComResultUpdatetabgoverninstate(
+    candname: string,
+    userid?: string,
+    comsel?: string,
+    comcateg?: string,
+    points?: number
+  ): Promise<ComResultUpdatetabgoverninstateMutation> {
+    const statement = `mutation ComResultUpdatetabgoverninstate($candname: String!, $userid: String, $comsel: String, $comcateg: String, $points: Int) {
+        comResultUpdatetabgoverninstate(candname: $candname, userid: $userid, comsel: $comsel, comcateg: $comcateg, points: $points) {
+          __typename
+          userid
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      candname
+    };
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (comsel) {
+      gqlAPIServiceArguments.comsel = comsel;
+    }
+    if (comcateg) {
+      gqlAPIServiceArguments.comcateg = comcateg;
+    }
+    if (points) {
+      gqlAPIServiceArguments.points = points;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ComResultUpdatetabgoverninstateMutation>(
+      response.data.comResultUpdatetabgoverninstate
     );
   }
   async IssResultUpdatetabsenateinstate(
@@ -4007,6 +4165,32 @@ export class APIService {
     )) as any;
     return <GetIssueCategsenateMutation>response.data.getIssueCategsenate;
   }
+  async GetIssueCateggovern(
+    userid?: string,
+    candname?: string
+  ): Promise<GetIssueCateggovernMutation> {
+    const statement = `mutation GetIssueCateggovern($userid: String, $candname: String) {
+        getIssueCateggovern(userid: $userid, candname: $candname) {
+          __typename
+          VotedIdsFlagArray
+          isscateg
+          comcateg
+          prefercateg
+          searchcateg
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (candname) {
+      gqlAPIServiceArguments.candname = candname;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetIssueCateggovernMutation>response.data.getIssueCateggovern;
+  }
   async GetPreferCateg(userid?: string): Promise<GetPreferCategMutation> {
     const statement = `mutation GetPreferCateg($userid: String) {
         getPreferCateg(userid: $userid) {
@@ -4090,11 +4274,10 @@ export class APIService {
     FutureCom1?: string,
     FutureCom2?: string,
     FutureCom3?: string,
-    points?: number,
-    s3file?: string
+    points?: number
   ): Promise<FutureComPreferResultsenateMutation> {
-    const statement = `mutation FutureComPreferResultsenate($candname: String, $userid: String, $FirstComPrefer: [Int], $SecondComPrefer: [Int], $ThirdComPrefer: [Int], $FutureCom1: String, $FutureCom2: String, $FutureCom3: String, $points: Int, $s3file: String) {
-        futureComPreferResultsenate(candname: $candname, userid: $userid, FirstComPrefer: $FirstComPrefer, SecondComPrefer: $SecondComPrefer, ThirdComPrefer: $ThirdComPrefer, FutureCom1: $FutureCom1, FutureCom2: $FutureCom2, FutureCom3: $FutureCom3, points: $points, s3file: $s3file) {
+    const statement = `mutation FutureComPreferResultsenate($candname: String, $userid: String, $FirstComPrefer: [Int], $SecondComPrefer: [Int], $ThirdComPrefer: [Int], $FutureCom1: String, $FutureCom2: String, $FutureCom3: String, $points: Int) {
+        futureComPreferResultsenate(candname: $candname, userid: $userid, FirstComPrefer: $FirstComPrefer, SecondComPrefer: $SecondComPrefer, ThirdComPrefer: $ThirdComPrefer, FutureCom1: $FutureCom1, FutureCom2: $FutureCom2, FutureCom3: $FutureCom3, points: $points) {
           __typename
           comcateg
         }
@@ -4126,9 +4309,6 @@ export class APIService {
     }
     if (points) {
       gqlAPIServiceArguments.points = points;
-    }
-    if (s3file) {
-      gqlAPIServiceArguments.s3file = s3file;
     }
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -6175,6 +6355,34 @@ export class APIService {
     )) as any;
     return <ListVotedIdsIssuesflagssenateQuery>(
       response.data.listVotedIdsIssuesflagssenate
+    );
+  }
+  async ListVotedIdsIssuesflagsgovern(
+    userid?: string,
+    isscand?: string
+  ): Promise<ListVotedIdsIssuesflagsgovernQuery> {
+    const statement = `query ListVotedIdsIssuesflagsgovern($userid: String, $isscand: String) {
+        listVotedIdsIssuesflagsgovern(userid: $userid, isscand: $isscand) {
+          __typename
+          VotedIdsFlagArray
+          VotedIdsFlagArrayCand
+          futurecomcandsvotedon
+          FutureComPreferArray
+          FutureComCandViewed
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (isscand) {
+      gqlAPIServiceArguments.isscand = isscand;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListVotedIdsIssuesflagsgovernQuery>(
+      response.data.listVotedIdsIssuesflagsgovern
     );
   }
   async SearchHouseCandInstate(

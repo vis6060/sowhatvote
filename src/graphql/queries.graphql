@@ -1317,6 +1317,15 @@ query ListVotedIdsIssuesflagssenate($userid: String, $isscand: String) {
     FutureComCandViewed
   }
 }
+query ListVotedIdsIssuesflagsgovern($userid: String, $isscand: String) {
+  listVotedIdsIssuesflagsgovern(userid: $userid, isscand: $isscand) {
+    VotedIdsFlagArray
+    VotedIdsFlagArrayCand
+    futurecomcandsvotedon
+    FutureComPreferArray
+    FutureComCandViewed
+  }
+}
 query SearchHouseCandInstate($filter: TableSearchFilterCands) {
   searchHouseCandInstate(filter: $filter) {
     items {

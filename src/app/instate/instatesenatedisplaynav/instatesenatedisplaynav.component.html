@@ -135,14 +135,16 @@
     <a class="assign_class"></a>
     <a *ngIf="FutureComCandViewed==-1">
       <form [formGroup]="zeroFormGroup">
-        <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card  fxLayout="column" fxLayoutAlign="space-around center">
           <br> <mat-card-title> Please select which U.S. Senate committees you would like to see {{CandName10}} serve in the year 2023: </mat-card-title>  <br>
-          <mat-form-field class="demo-form-field1" appearance="fill">
+
+          <mat-form-field  appearance="fill">
             <mat-label>First Preference</mat-label>
             <select matNativeControl required [(ngModel)]=FutureCom1  (change)="futcom($event)" [ngModelOptions]="{standalone: true}">
               <option value="Agriculture">Agriculture, Nutrition, and Forestry Committee</option> <option value="Appropriations">Appropriations Committee</option> <option value="Armed">Armed Services Committee</option> <option value="Banking">Banking, Housing, and Urban Affairs Committee</option> <option value="Budget">Budget Committee</option> <option value="Commerce">Commerce, Science, and Transportation Committee</option> <option value="Energy">Energy and Natural Resources Committee</option> <option value="Environment">Environment and Public Works Committee</option> <option value="Finance">Finance Committee</option> <option value="Foreign">Foreign Relations Committee</option> <option value="Health">Health, Education, Labor, and Pensions Committee</option> <option value="Homeland">Homeland Security and Governmental Affairs Committee</option> <option value="Indian">Indian Affairs Committee</option> <option value="Printing">Joint Committee on Printing</option> <option value="Taxation">Joint Committee on Taxation</option> <option value="Library">Joint Committee on the Library</option> <option value="Economic">Joint Economic Committee</option> <option value="Judiciary">Judiciary Committee</option> <option value="Rules">Rules and Administration Committee</option> <option value="Ethics">Select Committee on Ethics</option> <option value="Intelligence">Select Committee on Intelligence</option> <option value="Business">Small Business and Entrepreneurship Committee</option> <option value="Aging">Special Committee on Aging</option> <option value="Veteran">Veterans' Affairs Committee</option>
             </select>
           </mat-form-field>
+
           <br>     <mat-form-field class="demo-form-field1" appearance="fill">
           <mat-label>Second Preference</mat-label>
           <select matNativeControl required [(ngModel)]=FutureCom2 (change)="futcom($event)" [ngModelOptions]="{standalone: true}">

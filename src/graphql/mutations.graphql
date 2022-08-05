@@ -626,6 +626,11 @@ mutation NextButtontabsenateinstate($userid: String!, $itemid: String) {
     userid
   }
 }
+mutation NextButtontabgoverninstate($userid: String!, $itemid: String) {
+  nextButtontabgoverninstate(userid: $userid, itemid: $itemid) {
+    userid
+  }
+}
 mutation BackinitializeButtontabhouseinstate(
   $userid: String!
   $itemid: String
@@ -645,6 +650,19 @@ mutation BackinitializeButtontabsenateinstate(
   $index: Int
 ) {
   backinitializeButtontabsenateinstate(
+    userid: $userid
+    itemid: $itemid
+    index: $index
+  ) {
+    userid
+  }
+}
+mutation BackinitializeButtontabgoverninstate(
+  $userid: String!
+  $itemid: String
+  $index: Int
+) {
+  backinitializeButtontabgoverninstate(
     userid: $userid
     itemid: $itemid
     index: $index
@@ -724,6 +742,23 @@ mutation OverallResultUpdatetabsenateinstate(
     userid
   }
 }
+mutation OverallResultUpdatetabgoverninstate(
+  $candname: String!
+  $userid: String
+  $isssel: String
+  $isscateg: String
+  $points: Int
+) {
+  overallResultUpdatetabgoverninstate(
+    candname: $candname
+    userid: $userid
+    isssel: $isssel
+    isscateg: $isscateg
+    points: $points
+  ) {
+    userid
+  }
+}
 mutation ComResultUpdatetabsenateinstate(
   $candname: String!
   $userid: String
@@ -732,6 +767,23 @@ mutation ComResultUpdatetabsenateinstate(
   $points: Int
 ) {
   comResultUpdatetabsenateinstate(
+    candname: $candname
+    userid: $userid
+    comsel: $comsel
+    comcateg: $comcateg
+    points: $points
+  ) {
+    userid
+  }
+}
+mutation ComResultUpdatetabgoverninstate(
+  $candname: String!
+  $userid: String
+  $comsel: String
+  $comcateg: String
+  $points: Int
+) {
+  comResultUpdatetabgoverninstate(
     candname: $candname
     userid: $userid
     comsel: $comsel
@@ -774,6 +826,15 @@ mutation GetIssueCateg($userid: String) {
 }
 mutation GetIssueCategsenate($userid: String, $candname: String) {
   getIssueCategsenate(userid: $userid, candname: $candname) {
+    VotedIdsFlagArray
+    isscateg
+    comcateg
+    prefercateg
+    searchcateg
+  }
+}
+mutation GetIssueCateggovern($userid: String, $candname: String) {
+  getIssueCateggovern(userid: $userid, candname: $candname) {
     VotedIdsFlagArray
     isscateg
     comcateg
@@ -825,7 +886,6 @@ mutation FutureComPreferResultsenate(
   $FutureCom2: String
   $FutureCom3: String
   $points: Int
-  $s3file: String
 ) {
   futureComPreferResultsenate(
     candname: $candname
@@ -837,7 +897,6 @@ mutation FutureComPreferResultsenate(
     FutureCom2: $FutureCom2
     FutureCom3: $FutureCom3
     points: $points
-    s3file: $s3file
   ) {
     comcateg
   }

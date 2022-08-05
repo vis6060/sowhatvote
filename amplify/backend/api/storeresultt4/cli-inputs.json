@@ -21,6 +21,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/storegovern": {
+      "name": "/storegovern",
+      "lambdaFunction": "test40679226c",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
