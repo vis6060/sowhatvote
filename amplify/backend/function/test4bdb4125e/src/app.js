@@ -79,7 +79,7 @@ app.get(path + hashKeyPath, function(req, res) {
 
   let queryParams = {
     TableName: tableName,
-    ProjectionExpression: "webpagevalue,comcateg",
+    ProjectionExpression: "webpagevalue,comcateg,tabinstateindex,taballusaindex",
     KeySchema: [
       { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
     ],

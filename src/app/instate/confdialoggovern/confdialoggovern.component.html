@@ -1,1 +1,65 @@
-<p>confdialoggovern works!</p>
+
+<h1 mat-dialog-title>Confirmation of Vote Selection</h1>
+<div mat-dialog-content>
+  <a *ngIf="data.voteflag === 'Overallygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'Overallngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P0ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P0ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P1ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P1ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P2ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P2ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P3ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P3ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P4ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P4ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P5ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P5ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P6ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P6ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P7ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P7ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P8ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P8ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P9ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P9ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P10ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P10ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P11ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P11ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P12ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P12ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P13ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P13ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P14ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P14ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P15ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P15ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P16ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P16ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P17ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P17ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P18ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P18ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P19ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P19ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P20ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P20ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P21ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P21ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P22ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P22ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P23ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P23ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P24ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P24ngov'">You selected "Nay"</a>
+  <a *ngIf="data.voteflag === 'P25ygov'">You selected "YEA"</a>
+  <a *ngIf="data.voteflag === 'P25ngov'">You selected "Nay"</a>
+
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-button  mat-dialog-close>Cancel</button>   &nbsp; &nbsp; &nbsp;
+  <button mat-button routerLink="/AdA" [mat-dialog-close]="data.voteflag" >Submit</button>
+
+</mat-dialog-actions>

@@ -48,7 +48,7 @@ import { ConfdialoggovernComponent } from './confdialoggovern/confdialoggovern.c
     MatListModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class InstateModule { }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {DialogDatagovern} from "../instategovernordisplaynav/instategovernordisplaynav.component";
 
 @Component({
   selector: 'app-confdialoggovern',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfdialoggovernComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogDatagovern) { }
 
   ngOnInit(): void {
   }
