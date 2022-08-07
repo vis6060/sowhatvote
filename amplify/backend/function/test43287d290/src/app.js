@@ -54,7 +54,6 @@ const convertUrlType = (param, type) => {
       return param;
   }
 }
-
 /********************************
  * HTTP Get method for list objects *
  ********************************/
@@ -194,6 +193,7 @@ app.post(path, function(req, res) {
     }
   });
 });
+
 
 /**************************************
  * HTTP remove method to delete object *

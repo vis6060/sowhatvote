@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/mastercands": {
+      "name": "/mastercands",
+      "lambdaFunction": "test4b064dd77",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

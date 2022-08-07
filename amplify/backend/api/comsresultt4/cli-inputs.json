@@ -14,6 +14,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/coms": {
+      "name": "/coms",
+      "lambdaFunction": "test4429c48eb",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

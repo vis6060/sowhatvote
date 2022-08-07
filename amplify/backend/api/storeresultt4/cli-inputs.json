@@ -28,6 +28,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/store": {
+      "name": "/store",
+      "lambdaFunction": "test4268872fe",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

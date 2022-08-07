@@ -54,6 +54,11 @@ const awsmobile = {
             "name": "issresultt4",
             "endpoint": "https://u84fuih4rh.execute-api.us-west-2.amazonaws.com/staging",
             "region": "us-west-2"
+        },
+        {
+            "name": "onetimestoret4",
+            "endpoint": "https://hyoisymc0l.execute-api.us-west-2.amazonaws.com/staging",
+            "region": "us-west-2"
         }
     ],
     "aws_dynamodb_all_tables_region": "us-west-2",
@@ -96,6 +101,10 @@ const awsmobile = {
         },
         {
             "tableName": "ushouserepcandscoms",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "midtermplaceholder-staging",
             "region": "us-west-2"
         }
     ],

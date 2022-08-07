@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
+import {DialogData} from "../instatehousedisplaynav/instatehousedisplaynav.component";
 
 @Component({
   selector: 'app-confdialog',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfdialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit(): void {
   }
+
+
 
 }

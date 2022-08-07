@@ -334,9 +334,9 @@ type Mutation {
     backinitializeButtontabhouseinstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
     backinitializeButtontabsenateinstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
     backinitializeButtontabgoverninstate(userid: String!, itemid: String, index: Int): DatingitemtrackingStaging
-    overallResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
+    overallResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, points: Int): DatingitemtrackingStaging
   	comResultUpdatetabhouseinstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
-  	issResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, isscand:String, points: Int): DatingitemtrackingStaging
+  	issResultUpdatetabhouseinstate(candname: String!,userid: String,isssel: String, isscateg:String, points: Int): DatingitemtrackingStaging
    overallResultUpdatetabsenateinstate(candname: String!,userid: String,isssel: String, isscateg:String, points: Int): DatingitemtrackingStaging
    overallResultUpdatetabgoverninstate(candname: String!,userid: String,isssel: String, isscateg:String, points: Int): DatingitemtrackingStaging
     	comResultUpdatetabsenateinstate(candname: String!,userid: String,comsel: String, comcateg:String, points: Int): DatingitemtrackingStaging
@@ -347,7 +347,7 @@ type Mutation {
   getIssueCategsenate(userid: String,candname:String): IssCateg
   getIssueCateggovern(userid: String,candname:String): IssCateg
   getPreferCateg(userid: String): ComCateg
-  futureComPreferResult(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int,s3file:String,futurecomcandsvotedon:[String]): ComCateg
+  futureComPreferResult(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int): ComCateg
    futureComPreferResultsenate(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int): ComCateg
   comPreferInitializeA(slno: String): ComPreferOut
  comPreferInitializeAsenate(slno: String): ComPreferOut

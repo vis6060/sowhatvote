@@ -675,7 +675,6 @@ mutation OverallResultUpdatetabhouseinstate(
   $userid: String
   $isssel: String
   $isscateg: String
-  $isscand: String
   $points: Int
 ) {
   overallResultUpdatetabhouseinstate(
@@ -683,7 +682,6 @@ mutation OverallResultUpdatetabhouseinstate(
     userid: $userid
     isssel: $isssel
     isscateg: $isscateg
-    isscand: $isscand
     points: $points
   ) {
     userid
@@ -711,7 +709,6 @@ mutation IssResultUpdatetabhouseinstate(
   $userid: String
   $isssel: String
   $isscateg: String
-  $isscand: String
   $points: Int
 ) {
   issResultUpdatetabhouseinstate(
@@ -719,7 +716,6 @@ mutation IssResultUpdatetabhouseinstate(
     userid: $userid
     isssel: $isssel
     isscateg: $isscateg
-    isscand: $isscand
     points: $points
   ) {
     userid
@@ -857,8 +853,6 @@ mutation FutureComPreferResult(
   $FutureCom2: String
   $FutureCom3: String
   $points: Int
-  $s3file: String
-  $futurecomcandsvotedon: [String]
 ) {
   futureComPreferResult(
     candname: $candname
@@ -870,8 +864,6 @@ mutation FutureComPreferResult(
     FutureCom2: $FutureCom2
     FutureCom3: $FutureCom3
     points: $points
-    s3file: $s3file
-    futurecomcandsvotedon: $futurecomcandsvotedon
   ) {
     comcateg
   }

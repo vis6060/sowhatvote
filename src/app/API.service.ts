@@ -3820,11 +3820,10 @@ export class APIService {
     userid?: string,
     isssel?: string,
     isscateg?: string,
-    isscand?: string,
     points?: number
   ): Promise<OverallResultUpdatetabhouseinstateMutation> {
-    const statement = `mutation OverallResultUpdatetabhouseinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $isscand: String, $points: Int) {
-        overallResultUpdatetabhouseinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, isscand: $isscand, points: $points) {
+    const statement = `mutation OverallResultUpdatetabhouseinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $points: Int) {
+        overallResultUpdatetabhouseinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, points: $points) {
           __typename
           userid
         }
@@ -3840,9 +3839,6 @@ export class APIService {
     }
     if (isscateg) {
       gqlAPIServiceArguments.isscateg = isscateg;
-    }
-    if (isscand) {
-      gqlAPIServiceArguments.isscand = isscand;
     }
     if (points) {
       gqlAPIServiceArguments.points = points;
@@ -3894,11 +3890,10 @@ export class APIService {
     userid?: string,
     isssel?: string,
     isscateg?: string,
-    isscand?: string,
     points?: number
   ): Promise<IssResultUpdatetabhouseinstateMutation> {
-    const statement = `mutation IssResultUpdatetabhouseinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $isscand: String, $points: Int) {
-        issResultUpdatetabhouseinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, isscand: $isscand, points: $points) {
+    const statement = `mutation IssResultUpdatetabhouseinstate($candname: String!, $userid: String, $isssel: String, $isscateg: String, $points: Int) {
+        issResultUpdatetabhouseinstate(candname: $candname, userid: $userid, isssel: $isssel, isscateg: $isscateg, points: $points) {
           __typename
           userid
         }
@@ -3914,9 +3909,6 @@ export class APIService {
     }
     if (isscateg) {
       gqlAPIServiceArguments.isscateg = isscateg;
-    }
-    if (isscand) {
-      gqlAPIServiceArguments.isscand = isscand;
     }
     if (points) {
       gqlAPIServiceArguments.points = points;
@@ -4216,12 +4208,10 @@ export class APIService {
     FutureCom1?: string,
     FutureCom2?: string,
     FutureCom3?: string,
-    points?: number,
-    s3file?: string,
-    futurecomcandsvotedon?: Array<string | null>
+    points?: number
   ): Promise<FutureComPreferResultMutation> {
-    const statement = `mutation FutureComPreferResult($candname: String, $userid: String, $FirstComPrefer: [Int], $SecondComPrefer: [Int], $ThirdComPrefer: [Int], $FutureCom1: String, $FutureCom2: String, $FutureCom3: String, $points: Int, $s3file: String, $futurecomcandsvotedon: [String]) {
-        futureComPreferResult(candname: $candname, userid: $userid, FirstComPrefer: $FirstComPrefer, SecondComPrefer: $SecondComPrefer, ThirdComPrefer: $ThirdComPrefer, FutureCom1: $FutureCom1, FutureCom2: $FutureCom2, FutureCom3: $FutureCom3, points: $points, s3file: $s3file, futurecomcandsvotedon: $futurecomcandsvotedon) {
+    const statement = `mutation FutureComPreferResult($candname: String, $userid: String, $FirstComPrefer: [Int], $SecondComPrefer: [Int], $ThirdComPrefer: [Int], $FutureCom1: String, $FutureCom2: String, $FutureCom3: String, $points: Int) {
+        futureComPreferResult(candname: $candname, userid: $userid, FirstComPrefer: $FirstComPrefer, SecondComPrefer: $SecondComPrefer, ThirdComPrefer: $ThirdComPrefer, FutureCom1: $FutureCom1, FutureCom2: $FutureCom2, FutureCom3: $FutureCom3, points: $points) {
           __typename
           comcateg
         }
@@ -4253,12 +4243,6 @@ export class APIService {
     }
     if (points) {
       gqlAPIServiceArguments.points = points;
-    }
-    if (s3file) {
-      gqlAPIServiceArguments.s3file = s3file;
-    }
-    if (futurecomcandsvotedon) {
-      gqlAPIServiceArguments.futurecomcandsvotedon = futurecomcandsvotedon;
     }
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)

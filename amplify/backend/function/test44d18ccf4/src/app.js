@@ -143,14 +143,32 @@ app.post(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      {AttributeName: "userid", KeyType: "RANGE"}  //Sort key
+    ],
+    AttributeDefinitions: [
+      {AttributeName: "userid", AttributeType: "S"}
+    ],
+    Key: {
+      "userid":req.body.userid ,
+    },
+    UpdateExpression: "set #ta1 = :val13",
+    ExpressionAttributeNames:{
+      "#ta1": "instatehousearray",
+    },
+    ExpressionAttributeValues: {
+      ":val13": req.body.candarrayname
+    },
+    ReturnValues: "ALL_NEW"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
       res.json({error: err, url: req.url, body: req.body});
     } else {
-      res.json({success: 'post call succeed!', url: req.url, data: data})
+      res.json({success: 'put call succeed!', url: req.url, data: data})
     }
   });
 });
