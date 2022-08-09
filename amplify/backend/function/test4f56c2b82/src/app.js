@@ -80,7 +80,7 @@ app.get(path + hashKeyPath, function(req, res) {
   let queryParams = {
     TableName: tableName,
     //  KeyConditions: condition
-    ProjectionExpression: "instatesenatearray",
+    ProjectionExpression: "instatesenatearray, HOMEstate",
     KeySchema: [
       { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
     ],
@@ -101,7 +101,7 @@ app.get(path + hashKeyPath, function(req, res) {
       res.statusCode = 500;
       res.json({error: 'Could not load items: ' + err});
     } else {
-      arr=[data.Items[0].instatesenatearray[0],data.Items[0].instatesenatearray[1],data.Items[0].instatesenatearray[2],data.Items[0].instatesenatearray.length, data.Items[0].instatesenatearray.slice(-1)[0],data.Items[0].instatesenatearray[3]] //this gets first and last element of array
+      arr=[data.Items[0].instatesenatearray[0],data.Items[0].instatesenatearray[1],data.Items[0].instatesenatearray[2],data.Items[0].instatesenatearray.length, data.Items[0].instatesenatearray.slice(-1)[0],data.Items[0].instatesenatearray[3],data.Items[0].HOMEstate] //this gets first and last element of array
       res.json(arr)
     }
   });
@@ -109,8 +109,8 @@ app.get(path + hashKeyPath, function(req, res) {
 
 
 /************************************
-* HTTP put method for insert object *
-*************************************/
+ * HTTP put method for insert object *
+ *************************************/
 
 app.put(path, function(req, res) {
 
@@ -120,14 +120,26 @@ app.put(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      {AttributeName: "userid", KeyType: "RANGE"}  //Sort key
+    ],
+    AttributeDefinitions: [
+      {AttributeName: "userid", AttributeType: "S"}
+    ],
+    Key: {
+      "userid":req.body.userid ,
+    },
+    UpdateExpression: "set  instatesenatearray=instatesenatearrayHOME", //initialize array
+    ReturnValues: "ALL_NEW"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
-      res.json({ error: err, url: req.url, body: req.body });
-    } else{
-      res.json({ success: 'put call succeed!', url: req.url, data: data })
+      res.json({error: err, url: req.url, body: req.body});
+    } else {
+      res.json({success: 'put call succeed!', url: req.url, data: data})
     }
   });
 });

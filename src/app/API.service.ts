@@ -130,7 +130,7 @@ export type DatinginteractionStagingtab3 = {
 export type HouseCandsFilterInput = {
   Incumbent?: TableStringFilterInput | null;
   CandName?: TableStringFilterInput | null;
-  State?: TableStringFilterInput | null;
+  StateCand?: TableStringFilterInput | null;
   Office?: TableStringFilterInput | null;
 };
 
@@ -1162,6 +1162,272 @@ export type UpdateCandsArrayOneTimeMutation = {
   justcands?: Array<string | null> | null;
 };
 
+export type UpdateCandsArrayOneTimesenateMutation = {
+  __typename: "HouseCandsConnection";
+  items?: Array<{
+    __typename: "HouseCands";
+    CandName: string;
+    District?: string | null;
+    Party?: string | null;
+    State?: string | null;
+    Website?: string | null;
+    s3file?: string | null;
+    PictureAttribution?: string | null;
+    Coms?: string | null;
+    Motto?: string | null;
+    OverallYea?: string | null;
+    OverallNay?: string | null;
+    CAgricultureYea?: string | null;
+    CAgricultureNay?: string | null;
+    CFinancialYea?: string | null;
+    CFinancialNay?: string | null;
+    CEducationYea?: string | null;
+    CEducationNay?: string | null;
+    CAppropriationsYea?: string | null;
+    CAppropriationsNay?: string | null;
+    CAdminstrationYea?: string | null;
+    CAdminstrationNay?: string | null;
+    CForeignYea?: string | null;
+    CForeignNay?: string | null;
+    CTransportationYea?: string | null;
+    CTransportationNay?: string | null;
+    CVeteransYea?: string | null;
+    CVeteransNay?: string | null;
+    CClimateYea?: string | null;
+    CClimateNay?: string | null;
+    CEnergyYea?: string | null;
+    CEnergyNay?: string | null;
+    CEthicsYea?: string | null;
+    CEthicsNay?: string | null;
+    CWaysYea?: string | null;
+    CWaysNay?: string | null;
+    CScienceYea?: string | null;
+    CScienceNay?: string | null;
+    CArmedYea?: string | null;
+    CArmedNay?: string | null;
+    CJudiciaryYea?: string | null;
+    CJudiciaryNay?: string | null;
+    CHomelandYea?: string | null;
+    CHomelandNay?: string | null;
+    CBudgetYea?: string | null;
+    CBudgetNay?: string | null;
+    CNaturalYea?: string | null;
+    CNaturalNay?: string | null;
+    COversightYea?: string | null;
+    COversightNay?: string | null;
+    CSmallYea?: string | null;
+    CSmallNay?: string | null;
+    CTaxationYea?: string | null;
+    CTaxationNay?: string | null;
+    CIntelligenceYea?: string | null;
+    CIntelligenceNay?: string | null;
+    CAgricultureFuture?: string | null;
+    CFinancialFuture?: string | null;
+    CEducationFuture?: string | null;
+    CAppropriationsFuture?: string | null;
+    CAdminstrationFuture?: string | null;
+    CForeignFuture?: string | null;
+    CTransportationFuture?: string | null;
+    CVeteransFuture?: string | null;
+    CClimateFuture?: string | null;
+    CEnergyFuture?: string | null;
+    CEthicsFuture?: string | null;
+    CWaysFuture?: string | null;
+    CScienceFuture?: string | null;
+    CArmedFuture?: string | null;
+    CJudiciaryFuture?: string | null;
+    CHomelandFuture?: string | null;
+    CBudgetFuture?: string | null;
+    CNaturalFuture?: string | null;
+    COversightFuture?: string | null;
+    CSmallFuture?: string | null;
+    CTaxationFuture?: string | null;
+    CIntelligenceFuture?: string | null;
+    IBorderYea?: string | null;
+    IBorderNay?: string | null;
+    IImmigrationYea?: string | null;
+    IImmigrationNay?: string | null;
+    IAbortionYes?: string | null;
+    IAbortionNay?: string | null;
+    ITransgenderYea?: string | null;
+    ITransgenderNay?: string | null;
+    ISafetyYea?: string | null;
+    ISafetyNay?: string | null;
+    IEducationYea?: string | null;
+    IEducationNay?: string | null;
+    IVeteransYea?: string | null;
+    IVeteransNay?: string | null;
+    IClimateYea?: string | null;
+    IClimateNay?: string | null;
+    IMentalYea?: string | null;
+    IMentalNay?: string | null;
+    IGunsYea?: string | null;
+    IGunsNay?: string | null;
+    ICostYea?: string | null;
+    ICostNay?: string | null;
+    IFarmersYea?: string | null;
+    IFarmersNay?: string | null;
+    IEconomyYea?: string | null;
+    IEconomyNay?: string | null;
+    IHealthcareYea?: string | null;
+    IHealthcareNay?: string | null;
+    IInfrastructureYea?: string | null;
+    IInfrastructureNay?: string | null;
+    IEnergyYea?: string | null;
+    IEnergyNay?: string | null;
+    INaturalYea?: string | null;
+    INaturalNay?: string | null;
+    ICannabisYea?: string | null;
+    ICannabisNay?: string | null;
+    ITaxesYea?: string | null;
+    ITaxesNay?: string | null;
+    ISeniorsYea?: string | null;
+    ISeniorsNay?: string | null;
+    IManufacturingYea?: string | null;
+    IManufacturingNay?: string | null;
+    IHousingYea?: string | null;
+    IHousingNay?: string | null;
+    IDefenceYea?: string | null;
+    IDefenceNay?: string | null;
+    IFinanceYea?: string | null;
+    IFinanceNay?: string | null;
+  } | null> | null;
+  justcands?: Array<string | null> | null;
+};
+
+export type UpdateCandsArrayOneTimegovernMutation = {
+  __typename: "HouseCandsConnection";
+  items?: Array<{
+    __typename: "HouseCands";
+    CandName: string;
+    District?: string | null;
+    Party?: string | null;
+    State?: string | null;
+    Website?: string | null;
+    s3file?: string | null;
+    PictureAttribution?: string | null;
+    Coms?: string | null;
+    Motto?: string | null;
+    OverallYea?: string | null;
+    OverallNay?: string | null;
+    CAgricultureYea?: string | null;
+    CAgricultureNay?: string | null;
+    CFinancialYea?: string | null;
+    CFinancialNay?: string | null;
+    CEducationYea?: string | null;
+    CEducationNay?: string | null;
+    CAppropriationsYea?: string | null;
+    CAppropriationsNay?: string | null;
+    CAdminstrationYea?: string | null;
+    CAdminstrationNay?: string | null;
+    CForeignYea?: string | null;
+    CForeignNay?: string | null;
+    CTransportationYea?: string | null;
+    CTransportationNay?: string | null;
+    CVeteransYea?: string | null;
+    CVeteransNay?: string | null;
+    CClimateYea?: string | null;
+    CClimateNay?: string | null;
+    CEnergyYea?: string | null;
+    CEnergyNay?: string | null;
+    CEthicsYea?: string | null;
+    CEthicsNay?: string | null;
+    CWaysYea?: string | null;
+    CWaysNay?: string | null;
+    CScienceYea?: string | null;
+    CScienceNay?: string | null;
+    CArmedYea?: string | null;
+    CArmedNay?: string | null;
+    CJudiciaryYea?: string | null;
+    CJudiciaryNay?: string | null;
+    CHomelandYea?: string | null;
+    CHomelandNay?: string | null;
+    CBudgetYea?: string | null;
+    CBudgetNay?: string | null;
+    CNaturalYea?: string | null;
+    CNaturalNay?: string | null;
+    COversightYea?: string | null;
+    COversightNay?: string | null;
+    CSmallYea?: string | null;
+    CSmallNay?: string | null;
+    CTaxationYea?: string | null;
+    CTaxationNay?: string | null;
+    CIntelligenceYea?: string | null;
+    CIntelligenceNay?: string | null;
+    CAgricultureFuture?: string | null;
+    CFinancialFuture?: string | null;
+    CEducationFuture?: string | null;
+    CAppropriationsFuture?: string | null;
+    CAdminstrationFuture?: string | null;
+    CForeignFuture?: string | null;
+    CTransportationFuture?: string | null;
+    CVeteransFuture?: string | null;
+    CClimateFuture?: string | null;
+    CEnergyFuture?: string | null;
+    CEthicsFuture?: string | null;
+    CWaysFuture?: string | null;
+    CScienceFuture?: string | null;
+    CArmedFuture?: string | null;
+    CJudiciaryFuture?: string | null;
+    CHomelandFuture?: string | null;
+    CBudgetFuture?: string | null;
+    CNaturalFuture?: string | null;
+    COversightFuture?: string | null;
+    CSmallFuture?: string | null;
+    CTaxationFuture?: string | null;
+    CIntelligenceFuture?: string | null;
+    IBorderYea?: string | null;
+    IBorderNay?: string | null;
+    IImmigrationYea?: string | null;
+    IImmigrationNay?: string | null;
+    IAbortionYes?: string | null;
+    IAbortionNay?: string | null;
+    ITransgenderYea?: string | null;
+    ITransgenderNay?: string | null;
+    ISafetyYea?: string | null;
+    ISafetyNay?: string | null;
+    IEducationYea?: string | null;
+    IEducationNay?: string | null;
+    IVeteransYea?: string | null;
+    IVeteransNay?: string | null;
+    IClimateYea?: string | null;
+    IClimateNay?: string | null;
+    IMentalYea?: string | null;
+    IMentalNay?: string | null;
+    IGunsYea?: string | null;
+    IGunsNay?: string | null;
+    ICostYea?: string | null;
+    ICostNay?: string | null;
+    IFarmersYea?: string | null;
+    IFarmersNay?: string | null;
+    IEconomyYea?: string | null;
+    IEconomyNay?: string | null;
+    IHealthcareYea?: string | null;
+    IHealthcareNay?: string | null;
+    IInfrastructureYea?: string | null;
+    IInfrastructureNay?: string | null;
+    IEnergyYea?: string | null;
+    IEnergyNay?: string | null;
+    INaturalYea?: string | null;
+    INaturalNay?: string | null;
+    ICannabisYea?: string | null;
+    ICannabisNay?: string | null;
+    ITaxesYea?: string | null;
+    ITaxesNay?: string | null;
+    ISeniorsYea?: string | null;
+    ISeniorsNay?: string | null;
+    IManufacturingYea?: string | null;
+    IManufacturingNay?: string | null;
+    IHousingYea?: string | null;
+    IHousingNay?: string | null;
+    IDefenceYea?: string | null;
+    IDefenceNay?: string | null;
+    IFinanceYea?: string | null;
+    IFinanceNay?: string | null;
+  } | null> | null;
+  justcands?: Array<string | null> | null;
+};
+
 export type InitializetabhouseinstateMutation = {
   __typename: "DatingitemtrackingStaging";
   userid?: string | null;
@@ -1294,6 +1560,21 @@ export type ComPreferInitializeAsenateMutation = {
   __typename: "ComPreferOut";
   numberarray?: Array<number | null> | null;
   candarray?: Array<string | null> | null;
+};
+
+export type DropdownUpdateArrayMutation = {
+  __typename: "ComCateg";
+  comcateg?: string | null;
+};
+
+export type DropdownUpdateArraysenateMutation = {
+  __typename: "ComCateg";
+  comcateg?: string | null;
+};
+
+export type DropdownUpdateArraygovernMutation = {
+  __typename: "ComCateg";
+  comcateg?: string | null;
 };
 
 export type CreateTodoMutation = {
@@ -3490,10 +3771,12 @@ export class APIService {
     return <UpdateDislikeButtonMutation>response.data.updateDislikeButton;
   }
   async UpdateCandsArrayOneTime(
-    filter?: HouseCandsFilterInput
+    filter?: HouseCandsFilterInput,
+    index?: number,
+    limit?: number
   ): Promise<UpdateCandsArrayOneTimeMutation> {
-    const statement = `mutation UpdateCandsArrayOneTime($filter: HouseCandsFilterInput) {
-        updateCandsArrayOneTime(filter: $filter) {
+    const statement = `mutation UpdateCandsArrayOneTime($filter: HouseCandsFilterInput, $index: Int, $limit: Int) {
+        updateCandsArrayOneTime(filter: $filter, index: $index, limit: $limit) {
           __typename
           items {
             __typename
@@ -3630,11 +3913,329 @@ export class APIService {
     if (filter) {
       gqlAPIServiceArguments.filter = filter;
     }
+    if (index) {
+      gqlAPIServiceArguments.index = index;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <UpdateCandsArrayOneTimeMutation>(
       response.data.updateCandsArrayOneTime
+    );
+  }
+  async UpdateCandsArrayOneTimesenate(
+    filter?: HouseCandsFilterInput,
+    index?: number,
+    limit?: number
+  ): Promise<UpdateCandsArrayOneTimesenateMutation> {
+    const statement = `mutation UpdateCandsArrayOneTimesenate($filter: HouseCandsFilterInput, $index: Int, $limit: Int) {
+        updateCandsArrayOneTimesenate(filter: $filter, index: $index, limit: $limit) {
+          __typename
+          items {
+            __typename
+            CandName
+            District
+            Party
+            State
+            Website
+            s3file
+            PictureAttribution
+            Coms
+            Motto
+            OverallYea
+            OverallNay
+            CAgricultureYea
+            CAgricultureNay
+            CFinancialYea
+            CFinancialNay
+            CEducationYea
+            CEducationNay
+            CAppropriationsYea
+            CAppropriationsNay
+            CAdminstrationYea
+            CAdminstrationNay
+            CForeignYea
+            CForeignNay
+            CTransportationYea
+            CTransportationNay
+            CVeteransYea
+            CVeteransNay
+            CClimateYea
+            CClimateNay
+            CEnergyYea
+            CEnergyNay
+            CEthicsYea
+            CEthicsNay
+            CWaysYea
+            CWaysNay
+            CScienceYea
+            CScienceNay
+            CArmedYea
+            CArmedNay
+            CJudiciaryYea
+            CJudiciaryNay
+            CHomelandYea
+            CHomelandNay
+            CBudgetYea
+            CBudgetNay
+            CNaturalYea
+            CNaturalNay
+            COversightYea
+            COversightNay
+            CSmallYea
+            CSmallNay
+            CTaxationYea
+            CTaxationNay
+            CIntelligenceYea
+            CIntelligenceNay
+            CAgricultureFuture
+            CFinancialFuture
+            CEducationFuture
+            CAppropriationsFuture
+            CAdminstrationFuture
+            CForeignFuture
+            CTransportationFuture
+            CVeteransFuture
+            CClimateFuture
+            CEnergyFuture
+            CEthicsFuture
+            CWaysFuture
+            CScienceFuture
+            CArmedFuture
+            CJudiciaryFuture
+            CHomelandFuture
+            CBudgetFuture
+            CNaturalFuture
+            COversightFuture
+            CSmallFuture
+            CTaxationFuture
+            CIntelligenceFuture
+            IBorderYea
+            IBorderNay
+            IImmigrationYea
+            IImmigrationNay
+            IAbortionYes
+            IAbortionNay
+            ITransgenderYea
+            ITransgenderNay
+            ISafetyYea
+            ISafetyNay
+            IEducationYea
+            IEducationNay
+            IVeteransYea
+            IVeteransNay
+            IClimateYea
+            IClimateNay
+            IMentalYea
+            IMentalNay
+            IGunsYea
+            IGunsNay
+            ICostYea
+            ICostNay
+            IFarmersYea
+            IFarmersNay
+            IEconomyYea
+            IEconomyNay
+            IHealthcareYea
+            IHealthcareNay
+            IInfrastructureYea
+            IInfrastructureNay
+            IEnergyYea
+            IEnergyNay
+            INaturalYea
+            INaturalNay
+            ICannabisYea
+            ICannabisNay
+            ITaxesYea
+            ITaxesNay
+            ISeniorsYea
+            ISeniorsNay
+            IManufacturingYea
+            IManufacturingNay
+            IHousingYea
+            IHousingNay
+            IDefenceYea
+            IDefenceNay
+            IFinanceYea
+            IFinanceNay
+          }
+          justcands
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (index) {
+      gqlAPIServiceArguments.index = index;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateCandsArrayOneTimesenateMutation>(
+      response.data.updateCandsArrayOneTimesenate
+    );
+  }
+  async UpdateCandsArrayOneTimegovern(
+    filter?: HouseCandsFilterInput,
+    index?: number,
+    limit?: number
+  ): Promise<UpdateCandsArrayOneTimegovernMutation> {
+    const statement = `mutation UpdateCandsArrayOneTimegovern($filter: HouseCandsFilterInput, $index: Int, $limit: Int) {
+        updateCandsArrayOneTimegovern(filter: $filter, index: $index, limit: $limit) {
+          __typename
+          items {
+            __typename
+            CandName
+            District
+            Party
+            State
+            Website
+            s3file
+            PictureAttribution
+            Coms
+            Motto
+            OverallYea
+            OverallNay
+            CAgricultureYea
+            CAgricultureNay
+            CFinancialYea
+            CFinancialNay
+            CEducationYea
+            CEducationNay
+            CAppropriationsYea
+            CAppropriationsNay
+            CAdminstrationYea
+            CAdminstrationNay
+            CForeignYea
+            CForeignNay
+            CTransportationYea
+            CTransportationNay
+            CVeteransYea
+            CVeteransNay
+            CClimateYea
+            CClimateNay
+            CEnergyYea
+            CEnergyNay
+            CEthicsYea
+            CEthicsNay
+            CWaysYea
+            CWaysNay
+            CScienceYea
+            CScienceNay
+            CArmedYea
+            CArmedNay
+            CJudiciaryYea
+            CJudiciaryNay
+            CHomelandYea
+            CHomelandNay
+            CBudgetYea
+            CBudgetNay
+            CNaturalYea
+            CNaturalNay
+            COversightYea
+            COversightNay
+            CSmallYea
+            CSmallNay
+            CTaxationYea
+            CTaxationNay
+            CIntelligenceYea
+            CIntelligenceNay
+            CAgricultureFuture
+            CFinancialFuture
+            CEducationFuture
+            CAppropriationsFuture
+            CAdminstrationFuture
+            CForeignFuture
+            CTransportationFuture
+            CVeteransFuture
+            CClimateFuture
+            CEnergyFuture
+            CEthicsFuture
+            CWaysFuture
+            CScienceFuture
+            CArmedFuture
+            CJudiciaryFuture
+            CHomelandFuture
+            CBudgetFuture
+            CNaturalFuture
+            COversightFuture
+            CSmallFuture
+            CTaxationFuture
+            CIntelligenceFuture
+            IBorderYea
+            IBorderNay
+            IImmigrationYea
+            IImmigrationNay
+            IAbortionYes
+            IAbortionNay
+            ITransgenderYea
+            ITransgenderNay
+            ISafetyYea
+            ISafetyNay
+            IEducationYea
+            IEducationNay
+            IVeteransYea
+            IVeteransNay
+            IClimateYea
+            IClimateNay
+            IMentalYea
+            IMentalNay
+            IGunsYea
+            IGunsNay
+            ICostYea
+            ICostNay
+            IFarmersYea
+            IFarmersNay
+            IEconomyYea
+            IEconomyNay
+            IHealthcareYea
+            IHealthcareNay
+            IInfrastructureYea
+            IInfrastructureNay
+            IEnergyYea
+            IEnergyNay
+            INaturalYea
+            INaturalNay
+            ICannabisYea
+            ICannabisNay
+            ITaxesYea
+            ITaxesNay
+            ISeniorsYea
+            ISeniorsNay
+            IManufacturingYea
+            IManufacturingNay
+            IHousingYea
+            IHousingNay
+            IDefenceYea
+            IDefenceNay
+            IFinanceYea
+            IFinanceNay
+          }
+          justcands
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (index) {
+      gqlAPIServiceArguments.index = index;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateCandsArrayOneTimegovernMutation>(
+      response.data.updateCandsArrayOneTimegovern
     );
   }
   async Initializetabhouseinstate(
@@ -4339,6 +4940,76 @@ export class APIService {
     )) as any;
     return <ComPreferInitializeAsenateMutation>(
       response.data.comPreferInitializeAsenate
+    );
+  }
+  async DropdownUpdateArray(
+    userid?: string,
+    candarraystate?: string
+  ): Promise<DropdownUpdateArrayMutation> {
+    const statement = `mutation DropdownUpdateArray($userid: String, $candarraystate: String) {
+        dropdownUpdateArray(userid: $userid, candarraystate: $candarraystate) {
+          __typename
+          comcateg
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (candarraystate) {
+      gqlAPIServiceArguments.candarraystate = candarraystate;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DropdownUpdateArrayMutation>response.data.dropdownUpdateArray;
+  }
+  async DropdownUpdateArraysenate(
+    userid?: string,
+    candarraystate?: string
+  ): Promise<DropdownUpdateArraysenateMutation> {
+    const statement = `mutation DropdownUpdateArraysenate($userid: String, $candarraystate: String) {
+        dropdownUpdateArraysenate(userid: $userid, candarraystate: $candarraystate) {
+          __typename
+          comcateg
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (candarraystate) {
+      gqlAPIServiceArguments.candarraystate = candarraystate;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DropdownUpdateArraysenateMutation>(
+      response.data.dropdownUpdateArraysenate
+    );
+  }
+  async DropdownUpdateArraygovern(
+    userid?: string,
+    candarraystate?: string
+  ): Promise<DropdownUpdateArraygovernMutation> {
+    const statement = `mutation DropdownUpdateArraygovern($userid: String, $candarraystate: String) {
+        dropdownUpdateArraygovern(userid: $userid, candarraystate: $candarraystate) {
+          __typename
+          comcateg
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    if (candarraystate) {
+      gqlAPIServiceArguments.candarraystate = candarraystate;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DropdownUpdateArraygovernMutation>(
+      response.data.dropdownUpdateArraygovern
     );
   }
   async CreateTodo(

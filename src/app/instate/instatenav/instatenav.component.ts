@@ -23,7 +23,8 @@ export class InstatenavComponent implements OnInit {
 //    this.onetimearraycreateHouseOffice()
 //    this.onetimearraycreateSenateOffice()
 //    this.onetimearraycreateStateOffice()
-//    this.ComPreferInitialize()
+ //   this.ComPreferInitialize()
+//    this.onetimeHouseArray()
     this.getindex()
   }
 
@@ -52,105 +53,18 @@ export class InstatenavComponent implements OnInit {
 
   }
 
-  //this works in initializing house candidates per array in midtermplaceholder-staging table
-  async onetimearraycreateHouseOffice() {
-    const user = await Auth.currentAuthenticatedUser();
-    this.api.UpdateCandsArrayOneTime({State: {eq:"AL"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsAL"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"AR"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsAR"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"AZ"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsAZ"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"CA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsCA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"CO"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsCO"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"DE"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsDE"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"FL"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsFL"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"GA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsGA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"HI"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsHI"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"IA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsIA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"ID"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsID"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"IL"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsIL"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"IN"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsIN"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"KY"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsKY"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"LA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsLA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MD"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMD"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"ME"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsME"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MI"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMI"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MN"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMN"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MO"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMO"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MS"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMS"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"MT"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsMT"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NC"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNC"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"ND"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsND"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NE"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNE"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NH"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNH"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NJ"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNJ"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NM"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNM"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NV"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNV"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"NY"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsNY"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"OH"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsOH"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"OK"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsOK"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"OR"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsOR"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"PA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsPA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"RI"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsRI"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"SC"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsSC"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"SD"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsSD"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"TN"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsTN"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"TX"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsTX"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"UT"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsUT"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"VA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsVA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"WA"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsWA"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"WI"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsWI"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"WV"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsWV"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
-    this.api.UpdateCandsArrayOneTime({State: {eq:"WY"},Office: {eq:"House"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"HouseCandsWY"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
+  async onetimeHouseArray() { console.log("onetimeentered")
+    const user = await Auth.currentAuthenticatedUser(); //49 states
+    let statearray=["AL","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
+   //index 0:AL. 1:AZ. 2:AR. 3:CA. 4:CO. 5:CT. 6:DE. 7:FL. 8:GA. 9:HI. 10:ID. 11:IL. 12:IN. 13: IA.
+    // 14:KS. 15:KY. 16:LA. 17:ME. 18:MD. 19:MA. 20:MI. 21:MN. 22:MS. 23:MO. 24:MT. 25:NE. 26:NV.
+    // 27:NH. 28:NJ. 29:NM. 30:NY. 31:NC. 32:ND. 33:OH. 34:OK. 35:OR. 36:PA. 37:RI. 38:SC. 39:SD.
+    //40:TN. 41:TX. 42:UT. 43:VT. 44:VA. 45:WA. 46:WV. 47:WI. 48:WY.
+// API doesn't work gives template transformation failure message
+    this.api.UpdateCandsArrayOneTime({StateCand: {eq:"AL"}},0).then((event1) => {})
+}
 
 
-
-  }
 
   numberarray=[]; candarray=[]
   //future committee initialize each candidate ushouserepcandsmain table with numeric list of 22 entries with column names FirstComPrefer, SecondComPrefer, ThirdComPrefer
@@ -158,10 +72,10 @@ export class InstatenavComponent implements OnInit {
   //comPreferInitializeAcandsenate function applies to ussenaterepcandsmain table
   async ComPreferInitialize() {  const user = await Auth.currentAuthenticatedUser();
     this.api.ComPreferInitializeA("A").then((event2) => {this.numberarray = event2.numberarray as unknown as any; this.candarray=event2.candarray as unknown as any;
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 730; i++) {
         const paramsp9f = {body: {CandName: this.candarray[i], numberarray:this.numberarray}}
-        // API.put("storeresult", "/store", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
-        API.put("storeresultt4", "/storesenate", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
+        API.put("storeresultt4", "/store", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
+      //  API.put("storeresultt4", "/storesenate", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
       }
     });
   }
@@ -175,8 +89,8 @@ export class InstatenavComponent implements OnInit {
 
   async onetimearraycreateStateOffice() {
     const user = await Auth.currentAuthenticatedUser();
-    this.api.UpdateCandsArrayOneTime({State: {eq:"TX"},Office: {eq:"Stater"} }).then((event1) => {this.temparray=event1.justcands as [];
-      const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"StateCandsTX"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
+ //   this.api.UpdateCandsArrayOneTime({State: {eq:"TX"},Office: {eq:"Stater"} }).then((event1) => {this.temparray=event1.justcands as [];
+  //    const paramspE = {body: {userid: user.attributes.sub, colvalue:this.temparray, colname:"StateCandsTX"}}; API.put("onetimemidtermarraystore", "/store", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});})
 
   }
 

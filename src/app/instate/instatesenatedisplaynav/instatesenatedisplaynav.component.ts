@@ -53,7 +53,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   Coms10new=[]; FirstComPrefer10=[]; SecondComPrefer10=[]; ThirdComPrefer10=[]; FutureComCandViewed:Number; clicked10: boolean=true; CandLastNameSelect=""; nomatchinglastname="";
   CandNameSearch="";s3fileSearch=""; DistrictSearch="";PartySearch="";StateSearch="";WebsiteSearch="";PictureAttributionSearch="";MottoSearch=""; OverallYeaSearch=""; OverallNaySearch="";FirstComPreferSearch=[]; SecondComPreferSearch=[]; ThirdComPreferSearch=[];
   Coms100new=[]; FirstComPrefer100=[]; SecondComPrefer100=[]; ThirdComPrefer100=[];
-  Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[];
+  Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[]; statedropdown=''; HOMEstate=''
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -122,6 +122,23 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       this.gethompage1Arecur100()})
   }
 
+  //anytime in UX journey user can click button and the candidates of their home state will be loaded into the main house array. it is a copy from their home array in usercandarraydisplay table into main house array.
+  //index 0:AL. 1:AZ. 2:AR. 3:CA. 4:CO. 5:CT. 6:DE. 7:FL. 8:GA. 9:HI. 10:ID. 11:IL. 12:IN. 13: IA.
+  // 14:KS. 15:KY. 16:LA. 17:ME. 18:MD. 19:MA. 20:MI. 21:MN. 22:MS. 23:MO. 24:MT. 25:NE. 26:NV.
+  // 27:NH. 28:NJ. 29:NM. 30:NY. 31:NC. 32:ND. 33:OH. 34:OK. 35:OR. 36:PA. 37:RI. 38:SC. 39:SD.
+  //40:TN. 41:TX. 42:UT. 43:VT. 44:VA. 45:WA. 46:WV. 47:WI. 48:WY. 49: AK.
+  async sethomecands() {const user = await Auth.currentAuthenticatedUser();
+    const paramspG = {body: {userid:user.attributes.sub}}
+    API.put("initializeuserarrayt4", "/initsenate", paramspG).then(responseG => {
+      console.log("successG"); this.reloadComponent() }).catch(error => {console.log(error.responseG);});
+  }
+
+  //dropdown state if selected then candidates of that state are loaded
+  async setdropdowncands() {const user = await Auth.currentAuthenticatedUser();
+    if(this.statedropdown!='') {
+      this.api.DropdownUpdateArray(user.attributes.sub,this.statedropdown).then((event1) => {this.reloadComponent()})
+    } }
+
   //for tab1A start, extract the itemid from the array in the itemtracking table
   async gethompage1Binitialize() {
     const user = await Auth.currentAuthenticatedUser();
@@ -131,6 +148,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       this.tabinstatedisplayitemid=response1.data[0];
       this.tabinstatedisplayitemidnext=response1.data[1]; this.tabinstatedisplayitemidtwo=response1.data[2];
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemidinitialize=response1.data[4];
+      this.HOMEstate=response1.data[6];
       console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
       this.gethompageF1Ainitialize()
       if(+this.tabinstatelength==1) {this.clicked0=true}
@@ -144,7 +162,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     //retrieves basic info on itemid1
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
     API.get("storeresultt4", "/storesenate/m", paramsp1).then(response1 => { console.log(response1)
-       this.Party10=response1.data[0].Party; this.State10=response1.data[0].StateCand;
+       this.Party10=response1.data[0].Party; this.State10=response1.data[0].StateCand; this.statedropdown=response1.data[0].StateCand;
       this.Website10=response1.data[0].Website; this.PictureAttribution10=response1.data[0].PictureAttribution;
       this.CandName10=this.tabinstatedisplayitemid; this.Motto10=response1.data[0].Motto; this.OverallYea10=response1.data[0].OverallYea;
       this.OverallNay10=response1.data[0].OverallNay; this.s3file10=response1.data[0].s3file;

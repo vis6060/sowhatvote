@@ -78,7 +78,7 @@ app.get(path + hashKeyPath, function(req, res) {
   let queryParams = {
     TableName: tableName,
     //  KeyConditions: condition
-    ProjectionExpression: "instatehousearray",
+    ProjectionExpression: "instatehousearray, HOMEstate",
     KeySchema: [
       { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
     ],
@@ -99,7 +99,7 @@ app.get(path + hashKeyPath, function(req, res) {
       res.statusCode = 500;
       res.json({error: 'Could not load items: ' + err});
     } else {
-      arr=[data.Items[0].instatehousearray[0],data.Items[0].instatehousearray[1],data.Items[0].instatehousearray[2],data.Items[0].instatehousearray.length, data.Items[0].instatehousearray.slice(-1)[0],data.Items[0].instatehousearray[3]] //this gets first and last element of array
+      arr=[data.Items[0].instatehousearray[0],data.Items[0].instatehousearray[1],data.Items[0].instatehousearray[2],data.Items[0].instatehousearray.length, data.Items[0].instatehousearray.slice(-1)[0],data.Items[0].instatehousearray[3],data.Items[0].HOMEstate] //this gets first and last element of array
       res.json(arr)
     }
   });
@@ -127,13 +127,13 @@ app.put(path, function(req, res) {
     Key: {
       "userid":req.body.userid ,
     },
-    UpdateExpression: "set #ta = :val12", //initialize array
-    ExpressionAttributeNames:{
-      "#ta": req.body.colname
-    },
-    ExpressionAttributeValues: {
-      ":val12": req.body.tt,
-    },
+    UpdateExpression: "set  instatehousearray=instatehousearrayHOME", //initialize array
+ //   ExpressionAttributeNames:{
+ //     "#ta": req.body.colname
+ //   },
+ //   ExpressionAttributeValues: {
+ //     ":val12": req.body.tt,
+ //   },
     ReturnValues: "ALL_NEW"
   }
 

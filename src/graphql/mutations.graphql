@@ -471,8 +471,284 @@ mutation UpdateDislikeButton(
     userid
   }
 }
-mutation UpdateCandsArrayOneTime($filter: HouseCandsFilterInput) {
-  updateCandsArrayOneTime(filter: $filter) {
+mutation UpdateCandsArrayOneTime(
+  $filter: HouseCandsFilterInput
+  $index: Int
+  $limit: Int
+) {
+  updateCandsArrayOneTime(filter: $filter, index: $index, limit: $limit) {
+    items {
+      CandName
+      District
+      Party
+      State
+      Website
+      s3file
+      PictureAttribution
+      Coms
+      Motto
+      OverallYea
+      OverallNay
+      CAgricultureYea
+      CAgricultureNay
+      CFinancialYea
+      CFinancialNay
+      CEducationYea
+      CEducationNay
+      CAppropriationsYea
+      CAppropriationsNay
+      CAdminstrationYea
+      CAdminstrationNay
+      CForeignYea
+      CForeignNay
+      CTransportationYea
+      CTransportationNay
+      CVeteransYea
+      CVeteransNay
+      CClimateYea
+      CClimateNay
+      CEnergyYea
+      CEnergyNay
+      CEthicsYea
+      CEthicsNay
+      CWaysYea
+      CWaysNay
+      CScienceYea
+      CScienceNay
+      CArmedYea
+      CArmedNay
+      CJudiciaryYea
+      CJudiciaryNay
+      CHomelandYea
+      CHomelandNay
+      CBudgetYea
+      CBudgetNay
+      CNaturalYea
+      CNaturalNay
+      COversightYea
+      COversightNay
+      CSmallYea
+      CSmallNay
+      CTaxationYea
+      CTaxationNay
+      CIntelligenceYea
+      CIntelligenceNay
+      CAgricultureFuture
+      CFinancialFuture
+      CEducationFuture
+      CAppropriationsFuture
+      CAdminstrationFuture
+      CForeignFuture
+      CTransportationFuture
+      CVeteransFuture
+      CClimateFuture
+      CEnergyFuture
+      CEthicsFuture
+      CWaysFuture
+      CScienceFuture
+      CArmedFuture
+      CJudiciaryFuture
+      CHomelandFuture
+      CBudgetFuture
+      CNaturalFuture
+      COversightFuture
+      CSmallFuture
+      CTaxationFuture
+      CIntelligenceFuture
+      IBorderYea
+      IBorderNay
+      IImmigrationYea
+      IImmigrationNay
+      IAbortionYes
+      IAbortionNay
+      ITransgenderYea
+      ITransgenderNay
+      ISafetyYea
+      ISafetyNay
+      IEducationYea
+      IEducationNay
+      IVeteransYea
+      IVeteransNay
+      IClimateYea
+      IClimateNay
+      IMentalYea
+      IMentalNay
+      IGunsYea
+      IGunsNay
+      ICostYea
+      ICostNay
+      IFarmersYea
+      IFarmersNay
+      IEconomyYea
+      IEconomyNay
+      IHealthcareYea
+      IHealthcareNay
+      IInfrastructureYea
+      IInfrastructureNay
+      IEnergyYea
+      IEnergyNay
+      INaturalYea
+      INaturalNay
+      ICannabisYea
+      ICannabisNay
+      ITaxesYea
+      ITaxesNay
+      ISeniorsYea
+      ISeniorsNay
+      IManufacturingYea
+      IManufacturingNay
+      IHousingYea
+      IHousingNay
+      IDefenceYea
+      IDefenceNay
+      IFinanceYea
+      IFinanceNay
+    }
+    justcands
+  }
+}
+mutation UpdateCandsArrayOneTimesenate(
+  $filter: HouseCandsFilterInput
+  $index: Int
+  $limit: Int
+) {
+  updateCandsArrayOneTimesenate(filter: $filter, index: $index, limit: $limit) {
+    items {
+      CandName
+      District
+      Party
+      State
+      Website
+      s3file
+      PictureAttribution
+      Coms
+      Motto
+      OverallYea
+      OverallNay
+      CAgricultureYea
+      CAgricultureNay
+      CFinancialYea
+      CFinancialNay
+      CEducationYea
+      CEducationNay
+      CAppropriationsYea
+      CAppropriationsNay
+      CAdminstrationYea
+      CAdminstrationNay
+      CForeignYea
+      CForeignNay
+      CTransportationYea
+      CTransportationNay
+      CVeteransYea
+      CVeteransNay
+      CClimateYea
+      CClimateNay
+      CEnergyYea
+      CEnergyNay
+      CEthicsYea
+      CEthicsNay
+      CWaysYea
+      CWaysNay
+      CScienceYea
+      CScienceNay
+      CArmedYea
+      CArmedNay
+      CJudiciaryYea
+      CJudiciaryNay
+      CHomelandYea
+      CHomelandNay
+      CBudgetYea
+      CBudgetNay
+      CNaturalYea
+      CNaturalNay
+      COversightYea
+      COversightNay
+      CSmallYea
+      CSmallNay
+      CTaxationYea
+      CTaxationNay
+      CIntelligenceYea
+      CIntelligenceNay
+      CAgricultureFuture
+      CFinancialFuture
+      CEducationFuture
+      CAppropriationsFuture
+      CAdminstrationFuture
+      CForeignFuture
+      CTransportationFuture
+      CVeteransFuture
+      CClimateFuture
+      CEnergyFuture
+      CEthicsFuture
+      CWaysFuture
+      CScienceFuture
+      CArmedFuture
+      CJudiciaryFuture
+      CHomelandFuture
+      CBudgetFuture
+      CNaturalFuture
+      COversightFuture
+      CSmallFuture
+      CTaxationFuture
+      CIntelligenceFuture
+      IBorderYea
+      IBorderNay
+      IImmigrationYea
+      IImmigrationNay
+      IAbortionYes
+      IAbortionNay
+      ITransgenderYea
+      ITransgenderNay
+      ISafetyYea
+      ISafetyNay
+      IEducationYea
+      IEducationNay
+      IVeteransYea
+      IVeteransNay
+      IClimateYea
+      IClimateNay
+      IMentalYea
+      IMentalNay
+      IGunsYea
+      IGunsNay
+      ICostYea
+      ICostNay
+      IFarmersYea
+      IFarmersNay
+      IEconomyYea
+      IEconomyNay
+      IHealthcareYea
+      IHealthcareNay
+      IInfrastructureYea
+      IInfrastructureNay
+      IEnergyYea
+      IEnergyNay
+      INaturalYea
+      INaturalNay
+      ICannabisYea
+      ICannabisNay
+      ITaxesYea
+      ITaxesNay
+      ISeniorsYea
+      ISeniorsNay
+      IManufacturingYea
+      IManufacturingNay
+      IHousingYea
+      IHousingNay
+      IDefenceYea
+      IDefenceNay
+      IFinanceYea
+      IFinanceNay
+    }
+    justcands
+  }
+}
+mutation UpdateCandsArrayOneTimegovern(
+  $filter: HouseCandsFilterInput
+  $index: Int
+  $limit: Int
+) {
+  updateCandsArrayOneTimegovern(filter: $filter, index: $index, limit: $limit) {
     items {
       CandName
       District
@@ -903,6 +1179,21 @@ mutation ComPreferInitializeAsenate($slno: String) {
   comPreferInitializeAsenate(slno: $slno) {
     numberarray
     candarray
+  }
+}
+mutation DropdownUpdateArray($userid: String, $candarraystate: String) {
+  dropdownUpdateArray(userid: $userid, candarraystate: $candarraystate) {
+    comcateg
+  }
+}
+mutation DropdownUpdateArraysenate($userid: String, $candarraystate: String) {
+  dropdownUpdateArraysenate(userid: $userid, candarraystate: $candarraystate) {
+    comcateg
+  }
+}
+mutation DropdownUpdateArraygovern($userid: String, $candarraystate: String) {
+  dropdownUpdateArraygovern(userid: $userid, candarraystate: $candarraystate) {
+    comcateg
   }
 }
 mutation CreateTodo(

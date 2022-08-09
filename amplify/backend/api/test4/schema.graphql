@@ -326,7 +326,9 @@ type Mutation {
           		timestamp: String,
           		timeunix: Float
           	): DatingitemtrackingStaging
-  updateCandsArrayOneTime(filter: HouseCandsFilterInput): HouseCandsConnection
+  updateCandsArrayOneTime(filter: HouseCandsFilterInput,index:Int,limit: Int): HouseCandsConnection
+  updateCandsArrayOneTimesenate(filter: HouseCandsFilterInput,index:Int,limit: Int): HouseCandsConnection
+  updateCandsArrayOneTimegovern(filter: HouseCandsFilterInput,index:Int,limit: Int): HouseCandsConnection
     initializetabhouseinstate(userid1: String, userid2: String, state: String): DatingitemtrackingStaging
     nextButtontabhouseinstate(userid: String!, itemid: String): DatingitemtrackingStaging
     nextButtontabsenateinstate(userid: String!, itemid: String): DatingitemtrackingStaging
@@ -351,7 +353,9 @@ type Mutation {
    futureComPreferResultsenate(candname:String, userid:String, FirstComPrefer:[Int], SecondComPrefer:[Int], ThirdComPrefer:[Int],FutureCom1:String,FutureCom2:String,FutureCom3:String,points: Int): ComCateg
   comPreferInitializeA(slno: String): ComPreferOut
  comPreferInitializeAsenate(slno: String): ComPreferOut
-
+  dropdownUpdateArray(userid: String,candarraystate:String): ComCateg
+dropdownUpdateArraysenate(userid: String,candarraystate:String): ComCateg
+dropdownUpdateArraygovern(userid: String,candarraystate:String): ComCateg
     }
 
 input TableDatinguserdbStagingFilterInput {
@@ -600,7 +604,7 @@ type HouseCandsConnection {
 input HouseCandsFilterInput {
 	Incumbent: TableStringFilterInput
 	CandName: TableStringFilterInput
-	State: TableStringFilterInput
+	StateCand: TableStringFilterInput
 	Office: TableStringFilterInput
 }
 
