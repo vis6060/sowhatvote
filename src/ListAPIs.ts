@@ -3,7 +3,7 @@
 //API datingapitest4/userdbapiname corresponds to datinguserdb table and *1cc function(partition key is userid)
 
 //API initializeuserarrayt4/initsenate (post avail) corresponds to   usercandarraydisplay-staging and *b82 function
-//API initializeuserarrayt4/initgovern (put avail) corresponds to   usercandarraydisplay-staging and *cf4 function
+//API initializeuserarrayt4/initgovern corresponds to   usercandarraydisplay-staging and *cf4 function
 //API initializeuserarrayt4/index corresponds to   usercandarraydisplay-staging and *25e function
 //API initializeuserarrayt4/init  corresponds to   usercandarraydisplay-staging and *290 function
 

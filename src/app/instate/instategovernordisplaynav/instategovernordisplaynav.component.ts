@@ -122,20 +122,19 @@ export class InstategovernordisplaynavComponent implements OnInit {
   }
 
   //anytime in UX journey user can click button and the candidates of their home state will be loaded into the main house array. it is a copy from their home array in usercandarraydisplay table into main house array.
-  //index 0:. 1:. 2:. 3:. 4:CO. 5:CT. 6:DE. 7:FL. 8:GA. 9:HI. 10:ID. 11:IL. 12:IN. 13: IA.
-  // 14:KS. 15:KY. 16:LA. 17:ME. 18:MD. 19:MA. 20:MI. 21:MN. 22:MS. 23:MO. 24:MT. 25:NE. 26:NV.
-  // 27:NH. 28:NJ. 29:NM. 30:NY. 31:NC. 32:ND. 33:OH. 34:OK. 35:OR. 36:PA. 37:RI. 38:SC. 39:SD.
-  //40:TN. 41:TX. 42:UT. 43:VT. 44:VA. 45:WA. 46:WV. 47:WI. 48:WY.
+  //index 0:AK. 1:AL. 2:AR. 3:AZ. 4:CA. 5:CO. 6:CT. 7:FL. 8:GA. 9:ID. 10:IL. 11:IA. 12:KS. 13:ME.
+  // 14:MD. 15:MA. 16:MI. 17:MN. 18:NE. 19:NH. 20:NM. 21:NV. 22:NY. 23:OH. 24:OK. 25:OR. 26:PA.
+  // 27:SC. 28:SD. 29:TN. 30:TX. 31:VT. 32:WI. 33:WY.
   async sethomecands() {const user = await Auth.currentAuthenticatedUser();
     const paramspG = {body: {userid:user.attributes.sub}}
-    API.put("initializeuserarrayt4", "/init", paramspG).then(responseG => {
+    API.put("initializeuserarrayt4", "/initgovern", paramspG).then(responseG => {
       console.log("successG"); this.reloadComponent() }).catch(error => {console.log(error.responseG);});
   }
 
   //dropdown state if selected then candidates of that state are loaded
   async setdropdowncands() {const user = await Auth.currentAuthenticatedUser();
     if(this.statedropdown!='') {
-      this.api.DropdownUpdateArray(user.attributes.sub,this.statedropdown).then((event1) => {this.reloadComponent()})
+      this.api.DropdownUpdateArraygovern(user.attributes.sub,this.statedropdown).then((event1) => {this.reloadComponent()})
     } }
 
   //for tab1A start, extract the itemid from the array in the itemtracking table
@@ -147,6 +146,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.tabinstatedisplayitemid=response1.data[0];
       this.tabinstatedisplayitemidnext=response1.data[1]; this.tabinstatedisplayitemidtwo=response1.data[2];
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemidinitialize=response1.data[4];
+      this.HOMEstate=response1.data[6];
       console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
       this.gethompageF1Ainitialize()
       if(+this.tabinstatelength==1) {this.clicked0=true}
@@ -159,7 +159,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
     //retrieves basic info on itemid1
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
     API.get("storeresultt4", "/storegovern/m", paramsp1).then(response1 => { console.log(response1)
-      this.Party10=response1.data[0].Party; this.State10=response1.data[0].StateCand;
+      this.Party10=response1.data[0].Party; this.State10=response1.data[0].StateCand; this.statedropdown=response1.data[0].StateCand;
       this.District10=response1.data[0].District;
       this.Website10=response1.data[0].Website; this.PictureAttribution10=response1.data[0].PictureAttribution;
       this.AllOffices10=JSON.parse(response1.data[0].AllOffices);
@@ -167,8 +167,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.OverallNay10=response1.data[0].OverallNay; this.Office10=response1.data[0].Office;
       this.Coms10new=JSON.parse(response1.data[0].Coms)
       Storage.get(response1.data[0].s3file).then( res => {this.urlA=res;
-     //   if(response1.data[0].newWidth!='') {
-     //     this.newWidth10=response1.data[0].newWidth; this.newHeight10=response1.data[0].newHeight}
+       if(response1.data[0].newWidth!='') {
+          this.newWidth10=response1.data[0].newWidth; this.newHeight10=response1.data[0].newHeight}
       });
       this.initializerflag = "yes"; }).catch(error => {console.log(error.response1)});
     //Issue category-gets kill flags on whether overall issue category has been voted. votedindexesissue is an array of indicies, position0 index in this array is I0 categ, position1 index in this array is I1 categ

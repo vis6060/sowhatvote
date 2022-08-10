@@ -136,7 +136,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   //dropdown state if selected then candidates of that state are loaded
   async setdropdowncands() {const user = await Auth.currentAuthenticatedUser();
     if(this.statedropdown!='') {
-      this.api.DropdownUpdateArray(user.attributes.sub,this.statedropdown).then((event1) => {this.reloadComponent()})
+      this.api.DropdownUpdateArraysenate(user.attributes.sub,this.statedropdown).then((event1) => {this.reloadComponent()})
     } }
 
   //for tab1A start, extract the itemid from the array in the itemtracking table

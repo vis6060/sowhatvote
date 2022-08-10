@@ -96,7 +96,7 @@
   <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Inflation & Economy: {{IEconomyYea}} YEA and {{IEconomyNay}} NAY </mat-card-title> <br></a> <mat-divider></mat-divider>
 
 <!-- Stays on top, so anytime user can switch to their home state candidates -->
- <button mat-button  (click)="sethomecands()">Cast your Vote & View Voting Results of Candidates from your Home State of {{HOMEstate}} </button>
+ <button mat-button  (click)="sethomecands()">Cast your Vote & View Voting Results of Candidates/Senators from your Home State of {{HOMEstate}} </button>
 
 
 <!-- User selects which state they would like to view results for -->
@@ -110,10 +110,10 @@
     </select>
   </mat-form-field>
 </form>
-<button mat-button  (click)="setdropdowncands()">Search for Candidates in Selected State</button>
+<button mat-button  (click)="setdropdowncands()">Search for Candidates/Senators in Selected State</button>
 
 
-<br> &nbsp; &nbsp; &nbsp; <b> Found {{tabinstatelength}} candidate(s) in the state of {{State10}} for the 2022 U.S. Senate elections!</b> <br>
+<br> &nbsp; &nbsp; &nbsp; <b> Found {{tabinstatelength}} Candidate(s)/Senators in the state of {{State10}} for the 2022 U.S. Senate elections!</b> <br>
 
 
 <!--Display Initial Cand10  -->
@@ -133,10 +133,10 @@
 
     <!-- Chips for navigation -->
     &nbsp; &nbsp; &nbsp;<a> <b>Vote or View Results for: </b></a> <br>  <mat-chip-list>
-    <mat-chip (click)="overallfunc()">Candidate's Overall Performance</mat-chip>
-    <mat-chip (click)="assignfunc()">U.S. Senate Committees assignments to Candidates</mat-chip>
-    <mat-chip (click)="comperffunc()">Candidate's Performance on Senate Committees</mat-chip>
-    <mat-chip (click)="issperffunc()">Candidate's Performance on Issues</mat-chip>
+    <mat-chip (click)="overallfunc()">Candidate/Senator Overall Performance</mat-chip>
+    <mat-chip (click)="assignfunc()">U.S. Senate Committees assignments to Candidate/Senator</mat-chip>
+    <mat-chip (click)="comperffunc()">Candidate/Senator Performance on Senate Committees</mat-chip>
+    <mat-chip (click)="issperffunc()">Candidate/Senator Performance on Issues</mat-chip>
   </mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
 
 
@@ -382,7 +382,7 @@
     </mat-card> <mat-divider></mat-divider> </a>
 
     <!-- Issues rating-->
-    <a class="issperf_class"></a>  <br>  <mat-card-title>Vote or View Results of {{CandName10}}'s <b> Performance </b> on the following <b> Issues </b>: </mat-card-title>
+    <a class="issperf_class"></a>  <br>  <mat-card-title>Vote or View Results of {{CandName10}}'s <b> Performance or Potential </b> on the following <b> Issues </b>: </mat-card-title>
     &nbsp; &nbsp; &nbsp;  <mat-chip-list>
     <mat-chip (click)="iss0()">Abortion Rights</mat-chip> <mat-chip (click)="iss1()">Gun Control & Public Safety</mat-chip> <mat-chip (click)="iss2()">Jobs</mat-chip>
     <mat-chip (click)="iss3()">Veterans</mat-chip> <mat-chip (click)="iss4()">Border Security & Immigration</mat-chip> <mat-chip (click)="iss5()">Farmers and Ranchers</mat-chip>
