@@ -60,7 +60,7 @@ export class InstatenavComponent implements OnInit {
     // 14:KS. 15:KY. 16:LA. 17:ME. 18:MD. 19:MA. 20:MI. 21:MN. 22:MS. 23:MO. 24:MT. 25:NE. 26:NV.
     // 27:NH. 28:NJ. 29:NM. 30:NY. 31:NC. 32:ND. 33:OH. 34:OK. 35:OR. 36:PA. 37:RI. 38:SC. 39:SD.
     //40:TN. 41:TX. 42:UT. 43:VT. 44:VA. 45:WA. 46:WV. 47:WI. 48:WY.
-// API doesn't work gives template transformation failure message
+// API doesn't work gives template transformation failure message. for senate inswx 49: Alaska
     this.api.UpdateCandsArrayOneTime({StateCand: {eq:"AL"}},0).then((event1) => {})
 }
 
@@ -71,11 +71,13 @@ export class InstatenavComponent implements OnInit {
   //comPreferInitializeAcands function applies to ushouserepcandsmain table
   //comPreferInitializeAcandsenate function applies to ussenaterepcandsmain table
   async ComPreferInitialize() {  const user = await Auth.currentAuthenticatedUser();
-    this.api.ComPreferInitializeA("A").then((event2) => {this.numberarray = event2.numberarray as unknown as any; this.candarray=event2.candarray as unknown as any;
-      for (let i = 0; i < 730; i++) {
+ //   this.api.ComPreferInitializeA("A").then((event2) => {this.numberarray = event2.numberarray as unknown as any; this.candarray=event2.candarray as unknown as any;
+      this.api.ComPreferInitializeAsenate("B").then((event2) => {this.numberarray = event2.numberarray as unknown as any; this.candarray=event2.candarray as unknown as any;
+  //      for (let i = 0; i < 748; i++) {//house
+        for (let i = 0; i < 128; i++) {//senate
         const paramsp9f = {body: {CandName: this.candarray[i], numberarray:this.numberarray}}
-        API.put("storeresultt4", "/store", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
-      //  API.put("storeresultt4", "/storesenate", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
+  //      API.put("storeresultt4", "/store", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
+        API.put("storeresultt4", "/storesenate", paramsp9f).then(response9f => {console.log("success9f");}).catch(error => {console.log(error.response9f);});
       }
     });
   }

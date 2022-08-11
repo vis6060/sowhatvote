@@ -202,7 +202,7 @@
         <button mat-button (click)="YEAclickP1()"> <b> Vote YEA </b> for {{CandName10}} on the <b>Appropriations Committee</b> </button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickP1()"><b>Vote NAY</b> for {{CandName10}} on the <b>Appropriations Committee</b> </button></p> </a>
       <p *ngIf="Coms10new[1]==''">
-        <button mat-button color="primary" routerLink="/AdA"  (click)="ConfclickComResults('P1sen')"><b> View Voting Results </b>> for {{CandName10}} on the <b>Appropriations Committee </b> </button></p>
+        <button mat-button color="primary" routerLink="/AdA"  (click)="ConfclickComResults('P1sen')"><b> View Voting Results </b> for {{CandName10}} on the <b>Appropriations Committee </b> </button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[2]==''"> <mat-card class="example-card"> <!-- Committe 2 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[2]==''&& votedindexes[2]==-1">
@@ -518,16 +518,16 @@
       <a *ngIf="initsearchflag=='yes'"> <button mat-button color="primary"  (click)="reloadComponent()">See All Results</button> &nbsp; &nbsp; &nbsp; </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle==''">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='yes' && viewtoggle==''">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='yes'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle2back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='no'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
     </mat-card> <mat-divider></mat-divider>
 
     &nbsp; &nbsp; &nbsp;  <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a>

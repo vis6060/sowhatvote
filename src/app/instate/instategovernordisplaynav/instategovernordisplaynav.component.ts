@@ -24,8 +24,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage1Binitialize();
-    this.putindextabinstate()
-  //  this.delaytabPutIndex(100)
+ //   this.putindextabinstate()
+    this.delaytabPutIndex(100)
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
@@ -34,7 +34,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
   tabinstateendarrayitemid:string=""; tabinstateendarrayitemidnext:string=""; tabinstateendarrayitemidinitialize:string="";
   initializerflag=""; onetimenextflag=""; backflag=""; backflagnext=""; futureflag="";
   tabinstatelength="0"; tabinstatelengthnext="0";
-  clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
+  clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false; delayflag1:boolean=true; delayflag2:boolean=true;
   viewtoggle=""; urlA:string;   urlAnext:string; urlA1000:string;  //signed url to the image stored in s3
   stateuser=""; loyalty=0;
   click10=''; click11='';click12='';
@@ -64,16 +64,20 @@ export class InstategovernordisplaynavComponent implements OnInit {
     API.put("initializeuserarrayt4","/index", paramsp2).then(response2 => {console.log("success2");
     }).catch(error => {console.log(error.response2);});
   }
-  async delaytabPutIndex(ms: number) {
-    await new Promise(resolve => setTimeout(()=>this.putindextabinstate(), ms)).then(()=>console.log("fired"));
-  }
+
+  async delaytabPutIndex(ms: number) {await new Promise(resolve => setTimeout(()=>this.putindextabinstate(), ms)).then(()=>console.log("fired"));}
+
+  //delay button, so user doesn't quickly click on it and spoil the array of cands
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
 
   viewtoggle1next() {window.scrollTo(0,0);
     this.CandName10= this.CandName1000; this.Party10=this.Party1000; this.State10=this.State1000; this.District10=this.District1000; this.AllOffices10=this.AllOffices1000
     this.Website10=this.Website1000;this.PictureAttribution10=this.PictureAttribution1000; this.Motto10=this.Motto1000; this.Office10=this.Office1000;
     this.OverallYea10=this.OverallYea1000;this.OverallNay10=this.OverallNay1000;
     this.Coms10new=this.Coms1000new;this.urlA=this.urlA1000;
-    //this.newWidth10=this.newWidth1000; this.newHeight10=this.newHeight1000;
+    this.newWidth10=this.newWidth1000; this.newHeight10=this.newHeight1000;
     this.votedindexesissuecand10=this.votedindexesissuecand1000;
     this.viewtoggle="yes"; this.initializerflag=""; this.onetimenextflag=""; this.clicked=false;
     this.deleteindex0idrecur100Next();
@@ -84,7 +88,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;this.Office10=this.Office100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100;
     this.Coms10new=this.Coms100new;this.urlA=this.urlAnext;
-    //this.newWidth10=this.newWidth100; this.newHeight10=this.newHeight100;
+    this.newWidth10=this.newWidth100; this.newHeight10=this.newHeight100;
     this.votedindexesissuecand10=this.votedindexesissuecand100;
     this.viewtoggle="no";this.initializerflag=""; this.onetimenextflag=""; this.clicked1=false;
     this.deleteindex0idrecur10Next();
@@ -95,7 +99,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100; this.Office10=this.Office100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100;
     this.Coms10new=this.Coms100new;this.urlA=this.urlAnext;
-    //this.newWidth10=this.newWidth100; this.newHeight10=this.newHeight100;
+    this.newWidth10=this.newWidth100; this.newHeight10=this.newHeight100;
     this.votedindexesissuecand10=this.votedindexesissuecand100;
     this.onetimenextflag='yes';this.deleteindex0idinitializeNext();}
 
@@ -168,9 +172,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.Coms10new=JSON.parse(response1.data[0].Coms)
       Storage.get(response1.data[0].s3file).then( res => {this.urlA=res;
        if(response1.data[0].newWidth!='') {
-          this.newWidth10=response1.data[0].newWidth; this.newHeight10=response1.data[0].newHeight}
-      });
-      this.initializerflag = "yes"; }).catch(error => {console.log(error.response1)});
+          this.newWidth10=response1.data[0].newWidth; this.newHeight10=response1.data[0].newHeight}});
+      this.initializerflag = "yes";  }).catch(error => {console.log(error.response1)});
     //Issue category-gets kill flags on whether overall issue category has been voted. votedindexesissue is an array of indicies, position0 index in this array is I0 categ, position1 index in this array is I1 categ
     this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemid).then((event4) => {console.log(event4)
       this.votedindexesissuecand10=event4.VotedIdsFlagArrayCand as unknown as any;});
@@ -204,7 +207,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.Motto100=response2.data[0].Motto; this.OverallYea100=response2.data[0].OverallYea;
       this.OverallNay100=response2.data[0].OverallNay; this.Coms100new=JSON.parse(response2.data[0].Coms)
       Storage.get(response2.data[0].s3file).then( res => {this.urlAnext=res
-       // if(response2.data[0].newWidth!='') {this.newWidth100=response2.data[0].newWidth; this.newHeight100=response2.data[0].newHeight}
+        if(response2.data[0].newWidth!='') {this.newWidth100=response2.data[0].newWidth; this.newHeight100=response2.data[0].newHeight}
       });
        this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemidnext).then((event5) => {
         this.votedindexesissuecand100=event5.VotedIdsFlagArrayCand as unknown as any;});
@@ -236,10 +239,10 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.District1000=response1.data[0].District;
       this.AllOffices1000=JSON.parse(response1.data[0].AllOffices);
       this.Website1000=response1.data[0].Website; this.PictureAttribution1000=response1.data[0].PictureAttribution;
-      this.Motto1000=response1.data[0].Motto; this.OverallYea100=response1.data[0].OverallYea;
+      this.Motto1000=response1.data[0].Motto; this.OverallYea1000=response1.data[0].OverallYea;
       this.OverallNay1000=response1.data[0].OverallNay; this.Coms1000new=JSON.parse(response1.data[0].Coms)
        Storage.get(response1.data[0].s3file).then( res => {this.urlA1000=res;
-        // if(response1.data[0].newWidth!='') {this.newWidth1000=response1.data[0].newWidth; this.newHeight1000=response1.data[0].newHeight}
+         if(response1.data[0].newWidth!='') {this.newWidth1000=response1.data[0].newWidth; this.newHeight1000=response1.data[0].newHeight}
        });
       this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,var1).then((event5) => {
         this.votedindexesissuecand1000=event5.VotedIdsFlagArrayCand as unknown as any;});
@@ -274,7 +277,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.Motto100=response2.data[0].Motto; this.OverallYea100=response2.data[0].OverallYea;
       this.OverallNay100=response2.data[0].OverallNay;this.Coms100new=JSON.parse(response2.data[0].Coms)
       Storage.get(response2.data[0].s3file).then( res => {this.urlAnext=res;
-       // if(response2.data[0].newWidth!='') {this.newWidth100=response2.data[0].newWidth; this.newHeight100=response2.data[0].newHeight}
+        if(response2.data[0].newWidth!='') {this.newWidth100=response2.data[0].newWidth; this.newHeight100=response2.data[0].newHeight}
       });
       this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemidindex1next).then((event5) => {
         this.votedindexesissuecand100=event5.VotedIdsFlagArrayCand as unknown as any;});

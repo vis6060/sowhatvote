@@ -47,6 +47,7 @@ export class AppComponent {
     }
   }
 
+  //2022MidtermElections. //StateExecutiveOffices.  USSenate. USHouse.  AllProfileNames.
   routeOnRefreshmidterm() {
     this.routeString=this.location.path();
     if (this.routeString == "/Midterm/InState" || this.routeString == "Midterm/AllUSA") {

@@ -35,7 +35,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   tabinstateendarrayitemid:string=""; tabinstateendarrayitemidnext:string=""; tabinstateendarrayitemidinitialize:string="";
   initializerflag=""; onetimenextflag=""; backflag=""; backflagnext=""; futureflag=""; initsearchflag=""; CandNeutralflag=""
   tabinstatelength="0"; tabinstatelengthnext="0";
-  clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
+  clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false; delayflag1:boolean=true; delayflag2:boolean=true;
   viewtoggle=""; urlA:string;   urlAnext:string; urlA1000:string; urlSearch:string; s3file10=""; s3file100=""; s3file1000=""; //signed url to the image stored in s3
   stateuser=""; loyalty=0; FindDistrict='https://www.senate.gov/senators/senators-contact.htm';
   click10=''; click11='';click12='';
@@ -68,9 +68,14 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     API.put("initializeuserarrayt4","/index", paramsp2).then(response2 => {console.log("success2");
     }).catch(error => {console.log(error.response2);});
   }
-  async delaytabPutIndex(ms: number) {
-    await new Promise(resolve => setTimeout(()=>this.putindextabinstate(), ms)).then(()=>console.log("fired"));
-  }
+
+  async delaytabPutIndex(ms: number) {await new Promise(resolve => setTimeout(()=>this.putindextabinstate(), ms)).then(()=>console.log("fired"));}
+
+//delay button, so user doesn't quickly click on it and spoil the array of cands
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
+
 
   viewtoggle1next() {window.scrollTo(0,0);
     this.CandName10= this.CandName1000; this.Party10=this.Party1000; this.State10=this.State1000;
@@ -236,7 +241,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     API.get("storeresultt4", "/storesenate/m", paramsp1).then(response1 => {
       this.CandName1000=var1; this.Party1000=response1.data[0].Party; this.State1000=response1.data[0].StateCand;
       this.Website1000=response1.data[0].Website; this.PictureAttribution1000=response1.data[0].PictureAttribution;
-      this.Motto1000=response1.data[0].Motto; this.OverallYea100=response1.data[0].OverallYea;
+      this.Motto1000=response1.data[0].Motto; this.OverallYea1000=response1.data[0].OverallYea;
       this.OverallNay1000=response1.data[0].OverallNay; this.s3file1000=response1.data[0].s3file;
       this.Coms1000=response1.data[0].Coms; this.Coms1000new=JSON.parse(response1.data[0].Coms)
       this.FirstComPrefer1000=response1.data[0].FirstComPrefer;this.SecondComPrefer1000=response1.data[0].SecondComPrefer; this.ThirdComPrefer1000=response1.data[0].ThirdComPrefer;
