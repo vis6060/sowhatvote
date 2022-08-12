@@ -50,7 +50,7 @@ export class AppComponent {
   //2022MidtermElections. //StateExecutiveOffices.  USSenate. USHouse.  AllProfileNames.
   routeOnRefreshmidterm() {
     this.routeString=this.location.path();
-    if (this.routeString == "/Midterm/InState" || this.routeString == "Midterm/AllUSA") {
+    if (this.routeString == "/2022MidtermElections/USSenate" || this.routeString == "/2022MidtermElections/USHouse" || this.routeString == "/2022MidtermElections/StateExecutiveOffices" || this.routeString == "/2022MidtermElections/AllProfileNames") {
       this.routeflagmidterm = "yes"
     }
   }

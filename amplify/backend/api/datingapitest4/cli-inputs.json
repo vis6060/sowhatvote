@@ -14,6 +14,181 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/userdbapi": {
+      "name": "/userdbapi",
+      "lambdaFunction": "test4fd94023c",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapiemail": {
+      "name": "/userdbapiemail",
+      "lambdaFunction": "test43b0b3a00",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapipic": {
+      "name": "/userdbapipic",
+      "lambdaFunction": "test495bc9237",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapimentor": {
+      "name": "/userdbapimentor",
+      "lambdaFunction": "test423bb4b77",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapimoney": {
+      "name": "/userdbapimoney",
+      "lambdaFunction": "test4d218251f",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapiindustry": {
+      "name": "/userdbapiindustry",
+      "lambdaFunction": "test41fefcd8a",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapioccup": {
+      "name": "/userdbapioccup",
+      "lambdaFunction": "test465e5ae90",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapiloyal": {
+      "name": "/userdbapiloyal",
+      "lambdaFunction": "test4af42caca",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapieditform": {
+      "name": "/userdbapieditform",
+      "lambdaFunction": "test4a76c29ff",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapitime": {
+      "name": "/userdbapitime",
+      "lambdaFunction": "test41334b0ce",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/userdbapizip": {
+      "name": "/userdbapizip",
+      "lambdaFunction": "test4a0f69b57",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1A": {
+      "name": "/itemapitab1A",
+      "lambdaFunction": "test4a5e6f765",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1Afor": {
+      "name": "/itemapitab1Afor",
+      "lambdaFunction": "test4ffbced64",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapi": {
+      "name": "/itemapi",
+      "lambdaFunction": "test46013265d",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapiupdates": {
+      "name": "/itemapiupdates",
+      "lambdaFunction": "test405b18b8e",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapistan1": {
+      "name": "/itemapistan1",
+      "lambdaFunction": "test42636d304",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapistan2": {
+      "name": "/itemapistan2",
+      "lambdaFunction": "test48b447cac",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapiunsub1": {
+      "name": "/itemapiunsub1",
+      "lambdaFunction": "test47ea9524c",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitabsmove": {
+      "name": "/itemapitabsmove",
+      "lambdaFunction": "test4f5842fbf",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitabsmove1": {
+      "name": "/itemapitabsmove1",
+      "lambdaFunction": "test4a322e49f",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1C": {
+      "name": "/itemapitab1C",
+      "lambdaFunction": "test4c5f88e03",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1Cfor": {
+      "name": "/itemapitab1Cfor",
+      "lambdaFunction": "test415d88713",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab2": {
+      "name": "/itemapitab2",
+      "lambdaFunction": "test4a75e8f79",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab3move": {
+      "name": "/itemapitab3move",
+      "lambdaFunction": "test4b4a1cccf",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab3Bmove": {
+      "name": "/itemapitab3Bmove",
+      "lambdaFunction": "test47a3302f2",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

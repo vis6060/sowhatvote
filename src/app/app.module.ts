@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
+//import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -36,18 +36,28 @@ import { AppComponent } from './app.component';
 import {DirectAccessGuardService} from "./direct-access-guard.service";
 import { AdAComponent } from './ad-a/ad-a.component';
 import { LoginboxComponent } from './loginbox/loginbox.component';
+import { Big5partaComponent } from './big5parta/big5parta.component';
+import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component';
+import { Big5partdComponent } from './big5partd/big5partd.component';
+import { Big5parteComponent } from './big5parte/big5parte.component';
+import { Big5partfComponent } from './big5partf/big5partf.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AdAComponent,
-    LoginboxComponent
+    LoginboxComponent,
+    Big5partaComponent,
+    Big5partaeditComponent,
+    Big5partdComponent,
+    Big5parteComponent,
+    Big5partfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LegacyAmplifyUiModule,
+  //  LegacyAmplifyUiModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatIconModule,

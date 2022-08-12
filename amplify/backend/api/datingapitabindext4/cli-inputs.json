@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/datingapitabindex": {
+      "name": "/datingapitabindex",
+      "lambdaFunction": "test494876372",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/datingapisearch": {
+      "name": "/datingapisearch",
+      "lambdaFunction": "test4d9e45dc3",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

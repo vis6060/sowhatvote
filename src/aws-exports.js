@@ -59,6 +59,21 @@ const awsmobile = {
             "name": "onetimestoret4",
             "endpoint": "https://hyoisymc0l.execute-api.us-west-2.amazonaws.com/staging",
             "region": "us-west-2"
+        },
+        {
+            "name": "datingapi1At4",
+            "endpoint": "https://3h3tix230e.execute-api.us-west-2.amazonaws.com/staging",
+            "region": "us-west-2"
+        },
+        {
+            "name": "datingapi1Ct4",
+            "endpoint": "https://4xsqpiz7v2.execute-api.us-west-2.amazonaws.com/staging",
+            "region": "us-west-2"
+        },
+        {
+            "name": "datingapitabindext4",
+            "endpoint": "https://fgs0ielll9.execute-api.us-west-2.amazonaws.com/staging",
+            "region": "us-west-2"
         }
     ],
     "aws_dynamodb_all_tables_region": "us-west-2",
@@ -105,6 +120,30 @@ const awsmobile = {
         },
         {
             "tableName": "midtermplaceholder-staging",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "masterzipcountymaptable",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "datingitemtracking-staging",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "datinginteraction-staging",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "datingreason-staging",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "datingitemtracking1A-staging",
+            "region": "us-west-2"
+        },
+        {
+            "tableName": "datingitemtracking1C-staging",
             "region": "us-west-2"
         }
     ],

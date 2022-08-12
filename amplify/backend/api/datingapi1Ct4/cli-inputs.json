@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "paths": {
+    "/itemapitab1Cinit1": {
+      "name": "/itemapitab1Cinit1",
+      "lambdaFunction": "test47b7da803",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1Cinit2": {
+      "name": "/itemapitab1Cinit2",
+      "lambdaFunction": "test4faf67dfe",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1Cdisp": {
+      "name": "/itemapitab1Cdisp",
+      "lambdaFunction": "test4ee794cde",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1Cpost": {
+      "name": "/itemapitab1Cpost",
+      "lambdaFunction": "test4d7ee1a53",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab1Cpost1": {
+      "name": "/itemapitab1Cpost1",
+      "lambdaFunction": "test4397a7e5f",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/interactionapi1C": {
+      "name": "/interactionapi1C",
+      "lambdaFunction": "test4347cd42e",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

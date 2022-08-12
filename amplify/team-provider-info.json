@@ -96,6 +96,52 @@
           "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/midtermplaceholder-staging/stream/2022-07-17T19:38:00.995",
           "partitionKeyName": "userid",
           "partitionKeyType": "S"
+        },
+        "masterzipcountymaptable": {
+          "tableName": "masterzipcountymaptable",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/masterzipcountymaptable",
+          "partitionKeyName": "zip",
+          "partitionKeyType": "S"
+        },
+        "datingitemtrackingstaging": {
+          "tableName": "datingitemtracking-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingitemtracking-staging",
+          "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingitemtracking-staging/stream/2022-05-08T15:29:39.277",
+          "partitionKeyName": "userid",
+          "partitionKeyType": "S"
+        },
+        "datinginteractionstaging": {
+          "tableName": "datinginteraction-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/datinginteraction-staging",
+          "partitionKeyName": "uuid",
+          "partitionKeyType": "S"
+        },
+        "datingreasonstaging": {
+          "tableName": "datingreason-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingreason-staging",
+          "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingreason-staging/stream/2022-05-08T20:33:10.432",
+          "partitionKeyName": "userid",
+          "partitionKeyType": "S"
+        },
+        "datingitemtracking1Astaging": {
+          "tableName": "datingitemtracking1A-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingitemtracking1A-staging",
+          "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingitemtracking1A-staging/stream/2022-05-18T15:30:27.312",
+          "partitionKeyName": "userid",
+          "partitionKeyType": "S"
+        },
+        "datingitemtracking1Cstaging": {
+          "tableName": "datingitemtracking1C-staging",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingitemtracking1C-staging",
+          "streamArn": "arn:aws:dynamodb:us-west-2:564256529450:table/datingitemtracking1C-staging/stream/2022-05-21T19:27:23.069",
+          "partitionKeyName": "userid",
+          "partitionKeyType": "S"
         }
       },
       "function": {
@@ -158,6 +204,214 @@
         "test4b064dd77": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
           "s3Key": "amplify-builds/test4b064dd77-5378586d5a4d36597649-build.zip"
+        },
+        "test4a0f69b57": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4a0f69b57-33755a5552516b4e464c-build.zip"
+        },
+        "test41fefcd8a": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test41fefcd8a-356a2b46672f692f7436-build.zip"
+        },
+        "test4af42caca": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4af42caca-3477424d5041396f6549-build.zip"
+        },
+        "test4397a7e5f": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4397a7e5f-72455768393051325548-build.zip"
+        },
+        "test48b447cac": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test48b447cac-617a6733373964373650-build.zip"
+        },
+        "test465e5ae90": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test465e5ae90-7469566d414c754b7057-build.zip"
+        },
+        "test4d218251f": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4d218251f-504472532f364a4d3537-build.zip"
+        },
+        "test494876372": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test494876372-743941594b626f576b70-build.zip"
+        },
+        "test4fd94023c": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4fd94023c-6d704e47364335327556-build.zip"
+        },
+        "test4f5842fbf": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4f5842fbf-397043476150376d4a4d-build.zip"
+        },
+        "test4d9e45dc3": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4d9e45dc3-45356663334a2f4e6c6d-build.zip"
+        },
+        "test4e0443a18": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4e0443a18-53306252666737597958-build.zip"
+        },
+        "test4ddb33a8e": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4ddb33a8e-34766a506b6e4864437a-build.zip"
+        },
+        "test4a75e8f79": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4a75e8f79-4738636839352f654433-build.zip"
+        },
+        "test46013265d": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test46013265d-484c7644687a36456c79-build.zip"
+        },
+        "test42636d304": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test42636d304-723057533475475a5950-build.zip"
+        },
+        "test4a5e6f765": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4a5e6f765-2b652f75424a745a5357-build.zip"
+        },
+        "test4a322e49f": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4a322e49f-51652f2f31424c543463-build.zip"
+        },
+        "test495bc9237": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test495bc9237-38757868575a39735077-build.zip"
+        },
+        "test4b46ecbf5": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4b46ecbf5-6f4f53346b364d444651-build.zip"
+        },
+        "test47ea9524c": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test47ea9524c-433557306b6b37714a67-build.zip"
+        },
+        "test405b18b8e": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test405b18b8e-335352354b79327a6868-build.zip"
+        },
+        "test43550eb81": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test43550eb81-3354716b3976555a6e4b-build.zip"
+        },
+        "test4ffbced64": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4ffbced64-46565a696f2f4b787934-build.zip"
+        },
+        "test4b4a1cccf": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4b4a1cccf-574b4879783858516b51-build.zip"
+        },
+        "test4035a24db": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4035a24db-53485665742b57536d4b-build.zip"
+        },
+        "test4dc065a28": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4dc065a28-427967615354766f3744-build.zip"
+        },
+        "test49997822e": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test49997822e-4e3066386e6f784e5057-build.zip"
+        },
+        "test474b48f23": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test474b48f23-5250516267396d783366-build.zip"
+        },
+        "test4766751aa": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4766751aa-4451394d2f59756c734e-build.zip"
+        },
+        "test4c3b5777c": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4c3b5777c-2b3247496a5943504d6c-build.zip"
+        },
+        "test4c6fcc28b": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4c6fcc28b-4a737a30414661483651-build.zip"
+        },
+        "test4faf67dfe": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4faf67dfe-323637762f6347484d42-build.zip"
+        },
+        "test47331df82": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test47331df82-33795635772b454b5759-build.zip"
+        },
+        "test47a3302f2": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test47a3302f2-4968316d535375695972-build.zip"
+        },
+        "test4347cd42e": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4347cd42e-5330512b683961396535-build.zip"
+        },
+        "test4ee794cde": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4ee794cde-2f706954514664765130-build.zip"
+        },
+        "test423bb4b77": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test423bb4b77-626f65416c592b652b74-build.zip"
+        },
+        "test47b7da803": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test47b7da803-5a47636a77433070376c-build.zip"
+        },
+        "test4b98912da": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4b98912da-4e414b74634f7a2f3437-build.zip"
+        },
+        "test4154b45e5": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4154b45e5-593173372f66387a4972-build.zip"
+        },
+        "test4d7ee1a53": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4d7ee1a53-4a634136652b765a4834-build.zip"
+        },
+        "test43b0b3a00": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test43b0b3a00-6f325958624833786762-build.zip"
+        },
+        "test4c5f88e03": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4c5f88e03-3364757477316838394d-build.zip"
+        },
+        "test4687520dc": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4687520dc-6f724a384d79426e3778-build.zip"
+        },
+        "test4b1a23fad": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4b1a23fad-4d537155774c31465848-build.zip"
+        },
+        "test45777a166": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test45777a166-54645369314c63347663-build.zip"
+        },
+        "test416848025": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test416848025-335471336b374145365a-build.zip"
+        },
+        "test41334b0ce": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test41334b0ce-7135726a37533842466f-build.zip"
+        },
+        "test4a76c29ff": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4a76c29ff-5a794558416866333933-build.zip"
+        },
+        "test423867d56": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test423867d56-57345a5469346b465159-build.zip"
+        },
+        "test415d88713": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test415d88713-654346337830785a3975-build.zip"
         }
       }
     }
