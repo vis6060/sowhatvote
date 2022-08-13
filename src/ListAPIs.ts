@@ -72,5 +72,5 @@
 //API datingapi1Ct4/itemapitab1Cpost1 (post avail) corresponds to datingitemtracking1C table and *e5f function(partition key is userid)
 //API datingapi1Ct4/interactionapi1C (get, put avail) corresponds to datinginteraction table and *42e function(partition key is userid)
 
-//API datingapitabindext4/datingapitabindex (has index of main displays tab index)  corresponds to datingreason table and *372da function(partition key is userid)
+//API datingapitabindext4/datingapitabindex (has index of main displays tab index)  corresponds to datingreason table and *372 function(partition key is userid)
 //API datingapitabindext4/datingapisearch (get, post avail)  corresponds to datingreason table and *dc3 function(partition key is userid)

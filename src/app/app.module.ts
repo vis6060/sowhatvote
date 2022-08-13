@@ -81,4 +81,6 @@ import { Big5partfComponent } from './big5partf/big5partf.component';
   providers: [DirectAccessGuardService],
   bootstrap: [AppComponent]
 })
+//@ts-ignore
 export class AppModule { }
+//@ts-ignore

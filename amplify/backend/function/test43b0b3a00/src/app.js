@@ -17,14 +17,14 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-let tableName = "";
+let tableName = "datinguserdb";
 if (process.env.ENV && process.env.ENV !== "NONE") {
   tableName = tableName + '-' + process.env.ENV;
 }
 
 const userIdPresent = false; // TODO: update in case is required to use that definition
-const partitionKeyName = "";
-const partitionKeyType = "";
+const partitionKeyName = "userid";
+const partitionKeyType = "S";
 const sortKeyName = "";
 const sortKeyType = "";
 const hasSortKey = sortKeyName !== "";
@@ -34,7 +34,7 @@ const hashKeyPath = '/:' + partitionKeyName;
 const sortKeyPath = hasSortKey ? '/:' + sortKeyName : '';
 
 // declare a new express app
-const app = express()
+var app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
@@ -78,7 +78,19 @@ app.get(path + hashKeyPath, function(req, res) {
 
   let queryParams = {
     TableName: tableName,
-    KeyConditions: condition
+    KeySchema: [
+      { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [
+      { AttributeName: "userid", AttributeType: "S" }
+    ],
+    KeyConditionExpression: "#zip = :zipppp",
+    ExpressionAttributeNames:{
+      "#zip": "userid"
+    },
+    ExpressionAttributeValues: {
+      ":zipppp": req.query.userid
+    }
   }
 
   dynamodb.query(queryParams, (err, data) => {
@@ -91,55 +103,9 @@ app.get(path + hashKeyPath, function(req, res) {
   });
 });
 
-/*****************************************
- * HTTP Get method for get single object *
- *****************************************/
-
-app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
-  const params = {};
-  if (userIdPresent && req.apiGateway) {
-    params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
-  } else {
-    params[partitionKeyName] = req.params[partitionKeyName];
-    try {
-      params[partitionKeyName] = convertUrlType(req.params[partitionKeyName], partitionKeyType);
-    } catch(err) {
-      res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
-    }
-  }
-  if (hasSortKey) {
-    try {
-      params[sortKeyName] = convertUrlType(req.params[sortKeyName], sortKeyType);
-    } catch(err) {
-      res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
-    }
-  }
-
-  let getItemParams = {
-    TableName: tableName,
-    Key: params
-  }
-
-  dynamodb.get(getItemParams,(err, data) => {
-    if(err) {
-      res.statusCode = 500;
-      res.json({error: 'Could not load items: ' + err.message});
-    } else {
-      if (data.Item) {
-        res.json(data.Item);
-      } else {
-        res.json(data) ;
-      }
-    }
-  });
-});
-
-
 /************************************
-* HTTP put method for insert object *
-*************************************/
+ * HTTP put method for insert object *
+ *************************************/
 
 app.put(path, function(req, res) {
 
@@ -149,9 +115,24 @@ app.put(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [
+      { AttributeName: "userid", AttributeType: "S" }
+    ],
+    Key: {
+      "userid": req.body.userid,
+    },
+    UpdateExpression: "set emailshareagree = :val10",
+    ExpressionAttributeValues: {
+      ":val10": req.body.emailshareagree,
+    },
+    ReturnValues: "ALL_OLD"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
@@ -162,8 +143,8 @@ app.put(path, function(req, res) {
 });
 
 /************************************
-* HTTP post method for insert object *
-*************************************/
+ * HTTP post method for insert object *
+ *************************************/
 
 app.post(path, function(req, res) {
 
@@ -173,9 +154,25 @@ app.post(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [
+      { AttributeName: "userid", AttributeType: "S" }
+    ],
+    Key: {
+      "userid": req.body.userid,
+    },
+    UpdateExpression: "set facebookbusername = :val11",
+    ExpressionAttributeValues: {
+      ":val11": req.body.facebookbusername,
+    },
+    ReturnValues: "ALL_OLD"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
       res.json({error: err, url: req.url, body: req.body});
@@ -185,9 +182,10 @@ app.post(path, function(req, res) {
   });
 });
 
+
 /**************************************
-* HTTP remove method to delete object *
-***************************************/
+ * HTTP remove method to delete object *
+ ***************************************/
 
 app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
   const params = {};
@@ -195,7 +193,7 @@ app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   } else {
     params[partitionKeyName] = req.params[partitionKeyName];
-     try {
+    try {
       params[partitionKeyName] = convertUrlType(req.params[partitionKeyName], partitionKeyType);
     } catch(err) {
       res.statusCode = 500;

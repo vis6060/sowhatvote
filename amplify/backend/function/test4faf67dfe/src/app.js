@@ -17,14 +17,14 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-let tableName = "";
+let tableName = "datingitemtracking1C";
 if (process.env.ENV && process.env.ENV !== "NONE") {
   tableName = tableName + '-' + process.env.ENV;
 }
 
 const userIdPresent = false; // TODO: update in case is required to use that definition
-const partitionKeyName = "";
-const partitionKeyType = "";
+const partitionKeyName = "userid";
+const partitionKeyType = "S";
 const sortKeyName = "";
 const sortKeyType = "";
 const hasSortKey = sortKeyName !== "";
@@ -34,7 +34,7 @@ const hashKeyPath = '/:' + partitionKeyName;
 const sortKeyPath = hasSortKey ? '/:' + sortKeyName : '';
 
 // declare a new express app
-const app = express()
+var app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
@@ -54,6 +54,7 @@ const convertUrlType = (param, type) => {
       return param;
   }
 }
+
 
 /********************************
  * HTTP Get method for list objects *
@@ -136,10 +137,10 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
   });
 });
 
-
 /************************************
-* HTTP put method for insert object *
-*************************************/
+ * HTTP put method for insert object *
+ *************************************/
+
 
 app.put(path, function(req, res) {
 
@@ -147,23 +148,61 @@ app.put(path, function(req, res) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
 
+  // let vari=req.body.dealsPer1;
+//console.log(vari)
+//console.log(vari[0].age)
+
+//  for (let i = 0; i < 4; i++) {
+//    array1[i]=vari[i].userid
+//  }
+//console.log(array1)
+
+  // let index=req.body.arrayindex;
+
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      {AttributeName: "userid", KeyType: "RANGE"}  //Sort key
+    ],
+    AttributeDefinitions: [
+      {AttributeName: "userid", AttributeType: "S"}
+    ],
+    Key: {
+      "userid":req.body.rowid ,
+    },
+    //    UpdateExpression: "set #ri = list_append(:vals, #ri)",
+    UpdateExpression: "set itemidstab1C = list_append(:val12, itemidstab1C)",
+    //   ExpressionAttributeNames: {
+    //     "#ri": "itemidstab1A"
+    //   },
+    ExpressionAttributeValues: {
+      //     ":vals": {
+      //       "L": [
+      //         { "S": req.body.userid },
+      //       ]
+      //     }
+
+      ":val12": [req.body.userid],
+      //   ":val13": req.body.arrayindex
+    },
+    ReturnValues: "ALL_NEW"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
-      res.json({ error: err, url: req.url, body: req.body });
-    } else{
-      res.json({ success: 'put call succeed!', url: req.url, data: data })
+      res.json({error: err, url: req.url, body: req.body});
+    } else {
+      res.json({success: 'put call succeed!', url: req.url, data: data})
     }
   });
 });
 
+
 /************************************
-* HTTP post method for insert object *
-*************************************/
+ * HTTP post method for insert object *
+ *************************************/
 
 app.post(path, function(req, res) {
 
@@ -185,9 +224,10 @@ app.post(path, function(req, res) {
   });
 });
 
+
 /**************************************
-* HTTP remove method to delete object *
-***************************************/
+ * HTTP remove method to delete object *
+ ***************************************/
 
 app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
   const params = {};
@@ -195,7 +235,7 @@ app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   } else {
     params[partitionKeyName] = req.params[partitionKeyName];
-     try {
+    try {
       params[partitionKeyName] = convertUrlType(req.params[partitionKeyName], partitionKeyType);
     } catch(err) {
       res.statusCode = 500;
