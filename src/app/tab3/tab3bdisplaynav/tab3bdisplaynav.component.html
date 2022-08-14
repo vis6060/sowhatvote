@@ -1,0 +1,196 @@
+
+<!-- tab3B display -->
+
+<a *ngIf="endofarray3B=='yes'"> Sorry, no more matches. Please visit other sections.
+</a>
+
+<a *ngIf="endofarray3B!='yes'"> <b> We found {{tab3Blength}} matches!</b>
+
+  <!-- on screen refresh-ngoinit executes this for index0 itemid -->
+  <a *ngIf="initializerflag=='yes' && onetimenextflag==''">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer10.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer10.countyuser}}, {{dealsPer10.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer10.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlA}} [ngStyle]= "{'width': newWidthA + 'px', 'height':newHeightA + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer10.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer10.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer10.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer10.menteeagree}}</mat-card-subtitle>
+        <!--   <mat-card-subtitle> <b> Education: </b> {{dealsPer10.education}}</mat-card-subtitle> -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer10.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer10.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer10.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+        <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+        </mat-button-toggle-group>
+      </mat-card>
+
+
+      <mat-card class="example-card">
+        <h5><b> Please choose to connect with {{dealsPer10.profilename}} as they had in the past (more than 30days ago) showed interest to connect with you. </b> </h5>
+        <button  mat-button [disabled]="clicked" (click)="connectmetab63B(dealsPer10.userid)" (click)="onetimenextconnectdislike(); clicked = true;"
+        >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked" (click)="disliketab53B(dealsPer10.userid)" (click)="onetimenextconnectdislike(); clicked = true;"
+        >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="onetimenextnext(); clicked = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+
+  <!-- when user clicks on "onetimenext" connectme function index1 itemid below already loaded in browser is displayed -->
+  <a *ngIf="initializerflag=='yes' && onetimenextflag=='yes'">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer100.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer100.countyuser}}, {{dealsPer100.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer100.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlAnext}} [ngStyle]= "{'width': newWidthAnext + 'px', 'height':newHeightAnext + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer100.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer100.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer100.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer100.menteeagree}}</mat-card-subtitle>
+        <!--   <mat-card-subtitle> <b> Education: </b> {{dealsPer100.education}}</mat-card-subtitle> -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer100.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer100.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer100.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+        <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+        </mat-button-toggle-group>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Please choose to connect with {{dealsPer100.profilename}} as they had in the past (more than 30days ago) showed interest to connect with you. </b> </h5>
+        <button mat-button [disabled]="clicked1" (click)="connectmetab63B(dealsPer100.userid)" (click)="viewtoggle1connectdislike(); clicked1 = true;"
+        >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked1" (click)="disliketab53B(dealsPer100.userid)" (click)="viewtoggle1connectdislike(); clicked1 = true;"
+        >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+
+  <!-- user has seen index0, index1 from above initilalizers and now the user  -->
+  <a *ngIf="viewtoggle=='yes' && initializerflag==''">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer10.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer10.countyuser}}, {{dealsPer10.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer10.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlA}} [ngStyle]= "{'width': newWidthA + 'px', 'height':newHeightA + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer10.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer10.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer10.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer10.menteeagree}}</mat-card-subtitle>
+        <!--  <mat-card-subtitle> <b> Education: </b> {{dealsPer10.education}}</mat-card-subtitle> -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer10.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer10.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer10.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+        <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+        </mat-button-toggle-group>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Please choose to connect with {{dealsPer10.profilename}} as they had in the past (more than 30days ago) showed interest to connect with you. </b> </h5>
+        <button mat-button [disabled]="clicked" (click)="connectmetab63B(dealsPer10.userid)" (click)="viewtoggle2connectdislike(); clicked = true;"
+        >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked" (click)="disliketab53B(dealsPer10.userid)" (click)="viewtoggle2connectdislike(); clicked = true;"
+        >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2back(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2next(); clicked = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+
+  <a *ngIf="viewtoggle=='no' && initializerflag==''">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer100.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer100.countyuser}}, {{dealsPer100.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer100.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlAnext}} [ngStyle]= "{'width': newWidthAnext + 'px', 'height':newHeightAnext + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer100.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer100.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer100.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer100.menteeagree}}</mat-card-subtitle>
+        <!--   <mat-card-subtitle> <b> Education: </b> {{dealsPer100.education}}</mat-card-subtitle>  -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer100.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer100.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer100.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+        <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+          <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+        </mat-button-toggle-group>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <h5><b> Please choose to connect with {{dealsPer100.profilename}} as they had in the past (more than 30days ago) showed interest to connect with you. </b> </h5>
+        <button mat-button  [disabled]="clicked1" (click)="connectmetab63B(dealsPer100.userid)" (click)="viewtoggle1connectdislike(); clicked1 = true;"
+        >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked1" (click)="disliketab53B(dealsPer100.userid)" (click)="viewtoggle1connectdislike(); clicked1 = true;"
+        >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+</a>

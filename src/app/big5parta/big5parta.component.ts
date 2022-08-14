@@ -57,7 +57,7 @@ export class Big5partaComponent implements OnInit {
   async zipstore(event:any) {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp6 = {headers: {}, response: true, queryStringParameters: {zipq:this.zipuserentered} };
-    API.get("datingapi", "/userdbapizip/m", paramsp6).then(responseF => {console.log(responseF.data[0].county);
+    API.get("datingapitest4", "/userdbapizip/m", paramsp6).then(responseF => {console.log(responseF.data[0].county);
       this.zipdatabase=responseF.data[0].zip; this.countydatabase=responseF.data[0].county; this.statedatabase=responseF.data[0].state;
 
       if (this.zipuserentered==this.zipdatabase) {
@@ -66,7 +66,7 @@ export class Big5partaComponent implements OnInit {
         this.ziperrorflag="";
         const paramspG = {body: {userid: user.attributes.sub, zipuserentered:this.zipuserentered, countyuser:this.countydatabase ,
             stateuser:this.statedatabase }}
-        API.post("datingapi", "/userdbapioccup", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
+        API.post("datingapitest4", "/userdbapioccup", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
         this.countytab=this.countydatabase; this.statetab=this.statedatabase;
         console.log(this.countytab)
       }
@@ -83,7 +83,7 @@ export class Big5partaComponent implements OnInit {
   //this will be a true dynamobb.post API (where a new user is created in SWV DB once they enter their age), rest all api calls subsquently below will be dynamodb.update
   agestore1=""; unsubscribematchingme=''; genderstore1=""; educationstore1="";
   stateuser=""; loyalty=0; profilename="";  newWidth=0; newHeight=0; origWidth=0; origHeight=0;
-  profilefullycomplete=""; profilecompPartA="no"; profilecompPartB="no"; profilecompPartC="no"; profilecompPartD="no"; profilecompPartE="no";
+   profilecompPartA="no"; profilecompPartB="no"; profilecompPartC="no"; profilecompPartD="no"; profilecompPartE="no";
   profilecompPartF="no";
 
   Extraoverall=0; final9type=""; userdescription="";
@@ -109,17 +109,17 @@ export class Big5partaComponent implements OnInit {
         timeunix:new Date().valueOf(), lastmeetupviewdate: new Date().valueOf(),
         lastmeetupviewdatecompare: new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
       }}
-    API.post("datingapi", "/userdbapiage", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});
+    API.post("datingapitest4", "/userdbapiage", paramspE).then(responseE => {console.log("successE");}).catch(error => {console.log(error.responseE);});
 
     // create the array with itemids for the user to view
     const paramsp1 = {body: {userid: user.attributes.sub, itemidstab1A:[]}}
-    API.post("datingapi1A", "/itemapitab1Ainit1", paramsp1).then(response1 => {console.log("success1");}).catch(error => {console.log(error.response1);});
+    API.post("datingapi1At4", "/itemapitab1Ainit1", paramsp1).then(response1 => {console.log("success1");}).catch(error => {console.log(error.response1);});
 
     const paramsp2 = {body: {userid: user.attributes.sub, itemidstab1B:[], itemidstab2:[], itemidstab3:[], itemidstab3B:[], itemidstab5:[], itemidstab6:[], itemidstab6B:[], itemidstab6C:[]}}
-    API.post("datingapi", "/itemapitab1A", paramsp2).then(response2 => {console.log("success2");}).catch(error => {console.log(error.response2);});
+    API.post("datingapitest4", "/itemapitab1A", paramsp2).then(response2 => {console.log("success2");}).catch(error => {console.log(error.response2);});
 
     const paramsp3 = {body: {userid: user.attributes.sub, itemidstab1C:[]}}
-    API.post("datingapi1C", "/itemapitab1Cinit1", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.post("datingapi1Ct4", "/itemapitab1Cinit1", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
 
   }
 
@@ -129,7 +129,7 @@ export class Big5partaComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     console.log(this.mentoragree)
     const paramspF = {body: {userid: user.attributes.sub, mentoragree:"Yes"}}
-    API.put("datingapi", "/userdbapimentor", paramspF).then(responseF => {console.log("successF");}).catch(error => {console.log(error.responseF);});
+    API.put("datingapitest4", "/userdbapimentor", paramspF).then(responseF => {console.log("successF");}).catch(error => {console.log(error.responseF);});
   }
 
   //user checks a box if they agree to become a mentee
@@ -138,7 +138,7 @@ export class Big5partaComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     console.log(this.menteeagree)
     const paramspG = {body: {userid: user.attributes.sub, menteeagree: "Yes"}}
-    API.post("datingapi", "/userdbapimentor", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
+    API.post("datingapitest4", "/userdbapimentor", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
   }
 
   //user checks a box if they want to make side money
@@ -147,7 +147,7 @@ export class Big5partaComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     console.log(this.makemoneyside)
     const paramspH = {body: {userid: user.attributes.sub, makemoneyside:this.makemoneyside}}
-    API.post("datingapi", "/userdbapimoney", paramspH).then(responseH => {console.log("successH");}).catch(error => {console.log(error.responseH);});
+    API.post("datingapitest4", "/userdbapimoney", paramspH).then(responseH => {console.log("successH");}).catch(error => {console.log(error.responseH);});
   }
 
   //user checks a box if they are a veteran
@@ -157,7 +157,7 @@ export class Big5partaComponent implements OnInit {
     this.vetflag="yes";
     console.log(this.veteran)
     const paramspI = {body: {userid: user.attributes.sub, veteran:"Yes"}}
-    API.put("datingapi", "/userdbapimoney", paramspI).then(responseI => {console.log("successI");}).catch(error => {console.log(error.responseI);});
+    API.put("datingapitest4", "/userdbapimoney", paramspI).then(responseI => {console.log("successI");}).catch(error => {console.log(error.responseI);});
   }
 
   //this changes to true when the user checks the box that they agree to share email address
@@ -166,14 +166,14 @@ export class Big5partaComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     console.log(this.emailshareagree)
     const paramspB = {body: {userid: user.attributes.sub, emailshareagree:this.emailshareagree}}
-    API.put("datingapi", "/userdbapiemail", paramspB).then(responseB => {console.log("successB");}).catch(error => {console.log(error.responseB);});
+    API.put("datingapitest4", "/userdbapiemail", paramspB).then(responseB => {console.log("successB");}).catch(error => {console.log(error.responseB);});
   }
 
   //record that Section A is complete.
   async seccompleteA() {
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartA"}}
-    API.post("datingapi", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
   }
 
 }

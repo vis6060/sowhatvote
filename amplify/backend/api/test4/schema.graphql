@@ -237,9 +237,9 @@ type Query {
   getDatinguserdbStagingsfacebook(userid: String!, facebookvalue: String!, filter: TableDatinguserdbStagingFilterInput): LoyaltyDatinguserdbStagings
   	getBatchDatinguserdbStaging(ids: [String!]): PaginatedDatinguserdbStagings
   listDatinguserdbStagings(filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatinguserdbStagingConnection
-   listDatinguserdbStagingsOneBigArray1A(userid: String!, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
-  listDatinguserdbStagingsOneBigArray(userid: String!, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
-   listDatinguserdbStagingsOneBigArray1C(userid: String!, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+   listDatinguserdbStagingsOneBigArray1A(userid: String!,countyuser: String, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+  listDatinguserdbStagingsOneBigArray(userid: String!,stateuser: String, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
+   listDatinguserdbStagingsOneBigArray1C(userid: String!, profilecompPartF:String, filter: TableDatinguserdbStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
   getDatingitemtrackingStaging(userid: String!): DatingitemtrackingStaging
   listDatingitemtrackingStagings(filter: TableDatingitemtrackingStagingFilterInput, limit: Int, nextToken: String): DatingitemtrackingStagingConnection
   getHouseCands(CandName: String): HouseCands

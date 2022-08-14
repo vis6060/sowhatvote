@@ -1,0 +1,179 @@
+
+<!-- tab1B display -same state -->
+
+<a *ngIf="endofarray2=='yes'"> Sorry, no more matches. Please visit other sections.
+</a>
+
+<a *ngIf="endofarray2!='yes'"> <b> We found {{tab2length}} matches!</b>
+
+  <!-- on screen refresh-ngoinit executes this for index0 itemid -->
+  <a *ngIf="initializerflag=='yes' && onetimenextflag==''">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer10.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer10.countyuser}}, {{dealsPer10.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer10.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlA}} [ngStyle]= "{'width': newWidthA + 'px', 'height':newHeightA + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer10.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer10.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer10.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer10.menteeagree}}</mat-card-subtitle>
+        <!--   <mat-card-subtitle> <b> Education: </b> {{dealsPer10.education}}</mat-card-subtitle> -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer10.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer10.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer10.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Facebook username: </b>{{dealsPer10.facebookbusername}}</mat-card-subtitle>
+        <a *ngIf="emailshareflag10=='yes'" >
+          <mat-card-subtitle> <b> Email: </b>{{dealsPer10.email}}</mat-card-subtitle>
+        </a>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit1}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit1}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="onetimenextnext(); clicked = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+
+  <!-- when user clicks on "onetimenext" connectme function index1 itemid below already loaded in browser is displayed -->
+  <a *ngIf="initializerflag=='yes' && onetimenextflag=='yes'">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer100.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer100.countyuser}}, {{dealsPer100.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer100.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlAnext}} [ngStyle]= "{'width': newWidthAnext + 'px', 'height':newHeightAnext + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer100.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer100.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer100.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer100.menteeagree}}</mat-card-subtitle>
+        <!--   <mat-card-subtitle> <b> Education: </b> {{dealsPer100.education}}</mat-card-subtitle> -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer100.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer100.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer100.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Facebook username: </b>{{dealsPer100.facebookbusername}}</mat-card-subtitle>
+        <a *ngIf="emailshareflag100=='yes'" >
+          <mat-card-subtitle> <b> Email: </b>{{dealsPer100.email}}</mat-card-subtitle>
+        </a>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit2}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+
+  <!-- user has seen index0, index1 from above initilalizers and now the user  -->
+  <a *ngIf="viewtoggle=='yes' && initializerflag==''">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer10.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer10.countyuser}}, {{dealsPer10.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer10.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlA}} [ngStyle]= "{'width': newWidthA + 'px', 'height':newHeightA + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer10.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer10.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer10.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer10.menteeagree}}</mat-card-subtitle>
+        <!--  <mat-card-subtitle> <b> Education: </b> {{dealsPer10.education}}</mat-card-subtitle> -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer10.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer10.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer10.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Facebook username: </b>{{dealsPer10.facebookbusername}}</mat-card-subtitle>
+        <a *ngIf="emailshareflag10=='yes'" >
+          <mat-card-subtitle> <b> Email: </b>{{dealsPer10.email}}</mat-card-subtitle>
+        </a>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit1}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit1}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2back(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2next(); clicked = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+
+  <a *ngIf="viewtoggle=='no' && initializerflag==''">
+    <a style="text-align:center;">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-card-header>
+          <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+          <mat-card-title>{{dealsPer100.profilename}}</mat-card-title>
+          <mat-card-subtitle>{{dealsPer100.countyuser}}, {{dealsPer100.stateuser}}</mat-card-subtitle>
+          <mat-card-subtitle>{{dealsPer100.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <img src={{urlAnext}} [ngStyle]= "{'width': newWidthAnext + 'px', 'height':newHeightAnext + 'px'}">
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Industry: </b> {{dealsPer100.industrylevel2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPer100.mentoragree}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Occupation: </b> {{dealsPer100.occup}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPer100.menteeagree}}</mat-card-subtitle>
+        <!--   <mat-card-subtitle> <b> Education: </b> {{dealsPer100.education}}</mat-card-subtitle>  -->
+        <mat-card-subtitle> <b> Veteran: </b> {{dealsPer100.veteran}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPer100.loyalty}}</mat-card-subtitle>
+        <mat-card-subtitle><b> Description: </b>{{dealsPer100.userdescription}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Facebook username: </b>{{dealsPer100.facebookbusername}}</mat-card-subtitle>
+        <a *ngIf="emailshareflag100=='yes'" >
+          <mat-card-subtitle> <b> Email: </b>{{dealsPer100.email}}</mat-card-subtitle>
+        </a>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit2}}</mat-card-subtitle>
+        <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit2}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+      </mat-card>
+    </a>
+  </a>
+</a>

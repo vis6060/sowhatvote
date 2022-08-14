@@ -6360,12 +6360,13 @@ export class APIService {
   }
   async ListDatinguserdbStagingsOneBigArray1A(
     userid: string,
+    countyuser?: string,
     filter?: TableDatinguserdbStagingFilterInput,
     limit?: number,
     nextToken?: string
   ): Promise<ListDatinguserdbStagingsOneBigArray1AQuery> {
-    const statement = `query ListDatinguserdbStagingsOneBigArray1A($userid: String!, $filter: TableDatinguserdbStagingFilterInput, $limit: Int, $nextToken: String) {
-        listDatinguserdbStagingsOneBigArray1A(userid: $userid, filter: $filter, limit: $limit, nextToken: $nextToken) {
+    const statement = `query ListDatinguserdbStagingsOneBigArray1A($userid: String!, $countyuser: String, $filter: TableDatinguserdbStagingFilterInput, $limit: Int, $nextToken: String) {
+        listDatinguserdbStagingsOneBigArray1A(userid: $userid, countyuser: $countyuser, filter: $filter, limit: $limit, nextToken: $nextToken) {
           __typename
           items {
             __typename
@@ -6377,6 +6378,9 @@ export class APIService {
     const gqlAPIServiceArguments: any = {
       userid
     };
+    if (countyuser) {
+      gqlAPIServiceArguments.countyuser = countyuser;
+    }
     if (filter) {
       gqlAPIServiceArguments.filter = filter;
     }
@@ -6395,12 +6399,13 @@ export class APIService {
   }
   async ListDatinguserdbStagingsOneBigArray(
     userid: string,
+    stateuser?: string,
     filter?: TableDatinguserdbStagingFilterInput,
     limit?: number,
     nextToken?: string
   ): Promise<ListDatinguserdbStagingsOneBigArrayQuery> {
-    const statement = `query ListDatinguserdbStagingsOneBigArray($userid: String!, $filter: TableDatinguserdbStagingFilterInput, $limit: Int, $nextToken: String) {
-        listDatinguserdbStagingsOneBigArray(userid: $userid, filter: $filter, limit: $limit, nextToken: $nextToken) {
+    const statement = `query ListDatinguserdbStagingsOneBigArray($userid: String!, $stateuser: String, $filter: TableDatinguserdbStagingFilterInput, $limit: Int, $nextToken: String) {
+        listDatinguserdbStagingsOneBigArray(userid: $userid, stateuser: $stateuser, filter: $filter, limit: $limit, nextToken: $nextToken) {
           __typename
           items {
             __typename
@@ -6412,6 +6417,9 @@ export class APIService {
     const gqlAPIServiceArguments: any = {
       userid
     };
+    if (stateuser) {
+      gqlAPIServiceArguments.stateuser = stateuser;
+    }
     if (filter) {
       gqlAPIServiceArguments.filter = filter;
     }
@@ -6430,12 +6438,13 @@ export class APIService {
   }
   async ListDatinguserdbStagingsOneBigArray1C(
     userid: string,
+    profilecompPartF?: string,
     filter?: TableDatinguserdbStagingFilterInput,
     limit?: number,
     nextToken?: string
   ): Promise<ListDatinguserdbStagingsOneBigArray1CQuery> {
-    const statement = `query ListDatinguserdbStagingsOneBigArray1C($userid: String!, $filter: TableDatinguserdbStagingFilterInput, $limit: Int, $nextToken: String) {
-        listDatinguserdbStagingsOneBigArray1C(userid: $userid, filter: $filter, limit: $limit, nextToken: $nextToken) {
+    const statement = `query ListDatinguserdbStagingsOneBigArray1C($userid: String!, $profilecompPartF: String, $filter: TableDatinguserdbStagingFilterInput, $limit: Int, $nextToken: String) {
+        listDatinguserdbStagingsOneBigArray1C(userid: $userid, profilecompPartF: $profilecompPartF, filter: $filter, limit: $limit, nextToken: $nextToken) {
           __typename
           items {
             __typename
@@ -6447,6 +6456,9 @@ export class APIService {
     const gqlAPIServiceArguments: any = {
       userid
     };
+    if (profilecompPartF) {
+      gqlAPIServiceArguments.profilecompPartF = profilecompPartF;
+    }
     if (filter) {
       gqlAPIServiceArguments.filter = filter;
     }

@@ -74,3 +74,48 @@
 
 //API datingapitabindext4/datingapitabindex (has index of main displays tab index)  corresponds to datingreason table and *372 function(partition key is userid)
 //API datingapitabindext4/datingapisearch (get, post avail)  corresponds to datingreason table and *dc3 function(partition key is userid)
+
+//list of graphQL APIs from test3 folder copied into this test4 project
+//this.api.UpdateConnectButton
+//this.api.UpdateDislikeButton
+//this.api.NextButtonDatingitemtrackingStagingtab1A
+//this.api.GetDatinguserdbStaging
+//BackinitializeButtonDatingitemtrackingStagingtab1A
+//NextButtonDatingitemtrackingStagingtab1B
+//BackinitializeButtonDatingitemtrackingStagingtab1B
+//NextButtonDatingitemtrackingStagingtab1C
+//BackinitializeButtonDatingitemtrackingStagingtab1C
+//NextButtonDatingitemtrackingStagingtab2
+//BackinitializeButtonDatingitemtrackingStagingtab2
+//ListDatinguserdbStagingsQuery
+//NextButtonDatingitemtrackingStagingtab3
+//BackinitializeButtonDatingitemtrackingStagingtab3
+//NextButtonDatingitemtrackingStagingtab3B
+//BackinitializeButtonDatingitemtrackingStagingtab3B
+//Updatetab3Expiration30days
+//UpdateAcceptRequestatb3Button
+//UpdateDeclineRequestatb3Button
+//NextButtonDatingitemtrackingStagingtab5
+//BackinitializeButtonDatingitemtrackingStagingtab5
+//NextButtonDatingitemtrackingStagingtab6B
+//BackinitializeButtonDatingitemtrackingStagingtab6B
+//NextButtonDatingitemtrackingStagingtab6C
+//BackinitializeButtonDatingitemtrackingStagingtab6C
+//NextButtonDatingitemtrackingStagingtab6
+//BackinitializeButtonDatingitemtrackingStagingtab6
+//Updatetab6Expiration30days
+//RemoveDatingitemtrackingStagingtab1A
+//RemoveDatingitemtrackingStagingtab1B
+//RemoveDatingitemtrackingStagingtab1C
+//GetLoyaltytab3B6Cindex
+//AllDatinguserdbStagingsByStateIndus1
+//AllDatinguserdbStagingsByCountyAge1
+//AllDatinguserdbStagingsByCountyGender1
+//AllDatinguserdbStagingsByStateAge1
+//AllDatinguserdbStagingsByStateGender1
+//AllDatinguserdbStagingsByOccupIndus1
+//AllDatinguserdbStagingsByStateLoyalty
+//GetDatinguserdbStagingsfacebook
+//ListDatinguserdbStagingsOneBigArray1A
+//ListDatinguserdbStagingsOneBigArray
+//ListDatinguserdbStagingsOneBigArray1C

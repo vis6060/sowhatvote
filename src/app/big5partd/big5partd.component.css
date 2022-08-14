@@ -1,0 +1,57 @@
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.demo-stepper {
+  margin-top: 8px;
+}
+
+.demo-form-field1 {
+  display: flex;
+  width: 450px;
+  margin-top: 16px;
+}
+
+.demo-form-field2 {
+  display: flex;
+  width: 450px;
+  margin-top: 16px;
+}
+
+.demo-form-field3 {
+  width: 700px;
+  margin-top: 16px;
+}
+
+.demo-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.demo-radio-button {
+  margin: 5px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}

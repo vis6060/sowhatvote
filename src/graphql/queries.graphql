@@ -860,12 +860,14 @@ query ListDatinguserdbStagings(
 }
 query ListDatinguserdbStagingsOneBigArray1A(
   $userid: String!
+  $countyuser: String
   $filter: TableDatinguserdbStagingFilterInput
   $limit: Int
   $nextToken: String
 ) {
   listDatinguserdbStagingsOneBigArray1A(
     userid: $userid
+    countyuser: $countyuser
     filter: $filter
     limit: $limit
     nextToken: $nextToken
@@ -878,12 +880,14 @@ query ListDatinguserdbStagingsOneBigArray1A(
 }
 query ListDatinguserdbStagingsOneBigArray(
   $userid: String!
+  $stateuser: String
   $filter: TableDatinguserdbStagingFilterInput
   $limit: Int
   $nextToken: String
 ) {
   listDatinguserdbStagingsOneBigArray(
     userid: $userid
+    stateuser: $stateuser
     filter: $filter
     limit: $limit
     nextToken: $nextToken
@@ -896,12 +900,14 @@ query ListDatinguserdbStagingsOneBigArray(
 }
 query ListDatinguserdbStagingsOneBigArray1C(
   $userid: String!
+  $profilecompPartF: String
   $filter: TableDatinguserdbStagingFilterInput
   $limit: Int
   $nextToken: String
 ) {
   listDatinguserdbStagingsOneBigArray1C(
     userid: $userid
+    profilecompPartF: $profilecompPartF
     filter: $filter
     limit: $limit
     nextToken: $nextToken

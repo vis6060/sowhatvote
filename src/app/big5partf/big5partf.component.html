@@ -1,1 +1,34 @@
-<p>big5partf works!</p>
+
+
+<!-- Profile pic  -->
+<br> <br> <a> Step 5 of 5: </a>
+<!--  <h2 *ngIf="toggleBool7=='true'">Please upload picture to see your match results.</h2> -->
+<div className="Text">
+  <div>
+    <h3>Please provide your profile picture (less than 1MB in size) to display on this website</h3>
+    <input type="file" (change)="changeEvent($event)"/>
+  </div>
+</div>
+
+
+<a *ngIf="sizebig=='yes'">
+  <br> <a> <b> Sorry, the picture size should be less than 1MB in size. Please refresh the page and upload another picture. </b></a> <br>
+</a>
+
+<a *ngIf="unsafem=='yesm'">
+  <br> <a> Sorry, this picture does not meet our guidelines.  Please refresh the page and upload another picture.</a>
+  <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
+</a>
+
+<div *ngIf="toggleBool7=='false'&& editstep5flag==''">
+  <!--  <img src={{url}} [ngStyle]= "{'width': newWidth + 'px', 'height':newHeight + 'px'}"> -->
+  <!--  <amplify-s3-image imgKey="{{s3file}}"></amplify-s3-image> -->
+  <p>Thank you for answering all questions. Please click Submit to complete and see your match results.</p>
+  <button mat-button (click)="picclick()" (click)="seccompleteF()" (click)="initializetabs1()" routerLink="/Meetup/Home"> Submit</button>
+</div>
+
+<div *ngIf="toggleBool7=='false'&& editstep5flag=='yes'">
+  <!--   <amplify-s3-image imgKey="{{s3file}}"></amplify-s3-image> -->
+  <p>Thank you for the new profile picture.</p>
+  <button mat-button (click)="picclick()"  routerLink="/MyAccount"> Save Responses & Go Back to MyAccount </button>
+</div>

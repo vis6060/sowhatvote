@@ -1,0 +1,15 @@
+<form [formGroup]="stateForm" fxLayout="column">
+  <mat-form-field class="demo-form-field3"  appearance="fill">
+    <mat-label>Your Occupation:</mat-label>
+    <input type="text" matInput  formControlName="stateGroup" [matAutocomplete]="auto" [(ngModel)]="occup.names"
+           (ngModelChange)="occupstore($event)" >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+        <mat-option *ngFor="let name of group.names" [value]="name">
+          {{name}}
+        </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
+    <mat-hint align="start">Please begin typing to see most relevant drop-down options</mat-hint>
+  </mat-form-field>
+</form>

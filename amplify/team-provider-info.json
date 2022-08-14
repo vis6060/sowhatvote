@@ -147,7 +147,7 @@
       "function": {
         "test47fa6be8b": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
-          "s3Key": "amplify-builds/test47fa6be8b-4459716553536d433170-build.zip"
+          "s3Key": "amplify-builds/test47fa6be8b-6769766d513048347744-build.zip"
         },
         "test4224ccd61": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
@@ -403,7 +403,7 @@
         },
         "test4a76c29ff": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
-          "s3Key": "amplify-builds/test4a76c29ff-5a794558416866333933-build.zip"
+          "s3Key": "amplify-builds/test4a76c29ff-716168672b397559777a-build.zip"
         },
         "test423867d56": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",

@@ -470,5 +470,15 @@ export type AmplifyDependentResourcesAttributes = {
             "Region": "string",
             "LambdaExecutionRole": "string"
         }
+    },
+    "predictions": {
+        "identifyLabels84eda9b6": {
+            "region": "string",
+            "type": "string"
+        },
+        "interpretText74414311": {
+            "region": "string",
+            "type": "string"
+        }
     }
 }

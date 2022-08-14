@@ -1,0 +1,14 @@
+<form [formGroup]="stateForm" fxLayout="column">
+  <mat-form-field  class="demo-form-field3" appearance="fill">
+    <mat-label>The Specific Sub-Industry You Are Associated With:</mat-label>
+    <input type="text" matInput required formControlName="stateGroup" [matAutocomplete]="auto" [(ngModel)]="industrylevel2.names"  (ngModelChange)="industry2store($event)" >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+        <mat-option *ngFor="let name of group.names" [value]="name">
+          {{name}}
+        </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
+    <mat-hint align="start">Please begin typing to see most relevant drop-down options</mat-hint>
+  </mat-form-field>
+</form>

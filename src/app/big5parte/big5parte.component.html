@@ -1,1 +1,57 @@
-<p>big5parte works!</p>
+
+<!--   profile pic, description, facebook username  -->
+<br> <br> <a> Step 4 of 5: </a>
+<form [formGroup]="prefifthFormGroup">
+  <mat-form-field class="demo-form-field1" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input  matInput placeholder="John Doe" formControlName="prefifthCtrl" required #message maxlength="25" [(ngModel)]="profilename" (change)="nameevent($event)"  /> <br>
+    <mat-hint align="end">{{message.value.length}} / 25</mat-hint>
+  </mat-form-field>
+</form>
+
+<a *ngIf="unsafetext2=='yestext'">
+  <br> <a> Sorry, this name does not meet our community safety guidelines.  Please enter your name.</a>
+  <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
+</a>
+
+
+<form [formGroup]="fifthFormGroup">
+  <mat-form-field class="demo-form-field1" appearance="fill">
+    <mat-label>Facebook Username</mat-label>
+    <input  matInput placeholder="username" formControlName="fifthCtrl" required #message1 maxlength="30" [(ngModel)]="facebookbusername" (change)="boxevent($event)"  /> <br>
+    <mat-hint align="start">facebook.com/username  </mat-hint>
+    <mat-hint align="end">{{message1.value.length}} / 30</mat-hint> <br>
+  </mat-form-field>
+</form>
+
+<a *ngIf="unsafetext1=='yestext'">
+  <br> <a> Sorry, this username does not meet our community safety guidelines.  Please enter the username.</a>
+  <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
+</a>
+
+<form [formGroup]="sixthFormGroup" fxLayout="column">
+  <mat-form-field class="demo-form-field3" appearance="fill">
+    <mat-label>Please describe yourself, interests and hobbies</mat-label>
+    <textarea matInput formControlName="sixthCtrl"   required #message2 maxlength="280" placeholder="Ex. I am a patriotic fun happy friendly people person. Looking for ways to help my community."
+              [(ngModel)]="userdescription" (change)="boxevent1($event)"></textarea>
+    <mat-hint align="end">{{message2.value.length}} / 280</mat-hint>
+  </mat-form-field>
+</form>
+
+<a *ngIf="unsafetext=='yestext'">
+  <br> <a> Sorry, this description does not meet our community safety guidelines.  Please update the description.</a>
+  <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
+</a>
+
+<p *ngIf="toggleBool6=='true'"> <br> Please answer all questions and then click Submit.</p>
+<button mat-button (click)="checkallunsafe()"> Submit</button>
+
+<div *ngIf="toggleBool6=='false'&& editstep4flag==''">
+  <p>Thank you for answering all questions. Please click Next.</p>
+  <button mat-button (click)="seccompleteE()" routerLink="/Meetup/Step5"> Next</button>
+</div>
+
+<div *ngIf="toggleBool6=='false'&& editstep4flag=='yes'">
+  <p>Thank you for answering all questions. Please click Next.</p>
+  <button mat-button (click)="seccompleteE()" routerLink="/MyAccount"> Save Responses & Go Back to MyAccount </button>
+</div>

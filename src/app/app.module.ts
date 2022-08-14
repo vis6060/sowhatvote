@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
+import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -41,6 +41,9 @@ import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component'
 import { Big5partdComponent } from './big5partd/big5partd.component';
 import { Big5parteComponent } from './big5parte/big5parte.component';
 import { Big5partfComponent } from './big5partf/big5partf.component';
+import { OccupationComponent } from './occupation/occupation.component';
+import { Industrylevel2newComponent } from './industrylevel2new/industrylevel2new.component';
+import { AdBComponent } from './ad-b/ad-b.component';
 
 
 @NgModule({
@@ -52,12 +55,15 @@ import { Big5partfComponent } from './big5partf/big5partf.component';
     Big5partaeditComponent,
     Big5partdComponent,
     Big5parteComponent,
-    Big5partfComponent
+    Big5partfComponent,
+    OccupationComponent,
+    Industrylevel2newComponent,
+    AdBComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-  //  LegacyAmplifyUiModule,
+    LegacyAmplifyUiModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatIconModule,

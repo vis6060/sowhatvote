@@ -1,0 +1,703 @@
+
+<!-- below ngif statements are not needed as user first time is not going to know that there is a path called Meetup/Hone or Meetup/Tab1. the below logic slows down page load of tab1 and Home pages -->
+
+<!-- <a  *ngIf="profilecompPartF=='no'"> -->
+<!-- show them button to enter form  -->
+<!-- </a> -->
+<!-- <a  *ngIf="profilecompPartF=='yes'"> -->
+
+<!-- mat drawer container will have search results -->
+
+<!-- query criteria for users to enter goes here -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+
+    <!-- section1: mandatory state criteria -->
+    <form>
+      <br> <a> Step1: Select state </a>  <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>State (Required)</mat-label>
+        <select matNativeControl required [disabled]="toggleBoolState"  [(ngModel)]=stateselection [ngModelOptions]="{standalone: true}">
+          <option value="AL">Alabama</option> <option value="AK">Alaska</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</option> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="FL">Florida</option> <option value="GA">Georgia</option> <option value="HI">Hawaii</option> <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option> <option value="IN">Indiana</option> <option value="IA">Iowa</option> <option value="KS">Kansas</option> <option value="KY">Kentucky</option> <option value="LA">Louisiana</option> <option value="ME">Maine</option> <option value="MD">Maryland</option> <option value="MA">Massachusetts</option> <option value="MI">Michigan</option> <option value="MN">Minnesota</option> <option value="MS">Mississippi</option> <option value="MO">Missouri</option> <option value="MT">Montana</option> <option value="NE">Nebraska</option> <option value="NV">Nevada</option> <option value="NH">New Hampshire</option> <option value="NJ">New Jersey</option> <option value="NM">New Mexico</option> <option value="NY">New York</option> <option value="NC">North Carolina</option> <option value="ND">North Dakota</option> <option value="OH">Ohio</option> <option value="OK">Oklahoma</option> <option value="OR">Oregon</option> <option value="PA">Pennsylvania</option> <option value="PR">Puerto Rico</option> <option value="RI">Rhode Island</option> <option value="SC">South Carolina</option> <option value="SD">South Dakota</option> <option value="TN">Tennessee</option> <option value="TX">Texas</option> <option value="UT">Utah</option> <option value="VT">Vermont</option> <option value="VA">Virginia</option> <option value="WA">Washington</option> <option value="DC">Washington, D.C.</option>  <option value="WV">West Virginia</option> <option value="WI">Wisconsin</option> <option value="WY">Wyoming</option>
+        </select>
+      </mat-form-field>
+    </form>
+
+    <!--section2: meetup query criteria -->
+    <form>
+      <br> <a> Step2: Select one or all of the below fields </a>  <br>
+      <br> <a> Age </a>  <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>Age range (years)</mat-label>
+        <select matNativeControl [disabled]="toggleBool1" (change)="togglesearchfields($event)" [(ngModel)]=ageselection [ngModelOptions]="{standalone: true}">
+          <option value=""></option>  <option value="13 to 18 years">13 to 18 year old</option> <option value="19 to 23 year">19 to 23 year old</option> <option value="24 to 29 years">24 to 29 year old</option> <option value="30 to 35 years">30 to 35 year old</option> <option value="36 to 40 years">36 to 40 year old</option> <option value="41 to 49 years">41 to 49 year old</option> <option value="50 to 59 years">50 to 59 year old</option> <option value="60 to 65 years">60 to 65 year old</option> <option value="66 to 70 years">66 to 70 year old</option> <option value="71+ years">71+ year old</option>
+        </select>
+      </mat-form-field>
+
+      <br>  <a> Gender </a> <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>Gender</mat-label>
+        <select matNativeControl [disabled]="toggleBool1" (change)="togglesearchfields($event)" [(ngModel)]="genderselection" [ngModelOptions]="{standalone: true}"> <br>
+          <option value=""></option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option> <br>
+        </select>
+      </mat-form-field>
+    </form>
+
+    <br> <a> Are you looking for someone in <b> {{countyuser}} </b>? </a>  <br>
+    <mat-form-field class="demo-form-field1" appearance="fill">
+      <mat-label>County</mat-label>
+      <select matNativeControl [disabled]="toggleBool1" (change)="togglesearchfields($event)" [(ngModel)]=countyselection [ngModelOptions]="{standalone: true}">
+        <option value=""></option>  <option value="Yes">Yes</option>
+      </select>
+    </mat-form-field>
+
+    <!--Meetup search button -->
+    <br> <button mat-button [disabled]="toggleBool0" (click)="executesearchsec1(); toggleBool1= true;toggleBoolState= true;toggleBool3= true; toggleBool0= true;toggleBool2= true;toggleBoolAgain1=false">Search Now</button>
+    <button mat-button [disabled]="toggleBoolAgain1" (click)="reloadComponent()">Search Again</button>
+
+    <!--section3 Mentor query criteria -->
+    <br> <a> Step2: Select one or all of the below fields </a>  <br>
+
+    <br>  <a> What should be the <b> occupation </b> of your matches?  </a> <br>
+    <a  *ngIf="removefields!='yes'">
+      <app-occupation-search (newItemEvent)="addItem($event)"></app-occupation-search>
+    </a>
+
+    <br>  <a> Which <b> industry </b> should your matches associate themselves with?  </a> <br>
+    <a  *ngIf="removefields!='yes'">
+      <mat-form-field class="demo-form-field3" appearance="fill">
+        <mat-label>Industry</mat-label>
+        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]=industrylevel1
+               (ngModelChange)="assignindusvalue($event)">
+        <mat-autocomplete #auto="matAutocomplete"  [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-hint align="start">Please begin typing to see most relevant drop-down options</mat-hint>
+      </mat-form-field>
+    </a>
+
+    <br> <a> Are you looking to connect with an <b> armed forces veteran </b>? </a>  <br>
+    <mat-form-field class="demo-form-field1" appearance="fill">
+      <mat-label>Veteran</mat-label>
+      <select matNativeControl [disabled]="toggleBool3" (change)="togglesearchfields1($event)" [(ngModel)]=veteranselection [ngModelOptions]="{standalone: true}">
+        <option value=""></option>  <option value="Yes">Yes</option>
+      </select>
+    </mat-form-field>
+
+    <br> <a> Are you looking to connect with a <b> mentor </b> in your industry, occupation or community? </a>  <br>
+    <mat-form-field class="demo-form-field1" appearance="fill">
+      <mat-label>Mentor</mat-label>
+      <select matNativeControl [disabled]="toggleBool3" (change)="togglesearchfields1($event)" [(ngModel)]=mentorselection [ngModelOptions]="{standalone: true}">
+        <option value=""></option>  <option value="Yes">Yes</option>
+      </select>
+    </mat-form-field>
+
+    <!--Mentor search button -->
+    <br>   <button mat-button [disabled]="toggleBool2" (click)="executesearchsec2();toggleBool3= true;;toggleBoolState= true;toggleBool1= true;toggleBool2= true;toggleBool0= true;toggleBoolAgain2=false">Search Now</button>
+    <button mat-button [disabled]="toggleBoolAgain2" (click)="reloadComponent()">Search Again</button>
+  </mat-drawer>
+
+
+  <!--section3 Top5 most loyal SWV members that users can connect to do if not already done so -->
+  <form>
+    <br> <a> Please select a state to view the top 5 SoWhat Vote Community members in the state and an opportunity to connect with them. </a>  <br>
+    <mat-form-field class="demo-form-field1" appearance="fill">
+      <mat-label>State (Required)</mat-label>
+      <select matNativeControl required  [(ngModel)]=stateselectionloyalty [ngModelOptions]="{standalone: true}">
+        <option value="AL">Alabama</option> <option value="AK">Alaska</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</option> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="FL">Florida</option> <option value="GA">Georgia</option> <option value="HI">Hawaii</option> <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option> <option value="IN">Indiana</option> <option value="IA">Iowa</option> <option value="KS">Kansas</option> <option value="KY">Kentucky</option> <option value="LA">Louisiana</option> <option value="ME">Maine</option> <option value="MD">Maryland</option> <option value="MA">Massachusetts</option> <option value="MI">Michigan</option> <option value="MN">Minnesota</option> <option value="MS">Mississippi</option> <option value="MO">Missouri</option> <option value="MT">Montana</option> <option value="NE">Nebraska</option> <option value="NV">Nevada</option> <option value="NH">New Hampshire</option> <option value="NJ">New Jersey</option> <option value="NM">New Mexico</option> <option value="NY">New York</option> <option value="NC">North Carolina</option> <option value="ND">North Dakota</option> <option value="OH">Ohio</option> <option value="OK">Oklahoma</option> <option value="OR">Oregon</option> <option value="PA">Pennsylvania</option> <option value="PR">Puerto Rico</option> <option value="RI">Rhode Island</option> <option value="SC">South Carolina</option> <option value="SD">South Dakota</option> <option value="TN">Tennessee</option> <option value="TX">Texas</option> <option value="UT">Utah</option> <option value="VT">Vermont</option> <option value="VA">Virginia</option> <option value="WA">Washington</option> <option value="DC">Washington, D.C.</option>  <option value="WV">West Virginia</option> <option value="WI">Wisconsin</option> <option value="WY">Wyoming</option>
+      </select>
+    </mat-form-field>
+  </form>
+
+  <!--Top5 loyalty search button -->
+  <br> <button mat-button (click)="executesearchsec3()">Search Now</button>
+  <button mat-button (click)="reloadComponent()">Search Again</button>
+
+  <!--section4 Facebook Form-->
+  <form [formGroup]="fifthFormGroup">
+    <br> <a> Please enter the facebook username of a person  </a>
+    <mat-form-field class="demo-form-field1" appearance="fill">
+      <mat-label>Facebook Username</mat-label>
+      <input  matInput placeholder="username" formControlName="fifthCtrl" required #message1 maxlength="30" [(ngModel)]="facebookselection"> <br>
+      <mat-hint align="end">{{message1.value.length}} / 30</mat-hint> <br>
+    </mat-form-field>
+  </form>
+
+  <!-- Facebook username specific search button -->
+  <br> <button mat-button (click)="executesearchsec4()">Search Now</button>
+  <button mat-button (click)="reloadComponent()">Search Again</button> <br> <br>
+  <a *ngIf="nomatchingfacebook=='yes'"> <b> No matches!</b>  This facebook username is not a member of SoWhat Vote Community. Please encourage this person to join the SoWhat Vote community.</a>
+  <!-- search results in the center -->
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="itemsalreadyviewed()" (click)="drawer.toggle()">Toggle sidenav</button>
+  </div>
+</mat-drawer-container>
+
+<!-- display the tab1A, tab1B or tab1C search results with expansion panel. Each itemid will be loaded in browser, on clicking itemid details displayed -->
+<a *ngIf="nodisplay=='yes'"> Your search returned no results.  Please search again. Please encourage your friends and community members to join SoWhat Vote.
+  We will together create a strong community which helps each other and people in need.</a>
+
+<a *ngIf="displayflag=='yes'">
+  <br> <a> Showing <b> {{FilteredSearchArraySize}} </b> unseen results out of a possible <b> {{InitialSearchArraySize}} </b> search results</a> <br>
+  <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All Search Results</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All Search Results</button>
+  </div>
+
+  <mat-accordion class="example-headers-align" multi>
+
+    <a *ngFor="let dealPer of dealsPerArray; let i = index">
+      <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+        <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+          <mat-panel-description>
+            <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+              <mat-card-header>
+                <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+                <mat-card-title>{{dealPer.profilename}}</mat-card-title>
+                <mat-card-subtitle>{{dealPer.countyuser}}, {{dealPer.stateuser}}</mat-card-subtitle>
+                <mat-card-subtitle>{{dealPer.age}}</mat-card-subtitle>
+              </mat-card-header>
+              <img src={{urlarray[i]}} [ngStyle]= "{'width': widtharray[i] + 'px', 'height':heightarray[i] + 'px'}">
+            </mat-card>
+          </mat-panel-description>
+
+        </mat-expansion-panel-header>
+
+        <a style="text-align:center;">
+          <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+            <mat-card-subtitle> <b> Industry: </b> {{dealPer.industrylevel2}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer.mentoragree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Occupation: </b> {{dealPer.occup}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer.menteeagree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Veteran: </b> {{dealPer.veteran}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer.loyalty}}</mat-card-subtitle>
+            <mat-card-subtitle><b> Description: </b>{{dealPer.userdescription}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card class="example-card">
+            <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+            <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+            </mat-button-toggle-group>
+          </mat-card>
+        </a>
+
+        <mat-action-row class="example-card" style="text-align:center;" fxLayout="column" fxLayoutAlign="space-around center">
+          <a *ngIf="i==0">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked0" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="connectmetab61Apb(dealPer.userid); clicked0 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked0" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="disliketab51Apb(dealPer.userid); clicked0 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked0" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="nextprofile(dealPer.userid, dealPer.countyuser); clicked0 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==1">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked1" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="connectmetab61Apb(dealPer.userid); clicked1 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked1" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="disliketab51Apb(dealPer.userid); clicked1 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked1" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="nextprofile(dealPer.userid, dealPer.countyuser); clicked1 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==2">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked2" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="connectmetab61Apb(dealPer.userid); clicked2 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked2" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="disliketab51Apb(dealPer.userid); clicked2 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked2" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="nextprofile(dealPer.userid, dealPer.countyuser); clicked2 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==3">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked3" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="connectmetab61Apb(dealPer.userid); clicked3 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked3" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="disliketab51Apb(dealPer.userid); clicked3 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked3" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="nextprofile(dealPer.userid, dealPer.countyuser); clicked3 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==4">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked4" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="connectmetab61Apb(dealPer.userid); clicked4 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked4" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="disliketab51Apb(dealPer.userid); clicked4 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked4" (click)="putitemalreadyviewed(dealPer.userid)"
+                     (click)="removeitemidtabs(dealPer.userid, dealPer.countyuser)"  (click)="nextprofile(dealPer.userid, dealPer.countyuser); clicked4 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+        </mat-action-row>
+
+      </mat-expansion-panel>
+    </a>
+
+  </mat-accordion>
+</a>
+
+<!-- Section3 search results for top5 most loyal members -->
+<a *ngIf="displayflagloyalty=='yes'">
+  <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All Search Results</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All Search Results</button>
+  </div>
+
+  <mat-accordion class="example-headers-align" multi>
+
+    <a *ngFor="let dealPer of dealsPerArrayloyalty; let i = index">
+      <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+        <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+          <mat-panel-description>
+            <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+              <mat-card-header>
+                <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+                <mat-card-title>{{dealPer.profilename}}</mat-card-title>
+                <mat-card-subtitle>{{dealPer.countyuser}}, {{dealPer.stateuser}}</mat-card-subtitle>
+                <mat-card-subtitle>{{dealPer.age}}</mat-card-subtitle>
+              </mat-card-header>
+              <img src={{urlarrayloyalty[i]}} [ngStyle]= "{'width': widtharrayloyalty[i] + 'px', 'height':heightarrayloyalty[i] + 'px'}">
+            </mat-card>
+          </mat-panel-description>
+
+        </mat-expansion-panel-header>
+
+        <a style="text-align:center;">
+          <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+            <mat-card-subtitle> <b> Industry: </b> {{dealPer.industrylevel2}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer.mentoragree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Occupation: </b> {{dealPer.occup}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer.menteeagree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Veteran: </b> {{dealPer.veteran}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer.loyalty}}</mat-card-subtitle>
+            <mat-card-subtitle><b> Description: </b>{{dealPer.userdescription}}</mat-card-subtitle>
+          </mat-card>
+
+          <a *ngIf="arrayindexes[i]==null">
+            <mat-card class="example-card">
+              <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+              <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+              </mat-button-toggle-group>
+            </mat-card>
+          </a>
+        </a>
+
+        <mat-action-row class="example-card" style="text-align:center;" fxLayout="column" fxLayoutAlign="space-around center">
+          <a *ngIf="i==0">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked50"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="connectmetab61Apb(dealPer.userid); clicked50 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked50"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="disliketab51Apb(dealPer.userid); clicked50 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" >Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a *ngIf="clicked50==true"> Thank you.  Your response has been recorded. </a>
+          </a>
+          <a *ngIf="i==1">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked51"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="connectmetab61Apb(dealPer.userid); clicked51 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked51"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="disliketab51Apb(dealPer.userid); clicked51 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" >Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a *ngIf="clicked51==true"> Thank you.  Your response has been recorded. </a>
+          </a>
+          <a *ngIf="i==2">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked52"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="connectmetab61Apb(dealPer.userid); clicked52 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked52"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="disliketab51Apb(dealPer.userid); clicked52 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" >Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a *ngIf="clicked52==true"> Thank you.  Your response has been recorded. </a>
+          </a>
+          <a *ngIf="i==3">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked53"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="connectmetab61Apb(dealPer.userid); clicked53 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked53"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="disliketab51Apb(dealPer.userid); clicked53 = true;" >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" >Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a *ngIf="clicked53==true"> Thank you.  Your response has been recorded. </a>
+          </a>
+          <a *ngIf="i==4">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked54"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="connectmetab61Apb(dealPer.userid); clicked54 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked54"
+                     (click)="removeitemidtabsloyalty(dealPer.userid, dealPer.countyuser,i)"  (click)="disliketab51Apb(dealPer.userid); clicked54 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" >Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a *ngIf="clicked54==true"> Thank you.  Your response has been recorded. </a>
+          </a>
+        </mat-action-row>
+
+      </mat-expansion-panel>
+    </a>
+
+  </mat-accordion>
+</a>
+
+<!-- Section4 search result for searching for a user in SWV DB using the facebook username -->
+<br> <br>
+<a *ngIf="displayflagfacebook=='yes'">
+  <a style="text-align:center;">
+    <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+      <mat-card-header>
+        <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+        <mat-card-title>{{dealsPerfacebook[0].profilename}}</mat-card-title>
+        <mat-card-subtitle>{{dealsPerfacebook[0].countyuser}}, {{dealsPerfacebook[0].stateuser}}</mat-card-subtitle>
+        <mat-card-subtitle>{{dealsPerfacebook[0].age}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{urlAfacebook}} [ngStyle]= "{'width': newWidthAfacebook + 'px', 'height': newHeightAfacebook + 'px'}">
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-subtitle> <b> Industry: </b> {{dealsPerfacebook[0].industrylevel2}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealsPerfacebook[0].mentoragree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Occupation: </b> {{dealsPerfacebook[0].occup}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealsPerfacebook[0].menteeagree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Veteran: </b> {{dealsPerfacebook[0].veteran}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealsPerfacebook[0].loyalty}}</mat-card-subtitle>
+      <mat-card-subtitle><b> Description: </b>{{dealsPerfacebook[0].userdescription}}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+      <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+      </mat-button-toggle-group>
+    </mat-card>
+  </a>
+
+  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+    <a *ngIf="arrayindexesfacebook==null">
+      <button  mat-button (click)="nextStep()" [disabled]="clicked55"
+               (click)="removeitemidtabsloyalty(dealsPerfacebook[0].userid, dealsPerfacebook[0].countyuser,0)"  (click)="connectmetab61Apb(dealsPerfacebook[0].userid); clicked55 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <button  mat-button (click)="nextStep()" [disabled]="clicked55"
+               (click)="removeitemidtabsloyalty(dealsPerfacebook[0].userid, dealsPerfacebook[0].countyuser,0)"  (click)="disliketab51Apb(dealsPerfacebook[0].userid); clicked55 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <button  mat-button (click)="nextStep()" >Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <a *ngIf="clicked55==true"> Thank you.  Your response has been recorded. </a>
+    </a>
+  </mat-action-row>
+</a>
+
+<!-- tab3, tab1a, tab1b, tab1c, tab2 display with show all link to library of tabs -->
+
+<!-- tab1A display -->
+<br> <br> <a *ngIf="tab1Anullflag==''"> Tab1A items displayed </a>
+<a *ngIf="initializerflag1A=='yes'">
+  <a style="text-align:center;">
+    <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+      <mat-card-header>
+        <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+        <mat-card-title>{{dealPer81.profilename}}</mat-card-title>
+        <mat-card-subtitle>{{dealPer81.countyuser}}, {{dealPer81.stateuser}}</mat-card-subtitle>
+        <mat-card-subtitle>{{dealPer81.age}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{urlhome81}} [ngStyle]= "{'width': newWidthhome81 + 'px', 'height': newHeighthome81 + 'px'}">
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-subtitle> <b> Industry: </b> {{dealPer81.industrylevel2}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer81.mentoragree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Occupation: </b> {{dealPer81.occup}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer81.menteeagree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Veteran: </b> {{dealPer81.veteran}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer81.loyalty}}</mat-card-subtitle>
+      <mat-card-subtitle><b> Description: </b>{{dealPer81.userdescription}}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+      <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+      </mat-button-toggle-group>
+    </mat-card>
+  </a>
+
+  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+    <button  mat-button [disabled]="clicked101"  (click)="removehomeitemidtabs(dealPer81.stateuser, dealPer81.countyuser,0)"
+             (click)="connectmetab61Apb(dealPer81.userid); clicked101 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  [disabled]="clicked101"  (click)="removehomeitemidtabs(dealPer81.stateuser, dealPer81.countyuser,0)"
+             (click)="disliketab51Apb(dealPer81.userid); clicked101 = true;" >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  [disabled]="clicked101"  (click)="removehomeitemidtabs(dealPer81.stateuser, dealPer81.countyuser,0)"
+             (click)="nexthomeprofile(dealPer81.userid,dealPer81.stateuser, dealPer81.countyuser); clicked101 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+  </mat-action-row>
+  <a *ngIf="clicked101==true"> Thank you.  Your response has been recorded. </a>
+</a>
+
+<!-- tab1B display -->
+<br> <br> <a *ngIf="tab1Bnullflag==''"> Tab1B items displayed </a>
+<a *ngIf="initializerflag1B=='yes'">
+  <a style="text-align:center;">
+    <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+      <mat-card-header>
+        <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+        <mat-card-title>{{dealPer82.profilename}}</mat-card-title>
+        <mat-card-subtitle>{{dealPer82.countyuser}}, {{dealPer82.stateuser}}</mat-card-subtitle>
+        <mat-card-subtitle>{{dealPer82.age}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{urlhome82}} [ngStyle]= "{'width': newWidthhome82 + 'px', 'height': newHeighthome82 + 'px'}">
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-subtitle> <b> Industry: </b> {{dealPer82.industrylevel2}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer82.mentoragree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Occupation: </b> {{dealPer82.occup}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer82.menteeagree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Veteran: </b> {{dealPer82.veteran}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer82.loyalty}}</mat-card-subtitle>
+      <mat-card-subtitle><b> Description: </b>{{dealPer82.userdescription}}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+      <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+      </mat-button-toggle-group>
+    </mat-card>
+  </a>
+
+  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+    <button  mat-button [disabled]="clicked102"  (click)="removehomeitemidtabs(dealPer82.stateuser, dealPer82.countyuser,0)"
+             (click)="connectmetab61Apb(dealPer82.userid); clicked102 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  [disabled]="clicked102"  (click)="removehomeitemidtabs(dealPer82.stateuser, dealPer82.countyuser,0)"
+             (click)="disliketab51Apb(dealPer82.userid); clicked102 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  [disabled]="clicked102"  (click)="removehomeitemidtabs(dealPer82.stateuser, dealPer82.countyuser,0)"
+             (click)="nexthomeprofile(dealPer82.userid,dealPer82.stateuser, dealPer82.countyuser); clicked102 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+  </mat-action-row>
+  <a *ngIf="clicked102==true"> Thank you.  Your response has been recorded. </a>
+</a>
+
+<!-- tab1C display -->
+<br> <br> <a *ngIf="tab1Cnullflag==''"> Tab1C items displayed </a>
+<a *ngIf="initializerflag1C=='yes'">
+  <a style="text-align:center;">
+    <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+      <mat-card-header>
+        <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+        <mat-card-title>{{dealPer83.profilename}}</mat-card-title>
+        <mat-card-subtitle>{{dealPer83.countyuser}}, {{dealPer83.stateuser}}</mat-card-subtitle>
+        <mat-card-subtitle>{{dealPer83.age}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{urlhome83}} [ngStyle]= "{'width': newWidthhome83 + 'px', 'height': newHeighthome83 + 'px'}">
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-subtitle> <b> Industry: </b> {{dealPer83.industrylevel2}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer83.mentoragree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Occupation: </b> {{dealPer83.occup}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer83.menteeagree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Veteran: </b> {{dealPer83.veteran}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer83.loyalty}}</mat-card-subtitle>
+      <mat-card-subtitle><b> Description: </b>{{dealPer83.userdescription}}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
+      <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
+      </mat-button-toggle-group>
+    </mat-card>
+  </a>
+
+  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+    <button  mat-button [disabled]="clicked103"  (click)="removehomeitemidtabs(dealPer83.stateuser, dealPer83.countyuser,0)"
+             (click)="connectmetab61Apb(dealPer83.userid); clicked103 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  [disabled]="clicked103"  (click)="removehomeitemidtabs(dealPer83.stateuser, dealPer83.countyuser,0)"
+             (click)="disliketab51Apb(dealPer83.userid); clicked103 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  [disabled]="clicked103"  (click)="removehomeitemidtabs(dealPer83.stateuser, dealPer83.countyuser,0)"
+             (click)="nexthomeprofile(dealPer83.userid,dealPer83.stateuser, dealPer83.countyuser); clicked103 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+  </mat-action-row>
+  <a *ngIf="clicked103==true"> Thank you.  Your response has been recorded. </a>
+</a>
+
+<!-- tab3 display -->
+<br> <br> <a *ngIf="tab3nullflag==''"> Tab3 items displayed </a>
+<a *ngIf="initializerflag3=='yes'">
+  <mat-accordion class="example-headers-align" multi>
+    <a *ngFor="let dealPer of ngfortab3array; let i = index">
+      <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+        <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+          <mat-panel-description>
+            <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+              <mat-card-header>
+                <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+                <mat-card-title>{{dealPer.profilename}}</mat-card-title>
+                <mat-card-subtitle>{{dealPer.countyuser}}, {{dealPer.stateuser}}</mat-card-subtitle>
+                <mat-card-subtitle>{{dealPer.age}}</mat-card-subtitle>
+              </mat-card-header>
+              <img src={{urlhomearraytab3[i]}} [ngStyle]= "{'width': widthhomearraytab3[i] + 'px', 'height':heighthomearraytab3[i] + 'px'}">
+            </mat-card>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <a style="text-align:center;">
+          <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+            <mat-card-subtitle> <b> Industry: </b> {{dealPer.industrylevel2}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer.mentoragree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Occupation: </b> {{dealPer.occup}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer.menteeagree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Veteran: </b> {{dealPer.veteran}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer.loyalty}}</mat-card-subtitle>
+            <mat-card-subtitle><b> Description: </b>{{dealPer.userdescription}}</mat-card-subtitle>
+          </mat-card>
+
+          <a *ngIf="i==0">
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit31}}</mat-card-subtitle>
+              <mat-card-subtitle> <b> Date Request Sent: </b>{{interdatetempinit31}}</mat-card-subtitle>
+            </mat-card>
+          </a>
+
+          <a *ngIf="i==1">
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit32}}</mat-card-subtitle>
+              <mat-card-subtitle> <b> Date Request Sent: </b>{{interdatetempinit32}}</mat-card-subtitle>
+            </mat-card>
+          </a>
+
+          <a *ngIf="i==2">
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit33}}</mat-card-subtitle>
+              <mat-card-subtitle> <b> Date Request Sent: </b>{{interdatetempinit33}}</mat-card-subtitle>
+            </mat-card>
+          </a>
+        </a>
+
+        <mat-action-row class="example-card" style="text-align:center;" fxLayout="column" fxLayoutAlign="space-around center">
+          <a *ngIf="i==0">
+            <button mat-button (click)="nextStep()" [disabled]="clicked104" (click)="removetab3(i)"
+                    (click)="declinerequesttab3(dealPer.userid,interestcateginittemp31); clicked104 = true;">Decline Request</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked104"  (click)="removetab3(i)"
+                     (click)="acceptrequesttab3(dealPer.userid,interestcateginittemp31); clicked104 = true;">Accept Request</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+            <button  mat-button (click)="nextStep()" [disabled]="clicked104" (click)="removetab3(i)"
+                     (click)="nexttab3(dealPer.userid); clicked104 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==1">
+            <button mat-button (click)="nextStep()" [disabled]="clicked105" (click)="removetab3(i)"
+                    (click)="declinerequesttab3(dealPer.userid,interestcateginittemp32); clicked105 = true;">Decline Request</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button (click)="nextStep()" [disabled]="clicked105"  (click)="removetab3(i)"
+                     (click)="acceptrequesttab3(dealPer.userid,interestcateginittemp32); clicked105 = true;">Accept Request</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+            <button  mat-button (click)="nextStep()" [disabled]="clicked105" (click)="removetab3(i)"
+                     (click)="nexttab3(dealPer.userid); clicked105 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==2">
+            <button mat-button  [disabled]="clicked106" (click)="removetab3(i)"
+                    (click)="declinerequesttab3(dealPer.userid,interestcateginittemp33); clicked106 = true;">Decline Request</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button  [disabled]="clicked106"  (click)="removetab3(i)"
+                     (click)="acceptrequesttab3(dealPer.userid,interestcateginittemp33); clicked106 = true;">Accept Request</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
+            <button  mat-button  (click)="removetab3(i)" (click)="nexttab3(dealPer.userid)" routerLink="/Meetup/Tab3">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+        </mat-action-row>
+
+      </mat-expansion-panel>
+    </a>
+  </mat-accordion>
+</a>
+
+<!-- tab2 display -->
+<br> <br> <a *ngIf="tab2nullflag==''"> Tab2 items displayed </a>
+<a *ngIf="initializerflag2=='yes'">
+  <mat-accordion class="example-headers-align" multi>
+    <a *ngFor="let dealPer of ngfortab2array; let i = index">
+      <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+        <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+          <mat-panel-description>
+            <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+              <mat-card-header>
+                <img src="/assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
+                <mat-card-title>{{dealPer.profilename}}</mat-card-title>
+                <mat-card-subtitle>{{dealPer.countyuser}}, {{dealPer.stateuser}}</mat-card-subtitle>
+                <mat-card-subtitle>{{dealPer.age}}</mat-card-subtitle>
+              </mat-card-header>
+              <img src={{urlhomearraytab2[i]}} [ngStyle]= "{'width': widthhomearraytab2[i] + 'px', 'height':heighthomearraytab2[i] + 'px'}">
+            </mat-card>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <a style="text-align:center;">
+          <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
+            <mat-card-subtitle> <b> Industry: </b> {{dealPer.industrylevel2}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{dealPer.mentoragree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Occupation: </b> {{dealPer.occup}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Looking for a Mentor: </b> {{dealPer.menteeagree}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> Veteran: </b> {{dealPer.veteran}}</mat-card-subtitle>
+            <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{dealPer.loyalty}}</mat-card-subtitle>
+            <mat-card-subtitle><b> Description: </b>{{dealPer.userdescription}}</mat-card-subtitle>
+          </mat-card>
+
+          <a *ngIf="i==0">
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Facebook username: </b>{{dealPer.facebookbusername}}</mat-card-subtitle>
+              <a *ngIf="emailshareflag1=='yes'" >
+                <mat-card-subtitle> <b> Email: </b>{{dealPer.email}}</mat-card-subtitle>
+              </a>
+            </mat-card>
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit21}}</mat-card-subtitle>
+              <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit21}}</mat-card-subtitle>
+            </mat-card>
+          </a>
+          <a *ngIf="i==1">
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Facebook username: </b>{{dealPer.facebookbusername}}</mat-card-subtitle>
+              <a *ngIf="emailshareflag2=='yes'" >
+                <mat-card-subtitle> <b> Email: </b>{{dealPer.email}}</mat-card-subtitle>
+              </a>
+            </mat-card>
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit22}}</mat-card-subtitle>
+              <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit22}}</mat-card-subtitle>
+            </mat-card>
+          </a>
+          <a *ngIf="i==2">
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Facebook username: </b>{{dealPer.facebookbusername}}</mat-card-subtitle>
+              <a *ngIf="emailshareflag3=='yes'" >
+                <mat-card-subtitle> <b> Email: </b>{{dealPer.email}}</mat-card-subtitle>
+              </a>
+            </mat-card>
+            <mat-card class="example-card">
+              <mat-card-subtitle> <b> Reason for Connect: </b>{{interestcateginit23}}</mat-card-subtitle>
+              <mat-card-subtitle> <b> Date Mutually Matched: </b>{{interdatetempinit23}}</mat-card-subtitle>
+            </mat-card>
+          </a>
+
+        </a>
+
+        <mat-action-row class="example-card" style="text-align:center;" fxLayout="column" fxLayoutAlign="space-around center">
+          <a *ngIf="i==0">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked107" (click)="removetab2(i)"
+                     (click)="nexttab2(dealPer.userid); clicked107 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==1">
+            <button  mat-button (click)="nextStep()" [disabled]="clicked108" (click)="removetab2(i)"
+                     (click)="nexttab2(dealPer.userid); clicked108 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+          <a *ngIf="i==2">
+            <button  mat-button [disabled]="clicked109" (click)="removetab2(i)"
+                     (click)="nexttab2(dealPer.userid); clicked109 = true;" routerLink="/Meetup/Tab2">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+          </a>
+        </mat-action-row>
+
+      </mat-expansion-panel>
+    </a>
+  </mat-accordion>
+</a>

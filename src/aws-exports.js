@@ -148,7 +148,27 @@ const awsmobile = {
         }
     ],
     "aws_user_files_s3_bucket": "test4images171405-staging",
-    "aws_user_files_s3_bucket_region": "us-west-2"
+    "aws_user_files_s3_bucket_region": "us-west-2",
+    "predictions": {
+        "identify": {
+            "identifyLabels": {
+                "proxy": false,
+                "region": "us-west-2",
+                "defaults": {
+                    "type": "LABELS"
+                }
+            }
+        },
+        "interpret": {
+            "interpretText": {
+                "region": "us-west-2",
+                "proxy": false,
+                "defaults": {
+                    "type": "SENTIMENT"
+                }
+            }
+        }
+    }
 };
 
 

@@ -6,6 +6,95 @@
     let-signOut="signOut"
   >
     <h1>Welcome {{ user.username }}!</h1>
-    <button (click)="signOut()">Sign Out</button>
+    <button (click)="signOut()">Sign Out</button> <br>
   </ng-template>
 </amplify-authenticator>
+
+<!-- Show the tabs on top and the content underneath it -->
+<!--tab1: Display all the contents of the Meetup data form they enetered and option to edit it-->
+<mat-tab-group animationDuration="0ms">
+  <!-- tab1: Display their SoWhat Vote Loyalty Points -->
+  <mat-tab label="SWV Loyalty Points">
+    <mat-card>
+      <mat-card-subtitle> <b> SoWhat Vote Loyalty Points: </b> {{loyalty}}</mat-card-subtitle>
+
+    </mat-card>
+  </mat-tab>
+  <!-- tab2 contents -->
+  <mat-tab *ngIf="profilecompPartF=='yes'" label="Edit Your Meetup Profile">
+    <br> <br> <a>Your Step0 Responses: </a>  &nbsp; &nbsp; <button mat-button routerLink="/Meetup/Step0edit">Edit My Step0 Responses</button>
+    <mat-card class="Step0 contents">
+      <mat-card-subtitle> <b> Age: </b> {{agestore1}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Gender: </b> {{genderstore1}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Education: </b> {{educationstore1}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Veteran: </b> {{veteran}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Interested in training a Mentee: </b> {{mentoragree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Looking for a Mentor: </b> {{menteeagree}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Looking for side jobs and community networking opportunities to make extra money </b> {{makemoneyside}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> SWV has permission to share your email address with those matches whose request you accept: </b> {{emailshareagree}}</mat-card-subtitle>
+    </mat-card> <br>
+
+
+    <mat-card class="Step3 contents">
+      <a>Your Step3 Responses: </a>  &nbsp; &nbsp; <button mat-button (click)="editStep3()" routerLink="/Meetup/Step3">Edit My Step3 Responses</button> <br>
+      <br>   <mat-card-subtitle> <b> Your Occupation: </b> {{occup}}</mat-card-subtitle>
+      <mat-card-subtitle> <b>The Specific Sub-Industry You Are Associated With: </b> {{industrylevel2}}</mat-card-subtitle>
+      <mat-card-subtitle> <b>The Industry You Are Associated With: </b> {{industrylevel1}}</mat-card-subtitle>
+    </mat-card> <br>
+
+    <mat-card class="Step4 contents">
+      <a>Your Step4 Responses: </a>  &nbsp; &nbsp; <button mat-button (click)="editStep4()" routerLink="/Meetup/Step4">Edit My Step4 Responses</button> <br>
+      <br>  <mat-card-subtitle> <b> Name: </b> {{profilename}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Facebook Username: </b> {{facebookbusername}}</mat-card-subtitle>
+      <mat-card-subtitle> <b> Please describe yourself, interests and hobbies: </b> {{userdescription}}</mat-card-subtitle>
+    </mat-card> <br>
+
+    <mat-card class="Step5 contents">
+      <a>Your Step5 Response: </a>  &nbsp; &nbsp; <button mat-button (click)="editStep5()" routerLink="/Meetup/Step5">Edit My Step5 Response</button> <br>
+      <br>    <a> Your Profile Picture  <br> <br>
+  <img src={{url}} [ngStyle]= "{'width': newWidth + 'px', 'height':newHeight + 'px'}">
+
+    </a>
+    </mat-card> <br>
+
+  </mat-tab>
+
+  <!-- tab2: user is given the option to unsubscribe from matchup service -->
+  <mat-tab *ngIf="profilecompPartF=='yes'" label="Change Meetup Subscription Status">
+    <mat-card>
+      <mat-card-content>
+        <a *ngIf="unsubscribematchingme==''">
+          <input type="checkbox" class="example-margin" [(ngModel)]="unsubscribematchingme" (change)="boxevent4($event)"> Check box to unsubscribe your profile from SoWhat Vote Meetup Service.
+          <!--   <br> <br> <button mat-button routerLink="/MyAccount">Submit</button> <br> -->
+        </a>
+
+        <a *ngIf="unsubscribematchingme=='yes'">
+          <br>  <mat-card-subtitle> <b> You Are Not Subscribed to SoWhat Vote Matching Service.</b></mat-card-subtitle>
+          <br> <button mat-button (click)="editunsub()">Edit My Response</button> <br>
+        </a>
+
+        <a *ngIf="unsubflag=='yes'">
+          <mat-form-field class="demo-form-field3" appearance="fill">
+            <mat-label>Select whether to subscribe to Meetup Service</mat-label>
+            <select matNativeControl required [(ngModel)]="substatus" [ngModelOptions]="{standalone: true}"> <br>
+              <option value="yes">Unsubscribe my profile from Meetup Service</option> <option value="">Resume my subscription to Meetup Service</option> <br>
+            </select>
+          </mat-form-field>
+          <br> <button mat-button (click)="unsubstore()">Submit</button> <br>
+        </a>
+
+        <br> <a *ngIf="unsubflag1=='yes'"> Thank you. Your response is saved. </a>
+
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+
+
+</mat-tab-group>
+
+
+
+
+
+
+

@@ -1,1 +1,82 @@
-<p>big5partaedit works!</p>
+
+<br> <a> Please complete these questions so we can find the perfect matches for you. </a>  <br>
+
+<mat-stepper  class="demo-stepper" orientation="vertical" [linear]="true" #stepper>
+  <mat-step [stepControl]="zeroFormGroup">
+    <form [formGroup]="zeroFormGroup">
+      <ng-template matStepLabel>Getting to Know You </ng-template>
+
+      <br> <a> Please select your age </a>  <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>Age range (years)</mat-label>
+        <select matNativeControl required [(ngModel)]=agestore1 [ngModelOptions]="{standalone: true}">
+          <!--   <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option> <option value="60">60</option> <option value="61">61</option> <option value="62">62</option> <option value="63">63</option> <option value="64">64</option> <option value="65">65</option> <option value="66">66</option> <option value="67">67</option> <option value="68">68</option> <option value="69">69</option> <option value="70">70</option> <option value="71">71</option> <option value="72">72</option> <option value="73">73</option> <option value="74">74</option> <option value="75">75</option> <option value="76">76</option> <option value="77">77</option> <option value="78">78</option> <option value="79">79</option> <option value="80+">80</option> -->
+          <option value="13 to 18 years">13 to 18 year old</option> <option value="19 to 23 year">19 to 23 year old</option> <option value="24 to 29 years">24 to 29 year old</option> <option value="30 to 35 years">30 to 35 year old</option> <option value="36 to 40 years">36 to 40 year old</option> <option value="41 to 49 years">41 to 49 year old</option> <option value="50 to 59 years">50 to 59 year old</option> <option value="60 to 65 years">60 to 65 year old</option> <option value="66 to 70 years">66 to 70 year old</option> <option value="71+ years">71+ year old</option>
+        </select>
+      </mat-form-field>
+      <br>  <a> Please select your gender </a> <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>Gender</mat-label>
+        <select matNativeControl required [(ngModel)]="genderstore1" [ngModelOptions]="{standalone: true}"> <br>
+          <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option> <br>
+        </select>
+        <mat-hint align="start">Your gender is confidential.</mat-hint>
+      </mat-form-field>
+      <br>  <br> <a> Education </a> <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>Education</mat-label>
+        <select matNativeControl required [(ngModel)]="educationstore1" [ngModelOptions]="{standalone: true}"
+                (change)="ageeduput($event)"> <br>
+          <option value="Less than a high school diploma">Less than a high school diploma</option> <option value="High school diploma">High school diploma</option> <option value="Some college or associate's degree">Some college or associate's degree</option> <option value="Bachelor's degree">Bachelor's degree</option> <option value="Master's degree">Master's degree</option> <option value="Greater than a Master's degree">Greater than a Master's degree</option>
+        </select>
+      </mat-form-field>
+      <mat-card>
+        <mat-card-content>
+          <section class="example-section">
+            <input type="checkbox" class="example-margin" [(ngModel)]="veteran" [ngModelOptions]="{standalone: true}"
+                   (change)="boxevent8($event)"> Please check box if you are a <b> veteran. </b><br>
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <section class="example-section">
+            <input type="checkbox" class="example-margin" [(ngModel)]="mentoragree" [ngModelOptions]="{standalone: true}"
+                   (change)="boxevent5($event)">Are you interested in <b> training a Mentee </b> in your occupation/industry/education?<br>
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <section class="example-section">
+            <input type="checkbox" class="example-margin" [(ngModel)]="menteeagree" [ngModelOptions]="{standalone: true}"
+                   (change)="boxevent6($event)">Are you <b> looking for a Mentor </b> in your occupation/industry/education?<br>
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <section class="example-section">
+            <input type="checkbox" class="example-margin" [(ngModel)]="makemoneyside" [ngModelOptions]="{standalone: true}"
+                   (change)="boxevent7($event)">Would you like to learn about <b> side jobs </b> and <b> community networking opportunities </b> to <b> make extra money?</b> <br>
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <section class="example-section">
+            <input type="checkbox" class="example-margin" [(ngModel)]="emailshareagree" [ngModelOptions]="{standalone: true}"
+                   (change)="boxevent3($event)">Please check box to confirm that we can <b> share your email address </b> with those matches whose <b> request you accept. </b>
+          </section>
+        </mat-card-content>
+      </mat-card>
+
+      <div>
+        <button mat-button [disabled]="toggleBool0" routerLink="/MyAccount" matStepperNext> Save Responses & Go Back to MyAccount </button>
+      </div>
+      <a *ngIf="vetflag=='yes'">
+        <br> <b> Thank you for your service and sacrifices! </b>
+      </a>
+    </form>
+  </mat-step>
+</mat-stepper>

@@ -1946,5 +1946,18 @@
         }
       ]
     }
+  },
+  "predictions": {
+    "identifyLabels84eda9b6": {
+      "providerPlugin": "awscloudformation",
+      "service": "Rekognition",
+      "dependsOn": [],
+      "identifyType": "identifyLabels"
+    },
+    "interpretText74414311": {
+      "providerPlugin": "awscloudformation",
+      "service": "Comprehend",
+      "interpretType": "interpretText"
+    }
   }
 }
