@@ -8,29 +8,13 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <!-- go the appropariate form Step which is incomplete-->
 <a *ngIf="profilecompPartA=='no'">
   <nav mat-tab-nav-bar>
-    <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections </a>
+    <a mat-tab-link routerLink="/Meetup/Step0" (click)="midtermclicked()"> 2022 Midterm Elections </a>
     <a mat-tab-link routerLink="/Meetup/Step0" (click)="meetupclicked()"> Meetup </a>
     <a mat-tab-link> Intro to SWV </a>
   </nav>
 </a>
 
-<a *ngIf="profilecompPartB=='no' && profilecompPartA=='yes'">
-  <nav mat-tab-nav-bar>
-    <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections </a>
-    <a mat-tab-link routerLink="/Meetup/Step1" (click)="meetupclicked()"> Meetup </a>
-    <a mat-tab-link> Intro to SWV </a>
-  </nav>
-</a>
-
-<a *ngIf="profilecompPartC=='no' && profilecompPartB=='yes'">
-  <nav mat-tab-nav-bar>
-    <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections </a>
-    <a mat-tab-link routerLink="/Meetup/Step2" (click)="meetupclicked()"> Meetup </a>
-    <a mat-tab-link> Intro to SWV </a>
-  </nav>
-</a>
-
-<a *ngIf="profilecompPartD=='no' && profilecompPartC=='yes'">
+<a *ngIf="profilecompPartD=='no' && profilecompPartA=='yes'">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections </a>
     <a mat-tab-link routerLink="/Meetup/Step3" (click)="meetupclicked()"> Meetup </a>

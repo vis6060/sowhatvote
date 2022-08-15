@@ -311,7 +311,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   //future comittee: this will do a temp store of the webpagevalue and prefercateg, so that after the ads we know where the user was.
   async ConfclickPreferResults(){
     const user = await Auth.currentAuthenticatedUser();
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: "future", categcol:"prefercateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "Senate", comcateg: "future", categcol:"prefercateg"}}
       API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     }
 
@@ -326,14 +326,14 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   // this will do a temp store of the webpagevalue and comcateg, so that after the ads we know where the user was. var2 is category of committee.
   async ConfclickComResults( var2:string){
     const user = await Auth.currentAuthenticatedUser();
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: var2, categcol:"comcateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "Senate", comcateg: var2, categcol:"comcateg"}}
       API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     }
 
   // this will do a temp store of the webpagevalue and issuecateg, so that after the ads we know where the user was. var2 is category of committee.
   async ConfclickIssResults( var2:string){
     const user = await Auth.currentAuthenticatedUser();
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: var2, categcol:"isscateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "Senate", comcateg: var2, categcol:"isscateg"}}
       API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     }
 

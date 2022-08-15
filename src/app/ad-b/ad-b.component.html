@@ -1,1 +1,72 @@
-<p>ad-b works!</p>
+
+<p *ngIf="webpagevalue=='House'">
+  <button mat-button color="primary" routerLink="/2022MidtermElections/USHouse">Continue to see results of the selected candidate</button>
+</p>
+
+<p *ngIf="webpagevalue=='Senate'">
+  <button mat-button color="primary" routerLink="/2022MidtermElections/USSenate">Continue to see results of the selected candidate</button>
+</p>
+
+<p *ngIf="webpagevalue=='Governor'">
+  <button mat-button color="primary" routerLink="/2022MidtermElections/StateExecutiveOffices">Continue to see results of the selected candidate</button>
+</p>
+
+<p *ngIf="whichtab=='homeconnect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='homedislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='homeaccept'">
+  <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='homedecline'">
+  <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab1connect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab1">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab1dislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab1">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab3connect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab3dislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab3accept'">
+  <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab3decline'">
+  <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab6connect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab6">Continue to view profiles</button>
+</p>
+
+<p *ngIf="whichtab=='tab6dislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button color="primary" routerLink="/Meetup/Tab6">Continue to view profiles</button>
+</p>

@@ -3,9 +3,8 @@ import { AuthenticatorService } from '@aws-amplify/ui-angular';
 import Amplify, {Auth, Predictions, Storage} from "aws-amplify";
 import awsExports from "src/aws-exports";
 import {API} from 'aws-amplify';
-import { DatePipe } from '@angular/common';
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {User} from "../big5parta/big5parta.component";
 import {APIService, DatinguserdbStaging} from "../API.service";
 
@@ -18,18 +17,24 @@ export class LoginboxComponent implements OnInit {
 
   user: CognitoUserInterface | undefined;
   authState: AuthState;
-  // filename="image2.png"
-//  public key='';
+
+  emaildisplay=""
   public dealsPer1: Array<DatinguserdbStaging>;  public dealsPer3: Array<DatinguserdbStaging>; public dealsPer5: Array<DatinguserdbStaging>;
 
-  constructor(public authenticator: AuthenticatorService, private route: ActivatedRoute,private api: APIService) {
-    Amplify.configure(awsExports);
+  router: Router;
+  constructor(public authenticator: AuthenticatorService, private route: ActivatedRoute,private api: APIService,_router: Router) {
+    Amplify.configure(awsExports);this.router = _router;
   }
 
   ngOnInit(): void {
     this.showexistingprofile()
-    // this.getimage()
+    this.showemail();
   }
+
+  //amplify authenticator box
+  async showemail() { const user = await Auth.currentAuthenticatedUser();this.emaildisplay=user.attributes.email;  console.log('attributes:', user.attributes);}
+
+
 
   //tab2: unsubscribe from matchup service
   unsubscribematchingme = "";

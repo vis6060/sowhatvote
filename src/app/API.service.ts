@@ -1540,6 +1540,16 @@ export type GetPreferCategMutation = {
   comcateg?: string | null;
 };
 
+export type GetwhichtabMutation = {
+  __typename: "ComCateg";
+  comcateg?: string | null;
+};
+
+export type GetwebpagevalueMutation = {
+  __typename: "ComCateg";
+  comcateg?: string | null;
+};
+
 export type FutureComPreferResultMutation = {
   __typename: "ComCateg";
   comcateg?: string | null;
@@ -2905,13 +2915,14 @@ export class APIService {
   async UpdateConnectButton(
     userid: string,
     itemid?: string,
+    whichtab?: string,
     uuid?: string,
     interestcategory?: Array<string | null>,
     timestamp?: string,
     timeunix?: number
   ): Promise<UpdateConnectButtonMutation> {
-    const statement = `mutation UpdateConnectButton($userid: String!, $itemid: String, $uuid: String, $interestcategory: [String], $timestamp: String, $timeunix: Float) {
-        updateConnectButton(userid: $userid, itemid: $itemid, uuid: $uuid, interestcategory: $interestcategory, timestamp: $timestamp, timeunix: $timeunix) {
+    const statement = `mutation UpdateConnectButton($userid: String!, $itemid: String, $whichtab: String, $uuid: String, $interestcategory: [String], $timestamp: String, $timeunix: Float) {
+        updateConnectButton(userid: $userid, itemid: $itemid, whichtab: $whichtab, uuid: $uuid, interestcategory: $interestcategory, timestamp: $timestamp, timeunix: $timeunix) {
           __typename
           userid
         }
@@ -2921,6 +2932,9 @@ export class APIService {
     };
     if (itemid) {
       gqlAPIServiceArguments.itemid = itemid;
+    }
+    if (whichtab) {
+      gqlAPIServiceArguments.whichtab = whichtab;
     }
     if (uuid) {
       gqlAPIServiceArguments.uuid = uuid;
@@ -2942,13 +2956,14 @@ export class APIService {
   async UpdateAcceptRequestatb3Button(
     userid: string,
     itemid?: string,
+    whichtab?: string,
     uuid?: string,
     interestcategory?: Array<string | null>,
     timestamp?: string,
     timeunix?: number
   ): Promise<UpdateAcceptRequestatb3ButtonMutation> {
-    const statement = `mutation UpdateAcceptRequestatb3Button($userid: String!, $itemid: String, $uuid: String, $interestcategory: [String], $timestamp: String, $timeunix: Float) {
-        updateAcceptRequestatb3Button(userid: $userid, itemid: $itemid, uuid: $uuid, interestcategory: $interestcategory, timestamp: $timestamp, timeunix: $timeunix) {
+    const statement = `mutation UpdateAcceptRequestatb3Button($userid: String!, $itemid: String, $whichtab: String, $uuid: String, $interestcategory: [String], $timestamp: String, $timeunix: Float) {
+        updateAcceptRequestatb3Button(userid: $userid, itemid: $itemid, whichtab: $whichtab, uuid: $uuid, interestcategory: $interestcategory, timestamp: $timestamp, timeunix: $timeunix) {
           __typename
           userid
         }
@@ -2958,6 +2973,9 @@ export class APIService {
     };
     if (itemid) {
       gqlAPIServiceArguments.itemid = itemid;
+    }
+    if (whichtab) {
+      gqlAPIServiceArguments.whichtab = whichtab;
     }
     if (uuid) {
       gqlAPIServiceArguments.uuid = uuid;
@@ -2981,13 +2999,14 @@ export class APIService {
   async UpdateDeclineRequestatb3Button(
     userid: string,
     itemid?: string,
+    whichtab?: string,
     uuid?: string,
     interestcategory?: Array<string | null>,
     timestamp?: string,
     timeunix?: number
   ): Promise<UpdateDeclineRequestatb3ButtonMutation> {
-    const statement = `mutation UpdateDeclineRequestatb3Button($userid: String!, $itemid: String, $uuid: String, $interestcategory: [String], $timestamp: String, $timeunix: Float) {
-        updateDeclineRequestatb3Button(userid: $userid, itemid: $itemid, uuid: $uuid, interestcategory: $interestcategory, timestamp: $timestamp, timeunix: $timeunix) {
+    const statement = `mutation UpdateDeclineRequestatb3Button($userid: String!, $itemid: String, $whichtab: String, $uuid: String, $interestcategory: [String], $timestamp: String, $timeunix: Float) {
+        updateDeclineRequestatb3Button(userid: $userid, itemid: $itemid, whichtab: $whichtab, uuid: $uuid, interestcategory: $interestcategory, timestamp: $timestamp, timeunix: $timeunix) {
           __typename
           userid
         }
@@ -2997,6 +3016,9 @@ export class APIService {
     };
     if (itemid) {
       gqlAPIServiceArguments.itemid = itemid;
+    }
+    if (whichtab) {
+      gqlAPIServiceArguments.whichtab = whichtab;
     }
     if (uuid) {
       gqlAPIServiceArguments.uuid = uuid;
@@ -3740,12 +3762,13 @@ export class APIService {
   async UpdateDislikeButton(
     userid: string,
     itemid?: string,
+    whichtab?: string,
     uuid?: string,
     timestamp?: string,
     timeunix?: number
   ): Promise<UpdateDislikeButtonMutation> {
-    const statement = `mutation UpdateDislikeButton($userid: String!, $itemid: String, $uuid: String, $timestamp: String, $timeunix: Float) {
-        updateDislikeButton(userid: $userid, itemid: $itemid, uuid: $uuid, timestamp: $timestamp, timeunix: $timeunix) {
+    const statement = `mutation UpdateDislikeButton($userid: String!, $itemid: String, $whichtab: String, $uuid: String, $timestamp: String, $timeunix: Float) {
+        updateDislikeButton(userid: $userid, itemid: $itemid, whichtab: $whichtab, uuid: $uuid, timestamp: $timestamp, timeunix: $timeunix) {
           __typename
           userid
         }
@@ -3755,6 +3778,9 @@ export class APIService {
     };
     if (itemid) {
       gqlAPIServiceArguments.itemid = itemid;
+    }
+    if (whichtab) {
+      gqlAPIServiceArguments.whichtab = whichtab;
     }
     if (uuid) {
       gqlAPIServiceArguments.uuid = uuid;
@@ -4799,6 +4825,38 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <GetPreferCategMutation>response.data.getPreferCateg;
+  }
+  async Getwhichtab(userid?: string): Promise<GetwhichtabMutation> {
+    const statement = `mutation Getwhichtab($userid: String) {
+        getwhichtab(userid: $userid) {
+          __typename
+          comcateg
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetwhichtabMutation>response.data.getwhichtab;
+  }
+  async Getwebpagevalue(userid?: string): Promise<GetwebpagevalueMutation> {
+    const statement = `mutation Getwebpagevalue($userid: String) {
+        getwebpagevalue(userid: $userid) {
+          __typename
+          comcateg
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (userid) {
+      gqlAPIServiceArguments.userid = userid;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetwebpagevalueMutation>response.data.getwebpagevalue;
   }
   async FutureComPreferResult(
     candname?: string,

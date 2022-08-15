@@ -175,7 +175,7 @@ export class HomeComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     //reset the interest array in case it was clicked and then nextprofile was clicked, so nothing to store.
     this.categ=new Array();
-    this.api.UpdateDislikeButton(user.attributes.sub,var3,uuid(),new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {})
+    this.api.UpdateDislikeButton(user.attributes.sub,var3,"homedislike",uuid(),new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {})
   }
 
   //store the reason for connect in array
@@ -193,7 +193,7 @@ export class HomeComponent implements OnInit {
     //reset the interest array to empty once the interest have been stored in interaction table with a succesful or failing API call
     //for each friendsrequestsent interaction by the user they get 20 loyalty points
     this.interesttemp=this.categ as [];
-    this.api.UpdateConnectButton(user.attributes.sub,var1,uuid(),this.interesttemp,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {
+    this.api.UpdateConnectButton(user.attributes.sub,var1,"homeconnect",uuid(),this.interesttemp,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {
       console.log(event1); this.categ=new Array();}).catch(error => {console.log(error.response1b);this.categ=new Array();});
   }
 
@@ -926,7 +926,7 @@ export class HomeComponent implements OnInit {
     //this saves interactiondb timestamp of requestaccepted event
     // index of array of itemid to delete for tab6. Userid and itemid are swapped in the graphqlapi (next, remove itemid from tab6 of the user who sent the request)
     //  once we have tab6 index removes the itemid from the tab6 list, this too has the userid and itemid swapped
-    this.api.UpdateAcceptRequestatb3Button(user.attributes.sub,var1,uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
+    this.api.UpdateAcceptRequestatb3Button(user.attributes.sub,var1,"homeaccept",uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
       new Date().valueOf()).then((event1) => {})
   }
 
@@ -936,7 +936,7 @@ export class HomeComponent implements OnInit {
     //moves the itemid from tab3 to tab6B in itemtracking table.
     //moves the userid from tab3 to tab6B in itemtracking table of the itemid's row
     //populate interaction table with userid and itemid, with "requestdeclined"
-    this.api.UpdateDeclineRequestatb3Button(user.attributes.sub,var1,uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
+    this.api.UpdateDeclineRequestatb3Button(user.attributes.sub,var1,"homedecline",uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
       new Date().valueOf()).then((event1) => {})
   }
 

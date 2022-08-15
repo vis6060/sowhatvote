@@ -11,12 +11,14 @@ import { Big5partfComponent } from './big5partf/big5partf.component';
 import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component';
 
 import {DirectAccessGuardService} from "./direct-access-guard.service";
+import {AdBComponent} from "./ad-b/ad-b.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/2022MidtermElections/USSenate', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'MyAccount', component: LoginboxComponent },
-  { path: 'AdA', component: AdAComponent },
+  { path: 'Community1', component: AdAComponent,canActivate: [DirectAccessGuardService] },
+  { path: 'Community2', component: AdBComponent,canActivate: [DirectAccessGuardService] },
   { path: 'Meetup/Step0', component: Big5partaComponent }, //insert canActivate here too, once you have created button to access Step0
   { path: 'Meetup/Step0edit', component: Big5partaeditComponent,canActivate: [DirectAccessGuardService] },//canActivate method will ensure ppl cannot directly access these routes.
   { path: 'Meetup/Step3', component: Big5partdComponent,canActivate: [DirectAccessGuardService]},

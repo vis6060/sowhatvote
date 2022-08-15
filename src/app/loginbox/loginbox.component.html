@@ -1,15 +1,37 @@
 
 <amplify-authenticator [loginMechanisms]="['email']">
+  <!-- sign-up-field override -->
+  <ng-template
+    amplifySlot="sign-up-form-fields"
+    let-validationErrors="validationErrors"
+  >
+    <!-- Re-use default `Authenticator.SignUp.FormFields` -->
+    <amplify-sign-up-form-fields></amplify-sign-up-form-fields>
+
+    <!-- Append & require Terms & Conditions field to sign up -->
+    <amplify-checkbox
+      [errorMessage]="validationErrors.acknowledgement"
+      [hasError]="!!validationErrors.acknowledgement"
+      name="acknowledgement"
+      value="yes"
+    >
+      I agree with the Terms & Conditions
+    </amplify-checkbox>
+  </ng-template>
+
+  <!-- signed-in content override -->
   <ng-template
     amplifySlot="authenticated"
     let-user="user"
     let-signOut="signOut"
   >
-    <h1>Welcome {{ user.username }}!</h1>
+    <h1>Welcome {{ emaildisplay }}!</h1>
     <button (click)="signOut()">Sign Out</button> <br>
   </ng-template>
 </amplify-authenticator>
 
+
+<ng-container *ngIf="authenticator.route === 'authenticated'">
 <!-- Show the tabs on top and the content underneath it -->
 <!--tab1: Display all the contents of the Meetup data form they enetered and option to edit it-->
 <mat-tab-group animationDuration="0ms">
@@ -89,9 +111,8 @@
     </mat-card>
   </mat-tab>
 
-
 </mat-tab-group>
-
+</ng-container>
 
 
 

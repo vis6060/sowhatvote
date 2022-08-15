@@ -18,7 +18,7 @@ export class AppComponent {
     this.routeOnRefreshmidterm()
   }
 
-  profilecompPartA="";profilecompPartB="";profilecompPartC="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
+  profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
 
   //get the flag whether StepF and StepA in the form sign-up steps are complete.
 
@@ -28,7 +28,6 @@ export class AppComponent {
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
     API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => {
       this.profilecompPartF=response1.data[0].profilecompPartF;  this.profilecompPartA=response1.data[0].profilecompPartA;
-      this.profilecompPartB=response1.data[0].profilecompPartB;this.profilecompPartC=response1.data[0].profilecompPartC;
       this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
       ;}).catch(error => {console.log(error.response1)});
   }

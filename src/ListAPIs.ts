@@ -119,3 +119,9 @@
 //ListDatinguserdbStagingsOneBigArray1A
 //ListDatinguserdbStagingsOneBigArray
 //ListDatinguserdbStagingsOneBigArray1C
+
+//tabs for whome routerlink of Community1 for ads flow is attached at the buttons
+//Tab3b, 6c, 5, home, 1a, 1b, 1c = tabs whose updateconnectbutton function is updated with whichtab field
+//Tab3b, 6c, home, 1a, 1b, 1c = tabs whose updatedislikebutton function is updated with whichtab field
+//Tab3, home tabs whose updatedeclinerequestatb3Button function is updated with whichtab field
+//Tab3, home tabs whose updateacceptrequestatb3button function is updated with whichtab field

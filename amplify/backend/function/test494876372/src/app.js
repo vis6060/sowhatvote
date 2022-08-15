@@ -78,7 +78,7 @@ app.get(path + hashKeyPath, function(req, res) {
 
   let queryParams = {
     TableName: tableName,
-    ProjectionExpression: "tab1index, tab3index,tab6index, searchactedids",
+    ProjectionExpression: "tab1index, tab3index,tab6index, searchactedids, whichtab",
     KeySchema: [
       { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
     ],

@@ -346,10 +346,10 @@ export class InstatehousedisplaynavComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     //Step2: if a user votes on a committee, future committee preference, or an issue, then this will store the search cand name that is on display. so when it is time to display results we will know who it was.
     if(this.initsearchflag=='yes') {//one API call does both search save and prefercateg save.
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: "future", categcol:"prefercateg",searchname:this.CandName10,categcolS: "searchcateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "House", comcateg: "future", categcol:"prefercateg",searchname:this.CandName10,categcolS: "searchcateg"}}
       API.post("initializeuserarrayt4", "/init", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     } else if (this.initsearchflag=='') {
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: "future", categcol:"prefercateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "House", comcateg: "future", categcol:"prefercateg"}}
       API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     } }
 
@@ -365,10 +365,10 @@ export class InstatehousedisplaynavComponent implements OnInit {
   async ConfclickComResults( var2:string){
     const user = await Auth.currentAuthenticatedUser();
     if(this.initsearchflag=='yes') {//one API call does both search save and prefercateg save.
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: var2, categcol:"comcateg",searchname:this.CandName10,categcolS: "searchcateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "House", comcateg: var2, categcol:"comcateg",searchname:this.CandName10,categcolS: "searchcateg"}}
       API.post("initializeuserarrayt4", "/init", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     } else if (this.initsearchflag=='') {
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: var2, categcol:"comcateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "House", comcateg: var2, categcol:"comcateg"}}
       API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     } }
 
@@ -377,10 +377,10 @@ export class InstatehousedisplaynavComponent implements OnInit {
   async ConfclickIssResults( var2:string){
     const user = await Auth.currentAuthenticatedUser();
     if(this.initsearchflag=='yes') {//one API call does both search save and prefercateg save.
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: var2, categcol:"isscateg",searchname:this.CandName10,categcolS: "searchcateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "House", comcateg: var2, categcol:"isscateg",searchname:this.CandName10,categcolS: "searchcateg"}}
       API.post("initializeuserarrayt4", "/init", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     } else if (this.initsearchflag=='') {
-      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "InState", comcateg: var2, categcol:"isscateg"}}
+      const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "House", comcateg: var2, categcol:"isscateg"}}
       API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
     } }
 

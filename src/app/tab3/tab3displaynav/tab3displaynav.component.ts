@@ -396,7 +396,7 @@ export class Tab3displaynavComponent implements OnInit {
     //this saves interactiondb timestamp of requestaccepted event
     // index of array of itemid to delete for tab6. Userid and itemid are swapped in the graphqlapi (next, remove itemid from tab6 of the user who sent the request)
     //  once we have tab6 index removes the itemid from the tab6 list, this too has the userid and itemid swapped
-    this.api.UpdateAcceptRequestatb3Button(user.attributes.sub,var1,uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
+    this.api.UpdateAcceptRequestatb3Button(user.attributes.sub,var1,"tab3accept",uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
       new Date().valueOf()).then((event1) => {})
   }
 
@@ -406,7 +406,7 @@ export class Tab3displaynavComponent implements OnInit {
     //moves the itemid from tab3 to tab6B in itemtracking table.
     //moves the userid from tab3 to tab6B in itemtracking table of the itemid's row
     //populate interaction table with userid and itemid, with "requestdeclined"
-    this.api.UpdateDeclineRequestatb3Button(user.attributes.sub,var1,uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
+    this.api.UpdateDeclineRequestatb3Button(user.attributes.sub,var1,"tab3decline",uuid(),var2,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
       new Date().valueOf()).then((event1) => {})
   }
 

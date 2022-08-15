@@ -71,7 +71,7 @@ export class Tab3bdisplaynavComponent implements OnInit {
     //reset the interest array to empty once the interest have been stored in interaction table with a succesful or failing API call
     //for each friendsrequestsent interaction by the user they get 20 loyalty points
     this.interesttemp=this.categ as [];
-    this.api.UpdateConnectButton(user.attributes.sub,var1,uuid(),this.interesttemp,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {
+    this.api.UpdateConnectButton(user.attributes.sub,var1,"tab3connect",uuid(),this.interesttemp,new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {
       console.log(event1); this.categ=new Array();}).catch(error => {console.log(error.response1b);this.categ=new Array();});
   }
 
@@ -80,7 +80,7 @@ export class Tab3bdisplaynavComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     //reset the interest array in case it was clicked and then nextprofile was clicked, so nothing to store.
     this.categ=new Array();
-    this.api.UpdateDislikeButton(user.attributes.sub,var3,uuid(),new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {console.log("dislike entered")})
+    this.api.UpdateDislikeButton(user.attributes.sub,var3,"tab3dislike",uuid(),new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),new Date().valueOf() ).then((event1) => {console.log("dislike entered")})
   }
 
   async delaytabPutIndex(ms: number) {
