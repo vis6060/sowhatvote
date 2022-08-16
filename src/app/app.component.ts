@@ -18,12 +18,26 @@ export class AppComponent {
     this.routeOnRefresh()
     this.routeOnRefreshmidterm()
     this.refreshtab()
+    console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
+    console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
+    console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
+    console.log( 'midtermclicked homepage cache', Cache.getItem('midtermclicked'))
+    console.log('myaccountenter homepage cache', Cache.getItem('myaccountenter'))
+    console.log('profileAstatus homepage cache', Cache.getItem('profileAstatus'))
+    console.log('profileDstatus cache', Cache.getItem('profileDstatus'))
+    console.log('profileEstatus cache', Cache.getItem('profileEstatus'))
+    console.log('profileFstatus cache', Cache.getItem('profileFstatus'))
   }
 
   profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
-  profileAf=""
+  profileAfag="";profileDfag="";profileEfag="";profileFfag=""
 
-  refreshtab() {if(Cache.getItem('profileAstatus')=="yes") {this.profileAf="yes"}}
+  refreshtab() {
+    if(Cache.getItem('profileAstatus')=="yes") {this.profileAfag="yes"}
+    if(Cache.getItem('profileDstatus')=="yes") {this.profileDfag="yes"}
+    if(Cache.getItem('profileEstatus')=="yes") {this.profileEfag="yes"}
+    if(Cache.getItem('profileFstatus')=="yes") {this.profileFfag="yes"}
+  }
 
   //get the flag whether StepF and StepA in the form sign-up steps are complete.
   async level2tabRest(){

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {API, Auth} from "aws-amplify";
+import {API, Auth, Cache} from "aws-amplify";
+import {APIService} from "../API.service";
 
 @Component({
   selector: 'app-ad-a',
@@ -8,11 +9,21 @@ import {API, Auth} from "aws-amplify";
 })
 export class AdAComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: APIService,) { }
 
   ngOnInit(): void {
-
+    this.webpageroute()
   }
 
+  webpagevalue="";whichtab=""; profileFflag=""
+
+  async webpageroute() {
+    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
+    const user = await Auth.currentAuthenticatedUser();
+//has the comcategory for whom the results need to be display as view results button was clicked and then there were two ad pages.
+    this.api.Getwebpagevalue(user.attributes.sub).then((event2) => {this.webpagevalue=event2.comcateg as unknown as any;});
+    //this gets the whichtab value and also blanks it.
+    this.api.Getwhichtab(user.attributes.sub).then((event1) => {this.whichtab=event1.comcateg as unknown as any;});
+}
 
 }

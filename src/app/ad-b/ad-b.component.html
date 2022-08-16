@@ -1,3 +1,13 @@
+<a> <b> Ways of Helping Your Community </b></a>
+<a> Page 2 of 2 </a>
+
+<p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''">
+  <a> We are loading your personalized results.  Meanwhile, please read below.</a>
+</p>
+
+<p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''">
+  <button mat-button color="primary" routerLink="/Meetup/Home">Continue</button>
+</p>
 
 <p *ngIf="webpagevalue=='House'">
   <button mat-button color="primary" routerLink="/2022MidtermElections/USHouse">Continue to see results of the selected candidate</button>

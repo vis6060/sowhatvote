@@ -31,7 +31,7 @@ export class Big5partfComponent implements OnInit {
 
   ngOnInit(): void {
     this.delaygetedit(100)
- //   this.movenextpage()
+    this.movenextpage()
   }
 
   async delaygetedit(ms: number) {await new Promise(resolve => setTimeout(()=>this.geteditStep5(), ms)).then(()=>console.log("fired"));}
@@ -43,8 +43,9 @@ export class Big5partfComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
-
-  movenextpage() { if(Cache.getItem('profileFstatus')=="yes") {this.router.navigate(['/Meetup/Step5'])}}
+  locationreload() {  location.reload();}
+  movenextpage() { if(Cache.getItem('profileFstatus')=="yes") {this.seccompleteF();
+    this.router.navigate(['/Community1'])}}
 
   public dealsPer1: Array<DatinguserdbStaging>;  public dealsPer3: Array<DatinguserdbStaging>; public dealsPer5: Array<DatinguserdbStaging>;
 
@@ -111,10 +112,7 @@ export class Big5partfComponent implements OnInit {
 
 //on clicking next button store the original and new width and height of image in the userdb table.
   async  picclick () {
-    const expiration = new Date().valueOf()
-    Cache.setItem('profileFstatus', 'yes', { expires: expiration +1800000 }); //expires after 30minutes, time is in ms.
-
-    const user = await Auth.currentAuthenticatedUser();
+     const user = await Auth.currentAuthenticatedUser();
     if( this.origWidth>this.origHeight) {
       this.newWidth=300; this.newHeight=this.origHeight/( this.origWidth/300);
   //    this.url=Cache.getItem('urlcache');
@@ -190,6 +188,11 @@ export class Big5partfComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartF"}}
     API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+  }
+
+  async seccompleteflag() {
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileFstatus', 'yes', { expires: expiration +60000 }); //expires after 30minutes as user might be reading the Communty1 and Community2 ads.
   }
 
 }

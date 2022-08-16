@@ -36,3 +36,7 @@
 .mat-expansion-panel-header {
   height: auto!important;
 }
+
+mat-form-field {
+  width: 50%;
+}

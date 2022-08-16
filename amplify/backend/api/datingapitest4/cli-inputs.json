@@ -217,6 +217,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/initsenatedup": {
+      "name": "/initsenatedup",
+      "lambdaFunction": "test4b9373dda",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

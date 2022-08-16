@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {API, Auth} from "aws-amplify";
+import {API, Auth, Cache} from "aws-amplify";
 import {APIService} from "../API.service";
 
 @Component({
@@ -15,9 +15,10 @@ export class AdBComponent implements OnInit {
     this.webpageroute()
   }
 
-  webpagevalue="";whichtab=""
+  webpagevalue="";whichtab="";profileFflag=""
 
   async webpageroute() {
+    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
     const user = await Auth.currentAuthenticatedUser();
 //has the comcategory for whom the results need to be display as view results button was clicked and then there were two ad pages.
     this.api.Getwebpagevalue(user.attributes.sub).then((event2) => {this.webpagevalue=event2.comcateg as unknown as any;});
@@ -33,6 +34,7 @@ export class AdBComponent implements OnInit {
 //       this.whichtab=response70.data[0].whichtab
 //    }).catch(error => {console.log(error.response70);});
   }
+
 
 
 }

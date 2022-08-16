@@ -7,6 +7,8 @@
 //API initializeuserarrayt4/index corresponds to   usercandarraydisplay-staging and *25e function
 //API initializeuserarrayt4/init  corresponds to   usercandarraydisplay-staging and *290 function
 
+//API datingapitest4/initsenatedup (post avail) corresponds to   usercandarraydisplay-staging and *dda function
+
 // API storeresultt4/store ( post avail) corresponds to ushouserepcandsmain and *2fe function
 // API comsresultt4/coms ( post avail) corresponds to ushouserepcandscoms and *8eb function
 // API issresultt4/iss (post avail ) corresponds to ushouserepcandsissues and *4a0 function

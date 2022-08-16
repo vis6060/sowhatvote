@@ -49,9 +49,9 @@ export class Big5partdComponent implements OnInit {
     this.router.navigate([currentUrl]);
   }
 
-  movenextpage() { if(Cache.getItem('profileDstatus')=="yes") {this.router.navigate(['/Meetup/Step4'])}}
+  locationreload() {  location.reload();}
 
-
+  movenextpage() { if(Cache.getItem('profileDstatus')=="yes") { this.seccompleteD();this.router.navigate(['/Meetup/Step4'])}}
 
   toggleBool5= "true";    nextcheckfunc5() {this.toggleBool5= "false";}
 
@@ -81,8 +81,6 @@ export class Big5partdComponent implements OnInit {
 
   //record that Section D is complete.
   async seccompleteD() {
-    const expiration = new Date().valueOf()
-    Cache.setItem('profileDstatus', 'yes', { expires: expiration +1800000 }); //expires after 30minutes, time is in ms.
 
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartD"}}
@@ -95,6 +93,11 @@ export class Big5partdComponent implements OnInit {
     let paramsp1a = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub,editsection:"Step3Edit"} };
     API.get("datingapitest4", "/userdbapieditform/m", paramsp1a).then(response1a =>
     {this.editstep3flag=response1a.data[0].Step3Edit;}).catch(error => {console.log(error.response1a)});
+  }
+
+  async seccompleteflag() {
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileDstatus', 'yes', { expires: expiration +60000 }); //expires after 10minute, time is in ms.
   }
 
 }

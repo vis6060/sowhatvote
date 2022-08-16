@@ -3,7 +3,7 @@
 <br> <br> <a> Step 4 of 5: </a>
 <form [formGroup]="prefifthFormGroup">
   <mat-form-field class="demo-form-field1" appearance="fill">
-    <mat-label>Name</mat-label>
+    <mat-label>Your Name</mat-label>
     <input  matInput placeholder="John Doe" formControlName="prefifthCtrl" required #message maxlength="25" [(ngModel)]="profilename" (change)="nameevent($event)"  /> <br>
     <mat-hint align="end">{{message.value.length}} / 25</mat-hint>
   </mat-form-field>
@@ -48,7 +48,7 @@
 
 <div *ngIf="toggleBool6=='false'&& editstep4flag==''">
   <p>Thank you for answering all questions. Please click Next.</p>
-  <button mat-button (click)="seccompleteE()" (click)="reloadComponent()"> Next</button>
+  <button mat-button (click)="seccompleteflag()" (click)="locationreload()"> Next</button>
 </div>
 
 <div *ngIf="toggleBool6=='false'&& editstep4flag=='yes'">

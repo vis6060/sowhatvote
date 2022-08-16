@@ -50,10 +50,10 @@ locationreload() {  location.reload();}
 
   //movenextpage() { if(Cache.getItem('profileAstatus')=="yes") {this.seccompleteA();this.router.navigate(['/2022MidtermElections/USSenate'])}}
 
-   movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && Cache.getItem('midtermclicked')=="yes")  {
+   movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('midtermclicked')=="yes" ||Cache.getItem('midtermenter')=="yes"))  {
      this.seccompleteA(); this.router.navigate(['/2022MidtermElections/USSenate'])}
 
-  else if(Cache.getItem('profileAstatus')=="yes" && Cache.getItem('meetupclicked')=="yes")  {
+  else if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes"))  {
      this.seccompleteA();  this.router.navigate(['/Meetup/Step3'])}}
 
 //to enure that zip codes are only numbers
@@ -191,7 +191,7 @@ locationreload() {  location.reload();}
 
   async seccompleteflag() {
     const expiration = new Date().valueOf()
-    Cache.setItem('profileAstatus', 'yes', { expires: expiration +2000 }); //expires after 1minute, time is in ms.
+    Cache.setItem('profileAstatus', 'yes', { expires: expiration +60000 }); //expires after 10minute, time is in ms.
 
   }
 

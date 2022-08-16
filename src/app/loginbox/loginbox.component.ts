@@ -31,7 +31,7 @@ export class LoginboxComponent implements OnInit {
    //   this.onAuthEvent(payload);
   //    console.log('A new auth event has happened: ', data.payload.data.username + ' has ' + data.payload.event);
       if(data.payload.event=="signIn") {location.reload();}
-      if(data.payload.event=="signOut") {location.reload();}
+      if(data.payload.event=="signOut") {location.reload()}
     })
   }
 
@@ -39,8 +39,12 @@ export class LoginboxComponent implements OnInit {
     this.showexistingprofile()
  //   this.showemail();
   //  this.movenextpage()
-    console.log(Cache.getItem('meetupenter'));
-    console.log(Cache.getItem('midtermenter'))
+//    Cache.removeItem("meetupclicked");  Cache.removeItem("midtermclicked"); Cache.removeItem("profileAstatus");
+ //   Cache.removeItem("profileDstatus"); Cache.removeItem("profileEstatus"); Cache.removeItem("profileFstatus");
+    console.log('meetupenter login cache', Cache.getItem('meetupenter'));
+    console.log( 'midtermenter login cache', Cache.getItem('midtermenter'))
+    console.log('myaccountenter login cache', Cache.getItem('myaccountenter'))
+    console.log('profileAstatus login cache', Cache.getItem('profileAstatus'))
   }
 
   reloadComponent() {
@@ -51,22 +55,22 @@ export class LoginboxComponent implements OnInit {
   }
 
   //amplify authenticator box
-  async showemail() {  const user = await Auth.currentAuthenticatedUser();this.emaildisplay=user.attributes.email;  console.log('attributes:', user.attributes);}
+ // async showemail() {  const user = await Auth.currentAuthenticatedUser();this.emaildisplay=user.attributes.email;  console.log('attributes:', user.attributes);}
 
-  movenextpage() { if(Cache.getItem('SecAenter')=="yes")  {this.router.navigate(['/Meetup/Step0'])}
+ // movenextpage() { if(Cache.getItem('SecAenter')=="yes")  {this.router.navigate(['/Meetup/Step0'])}
 
-  else if(Cache.getItem('midtermenter')=="yes")  {
-    this.router.navigate(['/2022MidtermElections/USSenate'])}
+ // else if(Cache.getItem('midtermenter')=="yes")  {
+//    this.router.navigate(['/2022MidtermElections/USSenate'])}
 
-  else  if(Cache.getItem('SecDenter')=="yes")  {this.router.navigate(['/Meetup/Step3'])}
+//  else  if(Cache.getItem('SecDenter')=="yes")  {this.router.navigate(['/Meetup/Step3'])}
 
-  else  if(Cache.getItem('SecEenter')=="yes")  {this.router.navigate(['/Meetup/Step4'])}
+//  else  if(Cache.getItem('SecEenter')=="yes")  {this.router.navigate(['/Meetup/Step4'])}
 
-  else  if(Cache.getItem('SecFenter')=="yes")  {this.router.navigate(['/Meetup/Step5'])}
+ // else  if(Cache.getItem('SecFenter')=="yes")  {this.router.navigate(['/Meetup/Step5'])}
 
-  else if(Cache.getItem('meetupenter')=="yes")  {
-    this.router.navigate(['/Meetup/Home'])}
-  }
+ // else if(Cache.getItem('meetupenter')=="yes")  {
+ //   this.router.navigate(['/Meetup/Home'])}
+//  }
 
 
   //tab2: unsubscribe from matchup service
@@ -127,10 +131,24 @@ export class LoginboxComponent implements OnInit {
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
     API.get("datingapitest4", "/userdbapiemail/m", paramsp1).then(response1 =>
     { console.log(response1);
+      this.profilecompPartA=response1.data[0].profilecompPartA;   this.profilecompPartF=response1.data[0].profilecompPartF;
+      this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
+
+  //    console.log(Cache.getItem('midtermenter'))
+ //     console.log(Cache.getItem('myaccountenter'))
+      if(Cache.getItem('myaccountenter')=="yes") { this.router.navigate(['/MyAccount']) } else
+      if(this.profilecompPartA=='no') {this.router.navigate(['/Meetup/Step0'])} else
+      if(Cache.getItem('midtermenter')=="yes")  {this.router.navigate(['/2022MidtermElections/USSenate'])} else
+      if(this.profilecompPartD=='no') {this.router.navigate(['/Meetup/Step3']) } else
+      if(this.profilecompPartE=='no') {this.router.navigate(['/Meetup/Step4']) } else
+      if(this.profilecompPartF=='no') {this.router.navigate(['/Meetup/Step5']) } else
+      if(Cache.getItem('meetupenter')=="yes")  {this.router.navigate(['/Meetup/Home'])}
+
+
       Storage.get(response1.data[0].s3file).then( res => {this.url=res; console.log(res);
         this.newWidth=response1.data[0].newWidth; this.newHeight=response1.data[0].newHeight;
         this.readyflag="yes"});
-       console.log(response1.data[0].s3file)
+      console.log(response1.data[0].s3file)
       this.zipuserentered=response1.data[0].zipuserentered; this.agestore1=response1.data[0].age; this.genderstore1=response1.data[0].gender;
       this.educationstore1=response1.data[0].education; this.veteran=response1.data[0].veteran; this.mentoragree=response1.data[0].mentoragree;
       this.menteeagree=response1.data[0].menteeagree; this.makemoneyside=response1.data[0].makemoneyside; this.emailshareagree=response1.data[0].emailshareagree;
@@ -144,10 +162,6 @@ export class LoginboxComponent implements OnInit {
       this.countyuser=response1.data[0].countyuser;
       this.stateuser=response1.data[0].stateuser;
       this.loyalty=response1.data[0].loyalty;
-
-      this.profilecompPartA=response1.data[0].profilecompPartA;   this.profilecompPartF=response1.data[0].profilecompPartF;
-      this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
-
     }).catch(error => {console.log(error.response1)});
   }
 

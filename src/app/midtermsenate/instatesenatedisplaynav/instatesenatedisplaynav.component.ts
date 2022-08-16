@@ -136,7 +136,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   async gethompage1Binitialize() {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("initializeuserarrayt4", "/initsenate/m", paramsp1).then(response1 =>
+    API.get("datingapitest4", "/initsenatedup/m", paramsp1).then(response1 =>
     { console.log(response1) //this is the entire row of the user of itemtracking table
       this.tabinstatedisplayitemid=response1.data[0];
       this.tabinstatedisplayitemidnext=response1.data[1]; this.tabinstatedisplayitemidtwo=response1.data[2];
@@ -211,7 +211,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   async gethompage1Arecur10() {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("initializeuserarrayt4", "/initsenate/m", paramsp1).then(response1 =>
+    API.get("datingapitest4", "/initsenatedup/m", paramsp1).then(response1 =>
     { console.log(response1) //this is the entire row of the user of itemtracking table
       this.tabinstatedisplayitemid=response1.data[0];
       this.tabinstatedisplayitemidindex1=response1.data[1]
@@ -244,7 +244,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   async gethompage1Arecur100() {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("initializeuserarrayt4", "/initsenate/m", paramsp1).then(response1 =>
+    API.get("datingapitest4", "/initsenatedup/m", paramsp1).then(response1 =>
     { console.log(response1) //this is the entire row of the user of itemtracking table
       this.tabinstatedisplayitemidnext=response1.data[0];
       this.tabinstatedisplayitemidindex1next=response1.data[1];

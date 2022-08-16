@@ -16,51 +16,52 @@ steps, espcially for profile picture there could be interuption. tell user they 
 
 <!--<ng-container *ngIf="authenticator.route === 'authenticated'"> -->
 <!-- go the appropariate form Step which is incomplete-->
-<a *ngIf="profilecompPartA=='no' && authenticator.route === 'authenticated'">
+<a *ngIf="authenticator.route === 'authenticated' && profilecompPartA=='no' ">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/Meetup/Step0" (click)="midtermclickedA()"> 2022 Midterm ElectionsI </a>
     <a mat-tab-link routerLink="/Meetup/Step0" (click)="meetupclickedA()"> MeetupI </a>
-    <a mat-tab-link> <mat-icon class="icontext" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <!--   <mat-icon class="icontext" aria-hidden="false">logout</mat-icon> -->
   </nav>
 </a>
 
 <!--<a *ngIf="profilecompPartD=='no' && profilecompPartA=='yes' && authenticator.route === 'authenticated' "> -->
-<a *ngIf="profileAf=='yes' && authenticator.route === 'authenticated'">
+<a *ngIf="(profileAfag=='yes' || profilecompPartA=='yes') && profilecompPartD=='no' && authenticator.route === 'authenticated'">
 <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm ElectionsII </a>
     <a mat-tab-link routerLink="/Meetup/Step3" (click)="meetupclicked()"> MeetupII </a>
-    <a mat-tab-link> <mat-icon class="icontext" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
 
-<a *ngIf="profilecompPartE=='no' && profilecompPartD=='yes' ">
+<a *ngIf="profileDfag=='yes' && profilecompPartE=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections III </a>
     <a mat-tab-link routerLink="/Meetup/Step4" (click)="meetupclicked()"> Meetup III </a>
-    <a mat-tab-link> <mat-icon class="icontext" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
 
-<a *ngIf="profilecompPartF=='no' && profilecompPartE=='yes' ">
+<a *ngIf="profileEfag=='yes' && profilecompPartF=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections IV </a>
     <a mat-tab-link routerLink="/Meetup/Step5" (click)="meetupclicked()"> Meetup IV </a>
-    <a mat-tab-link> <mat-icon class="icontext" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
 
-<a *ngIf="profilecompPartF=='yes'">
+<a *ngIf="authenticator.route === 'authenticated' && (profilecompPartF=='yes' || profileFfag=='yes')">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections V </a>
     <a mat-tab-link routerLink="/Meetup/Home" (click)="meetupclicked()"> Meetup V</a>
-    <a mat-tab-link> <mat-icon class="icontext" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
 <!-- when a from all steps are fully complete the Homepage router link is made available when Meetup button is clicked and above profilecompPartF is always activated -->
 
 
 <!-- when Meetup button is clicked on toolbar, below if statement will dictate toolbar display. this will also remove duplicate toolbar from below section  -->
-<a *ngIf="profilecompPartF=='yes' && meetupflag=='yes' ">
+<a *ngIf="profilecompPartF=='yes' && meetupflag=='yes' && authenticator.route === 'authenticated' ">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/Meetup/Home"> Home </a>
     <a mat-tab-link routerLink="/Meetup/Tab1"> Tab1  </a>
@@ -71,13 +72,23 @@ steps, espcially for profile picture there could be interuption. tell user they 
 </a>
 
 <!-- refresh button in browser clicked then below if statements will dictate toolbar display  -->
-<a *ngIf="profilecompPartF=='yes'&& meetupflag=='' && routeflag=='yes' ">
+<a *ngIf="profilecompPartF=='yes'&& meetupflag=='' && routeflag=='yes' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/Meetup/Home"> Home </a>
     <a mat-tab-link routerLink="/Meetup/Tab1"> Tab1  </a>
     <a mat-tab-link routerLink="/Meetup/Tab2"> Tab2 </a>
     <a mat-tab-link routerLink="/Meetup/Tab3"> Tab3  </a>
     <a mat-tab-link routerLink="/Meetup/Tab6"> Tab6  </a>
+  </nav>
+</a>
+
+<!-- coming out of stepA form completion, would like to see the senate, house, state toolbar -->
+<a *ngIf="midtermflag=='' && routeflagmidterm=='' && profilecompPartA=='yes' && authenticator.route === 'authenticated' ">
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link routerLink="/2022MidtermElections/USSenate">US Senate</a>
+    <a mat-tab-link routerLink="/2022MidtermElections/USHouse">US House</a>
+    <a mat-tab-link routerLink="/2022MidtermElections/StateExecutiveOffices">State Offices</a>
+    <a mat-tab-link routerLink="/2022MidtermElections/AllProfileNames">All Names</a>
   </nav>
 </a>
 
