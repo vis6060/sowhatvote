@@ -21,10 +21,11 @@
 </a>
 
 <div *ngIf="toggleBool7=='false'&& editstep5flag==''">
-  <!--  <img src={{url}} [ngStyle]= "{'width': newWidth + 'px', 'height':newHeight + 'px'}"> -->
+  <!--    <img src={{url}} [ngStyle]= "{'width': newWidth + 'px', 'height':newHeight + 'px'}"> -->
   <!--  <amplify-s3-image imgKey="{{s3file}}"></amplify-s3-image> -->
   <p>Thank you for answering all questions. Please click Submit to complete and see your match results.</p>
-  <button mat-button (click)="picclick()" (click)="seccompleteF()" (click)="initializetabs1()" routerLink="/Meetup/Home"> Submit</button>
+  <button mat-button (click)="picclick()" (click)="reloadComponent()" (click)="seccompleteF()" (click)="initializetabs1()"
+          > Submit</button>
 </div>
 
 <div *ngIf="toggleBool7=='false'&& editstep5flag=='yes'">

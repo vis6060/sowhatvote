@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {APIService, DatinguserdbStaging} from "../../API.service";
-import Amplify, {API, Auth, Storage} from "aws-amplify";
+import Amplify, {API, Auth, Cache, Storage} from "aws-amplify";
 import awsExports from "../../../aws-exports";
 import {v4 as uuid} from "uuid";
 
@@ -21,7 +21,7 @@ export class Tab6displaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage1Binitialize()
-    this.delaytabPutIndex(500)
+    this.putindextab1B()
   }
 
   profilecompPartF=""; day30flag10="";day30flag100="";tab6expire30daycheck:string="";
@@ -47,10 +47,8 @@ export class Tab6displaynavComponent implements OnInit {
 
   //stores tab1B index in table
   async putindextab1B() {
-    const user = await Auth.currentAuthenticatedUser();
-    const paramsp2 = {body: {userid: user.attributes.sub, tab1index:0, tab3index:0, tab6index:0}} //place itemid in index1 position of tab1
-    API.put("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2");
-    }).catch(error => {console.log(error.response2);});
+    const expiration = new Date().valueOf()
+    Cache.setItem('tab6index', '0', { expires: expiration +900000 }); //expires after 15minutes, time is in ms.
   }
 
   async delaytabPutIndex(ms: number) {
@@ -98,7 +96,7 @@ export class Tab6displaynavComponent implements OnInit {
   async gethompage1Binitialize() {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitest4", "/itemapitab6/m", paramsp1).then(response1 =>
+    API.get("datingapitest4", "/itemapitab6dup/m", paramsp1).then(response1 =>
     { console.log(response1) //this is the entire row of the user of itemtracking table
       this.tab6displayitemid=response1.data[0];
       this.tab6displayitemidnext=response1.data[1];
@@ -162,7 +160,7 @@ export class Tab6displaynavComponent implements OnInit {
   async gethompage1Arecur10() {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitest4", "/itemapitab6/m", paramsp1).then(response1 =>
+    API.get("datingapitest4", "/itemapitab6dup/m", paramsp1).then(response1 =>
     { console.log(response1) //this is the entire row of the user of itemtracking table
       this.tab6displayitemid=response1.data[0];
       this.tab6displayitemidindex1=response1.data[1]
@@ -220,7 +218,7 @@ export class Tab6displaynavComponent implements OnInit {
   async gethompage1Arecur100() {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitest4", "/itemapitab6/m", paramsp1).then(response1 =>
+    API.get("datingapitest4", "/itemapitab6dup/m", paramsp1).then(response1 =>
     { console.log(response1) //this is the entire row of the user of itemtracking table
       this.tab6displayitemidnext=response1.data[0];
       this.tab6displayitemidindex1next=response1.data[1];

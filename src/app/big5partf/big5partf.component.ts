@@ -1,7 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import Predictions, {AmazonAIPredictionsProvider} from '@aws-amplify/predictions';
 Amplify.addPluggable(new AmazonAIPredictionsProvider());
-import Amplify, {API, Auth, Storage} from "aws-amplify";
+import Amplify, {API, Auth, Cache, Storage} from "aws-amplify";
 import {APIService,DatinguserdbStaging} from "../API.service";
 import {DatePipe} from "@angular/common";
 import {FormBuilder} from "@angular/forms";
@@ -31,6 +31,7 @@ export class Big5partfComponent implements OnInit {
 
   ngOnInit(): void {
     this.delaygetedit(100)
+ //   this.movenextpage()
   }
 
   async delaygetedit(ms: number) {await new Promise(resolve => setTimeout(()=>this.geteditStep5(), ms)).then(()=>console.log("fired"));}
@@ -43,9 +44,11 @@ export class Big5partfComponent implements OnInit {
     this.router.navigate([currentUrl]);
   }
 
+  movenextpage() { if(Cache.getItem('profileFstatus')=="yes") {this.router.navigate(['/Meetup/Step5'])}}
+
   public dealsPer1: Array<DatinguserdbStaging>;  public dealsPer3: Array<DatinguserdbStaging>; public dealsPer5: Array<DatinguserdbStaging>;
 
-  toggleBool7= "true";
+  toggleBool7= "true"; toggleBool10=""
 
   newWidth=0; newHeight=0; origWidth=0; origHeight=0;
 
@@ -78,7 +81,10 @@ export class Big5partfComponent implements OnInit {
 
           Storage.put(this.userstore.concat(file.name.toString()), file).then( res1 => {
             Storage.get(this.userstore.concat(file.name.toString())).then( res => {this.getMeta(res);
-              this.url=res; console.log(res)
+              this.url=res; console.log(res);
+      //        const expiration = new Date().valueOf()
+      //        Cache.setItem('urlcache', res, { expires: expiration +900000 }); //expires after 15minutes, time is in ms.
+
             });
           })
 
@@ -105,16 +111,22 @@ export class Big5partfComponent implements OnInit {
 
 //on clicking next button store the original and new width and height of image in the userdb table.
   async  picclick () {
-    const user = await Auth.currentAuthenticatedUser();
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileFstatus', 'yes', { expires: expiration +1800000 }); //expires after 30minutes, time is in ms.
 
+    const user = await Auth.currentAuthenticatedUser();
     if( this.origWidth>this.origHeight) {
       this.newWidth=300; this.newHeight=this.origHeight/( this.origWidth/300);
+  //    this.url=Cache.getItem('urlcache');
+  //    this.toggleBool10="yes"
       console.log(this.origWidth); console.log(this.origHeight);
       const paramsp1b = {body: {userid: user.attributes.sub, origWidth: this.origWidth, origHeight:this.origHeight,
           newWidth:this.newWidth, newHeight:this.newHeight}}
       API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b");}).catch(error => {console.log(error.response1b)});
     } else if(this.origWidth<this.origHeight) {
       this.newHeight=300; this.newWidth= this.origWidth/(this.origHeight/300);
+   //  this.url=Cache.getItem('urlcache');
+   //   this.toggleBool10="yes"
 
       const paramsp1b = {body: {userid: user.attributes.sub, origWidth: this.origWidth, origHeight:this.origHeight,
           newWidth:this.newWidth, newHeight:this.newHeight}}

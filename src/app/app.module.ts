@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
+//import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -44,7 +44,9 @@ import { Big5partfComponent } from './big5partf/big5partf.component';
 import { OccupationComponent } from './occupation/occupation.component';
 import { Industrylevel2newComponent } from './industrylevel2new/industrylevel2new.component';
 import { AdBComponent } from './ad-b/ad-b.component';
+import { EntrypageComponent } from './entrypage/entrypage.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -58,12 +60,13 @@ import { AdBComponent } from './ad-b/ad-b.component';
     Big5partfComponent,
     OccupationComponent,
     Industrylevel2newComponent,
-    AdBComponent
+    AdBComponent,
+    EntrypageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LegacyAmplifyUiModule,
+ //   LegacyAmplifyUiModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatIconModule,
@@ -84,7 +87,7 @@ import { AdBComponent } from './ad-b/ad-b.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [DirectAccessGuardService],
+  providers: [DirectAccessGuardService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 //@ts-ignore

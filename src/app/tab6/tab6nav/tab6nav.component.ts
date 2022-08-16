@@ -2,7 +2,7 @@ import {Component, Injectable, OnInit, ViewEncapsulation} from '@angular/core';
 import {DatePipe} from "@angular/common";
 import {MatStepperIntl} from "@angular/material/stepper";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
-import Amplify, {API, Auth} from "aws-amplify";
+import Amplify, {API, Auth, Cache} from "aws-amplify";
 import awsExports from "../../../aws-exports";
 
 @Injectable()
@@ -21,7 +21,7 @@ export class StepperIntl extends MatStepperIntl {
 
 export class Tab6navComponent implements OnInit {
 
-  loadflag6="";
+
   tab6index:number;
 
   constructor(public datepipe: DatePipe, public authenticator: AuthenticatorService) {
@@ -35,14 +35,9 @@ export class Tab6navComponent implements OnInit {
 
   //get index of tab to display
   async getindex() {
-    const user = await Auth.currentAuthenticatedUser();
-    let paramsp70 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitabindext4", "/datingapitabindex/m", paramsp70).then(response70 => {
-      this.tab6index=response70.data[0].tab6index;
-      this.loadflag6="yes";
-    }).catch(error => {console.log(error.response70);
-      this.loadflag6="yes"
-    });
+    if(Cache.getItem('tab6index')!=null) {
+      {this.tab6index=  Cache.getItem('tab6index')} } else {this.tab6index=0}
+
   }
 
 }

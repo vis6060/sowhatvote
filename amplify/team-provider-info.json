@@ -412,6 +412,22 @@
         "test415d88713": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
           "s3Key": "amplify-builds/test415d88713-4b6675366b444270456b-build.zip"
+        },
+        "test46813c786": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test46813c786-307a6a797a48494e5a6d-build.zip"
+        },
+        "test4d930d7ad": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4d930d7ad-6950556e5a3833592b36-build.zip"
+        },
+        "test42143d587": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test42143d587-7142764b384c41715241-build.zip"
+        },
+        "test492e4ee58": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test492e4ee58-4d304e625875576c6c62-build.zip"
         }
       }
     }

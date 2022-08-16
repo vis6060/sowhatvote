@@ -22,7 +22,8 @@ export class DirectAccessGuardService implements CanActivate {
     //     return false;
     //   }
     if (this.location.path() === '/Meetup/Step0edit'||this.location.path() === '/Meetup/Step1'||this.location.path() === '/Meetup/Step2'
-      ||this.location.path() === '/Meetup/Step3'||this.location.path() === '/Meetup/Step4'||this.location.path() === '/Meetup/Step5') {
+      ||this.location.path() === '/Meetup/Step3'||this.location.path() === '/Meetup/Step4'||this.location.path() === '/Meetup/Step5'
+      ||this.location.path() === '/Community1'||this.location.path() === '/Community2') {
       this.router.navigate(['/Meetup/Home']); // Navigate away to some other page
       return false;
     }

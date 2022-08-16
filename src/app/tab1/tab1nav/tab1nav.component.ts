@@ -5,6 +5,8 @@ import {MatStepperIntl} from "@angular/material/stepper";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import awsExports from "../../../aws-exports";
 
+import { Cache } from 'aws-amplify';
+
 @Injectable()
 export class StepperIntl extends MatStepperIntl {
   // the default optional label text, if unspecified is "Optional"
@@ -20,7 +22,7 @@ export class StepperIntl extends MatStepperIntl {
 })
 export class Tab1navComponent implements OnInit {
 
-  loadflag="";
+
   tab1index:number;
 
   constructor(public datepipe: DatePipe, public authenticator: AuthenticatorService) {
@@ -34,14 +36,10 @@ export class Tab1navComponent implements OnInit {
 
   //get index of tab to display
   async getindex() {
-    const user = await Auth.currentAuthenticatedUser();
-    let paramsp70 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitabindext4", "/datingapitabindex/m", paramsp70).then(response70 => {
-      this.tab1index=response70.data[0].tab1index;
-      this.loadflag="yes";
-    }).catch(error => {console.log(error.response70);
-      this.loadflag="yes"
-    });
+    if(Cache.getItem('tab1index')!=null) {
+    {this.tab1index=  Cache.getItem('tab1index'); } } else {this.tab1index=0}
+
+
   }
 
 

@@ -48,7 +48,7 @@
 
 <div *ngIf="toggleBool6=='false'&& editstep4flag==''">
   <p>Thank you for answering all questions. Please click Next.</p>
-  <button mat-button (click)="seccompleteE()" routerLink="/Meetup/Step5"> Next</button>
+  <button mat-button (click)="seccompleteE()" (click)="reloadComponent()"> Next</button>
 </div>
 
 <div *ngIf="toggleBool6=='false'&& editstep4flag=='yes'">

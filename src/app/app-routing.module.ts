@@ -12,10 +12,12 @@ import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component'
 
 import {DirectAccessGuardService} from "./direct-access-guard.service";
 import {AdBComponent} from "./ad-b/ad-b.component";
+import {EntrypageComponent} from "./entrypage/entrypage.component";
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: EntrypageComponent },
   { path: 'MyAccount', component: LoginboxComponent },
   { path: 'Community1', component: AdAComponent,canActivate: [DirectAccessGuardService] },
   { path: 'Community2', component: AdBComponent,canActivate: [DirectAccessGuardService] },

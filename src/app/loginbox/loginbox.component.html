@@ -1,5 +1,5 @@
 
-<amplify-authenticator [loginMechanisms]="['email']">
+<amplify-authenticator  [loginMechanisms]="['email']">
   <!-- sign-up-field override -->
   <ng-template
     amplifySlot="sign-up-form-fields"
@@ -15,7 +15,7 @@
       name="acknowledgement"
       value="yes"
     >
-      I agree with the Terms & Conditions
+      I agree with the Terms & Conditions and Privacy Policy
     </amplify-checkbox>
   </ng-template>
 
@@ -25,7 +25,7 @@
     let-user="user"
     let-signOut="signOut"
   >
-    <h1>Welcome {{ emaildisplay }}!</h1>
+    <h1>Welcome {{ email }}!</h1>
     <button (click)="signOut()">Sign Out</button> <br>
   </ng-template>
 </amplify-authenticator>

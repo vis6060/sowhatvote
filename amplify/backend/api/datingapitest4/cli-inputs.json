@@ -189,6 +189,34 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/itemapitab6dup": {
+      "name": "/itemapitab6dup",
+      "lambdaFunction": "test46813c786",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab5movedup": {
+      "name": "/itemapitab5movedup",
+      "lambdaFunction": "test492e4ee58",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab6Bdup": {
+      "name": "/itemapitab6Bdup",
+      "lambdaFunction": "test4d930d7ad",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/itemapitab6Cdup": {
+      "name": "/itemapitab6Cdup",
+      "lambdaFunction": "test42143d587",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

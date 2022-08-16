@@ -1,8 +1,8 @@
 import { Component,Injectable, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { FormBuilder, FormControl } from '@angular/forms';
 import {MatStepperIntl} from '@angular/material/stepper';
-import Amplify, {Auth} from "aws-amplify";
+import Amplify, {Auth, Cache} from "aws-amplify";
 import { API } from 'aws-amplify';
 import { DatePipe } from '@angular/common';
 
@@ -29,7 +29,8 @@ export class StepperIntl extends MatStepperIntl {
 })
 export class Big5partdComponent implements OnInit {
 
-  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute) {Amplify.configure(awsExports);}
+  router: Router;
+  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, _router: Router) {Amplify.configure(awsExports);}
 
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -37,7 +38,20 @@ export class Big5partdComponent implements OnInit {
       map(value => (typeof value === 'string' ? value : value.name)),
       map(name => (name ? this._filter(name) : this.options.slice())),
     );
+    this.movenextpage()
   }
+
+  //refreshes the browser upon button click of next or dislike or connectme
+  reloadComponent() {
+    let currentUrl = this.router.url;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([currentUrl]);
+  }
+
+  movenextpage() { if(Cache.getItem('profileDstatus')=="yes") {this.router.navigate(['/Meetup/Step4'])}}
+
+
 
   toggleBool5= "true";    nextcheckfunc5() {this.toggleBool5= "false";}
 
@@ -67,6 +81,9 @@ export class Big5partdComponent implements OnInit {
 
   //record that Section D is complete.
   async seccompleteD() {
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileDstatus', 'yes', { expires: expiration +1800000 }); //expires after 30minutes, time is in ms.
+
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartD"}}
     API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});

@@ -58,6 +58,11 @@
 //API datingapitest4/interactionapi corresponds to datinginteraction  table and *025 function(partition key is uuid)
 //API datingapitest4/requestinterestapi corresponds to datingreason  table and *77c function(partition key is userid)
 
+//API datingapitest4/itemapitab6dup (get) corresponds to datingitemtracking table and *786 function(partition key is userid)
+//API datingapitest4/itemapitab5movedup corresponds to datingitemtracking table and *e58 function(partition key is userid)
+//API datingapitest4/itemapitab6Bdup (get) corresponds to datingitemtracking table and *7ad function(partition key is userid)
+//API datingapitest4/itemapitab6Cdup (get) corresponds to datingitemtracking table and *587 function(partition key is userid)
+
 //API datingapi1At4/itemapitab1Ainit1 (put avail)  corresponds to datingitemtracking1A table and *d56 function(partition key is userid)
 //API datingapi1At4/itemapitab1Ainit2  corresponds to datingitemtracking1A table and *fad function(partition key is userid)
 //API datingapi1At4/itemapitab1Adisp  corresponds to datingitemtracking1A table and *f23 function(partition key is userid)

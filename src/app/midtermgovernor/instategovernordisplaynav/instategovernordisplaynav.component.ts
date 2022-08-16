@@ -24,8 +24,6 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage1Binitialize();
- //   this.putindextabinstate()
-    this.delaytabPutIndex(100)
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
@@ -57,15 +55,6 @@ export class InstategovernordisplaynavComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
-
-  async putindextabinstate() {
-    const user = await Auth.currentAuthenticatedUser();
-    const paramsp2 = {body: {userid: user.attributes.sub, tabinstateindex:2,taballusaindex:0}} //place itemid in index0 position of tab2
-    API.put("initializeuserarrayt4","/index", paramsp2).then(response2 => {console.log("success2");
-    }).catch(error => {console.log(error.response2);});
-  }
-
-  async delaytabPutIndex(ms: number) {await new Promise(resolve => setTimeout(()=>this.putindextabinstate(), ms)).then(()=>console.log("fired"));}
 
   //delay button, so user doesn't quickly click on it and spoil the array of cands
   async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}

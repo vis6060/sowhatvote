@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {APIService, DatinginteractionStaging, DatinguserdbStaging} from "../../API.service";
-import Amplify, {API, Auth, Storage} from "aws-amplify";
+import Amplify, {API, Auth, Cache, Storage} from "aws-amplify";
 import awsExports from "../../../aws-exports";
 import {v4 as uuid} from "uuid";
 
@@ -20,7 +20,7 @@ export class Tab3displaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage3initialize()
-    this.delaytabPutIndex(500)
+   this.putindextab3()
   }
 
   profilecompPartF="";day30flag10="";day30flag100="";day30flag4=""
@@ -53,10 +53,8 @@ export class Tab3displaynavComponent implements OnInit {
   }
 
   async putindextab3() {
-    const user = await Auth.currentAuthenticatedUser();
-    const paramsp2 = {body: {userid: user.attributes.sub, tab1index:0, tab3index:0, tab6index:0}} //place itemid in index0 position of tab3
-    API.put("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2");
-    }).catch(error => {console.log(error.response2);});
+    const expiration = new Date().valueOf()
+    Cache.setItem('tab3index', '0', { expires: expiration +900000 }); //expires after 15minutes, time is in ms.
   }
 
   async delaytabPutIndex(ms: number) {

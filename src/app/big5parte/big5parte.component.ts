@@ -1,6 +1,6 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import Predictions from "@aws-amplify/predictions";
-import Amplify, {API, Auth} from "aws-amplify";
+import Amplify, {API, Auth, Cache} from "aws-amplify";
 import {DatePipe} from "@angular/common";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatStepperIntl} from "@angular/material/stepper";
@@ -31,6 +31,7 @@ export class Big5parteComponent implements OnInit {
     this.prefifthFormGroup = this._formBuilder.group({prefifthCtrl: ['', Validators.required],});
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
     this.sixthFormGroup = this._formBuilder.group({sixthCtrl: ['', Validators.required],});
+    this.movenextpage()
   }
 
   //refreshes the browser upon button click of next or dislike or connectme
@@ -40,6 +41,9 @@ export class Big5parteComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
+
+  movenextpage() { if(Cache.getItem('profileEstatus')=="yes") {this.router.navigate(['/Meetup/Step5'])}}
+
 
   toggleBool6= "true";
   profilename="";
@@ -172,6 +176,9 @@ export class Big5parteComponent implements OnInit {
 
   //record that Section E is complete.
   async seccompleteE() {
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileEstatus', 'yes', { expires: expiration +1800000 }); //expires after 30minutes, time is in ms.
+
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartE"}}
     API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});

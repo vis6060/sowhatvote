@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { v4 as uuid } from 'uuid';
 import awsExports from 'src/aws-exports';
 
-import { API } from 'aws-amplify';
+import {API, Cache} from 'aws-amplify';
 import Amplify, {Auth, Analytics, Storage} from "aws-amplify";
 import { ActivatedRoute,Router } from '@angular/router';
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
@@ -23,7 +23,8 @@ export class Tab1cdisplaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage1Ainitialize()
-    this.delaytabPutIndex(500)
+ //   this.delaytabPutIndex(500)
+    this.putindextab1A()
   }
 
   profilecompPartF="";
@@ -49,10 +50,14 @@ export class Tab1cdisplaynavComponent implements OnInit {
 
   //stores tab1A index in table
   async putindextab1A() {
-    const user = await Auth.currentAuthenticatedUser();
-    const paramsp2 = {body: {userid: user.attributes.sub, tab1index:2, tab3index:0, tab6index:0}} //place itemid in index0 position of tab2
-    API.put("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2");
-    }).catch(error => {console.log(error.response2);});
+    const expiration = new Date().valueOf()
+    Cache.setItem('tab1index', '2', { expires: expiration +900000 }); //expires after 15minutes, time is in ms.
+
+    //  const user = await Auth.currentAuthenticatedUser();
+ //   const paramsp2 = {body: {userid: user.attributes.sub, tab1index:2, tab3index:0, tab6index:0}} //place itemid in index0 position of tab2
+  //  API.put("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2");
+  //  }).catch(error => {console.log(error.response2);});
+
   }
 
   //store the reason for connect in array

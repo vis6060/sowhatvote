@@ -2,7 +2,7 @@ import { Component,Injectable, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { FormBuilder, FormGroup,} from '@angular/forms';
 import {MatStepperIntl} from '@angular/material/stepper';
-import Amplify, {Auth} from "aws-amplify";
+import Amplify, {Auth, Cache} from "aws-amplify";
 import { API } from 'aws-amplify';
 import { DatePipe } from '@angular/common';
 
@@ -29,11 +29,13 @@ export class Big5partaComponent implements OnInit {
 
   router: Router;
   constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, _router: Router) {
-    Amplify.configure(awsExports); this.router = _router;}
+    Amplify.configure(awsExports); this.router = _router;
+
+  }
 
   ngOnInit(): void {
     this.zeroFormGroup = this._formBuilder.group({});
-
+    this.movenextpage()
   }
 
   //refreshes the browser upon button click of next or dislike or connectme
@@ -43,6 +45,16 @@ export class Big5partaComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
+
+locationreload() {  location.reload();}
+
+  //movenextpage() { if(Cache.getItem('profileAstatus')=="yes") {this.seccompleteA();this.router.navigate(['/2022MidtermElections/USSenate'])}}
+
+   movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && Cache.getItem('midtermclicked')=="yes")  {
+     this.seccompleteA(); this.router.navigate(['/2022MidtermElections/USSenate'])}
+
+  else if(Cache.getItem('profileAstatus')=="yes" && Cache.getItem('meetupclicked')=="yes")  {
+     this.seccompleteA();  this.router.navigate(['/Meetup/Step3'])}}
 
 //to enure that zip codes are only numbers
   numberOnly(event:any): boolean {
@@ -171,10 +183,18 @@ export class Big5partaComponent implements OnInit {
 
   //record that Section A is complete.
   async seccompleteA() {
+
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartA"}}
     API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
   }
+
+  async seccompleteflag() {
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileAstatus', 'yes', { expires: expiration +2000 }); //expires after 1minute, time is in ms.
+
+  }
+
 
 }
 

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticatorService } from '@aws-amplify/ui-angular';
-import Amplify, {Auth, Predictions, Storage} from "aws-amplify";
+import Amplify, {Auth, Cache, Predictions, Storage} from "aws-amplify";
 import awsExports from "src/aws-exports";
 import {API} from 'aws-amplify';
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from "../big5parta/big5parta.component";
 import {APIService, DatinguserdbStaging} from "../API.service";
+
+import { Hub } from 'aws-amplify';
 
 @Component({
   selector: 'app-loginbox',
@@ -24,16 +26,47 @@ export class LoginboxComponent implements OnInit {
   router: Router;
   constructor(public authenticator: AuthenticatorService, private route: ActivatedRoute,private api: APIService,_router: Router) {
     Amplify.configure(awsExports);this.router = _router;
+    Hub.listen('auth', (data) => {
+    //  const { payload } = data;
+   //   this.onAuthEvent(payload);
+  //    console.log('A new auth event has happened: ', data.payload.data.username + ' has ' + data.payload.event);
+      if(data.payload.event=="signIn") {location.reload();}
+      if(data.payload.event=="signOut") {location.reload();}
+    })
   }
 
   ngOnInit(): void {
     this.showexistingprofile()
-    this.showemail();
+ //   this.showemail();
+  //  this.movenextpage()
+    console.log(Cache.getItem('meetupenter'));
+    console.log(Cache.getItem('midtermenter'))
+  }
+
+  reloadComponent() {
+    let currentUrl = this.router.url;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([currentUrl]);
   }
 
   //amplify authenticator box
-  async showemail() { const user = await Auth.currentAuthenticatedUser();this.emaildisplay=user.attributes.email;  console.log('attributes:', user.attributes);}
+  async showemail() {  const user = await Auth.currentAuthenticatedUser();this.emaildisplay=user.attributes.email;  console.log('attributes:', user.attributes);}
 
+  movenextpage() { if(Cache.getItem('SecAenter')=="yes")  {this.router.navigate(['/Meetup/Step0'])}
+
+  else if(Cache.getItem('midtermenter')=="yes")  {
+    this.router.navigate(['/2022MidtermElections/USSenate'])}
+
+  else  if(Cache.getItem('SecDenter')=="yes")  {this.router.navigate(['/Meetup/Step3'])}
+
+  else  if(Cache.getItem('SecEenter')=="yes")  {this.router.navigate(['/Meetup/Step4'])}
+
+  else  if(Cache.getItem('SecFenter')=="yes")  {this.router.navigate(['/Meetup/Step5'])}
+
+  else if(Cache.getItem('meetupenter')=="yes")  {
+    this.router.navigate(['/Meetup/Home'])}
+  }
 
 
   //tab2: unsubscribe from matchup service
@@ -85,9 +118,9 @@ export class LoginboxComponent implements OnInit {
 
   mentoragree = false;  menteeagree = false; makemoneyside = false; veteran = false;  emailshareagree = false;
 
-  profilecompPartF="";
+ profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
 
-  countyuser=""; stateuser=""; readyflag="";
+  countyuser=""; stateuser=""; readyflag=""; email=""
 
   async showexistingprofile() {
     const user = await Auth.currentAuthenticatedUser();
@@ -104,14 +137,17 @@ export class LoginboxComponent implements OnInit {
       this.profilename=response1.data[0].profilename; this.facebookbusername=response1.data[0].facebookbusername;
       this.userdescription=response1.data[0].userdescription; this.industrylevel1=response1.data[0].industrylevel1;
       this.industrylevel2=response1.data[0].industrylevel2; this.occup=response1.data[0].occup;
-
+      this.email=response1.data[0].email
       //this gets the signed URL for new dimension image to display
 
-      this.profilecompPartF=response1.data[0].profilecompPartF;
       this.unsubscribematchingme=response1.data[0].unsubscribematchingme;
       this.countyuser=response1.data[0].countyuser;
       this.stateuser=response1.data[0].stateuser;
       this.loyalty=response1.data[0].loyalty;
+
+      this.profilecompPartA=response1.data[0].profilecompPartA;   this.profilecompPartF=response1.data[0].profilecompPartF;
+      this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
+
     }).catch(error => {console.log(error.response1)});
   }
 
