@@ -1,7 +1,7 @@
 import {Component, Injectable, OnInit,ViewChild} from '@angular/core';
 import awsExports from 'src/aws-exports';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import { API } from 'aws-amplify';
+import {API, Cache} from 'aws-amplify';
 import Amplify, {Auth, Storage} from "aws-amplify";
 import { ActivatedRoute,Router } from '@angular/router';
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
   router: Router;
   constructor(public authenticator: AuthenticatorService,public datepipe: DatePipe, private _matStepperIntl: MatStepperIntl,  private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router) {
     Amplify.configure(awsExports); this.router = _router;
+    if(Cache.getItem('profileFstatus')=="yes") {Cache.removeItem("profileFstatus");location.reload();}
   }
 
   ngOnInit(): void {
@@ -48,12 +49,12 @@ export class HomeComponent implements OnInit {
       map(name => (name ? this._filter(name) : this.options.slice())),
     );
     //initialize the tab1, tab2, tab3 arrays with itemids
-//    this.homeinitialize1A();
-    //     this.homeinitialize1B();  this.homeinitialize1C(); this.homeinitialize3(); this.homeinitialize2()
-//    this.delaytab1B(500)
-    //   this.delaytab1C(1000)
-    //   this.delaytab3(1500)
-//    this.delaytab2(2000)
+    this.homeinitialize1A();
+         this.homeinitialize1B();  this.homeinitialize1C(); this.homeinitialize3(); this.homeinitialize2()
+    this.delaytab1B(500)
+       this.delaytab1C(1000)
+       this.delaytab3(1500)
+    this.delaytab2(2000)
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
   }
 //speed test on amplify domain. basic page load time without any of the above initialize1A and delay statements is 3.40sec. only inserting intialize 1A the time to load text is then 4.40sec and the time to fully load the 1A picture is 6.40sec.

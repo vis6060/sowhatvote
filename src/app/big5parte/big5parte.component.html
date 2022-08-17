@@ -38,13 +38,22 @@
   </mat-form-field>
 </form>
 
+<mat-card>
+  <mat-card-content>
+    <section class="example-section">
+      <input type="checkbox" class="example-margin" (click)="enablesubmit()">
+      Please check box to confirm that information entered is safe for all age groups.<br>
+    </section>
+  </mat-card-content>
+</mat-card>
+
 <a *ngIf="unsafetext=='yestext'">
   <br> <a> Sorry, this description does not meet our community safety guidelines.  Please update the description.</a>
   <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
 </a>
 
 <p *ngIf="toggleBool6=='true'"> <br> Please answer all questions and then click Submit.</p>
-<button mat-button (click)="checkallunsafe()"> Submit</button>
+<button mat-button [disabled]="submitflag" (click)="checkallunsafe()"> Submit</button>
 
 <div *ngIf="toggleBool6=='false'&& editstep4flag==''">
   <p>Thank you for answering all questions. Please click Next.</p>
@@ -52,6 +61,6 @@
 </div>
 
 <div *ngIf="toggleBool6=='false'&& editstep4flag=='yes'">
-  <p>Thank you for answering all questions. Please click Next.</p>
+  <p>Thank you for answering all questions. </p>
   <button mat-button (click)="seccompleteE()" routerLink="/MyAccount"> Save Responses & Go Back to MyAccount </button>
 </div>

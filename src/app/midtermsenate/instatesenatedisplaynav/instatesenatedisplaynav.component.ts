@@ -2,7 +2,7 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {APIService,CandNameOutArray} from "../../API.service";
-import Amplify, {API, Auth, Storage} from "aws-amplify";
+import Amplify, {API, Auth, Storage, Cache} from "aws-amplify";
 import awsExports from "../../../aws-exports";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
@@ -20,7 +20,9 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   router: Router;
   constructor(public dialog: MatDialog, public authenticator: AuthenticatorService, private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router,private titlecasePipe:TitleCasePipe,private renderer: Renderer2) {
     Amplify.configure(awsExports);
-    this.router = _router; }
+    this.router = _router;
+ if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
+  }
 
   ngOnInit(): void {
     this.gethompage1Binitialize();

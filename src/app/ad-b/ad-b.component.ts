@@ -15,9 +15,10 @@ export class AdBComponent implements OnInit {
     this.webpageroute()
   }
 
-  webpagevalue="";whichtab="";profileFflag=""
+  webpagevalue="";whichtab="";profileFflag="";profileAflag=""
 
   async webpageroute() {
+    if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"}
     if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
     const user = await Auth.currentAuthenticatedUser();
 //has the comcategory for whom the results need to be display as view results button was clicked and then there were two ad pages.

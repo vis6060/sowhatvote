@@ -29,8 +29,11 @@ export class StepperIntl extends MatStepperIntl {
 })
 export class Big5partdComponent implements OnInit {
 
-  router: Router;
-  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, _router: Router) {Amplify.configure(awsExports);}
+//  private router: Router;
+  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
+    Amplify.configure(awsExports);
+    if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
+  }
 
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -51,7 +54,7 @@ export class Big5partdComponent implements OnInit {
 
   locationreload() {  location.reload();}
 
-  movenextpage() { if(Cache.getItem('profileDstatus')=="yes") { this.seccompleteD();this.router.navigate(['/Meetup/Step4'])}}
+  movenextpage() { if(Cache.getItem('profileDstatus')=="yes") { this.seccompleteD(); }}
 
   toggleBool5= "true";    nextcheckfunc5() {this.toggleBool5= "false";}
 
@@ -81,10 +84,12 @@ export class Big5partdComponent implements OnInit {
 
   //record that Section D is complete.
   async seccompleteD() {
-
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartD"}}
-    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3 seccompleteD");
+      this.router.navigate(['/Meetup/Step4'])
+
+    }).catch(error => {console.log(error.response3);});
   }
 
   editstep3flag="";

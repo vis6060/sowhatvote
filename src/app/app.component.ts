@@ -46,6 +46,10 @@ export class AppComponent {
     API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => {
       this.profilecompPartF=response1.data[0].profilecompPartF;  this.profilecompPartA=response1.data[0].profilecompPartA;
       this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
+      console.log('profilecompPartA database status', response1.data[0].profilecompPartA)
+      console.log('profilecompPartD database status', response1.data[0].profilecompPartD)
+      console.log('profilecompPartE database status', response1.data[0].profilecompPartE)
+      console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
       ;}).catch(error => {console.log(error.response1)});
   }
 

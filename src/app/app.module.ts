@@ -87,7 +87,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [DirectAccessGuardService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 //@ts-ignore

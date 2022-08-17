@@ -22,9 +22,11 @@ export class StepperIntl extends MatStepperIntl {
 })
 export class Big5parteComponent implements OnInit {
 
-  router: Router;
-  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute,_router: Router) {
-    Amplify.configure(awsExports);this.router = _router;}
+
+  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
+    Amplify.configure(awsExports);
+    if(Cache.getItem('profileDstatus')=="yes") {Cache.removeItem("profileDstatus");location.reload();}
+  }
 
 
   ngOnInit(): void {
@@ -43,7 +45,7 @@ export class Big5parteComponent implements OnInit {
   }
   locationreload() {  location.reload();}
 
-  movenextpage() { if(Cache.getItem('profileEstatus')=="yes") {this.seccompleteE();this.router.navigate(['/Meetup/Step5'])}}
+  movenextpage() { if(Cache.getItem('profileEstatus')=="yes") {this.seccompleteE();}}
 
   toggleBool6= "true";
   profilename="";
@@ -168,17 +170,21 @@ export class Big5parteComponent implements OnInit {
   async checkallunsafe() {
     console.log(this.unsafetext); console.log(this.unsafetext1); console.log(this.unsafetext2);
     if(this.unsafetext=="yestext" ||this.unsafetext1=="yestext" || this.unsafetext2=="yestext" ) {
-      this.toggleBool6="true"
+      this.toggleBool6="true"; console.log('this is status of togglebool6',this.toggleBool6)
     } else if(this.unsafetext=="notext" && this.unsafetext1=="notext" && this.unsafetext2=="notext" ) {
       this.toggleBool6 = "false"; this.geteditStep4()
     }
   }
+  submitflag:boolean=true
+  enablesubmit() {this.submitflag=false}
 
   //record that Section E is complete.
   async seccompleteE() {
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartE"}}
-    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3 seccompleteE");
+      this.router.navigate(['/Meetup/Step5'])
+    }).catch(error => {console.log(error.response3);});
   }
 
   editstep4flag="";

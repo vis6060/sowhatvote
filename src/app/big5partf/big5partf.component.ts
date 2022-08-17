@@ -25,12 +25,15 @@ export class StepperIntl extends MatStepperIntl {
 
 export class Big5partfComponent implements OnInit {
 
-  router: Router;
-  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, _router: Router) {
-    Amplify.configure(awsExports);this.router = _router;}
+
+  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
+    Amplify.configure(awsExports);
+    if(Cache.getItem('profileEstatus')=="yes") {Cache.removeItem("profileEstatus");location.reload();}
+  }
 
   ngOnInit(): void {
     this.delaygetedit(100)
+    this.getstatecounty()
     this.movenextpage()
   }
 
@@ -45,7 +48,8 @@ export class Big5partfComponent implements OnInit {
   }
   locationreload() {  location.reload();}
   movenextpage() { if(Cache.getItem('profileFstatus')=="yes") {this.seccompleteF();
-    this.router.navigate(['/Community1'])}}
+  this.initializetabindex(); this.initializetabs1()
+  }}
 
   public dealsPer1: Array<DatinguserdbStaging>;  public dealsPer3: Array<DatinguserdbStaging>; public dealsPer5: Array<DatinguserdbStaging>;
 
@@ -94,7 +98,7 @@ export class Big5partfComponent implements OnInit {
           if (unsafe=="YES") {
             Storage.remove(file.name, file);
             this.unsafem="yesm"
-          } else {this.picstore(); this.toggleBool7="false";}
+          } else {this.picstore(); this.picclick(); this.toggleBool7="false";}
         })
         .catch(err => console.log({ err }));
     }
@@ -120,7 +124,7 @@ export class Big5partfComponent implements OnInit {
       console.log(this.origWidth); console.log(this.origHeight);
       const paramsp1b = {body: {userid: user.attributes.sub, origWidth: this.origWidth, origHeight:this.origHeight,
           newWidth:this.newWidth, newHeight:this.newHeight}}
-      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b");}).catch(error => {console.log(error.response1b)});
+      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b pickclick function1");}).catch(error => {console.log(error.response1b)});
     } else if(this.origWidth<this.origHeight) {
       this.newHeight=300; this.newWidth= this.origWidth/(this.origHeight/300);
    //  this.url=Cache.getItem('urlcache');
@@ -128,13 +132,14 @@ export class Big5partfComponent implements OnInit {
 
       const paramsp1b = {body: {userid: user.attributes.sub, origWidth: this.origWidth, origHeight:this.origHeight,
           newWidth:this.newWidth, newHeight:this.newHeight}}
-      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b");}).catch(error => {console.log(error.response1b)});
+      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b pickclick function2");}).catch(error => {console.log(error.response1b)});
     }
   }
 
   //stores the pic in S3 and record that Section F is complete and all secyion
   async picstore() {
     const user = await Auth.currentAuthenticatedUser();
+
     if( this.editstep5flag=="") {
     this.userstore=user.attributes.sub;
     const paramspE = {body: {userid: user.attributes.sub, s3file:this.userstore.concat(this.s3file.toString())}}
@@ -147,23 +152,33 @@ export class Big5partfComponent implements OnInit {
     }
   }
 
+  countyuser=""; stateuser=""
+  async getstatecounty() {
+    const user = await Auth.currentAuthenticatedUser(); const expiration = new Date().valueOf()
+    let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
+    API.get("datingapitest4", "/userdbapimoney/m", paramsp1).then(response1 =>{
+
+      Cache.setItem('countyuser', response1.data[0].countyuser, { expires: expiration +60000 });
+      Cache.setItem('stateuser', response1.data[0].stateuser, { expires: expiration +60000 });
+
+  }).catch(error => {console.log(error.responseE);});
+  }
+
   //insert the entire array of itemids for newly created user
   async initializetabs1(){
     const user = await Auth.currentAuthenticatedUser();
-    let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitest4", "/userdbapimoney/m", paramsp1).then(response1 =>
-    { this.initializetabindex(); //inialitize the mat-tab-group selection index on dating display that tab1A first-time loads
+      //inialitize the mat-tab-group selection index on dating display that tab1A first-time loads
       //intialize tab1A same county users
       //need both county and state filter as same county name is used across states
-      this.api.ListDatinguserdbStagingsOneBigArray1A(user.attributes.sub,response1.data[0].countyuser,{stateuser: {eq:response1.data[0].stateuser },
-        userid: {ne: user.attributes.sub}, unsubscribematchingme: {eq: ""}, profilecompPartF:{eq: "yes"} }).then((event1) => {});
+      this.api.ListDatinguserdbStagingsOneBigArray1A(user.attributes.sub,Cache.getItem('countyuser'),{stateuser: {eq:Cache.getItem('stateuser') },
+        userid: {ne: user.attributes.sub}, unsubscribematchingme: {eq: ""}, profilecompPartF:{eq: "yes"} }).then((event1) => {console.log("onebigarray1A")});
       //initialize tab1B same state users. same state but different county
-      this.api.ListDatinguserdbStagingsOneBigArray(user.attributes.sub,response1.data[0].stateuser,{countyuser: {ne:response1.data[0].countyuser },
-        userid: {ne: user.attributes.sub}, unsubscribematchingme: {eq: ""}, profilecompPartF:{eq: "yes"}}).then((event1) => {});
+      this.api.ListDatinguserdbStagingsOneBigArray(user.attributes.sub,Cache.getItem('stateuser'),{countyuser: {ne:Cache.getItem('countyuser') },
+        userid: {ne: user.attributes.sub}, unsubscribematchingme: {eq: ""}, profilecompPartF:{eq: "yes"}}).then((event1) => {console.log("onebigarray")});
       //initialize tab1C same rest of USA users
-      this.api.ListDatinguserdbStagingsOneBigArray1C(user.attributes.sub, "yes",{stateuser: {ne: response1.data[0].stateuser},userid: {ne: user.attributes.sub},
-        unsubscribematchingme: {eq: ""}}).then((event1) => {});
-    }).catch(error => {console.log(error.responseE);});
+      this.api.ListDatinguserdbStagingsOneBigArray1C(user.attributes.sub, "yes",{stateuser: {ne: Cache.getItem('stateuser')},userid: {ne: user.attributes.sub},
+        unsubscribematchingme: {eq: ""}}).then((event1) => {console.log("onebigarray1C")});
+
   }
 
   //save the flag that the user wants to edit their previous section selection
@@ -179,7 +194,7 @@ export class Big5partfComponent implements OnInit {
   async initializetabindex() {
     const user = await Auth.currentAuthenticatedUser();
     const paramsp2 = {body: {userid: user.attributes.sub, searchactedids:[], tab1index:0, tab3index:0, tab4index:0}} //place itemid in index0 position of tab2
-    API.post("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2");
+    API.post("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2 initializetabindex");
     }).catch(error => {console.log(error.response2);});
   }
 
@@ -187,7 +202,9 @@ export class Big5partfComponent implements OnInit {
   async seccompleteF() {
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartF"}}
-    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");
+      this.router.navigate(['/Community1'])
+    }).catch(error => {console.log(error.response3);});
   }
 
   async seccompleteflag() {

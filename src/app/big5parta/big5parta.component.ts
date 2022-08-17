@@ -50,11 +50,11 @@ locationreload() {  location.reload();}
 
   //movenextpage() { if(Cache.getItem('profileAstatus')=="yes") {this.seccompleteA();this.router.navigate(['/2022MidtermElections/USSenate'])}}
 
-   movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('midtermclicked')=="yes" ||Cache.getItem('midtermenter')=="yes"))  {
-     this.seccompleteA(); this.router.navigate(['/2022MidtermElections/USSenate'])}
+   movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('midtermclicked')=="yes" || Cache.getItem('midtermenter')=="yes") )  {
+     this.seccompleteA();}
 
   else if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes"))  {
-     this.seccompleteA();  this.router.navigate(['/Meetup/Step3'])}}
+     this.seccompleteA();  }}
 
 //to enure that zip codes are only numbers
   numberOnly(event:any): boolean {
@@ -183,16 +183,21 @@ locationreload() {  location.reload();}
 
   //record that Section A is complete.
   async seccompleteA() {
-
     const user = await Auth.currentAuthenticatedUser();
     const paramsp3 = {body: {userid: user.attributes.sub, seccomplete:"profilecompPartA"}}
-    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {
+      console.log("success3 seccompleteA");
+   if(Cache.getItem('midtermclicked')=="yes" || Cache.getItem('midtermenter')=="yes") {
+     this.router.navigate(['/2022MidtermElections/USSenate']) }
+   if(Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes") {
+     this.router.navigate(['/Meetup/Step3'])
+   }
+    }).catch(error => {console.log(error.response3);});
   }
 
   async seccompleteflag() {
     const expiration = new Date().valueOf()
     Cache.setItem('profileAstatus', 'yes', { expires: expiration +60000 }); //expires after 10minute, time is in ms.
-
   }
 
 

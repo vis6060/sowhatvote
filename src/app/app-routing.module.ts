@@ -10,7 +10,7 @@ import { Big5parteComponent } from './big5parte/big5parte.component';
 import { Big5partfComponent } from './big5partf/big5partf.component';
 import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component';
 
-import {DirectAccessGuardService} from "./direct-access-guard.service";
+//import {DirectAccessGuardService} from "./direct-access-guard.service";
 import {AdBComponent} from "./ad-b/ad-b.component";
 import {EntrypageComponent} from "./entrypage/entrypage.component";
 
@@ -19,13 +19,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: EntrypageComponent },
   { path: 'MyAccount', component: LoginboxComponent },
-  { path: 'Community1', component: AdAComponent,canActivate: [DirectAccessGuardService] },
-  { path: 'Community2', component: AdBComponent,canActivate: [DirectAccessGuardService] },
+  { path: 'Community1', component: AdAComponent, },
+  { path: 'Community2', component: AdBComponent, },
   { path: 'Meetup/Step0', component: Big5partaComponent }, //insert canActivate here too, once you have created button to access Step0
-  { path: 'Meetup/Step0edit', component: Big5partaeditComponent,canActivate: [DirectAccessGuardService] },//canActivate method will ensure ppl cannot directly access these routes.
-  { path: 'Meetup/Step3', component: Big5partdComponent,canActivate: [DirectAccessGuardService]},
-  { path: 'Meetup/Step4', component: Big5parteComponent,canActivate: [DirectAccessGuardService]},
-  { path: 'Meetup/Step5', component: Big5partfComponent,canActivate: [DirectAccessGuardService]},
+  { path: 'Meetup/Step0edit', component: Big5partaeditComponent, },//canActivate method will ensure ppl cannot directly access these routes.
+  { path: 'Meetup/Step3', component: Big5partdComponent},
+  { path: 'Meetup/Step4', component: Big5parteComponent,},
+  { path: 'Meetup/Step5', component: Big5partfComponent,},
   {
     path: '2022MidtermElections/USSenate',
     loadChildren: () =>
@@ -83,6 +83,8 @@ const routes: Routes = [
   }
 
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
