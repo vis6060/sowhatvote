@@ -10,7 +10,9 @@ import {APIService} from "../API.service";
 export class AdAComponent implements OnInit {
 
   constructor(private api: APIService,) {
-
+  // if(Cache.getItem('')!=null) {Cache.removeItem("");}
+    if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"}
+    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
   }
 
   ngOnInit(): void {
@@ -20,8 +22,6 @@ export class AdAComponent implements OnInit {
   webpagevalue="";whichtab=""; profileFflag="";profileAflag=""
 
   async webpageroute() {
-    if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"}
-    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
     const user = await Auth.currentAuthenticatedUser();
 //has the comcategory for whom the results need to be display as view results button was clicked and then there were two ad pages.
     this.api.Getwebpagevalue(user.attributes.sub).then((event2) => {this.webpagevalue=event2.comcateg as unknown as any;});

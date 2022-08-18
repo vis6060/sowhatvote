@@ -29,6 +29,7 @@ export class Big5partfComponent implements OnInit {
   constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
     Amplify.configure(awsExports);
     if(Cache.getItem('profileEstatus')=="yes") {Cache.removeItem("profileEstatus");location.reload();}
+    if(Cache.getItem('profileFstatus')=="yes") { this.reloadscreenblankit="yes"}
   }
 
   ngOnInit(): void {
@@ -48,13 +49,13 @@ export class Big5partfComponent implements OnInit {
   }
   locationreload() {  location.reload();}
   movenextpage() { if(Cache.getItem('profileFstatus')=="yes") {this.seccompleteF();
-  this.initializetabindex(); this.initializetabs1()
+  this.initializetabindex(); this.initializetabs1(); this.dimensionstore()
   }}
 
   public dealsPer1: Array<DatinguserdbStaging>;  public dealsPer3: Array<DatinguserdbStaging>; public dealsPer5: Array<DatinguserdbStaging>;
 
   toggleBool7= "true"; toggleBool10=""
-
+  reloadscreenblankit=""
   newWidth=0; newHeight=0; origWidth=0; origHeight=0;
 
   //listens to the file being uploaded on the front-end and then passes the filename to backend for prediction to runs it unsafe content magic.
@@ -63,7 +64,7 @@ export class Big5partfComponent implements OnInit {
   userstore="";
   unsafe='';
   unsafem='';
-  picm=''; sizebig="";
+  picm=''; sizebig=""; invalidfileextension="";
   url:string; urlflag="" //signed url to the image stored in s3
   async changeEvent(event:any) {const user = await Auth.currentAuthenticatedUser();
     this.userstore=user.attributes.sub;
@@ -98,48 +99,68 @@ export class Big5partfComponent implements OnInit {
           if (unsafe=="YES") {
             Storage.remove(file.name, file);
             this.unsafem="yesm"
-          } else {this.picstore(); this.picclick(); this.toggleBool7="false";}
+          } else {this.picstore();  this.toggleBool7="false";
+            const expiration = new Date().valueOf()
+            Cache.setItem('toggleBool7',  this.toggleBool7, { expires: expiration +60000 });
+            Cache.setItem('editstep5flag',  this.editstep5flag, { expires: expiration +60000 });
+          }
         })
-        .catch(err => console.log({ err }));
+        .catch(err => { console.log({ err }); if(err.name="InvalidImageFormatException") {this.invalidfileextension="yes"}});
     }
     else {this.sizebig="yes"} //if size big then user needs to re-upload
   }
 
   //listen to the image being displayed
-  getMeta(url1:string){
+  getMeta(url1:string){ const expiration = new Date().valueOf()
     const img = new Image();
     img.addEventListener('load', (event) => {
       this.origWidth = img.naturalWidth; this.origHeight=img.naturalHeight;
+      Cache.setItem('naturalWidth',  img.naturalWidth, { expires: expiration +60000 });
+      Cache.setItem('naturalHeight', img.naturalHeight, { expires: expiration +60000 });
+
+      if( img.naturalWidth>=img.naturalHeight) {
+        this.newWidth=300; this.newHeight=img.naturalHeight/( img.naturalWidth/300);
+        Cache.setItem('newWidth',  this.newWidth, { expires: expiration +60000 });
+        Cache.setItem('newHeight', this.newHeight, { expires: expiration +60000 });
+      } else if(img.naturalWidth<img.naturalHeight) {
+        this.newHeight=300; this.newWidth= img.naturalWidth/(img.naturalHeight/300);
+      Cache.setItem('newWidth',  this.newWidth, { expires: expiration +60000 });
+       Cache.setItem('newHeight', this.newHeight, { expires: expiration +60000 });
+      }
     });
     img.src = url1;
   }
 
 //on clicking next button store the original and new width and height of image in the userdb table.
+//    this.url=Cache.getItem('urlcache');
+//       this.toggleBool10="yes"
+
+  //this function is meant when a user wants to edit their profile pic. don't edit for main flow.
   async  picclick () {
-     const user = await Auth.currentAuthenticatedUser();
+    const user = await Auth.currentAuthenticatedUser();
+
     if( this.origWidth>this.origHeight) {
       this.newWidth=300; this.newHeight=this.origHeight/( this.origWidth/300);
-  //    this.url=Cache.getItem('urlcache');
-  //    this.toggleBool10="yes"
       console.log(this.origWidth); console.log(this.origHeight);
-      const paramsp1b = {body: {userid: user.attributes.sub, origWidth: this.origWidth, origHeight:this.origHeight,
-          newWidth:this.newWidth, newHeight:this.newHeight}}
-      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b pickclick function1");}).catch(error => {console.log(error.response1b)});
+      const paramsp1b = {body: {userid: user.attributes.sub, newWidth:this.newWidth, newHeight:this.newHeight}}
+      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b");}).catch(error => {console.log(error.response1b)});
     } else if(this.origWidth<this.origHeight) {
       this.newHeight=300; this.newWidth= this.origWidth/(this.origHeight/300);
-   //  this.url=Cache.getItem('urlcache');
-   //   this.toggleBool10="yes"
-
-      const paramsp1b = {body: {userid: user.attributes.sub, origWidth: this.origWidth, origHeight:this.origHeight,
-          newWidth:this.newWidth, newHeight:this.newHeight}}
-      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b pickclick function2");}).catch(error => {console.log(error.response1b)});
+      const paramsp1b = {body: {userid: user.attributes.sub, newWidth:this.newWidth, newHeight:this.newHeight}}
+      API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b");}).catch(error => {console.log(error.response1b)});
     }
+  }
+
+  async dimensionstore() {
+    const user = await Auth.currentAuthenticatedUser();
+    const paramsp1b = {body: {userid: user.attributes.sub, newWidth:Cache.getItem('newWidth'), newHeight:Cache.getItem('newHeight')}}
+    API.post("datingapitest4", "/userdbapiloyal", paramsp1b).then(response1b => {console.log("success1b dimension store");}).catch(error => {console.log(error.response1b)});
+
   }
 
   //stores the pic in S3 and record that Section F is complete and all secyion
   async picstore() {
     const user = await Auth.currentAuthenticatedUser();
-
     if( this.editstep5flag=="") {
     this.userstore=user.attributes.sub;
     const paramspE = {body: {userid: user.attributes.sub, s3file:this.userstore.concat(this.s3file.toString())}}
@@ -193,7 +214,7 @@ export class Big5partfComponent implements OnInit {
   //initialize the tabindex that tab1A always loads first-time user enters the Dating service.
   async initializetabindex() {
     const user = await Auth.currentAuthenticatedUser();
-    const paramsp2 = {body: {userid: user.attributes.sub, searchactedids:[], tab1index:0, tab3index:0, tab4index:0}} //place itemid in index0 position of tab2
+    const paramsp2 = {body: {userid: user.attributes.sub, searchactedids:[], whichtab:""}} //place itemid in index0 position of tab2
     API.post("datingapitabindext4","/datingapitabindex", paramsp2).then(response2 => {console.log("success2 initializetabindex");
     }).catch(error => {console.log(error.response2);});
   }
@@ -209,7 +230,8 @@ export class Big5partfComponent implements OnInit {
 
   async seccompleteflag() {
     const expiration = new Date().valueOf()
-    Cache.setItem('profileFstatus', 'yes', { expires: expiration +60000 }); //expires after 30minutes as user might be reading the Communty1 and Community2 ads.
+    Cache.setItem('profileFstatus', 'yes', { expires: expiration +1800000 }); //expires after 30minutes as user might be reading the Communty1 and Community2 ads.
+    //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
   }
 
 }

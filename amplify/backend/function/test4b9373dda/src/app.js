@@ -156,17 +156,64 @@ app.post(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      {AttributeName: "userid", KeyType: "RANGE"}  //Sort key
+    ],
+    AttributeDefinitions: [
+      {AttributeName: "userid", AttributeType: "S"}
+    ],
+    Key: {
+      "userid":req.body.userid ,
+    },
+    UpdateExpression: "set  #m1=:v1,#m2=:v2,#m3=:v3,#m4=:v4,#m5=:v5,#m6=:v6,#m7=:v7,#m8=:v8,#m9=:v9,#m10=:v10,#m11=:v11,#m12=:v12,#m13=:v13,#m14=:v14,#m15=:v15", //initialize array
+    ExpressionAttributeNames:{
+      "#m1": "comcateg",
+      "#m2": "futurecomcandsvotedon",
+      "#m3": "futurecomcandsvotedonSenate",
+      "#m4": "FutureComPreferArray",
+      "#m5": "FutureComPreferArraySenate",
+      "#m6": "HOMEstate",
+      "#m7": "isscateg",
+      "#m8": "prefercateg",
+      "#m9": "searchcateg",
+      "#m10": "voteactedidsgovern",
+      "#m11": "voteactedidshouse",
+      "#m12": "voteactedidsissuescandhouse",
+      "#m13": "voteactedidsissueshouse",
+      "#m14": "voteactedidsSenate",
+      "#m15": "webpagevalue",
+    },
+    ExpressionAttributeValues: {
+      ":v1": req.body.comcateg,
+      ":v2": req.body.futurecomcandsvotedon,
+      ":v3": req.body.futurecomcandsvotedonSenate,
+      ":v4": req.body.FutureComPreferArray,
+      ":v5": req.body.FutureComPreferArraySenate,
+      ":v6": req.body.HOMEstate,
+      ":v7": req.body.isscateg,
+      ":v8": req.body.prefercateg,
+      ":v9": req.body.searchcateg,
+      ":v10": req.body.voteactedidsgovern,
+      ":v11": req.body.voteactedidshouse,
+      ":v12": req.body.voteactedidsissuescandhouse,
+      ":v13": req.body.voteactedidsissueshouse,
+      ":v14": req.body.voteactedidsSenate,
+      ":v15": req.body.webpagevalue,
+    },
+    ReturnValues: "ALL_NEW"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
       res.json({error: err, url: req.url, body: req.body});
     } else {
-      res.json({success: 'post call succeed!', url: req.url, data: data})
+      res.json({success: 'put call succeed!', url: req.url, data: data})
     }
   });
 });
+
 
 /**************************************
 * HTTP remove method to delete object *

@@ -1,6 +1,7 @@
 
 
 <!-- Profile pic  -->
+<a *ngIf="reloadscreenblankit!='yes'">
 <br> <br> <a> Step 5 of 5: </a>
 <!--  <h2 *ngIf="toggleBool7=='true'">Please upload picture to see your match results.</h2> -->
 <div className="Text">
@@ -13,6 +14,7 @@
 
 <a *ngIf="sizebig=='yes'">
   <br> <a> <b> Sorry, the picture size should be less than 1MB in size. Please refresh the page and upload another picture. </b></a> <br>
+  <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
 </a>
 
 <a *ngIf="unsafem=='yesm'">
@@ -20,13 +22,17 @@
   <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
 </a>
 
+  <a *ngIf="invalidfileextension=='yes'">
+    <br> <a> <b> Sorry, the picture is not in the acceptable file format of either .jpg or .png. Please refresh the page and upload another picture. </b></a> <br>
+    <button  mat-button (click)="reloadComponent()" >Reset This Page</button> <br>
+  </a>
+
 <div *ngIf="toggleBool7=='false'&& editstep5flag==''">
   <!--    <img src={{url}} [ngStyle]= "{'width': newWidth + 'px', 'height':newHeight + 'px'}"> -->
   <!--  <amplify-s3-image imgKey="{{s3file}}"></amplify-s3-image> -->
   <p>Thank you for answering all questions. Please click Submit to complete and see your match results.</p>
   <!-- <button mat-button (click)="picclick()" (click)="seccompleteflag()" (click)="locationreload()" (click)="initializetabs1()" -->
-  <button mat-button  (click)="seccompleteflag()" (click)="locationreload()"
-          > Submit</button>
+  <button mat-button  (click)="seccompleteflag()" (click)="locationreload()"> Submit</button>
 </div>
 
 <div *ngIf="toggleBool7=='false'&& editstep5flag=='yes'">
@@ -34,3 +40,4 @@
   <p>Thank you for the new profile picture.</p>
   <button mat-button (click)="picclick()"  routerLink="/MyAccount"> Save Responses & Go Back to MyAccount </button>
 </div>
+</a>

@@ -215,7 +215,7 @@
         },
         "test4af42caca": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
-          "s3Key": "amplify-builds/test4af42caca-786d573577516a514b52-build.zip"
+          "s3Key": "amplify-builds/test4af42caca-67485158466730415844-build.zip"
         },
         "test4397a7e5f": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
@@ -431,7 +431,7 @@
         },
         "test4b9373dda": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
-          "s3Key": "amplify-builds/test4b9373dda-324459317078572f5654-build.zip"
+          "s3Key": "amplify-builds/test4b9373dda-336b536b446c35515841-build.zip"
         }
       }
     }

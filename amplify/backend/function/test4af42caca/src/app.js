@@ -169,16 +169,16 @@ app.post(path, function(req, res) {
     Key: {
       "userid":req.body.userid ,
     },
-    UpdateExpression: "set #ta = :val12, #ta1 = :val13, #ta2 = :val14, #ta3 = :val15",
+    UpdateExpression: "set  #ta2 = :val14, #ta3 = :val15",
     ExpressionAttributeNames:{
-      "#ta": "origWidth",
-      "#ta1": "origHeight",
+    //  "#ta": "origWidth",
+    //  "#ta1": "origHeight",
       "#ta2": "newWidth",
       "#ta3": "newHeight",
     },
     ExpressionAttributeValues: {
-      ":val12": req.body.origWidth,
-      ":val13": req.body.origHeight,
+   //   ":val12": req.body.origWidth,
+   //   ":val13": req.body.origHeight,
       ":val14": req.body.newWidth,
       ":val15": req.body.newHeight,
     },

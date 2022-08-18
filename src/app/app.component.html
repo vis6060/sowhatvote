@@ -14,6 +14,16 @@ steps, espcially for profile picture there could be interuption. tell user they 
   </nav>
 </a>
 
+<!-- first time user, their profile does not even exist in the datinguserdb table, so no profile flags. -->
+<a *ngIf="authenticator.route === 'authenticated' && usernoexist=='yes'">
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link routerLink="/Meetup/Step0" (click)="midtermclickedA()"> 2022 Midterm ElectionsBrandNew </a>
+    <a mat-tab-link routerLink="/Meetup/Step0" (click)="meetupclickedA()"> MeetupBrandNew </a>
+    <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
+    <!--   <mat-icon class="icontext" aria-hidden="false">logout</mat-icon> -->
+  </nav>
+</a>
+
 <!--<ng-container *ngIf="authenticator.route === 'authenticated'"> -->
 <!-- go the appropariate form Step which is incomplete-->
 <a *ngIf="authenticator.route === 'authenticated' && profilecompPartA=='no' ">
@@ -34,7 +44,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
   </nav>
 </a>
 
-<a *ngIf="(profilecompPartD=='yes' || profileDfag=='yes') && profilecompPartE=='no' && authenticator.route === 'authenticated'">
+<a *ngIf="profilecompPartD=='yes' && profilecompPartE=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"> 2022 Midterm Elections III </a>
     <a mat-tab-link routerLink="/Meetup/Step4" (click)="meetupclicked()"> Meetup III </a>

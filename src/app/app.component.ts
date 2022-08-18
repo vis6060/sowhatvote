@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation, NgModule} from '@angular/core';
 import {API, Auth, Cache} from "aws-amplify";
 import { Location } from '@angular/common';
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,13 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 })
 export class AppComponent {
 
-  constructor(public authenticator: AuthenticatorService,private readonly location: Location) {}
+  constructor(public authenticator: AuthenticatorService,private readonly location: Location, private router: Router) {}
 
   ngOnInit(): void {
     this.level2tabRest()
     this.routeOnRefresh()
     this.routeOnRefreshmidterm()
-    this.refreshtab()
+ //   this.refreshtab()
     console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
     console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
     console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
@@ -27,11 +28,19 @@ export class AppComponent {
     console.log('profileDstatus cache', Cache.getItem('profileDstatus'))
     console.log('profileEstatus cache', Cache.getItem('profileEstatus'))
     console.log('profileFstatus cache', Cache.getItem('profileFstatus'))
+    console.log('countyuser cache', Cache.getItem('countyuser'))
+    console.log('stateuser cache', Cache.getItem('stateuser'))
+    console.log('naturalWidth cache', Cache.getItem('naturalWidth'))
+    console.log('naturalHeight cache', Cache.getItem('naturalHeight'))
+    console.log('newWidth cache', Cache.getItem('newWidth'))
+    console.log('newHeight cache', Cache.getItem('newHeight'))
+    console.log('toggleBool7 cache', Cache.getItem('toggleBool7'))
+    console.log('editstep5flag cache', Cache.getItem('editstep5flag'))
   }
 
   profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
   profileAfag="";profileDfag="";profileEfag="";profileFfag=""
-
+  usernoexist="";
   refreshtab() {
     if(Cache.getItem('profileAstatus')=="yes") {this.profileAfag="yes"}
     if(Cache.getItem('profileDstatus')=="yes") {this.profileDfag="yes"}
@@ -50,7 +59,15 @@ export class AppComponent {
       console.log('profilecompPartD database status', response1.data[0].profilecompPartD)
       console.log('profilecompPartE database status', response1.data[0].profilecompPartE)
       console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
-      ;}).catch(error => {console.log(error.response1)});
+      ;}).catch(error => {console.log(error.response1);
+  //    if(error.response1==undefined && this.authenticator.route=="authenticated")
+      //   {const expiration = new Date().valueOf()
+    //    this.router.navigate(['/Meetup/Step0']); Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
+
+       const expiration = new Date().valueOf()
+        if(error.response1==undefined) {this.usernoexist="yes";
+          Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
+      });
   }
 
   meetupflag=""; routeString=""; routeflag=""; midtermflag=""; routeflagmidterm="";

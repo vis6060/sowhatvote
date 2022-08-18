@@ -2,12 +2,12 @@
 ////API datingapitest4/userdbapiage (get avail) corresponds to datinguserdb table and *e8b function(partition key is userid)
 //API datingapitest4/userdbapiname corresponds to datinguserdb table and *1cc function(partition key is userid)
 
-//API initializeuserarrayt4/initsenate (post avail) corresponds to   usercandarraydisplay-staging and *b82 function
+//API initializeuserarrayt4/initsenate (don't use) (post avail) corresponds to   usercandarraydisplay-staging and *b82 function
 //API initializeuserarrayt4/initgovern corresponds to   usercandarraydisplay-staging and *cf4 function
 //API initializeuserarrayt4/index corresponds to   usercandarraydisplay-staging and *25e function
 //API initializeuserarrayt4/init  corresponds to   usercandarraydisplay-staging and *290 function
 
-//API datingapitest4/initsenatedup (post avail) corresponds to   usercandarraydisplay-staging and *dda function
+//API datingapitest4/initsenatedup  corresponds to   usercandarraydisplay-staging and *dda function
 
 // API storeresultt4/store ( post avail) corresponds to ushouserepcandsmain and *2fe function
 // API comsresultt4/coms ( post avail) corresponds to ushouserepcandscoms and *8eb function
@@ -58,7 +58,7 @@
 //API datingapitest4/itemapitabremoveindex1 (get) corresponds to datingitemtracking table and *bf5 function(partition key is userid)
 //API datingapitest4/itemapitemp (get) corresponds to datingitemtracking table and *5e5 function(partition key is userid)
 //API datingapitest4/interactionapi corresponds to datinginteraction  table and *025 function(partition key is uuid)
-//API datingapitest4/requestinterestapi corresponds to datingreason  table and *77c function(partition key is userid)
+//API datingapitest4/requestinterestapi (used?) corresponds to datingreason  table and *77c function(partition key is userid)
 
 //API datingapitest4/itemapitab6dup (get) corresponds to datingitemtracking table and *786 function(partition key is userid)
 //API datingapitest4/itemapitab5movedup corresponds to datingitemtracking table and *e58 function(partition key is userid)

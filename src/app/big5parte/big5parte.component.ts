@@ -26,8 +26,10 @@ export class Big5parteComponent implements OnInit {
   constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
     Amplify.configure(awsExports);
     if(Cache.getItem('profileDstatus')=="yes") {Cache.removeItem("profileDstatus");location.reload();}
+    if(Cache.getItem('profileEstatus')=="yes") { this.reloadscreenblankit="yes"}
   }
 
+  reloadscreenblankit=""
 
   ngOnInit(): void {
     this.prefifthFormGroup = this._formBuilder.group({prefifthCtrl: ['', Validators.required],});
@@ -172,7 +174,7 @@ export class Big5parteComponent implements OnInit {
     if(this.unsafetext=="yestext" ||this.unsafetext1=="yestext" || this.unsafetext2=="yestext" ) {
       this.toggleBool6="true"; console.log('this is status of togglebool6',this.toggleBool6)
     } else if(this.unsafetext=="notext" && this.unsafetext1=="notext" && this.unsafetext2=="notext" ) {
-      this.toggleBool6 = "false"; this.geteditStep4()
+      this.toggleBool6 = "false"; this.submitflag=true; this.geteditStep4()
     }
   }
   submitflag:boolean=true

@@ -1,4 +1,5 @@
 
+<a *ngIf="reloadscreenblankit!='yes'">
 <!--   profile pic, description, facebook username  -->
 <br> <br> <a> Step 4 of 5: </a>
 <form [formGroup]="prefifthFormGroup">
@@ -64,3 +65,4 @@
   <p>Thank you for answering all questions. </p>
   <button mat-button (click)="seccompleteE()" routerLink="/MyAccount"> Save Responses & Go Back to MyAccount </button>
 </div>
+</a>

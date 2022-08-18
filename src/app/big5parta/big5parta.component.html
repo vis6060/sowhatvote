@@ -1,4 +1,5 @@
 
+<a *ngIf="reloadscreenblankit!='yes'">
 <br> <a> this section is displayed when Meetup on toolbar is clicked for the firstime user. so, have some introductory
   message asking them to sign-up please.</a>  <br>
 
@@ -37,7 +38,7 @@
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Education</mat-label>
         <select matNativeControl required [(ngModel)]="educationstore1" [ngModelOptions]="{standalone: true}"
-                (change)="agestore($event)"  (change)="zipstore($event)"> <br>
+                (change)="agestore($event)"   (change)="zipstore($event)"> <br>
           <option value="Less than a high school diploma">Less than a high school diploma</option> <option value="High school diploma">High school diploma</option> <option value="Some college or associate's degree">Some college or associate's degree</option> <option value="Bachelor's degree">Bachelor's degree</option> <option value="Master's degree">Master's degree</option> <option value="Greater than a Master's degree">Greater than a Master's degree</option>
         </select>
       </mat-form-field>
@@ -95,3 +96,4 @@
     </form>
   </mat-step>
 </mat-stepper>
+</a>

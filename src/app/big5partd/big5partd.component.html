@@ -1,5 +1,5 @@
 
-
+<a *ngIf="reloadscreenblankit!='yes'">
 <!-- display industry and occupation dropdown -->
 <br> <br> <a> Step 3 of 5: </a>
 
@@ -32,3 +32,4 @@
 <div *ngIf="toggleBool5=='false'&& editstep3flag=='yes'">
   <button mat-button (click)="seccompleteD()" routerLink="/MyAccount" > Save Responses & Go Back to MyAccount</button>
 </div>
+</a>

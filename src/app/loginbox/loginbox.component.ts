@@ -32,11 +32,16 @@ export class LoginboxComponent implements OnInit {
   //    console.log('A new auth event has happened: ', data.payload.data.username + ' has ' + data.payload.event);
       if(data.payload.event=="signIn") {location.reload();}
       if(data.payload.event=="signOut") {location.reload()}
+      if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus")} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+      if(Cache.getItem('profileFstatus')=="yes") {Cache.removeItem("profileFstatus")} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+  //    if(Cache.getItem('usernoexist')=="yes") {Cache.removeItem("usernoexist"); this.router.navigate(['/Meetup/Step0'])} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+
     })
   }
 
   ngOnInit(): void {
     this.showexistingprofile()
+
  //   this.showemail();
   //  this.movenextpage()
 //    Cache.removeItem("meetupclicked");  Cache.removeItem("midtermclicked"); Cache.removeItem("profileAstatus");
@@ -71,6 +76,7 @@ export class LoginboxComponent implements OnInit {
  // else if(Cache.getItem('meetupenter')=="yes")  {
  //   this.router.navigate(['/Meetup/Home'])}
 //  }
+
 
 
   //tab2: unsubscribe from matchup service
@@ -134,14 +140,12 @@ export class LoginboxComponent implements OnInit {
       this.profilecompPartA=response1.data[0].profilecompPartA;   this.profilecompPartF=response1.data[0].profilecompPartF;
       this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
 
-  //    console.log(Cache.getItem('midtermenter'))
- //     console.log(Cache.getItem('myaccountenter'))
       if(Cache.getItem('myaccountenter')=="yes") { this.router.navigate(['/MyAccount']) } else
-      if(this.profilecompPartA=='no') {this.router.navigate(['/Meetup/Step0'])} else
+      if(response1.data[0].profilecompPartA=='no') {this.router.navigate(['/Meetup/Step0'])} else
       if(Cache.getItem('midtermenter')=="yes")  {this.router.navigate(['/2022MidtermElections/USSenate'])} else
       if(response1.data[0].profilecompPartD=='no') {this.router.navigate(['/Meetup/Step3']) } else
-      if(this.profilecompPartE=='no') {this.router.navigate(['/Meetup/Step4']) } else
-      if(this.profilecompPartF=='no') {this.router.navigate(['/Meetup/Step5']) } else
+      if(response1.data[0].profilecompPartE=='no') {this.router.navigate(['/Meetup/Step4']) } else
+      if(response1.data[0].profilecompPartF=='no') {this.router.navigate(['/Meetup/Step5']) } else
       if(Cache.getItem('meetupenter')=="yes")  {this.router.navigate(['/Meetup/Home'])}
 
 
@@ -162,7 +166,10 @@ export class LoginboxComponent implements OnInit {
       this.countyuser=response1.data[0].countyuser;
       this.stateuser=response1.data[0].stateuser;
       this.loyalty=response1.data[0].loyalty;
-    }).catch(error => {console.log(error.response1)});
+    }).catch(error => {console.log(error.response1)
+      //user is brand new and doesn't exist in the userdating db table
+      if(error.response1==undefined && this.authenticator.route=="authenticated") {this.router.navigate(['/Meetup/Step0'])}
+    });
   }
 
 //sets the flag that a user wants to edit the section. this flag is used to create a new button in that step screen- this button will return the user after edit back to MyAccount screen

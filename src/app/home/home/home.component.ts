@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
     );
     //initialize the tab1, tab2, tab3 arrays with itemids
     this.homeinitialize1A();
-         this.homeinitialize1B();  this.homeinitialize1C(); this.homeinitialize3(); this.homeinitialize2()
+   // keep this commented out   this.homeinitialize1B();  this.homeinitialize1C(); this.homeinitialize3(); this.homeinitialize2()
     this.delaytab1B(500)
        this.delaytab1C(1000)
        this.delaytab3(1500)

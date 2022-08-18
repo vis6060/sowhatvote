@@ -33,7 +33,10 @@ export class Big5partdComponent implements OnInit {
   constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
     Amplify.configure(awsExports);
     if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
+    if(Cache.getItem('profileDstatus')=="yes") { this.reloadscreenblankit="yes"}
   }
+
+  reloadscreenblankit=""
 
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(

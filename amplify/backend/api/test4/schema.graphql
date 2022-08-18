@@ -253,6 +253,7 @@ type Query {
 	listVotedIdsIssuesflagsgovern(userid: String,isscand:String): VotedIdsFlagsIssue
 	searchHouseCandInstate(filter:TableSearchFilterCands): CandNameOutArray
 	searchsenateCandInstate(filter:TableSearchFilterCands): CandNameOutArray
+
 }
 
 type Mutation {
@@ -362,7 +363,7 @@ type Mutation {
   dropdownUpdateArray(userid: String,candarraystate:String): ComCateg
 dropdownUpdateArraysenate(userid: String,candarraystate:String): ComCateg
 dropdownUpdateArraygovern(userid: String,candarraystate:String): ComCateg
-    }
+   }
 
 input TableDatinguserdbStagingFilterInput {
   age: TableStringFilterInput
