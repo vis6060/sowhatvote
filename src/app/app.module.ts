@@ -47,6 +47,8 @@ import { AdBComponent } from './ad-b/ad-b.component';
 import { EntrypageComponent } from './entrypage/entrypage.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TermsdialogboxComponent } from './termsdialogbox/termsdialogbox.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     OccupationComponent,
     Industrylevel2newComponent,
     AdBComponent,
-    EntrypageComponent
+    EntrypageComponent,
+    TermsdialogboxComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +89,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     AmplifyAuthenticatorModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

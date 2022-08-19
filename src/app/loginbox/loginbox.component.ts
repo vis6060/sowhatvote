@@ -7,8 +7,9 @@ import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-ampli
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from "../big5parta/big5parta.component";
 import {APIService, DatinguserdbStaging} from "../API.service";
-
+import {MatDialog} from '@angular/material/dialog';
 import { Hub } from 'aws-amplify';
+import {TermsdialogboxComponent} from "../termsdialogbox/termsdialogbox.component";
 
 @Component({
   selector: 'app-loginbox',
@@ -24,7 +25,7 @@ export class LoginboxComponent implements OnInit {
   public dealsPer1: Array<DatinguserdbStaging>;  public dealsPer3: Array<DatinguserdbStaging>; public dealsPer5: Array<DatinguserdbStaging>;
 
   router: Router;
-  constructor(public authenticator: AuthenticatorService, private route: ActivatedRoute,private api: APIService,_router: Router) {
+  constructor(public authenticator: AuthenticatorService, private route: ActivatedRoute,private api: APIService,_router: Router,public dialog: MatDialog) {
     Amplify.configure(awsExports);this.router = _router;
     Hub.listen('auth', (data) => {
     //  const { payload } = data;
@@ -203,8 +204,25 @@ export class LoginboxComponent implements OnInit {
     API.put("datingapitest4", "/userdbapieditform", paramsp1b).then(response1b => {console.log("success1b");}).catch(error => {console.log(error.response1b)});
   }
 
+  services = {
+    //@ts-ignore
+    async validateCustomSignUp(formData: Record<string, string>) {
+      //@ts-ignore
+      if (!formData.acknowledgement) {
+        return {
+          acknowledgement: 'You must agree to the Terms & Conditions and Privacy Policy',
+        };
+      }
+    },
+  };
 
+  openTerms() {
+    const dialogRef = this.dialog.open(TermsdialogboxComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 }
 

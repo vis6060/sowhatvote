@@ -1,5 +1,5 @@
 
-<amplify-authenticator  [loginMechanisms]="['email']">
+<amplify-authenticator [services]="services" [loginMechanisms]="['email']" initialState="signUp">
   <!-- sign-up-field override -->
   <ng-template
     amplifySlot="sign-up-form-fields"
@@ -17,6 +17,7 @@
     >
       I agree with the Terms & Conditions and Privacy Policy
     </amplify-checkbox>
+    <button mat-button class="terms-button" (click)="openTerms()">Review Terms & Conditions and Privacy Policy</button>
   </ng-template>
 
   <!-- signed-in content override -->
@@ -25,12 +26,10 @@
     let-user="user"
     let-signOut="signOut"
   >
-    <h1>Welcome {{ email }}!</h1>
-    <button (click)="signOut()">Sign Out</button> <br>
+    <h2>Welcome, {{ email}}!</h2>
+    <button (click)="signOut()">Sign Out</button>
   </ng-template>
 </amplify-authenticator>
-
-
 
 <ng-container *ngIf="authenticator.route === 'authenticated'">
 <!-- Show the tabs on top and the content underneath it -->

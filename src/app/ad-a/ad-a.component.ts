@@ -17,6 +17,7 @@ export class AdAComponent implements OnInit {
 
   ngOnInit(): void {
     this.webpageroute()
+    this.randomgen()
   }
 
   webpagevalue="";whichtab=""; profileFflag="";profileAflag=""
@@ -28,5 +29,15 @@ export class AdAComponent implements OnInit {
     //this gets the whichtab value and also blanks it.
     this.api.Getwhichtab(user.attributes.sub).then((event1) => {this.whichtab=event1.comcateg as unknown as any;});
 }
+
+selectorflag:number
+//random number generator which chooses which view section to show
+   randomgen() {//this finds a number between 1 and 10, inclusive of both
+  let  min = Math.ceil(1);
+  let   max = Math.floor(3);
+     this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
+   }
+
+
 
 }
