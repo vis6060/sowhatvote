@@ -16,8 +16,8 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from '@angular/material/expansion';
 import { OccupationSearchComponent } from './occupation-search/occupation-search.component';
-
-
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -40,7 +40,9 @@ import { OccupationSearchComponent } from './occupation-search/occupation-search
     ReactiveFormsModule,
     MatStepperModule,
     MatInputModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatChipsModule,
+    MatDividerModule
   ]
 })
 export class HomeModule { }

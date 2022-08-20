@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit,ViewChild} from '@angular/core';
+import {Component, Injectable, OnInit,ViewChild,Renderer2} from '@angular/core';
 import awsExports from 'src/aws-exports';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {API, Cache} from 'aws-amplify';
@@ -33,7 +33,7 @@ export class StepperIntl extends MatStepperIntl {
 export class HomeComponent implements OnInit {
 
   router: Router;
-  constructor(public authenticator: AuthenticatorService,public datepipe: DatePipe, private _matStepperIntl: MatStepperIntl,  private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router) {
+  constructor(public authenticator: AuthenticatorService,public datepipe: DatePipe, private _matStepperIntl: MatStepperIntl,  private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router, private renderer: Renderer2) {
     Amplify.configure(awsExports); this.router = _router;
     if(Cache.getItem('profileFstatus')=="yes") {Cache.removeItem("profileFstatus");location.reload();}
   }
@@ -51,6 +51,7 @@ export class HomeComponent implements OnInit {
     //initialize the tab1, tab2, tab3 arrays with itemids
     this.homeinitialize1A();
    // keep this commented out   this.homeinitialize1B();  this.homeinitialize1C(); this.homeinitialize3(); this.homeinitialize2()
+    this.delayitemssearched(250)
     this.delaytab1B(500)
        this.delaytab1C(1000)
        this.delaytab3(1500)
@@ -70,6 +71,9 @@ export class HomeComponent implements OnInit {
   }
   async delaytab2(ms: number) {
     await new Promise(resolve => setTimeout(()=>this.homeinitialize2(), ms)).then(()=>console.log("fired"));
+  }
+  async delayitemssearched(ms: number) {
+    await new Promise(resolve => setTimeout(()=>this.itemsalreadyviewed(), ms)).then(()=>console.log("fired"));
   }
 
   zeroFormGroup: FormGroup;
@@ -1166,6 +1170,17 @@ export class HomeComponent implements OnInit {
       if(this.tab2displayitemid1==null && this.tab2displayitemid2==null && this.tab2displayitemid3==null) {this.tab2nullflag="yes"}
     }).catch(error => {console.log(error.response2)})
   }
+
+//scroll to appropriate section
+  search1(){try {const errorField = this.renderer.selectRootElement('.search1');errorField.scrollIntoView();} catch (err) {}}
+  search2(){try {const errorField = this.renderer.selectRootElement('.search2');errorField.scrollIntoView();} catch (err) {}}
+  search3(){try {const errorField = this.renderer.selectRootElement('.search3');errorField.scrollIntoView();} catch (err) {}}
+  search4(){try {const errorField = this.renderer.selectRootElement('.search4');errorField.scrollIntoView();} catch (err) {}}
+  tab1A(){try {const errorField = this.renderer.selectRootElement('.tab1A');errorField.scrollIntoView();} catch (err) {}}
+  tab1B(){try {const errorField = this.renderer.selectRootElement('.tab1B');errorField.scrollIntoView();} catch (err) {}}
+  tab1C(){try {const errorField = this.renderer.selectRootElement('.tab1C');errorField.scrollIntoView();} catch (err) {}}
+  tab3(){try {const errorField = this.renderer.selectRootElement('.tab3');errorField.scrollIntoView();} catch (err) {}}
+  tab2(){try {const errorField = this.renderer.selectRootElement('.tab2');errorField.scrollIntoView();} catch (err) {}}
 
 
 }

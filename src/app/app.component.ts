@@ -19,42 +19,48 @@ export class AppComponent {
     this.routeOnRefresh()
     this.routeOnRefreshmidterm()
  //   this.refreshtab()
-    console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
-    console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
-    console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
-    console.log( 'midtermclicked homepage cache', Cache.getItem('midtermclicked'))
-    console.log('myaccountenter homepage cache', Cache.getItem('myaccountenter'))
-    console.log('profileAstatus homepage cache', Cache.getItem('profileAstatus'))
-    console.log('profileDstatus cache', Cache.getItem('profileDstatus'))
-    console.log('profileEstatus cache', Cache.getItem('profileEstatus'))
-    console.log('profileFstatus cache', Cache.getItem('profileFstatus'))
-    console.log('countyuser cache', Cache.getItem('countyuser'))
-    console.log('stateuser cache', Cache.getItem('stateuser'))
-    console.log('naturalWidth cache', Cache.getItem('naturalWidth'))
-    console.log('naturalHeight cache', Cache.getItem('naturalHeight'))
-    console.log('newWidth cache', Cache.getItem('newWidth'))
-    console.log('newHeight cache', Cache.getItem('newHeight'))
-    console.log('toggleBool7 cache', Cache.getItem('toggleBool7'))
-    console.log('editstep5flag cache', Cache.getItem('editstep5flag'))
+ //   console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
+//    console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
+ //   console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
+ //   console.log( 'midtermclicked homepage cache', Cache.getItem('midtermclicked'))
+ //   console.log('myaccountenter homepage cache', Cache.getItem('myaccountenter'))
+ //   console.log('profileAstatus homepage cache', Cache.getItem('profileAstatus'))
+  //  console.log('profileDstatus cache', Cache.getItem('profileDstatus'))
+  //  console.log('profileEstatus cache', Cache.getItem('profileEstatus'))
+  //  console.log('profileFstatus cache', Cache.getItem('profileFstatus'))
+ //   console.log('countyuser cache', Cache.getItem('countyuser'))
+ //   console.log('stateuser cache', Cache.getItem('stateuser'))
+  //  console.log('naturalWidth cache', Cache.getItem('naturalWidth'))
+  //  console.log('naturalHeight cache', Cache.getItem('naturalHeight'))
+ //   console.log('newWidth cache', Cache.getItem('newWidth'))
+  //  console.log('newHeight cache', Cache.getItem('newHeight'))
+  //  console.log('toggleBool7 cache', Cache.getItem('toggleBool7'))
+  //  console.log('editstep5flag cache', Cache.getItem('editstep5flag'))
   }
 
   profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
   profileAfag="";profileDfag="";profileEfag="";profileFfag=""
   usernoexist="";
-  refreshtab() {
-    if(Cache.getItem('profileAstatus')=="yes") {this.profileAfag="yes"}
-    if(Cache.getItem('profileDstatus')=="yes") {this.profileDfag="yes"}
-    if(Cache.getItem('profileEstatus')=="yes") {this.profileEfag="yes"}
-    if(Cache.getItem('profileFstatus')=="yes") {this.profileFfag="yes"}
-  }
+//  refreshtab() {
+//    if(Cache.getItem('profileAstatus')=="yes") {this.profileAfag="yes"}
+ ////   if(Cache.getItem('profileDstatus')=="yes") {this.profileDfag="yes"}
+ //   if(Cache.getItem('profileEstatus')=="yes") {this.profileEfag="yes"}
+ //   if(Cache.getItem('profileFstatus')=="yes") {this.profileFfag="yes"}
+ // }
 
   //get the flag whether StepF and StepA in the form sign-up steps are complete.
   async level2tabRest(){
-    const user = await Auth.currentAuthenticatedUser();
+    const user = await Auth.currentAuthenticatedUser();    const expiration = new Date().valueOf()
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
     API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => {
       this.profilecompPartF=response1.data[0].profilecompPartF;  this.profilecompPartA=response1.data[0].profilecompPartA;
       this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
+
+   if(response1.data[0].profilecompPartA=='no') { Cache.setItem('profAevade', 'yes', { expires: expiration +60000 });}
+      if(response1.data[0].profilecompPartD=='no')  {  Cache.setItem('profDevade', 'yes', { expires: expiration +60000 });}
+      if(response1.data[0].profilecompPartE=='no')  {   Cache.setItem('profEevade', 'yes', { expires: expiration +60000 }); }
+      if(response1.data[0].profilecompPartF=='no') {  Cache.setItem('profFevade', 'yes', { expires: expiration +60000 });}
+
       console.log('profilecompPartA database status', response1.data[0].profilecompPartA)
       console.log('profilecompPartD database status', response1.data[0].profilecompPartD)
       console.log('profilecompPartE database status', response1.data[0].profilecompPartE)
@@ -110,7 +116,7 @@ export class AppComponent {
   //when user is on tab1 and they refresh the screen, then below routeflag will ensure the tab1, tab2, tab3, tab6 toolbar will appear
   routeOnRefresh() {
     this.routeString=this.location.path();
-    if (this.routeString == "/Meetup/Home" || this.routeString == "/Meetup/Tab1" || this.routeString == "/Meetup/Tab2" || this.routeString == "/Meetup/Tab3" || this.routeString == "/Meetup/Tab6") {
+    if (this.routeString == "/Meetup/Home" || this.routeString == "/Meetup/AllMembers" || this.routeString == "/Meetup/MutuallyAccepted" || this.routeString == "/Meetup/RequestReceived" || this.routeString == "/Meetup/RequestSent") {
       this.routeflag = "yes"
     }
   }

@@ -1,10 +1,9 @@
 
+<!-- class1 is ad space left-->
 <div class="class1" >
-  <p>Hi</p>
 </div>
+<!-- class2 is center main content -->
 <div class="class2" >
-
-
 
 
 <!--Future Comm- show the results -->
@@ -156,14 +155,14 @@
         <mat-card-title>Vote on {{CandName10}}'s Overall Performance or Potential</mat-card-title>
         <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
       <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p> </a>
-  </mat-card> <mat-divider></mat-divider>
+  </mat-card> <mat-divider></mat-divider> <br>
 
     <!-- Future committee assignments preference of user -->
     <a class="assign_class"></a> <a *ngIf="HOMEstate==statedropdown">
     <a *ngIf="FutureComCandViewed==-1">
       <form [formGroup]="zeroFormGroup">
         <mat-card  fxLayout="column" fxLayoutAlign="space-around center">
-          <br> <mat-card-title> Please select which U.S. Senate committees you would like to see {{CandName10}} serve in the year 2023: </mat-card-title>  <br>
+           <mat-card-title> Please select which U.S. Senate committees you would like to see {{CandName10}} serve in the year 2023: </mat-card-title>  <br>
 
           <mat-form-field  appearance="fill">
             <mat-label>First Preference</mat-label>
@@ -541,8 +540,10 @@
     &nbsp; &nbsp; &nbsp;  <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a>
   </a>
 </a>
+
+
+</div>
+<!-- class3 is ad space right-->
+<div class="class3" >
 </div>
 
-<div class="class3" >
-  <p>This is Working!</p>
-</div>

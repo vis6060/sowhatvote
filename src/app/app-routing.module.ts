@@ -54,28 +54,28 @@ const routes: Routes = [
       )
   },
   {
-    path: 'Meetup/Tab1',
+    path: 'Meetup/AllMembers',
     loadChildren: () =>
       import('./tab1/tab1.module').then(
         (m) => m.Tab1Module
       )
   },
   {
-    path: 'Meetup/Tab2',
+    path: 'Meetup/MutuallyAccepted',
     loadChildren: () =>
       import('./tab2/tab2.module').then(
         (m) => m.Tab2Module
       )
   },
   {
-    path: 'Meetup/Tab3',
+    path: 'Meetup/RequestReceived',
     loadChildren: () =>
       import('./tab3/tab3.module').then(
         (m) => m.Tab3Module
       )
   },
   {
-    path: 'Meetup/Tab6',
+    path: 'Meetup/RequestSent',
     loadChildren: () =>
       import('./tab6/tab6.module').then(
         (m) => m.Tab6Module

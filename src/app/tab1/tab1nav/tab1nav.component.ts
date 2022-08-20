@@ -6,6 +6,7 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import awsExports from "../../../aws-exports";
 
 import { Cache } from 'aws-amplify';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class StepperIntl extends MatStepperIntl {
@@ -25,8 +26,13 @@ export class Tab1navComponent implements OnInit {
 
   tab1index:number;
 
-  constructor(public datepipe: DatePipe, public authenticator: AuthenticatorService) {
+  constructor(public datepipe: DatePipe, public authenticator: AuthenticatorService, private router: Router) {
     Amplify.configure(awsExports);
+    if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])} else
+    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])} else
+    if(Cache.getItem('profDevade')=="yes") {this.router.navigate(['/Meetup/Step3'])} else
+    if(Cache.getItem('profEevade')=="yes") {this.router.navigate(['/Meetup/Step4'])} else
+   if(Cache.getItem('profFevade')=="yes") {this.router.navigate(['/Meetup/Step5'])}
   }
 
   ngOnInit(): void {

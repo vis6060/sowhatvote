@@ -1,0 +1,30 @@
+.class6{
+  width: 25%;
+  float: left;
+  height: 100%;
+  padding: 15px;
+}
+
+.class7{
+  width: 50%;
+  float: left;
+  height: 100%;
+  padding: 15px;
+}
+
+.class8 {
+  width: 25%;
+  float: left;
+  height: 100%;
+  padding: 15px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .class6,.class8 {
+    display: none;
+  }
+  .class7 {
+    width: 100%;
+  }
+}

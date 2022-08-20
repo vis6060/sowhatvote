@@ -1,10 +1,14 @@
 
 <a *ngIf="reloadscreenblankit!='yes'">
-<br> <a> this section is displayed when Meetup on toolbar is clicked for the firstime user. so, have some introductory
-  message asking them to sign-up please.</a>  <br>
+<!-- class1 is ad space left-->
+<div class="class6" >
+</div>
+<!-- class2 is center main content -->
+<div class="class7" >
+
 
 <!-- Age store -->
-<br> <a> Please complete these questions so we can find the perfect matches for you. </a>  <br>
+<br> <a> Please complete these questions so we can deliver a personalized experience. </a>  <br>
 
 <mat-stepper  class="demo-stepper" orientation="vertical" [linear]="true" #stepper>
   <mat-step [stepControl]="zeroFormGroup">
@@ -32,7 +36,6 @@
         <select matNativeControl required [(ngModel)]="genderstore1" [ngModelOptions]="{standalone: true}"> <br>
           <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option> <br>
         </select>
-        <!--     <mat-hint align="start">Your gender is confidential.</mat-hint>-->
       </mat-form-field>
       <br>  <br> <a> Education </a> <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
@@ -96,4 +99,11 @@
     </form>
   </mat-step>
 </mat-stepper>
+
+
+</div>
+<!-- class3 is ad space right-->
+<div class="class8" >
+</div>
+
 </a>

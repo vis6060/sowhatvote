@@ -5,8 +5,13 @@
 
 <br> <p *ngIf="profileAflag=='yes' && whichtab=='' && webpagevalue==''"> <a> We are loading your personalized results.  Meanwhile, please read below.</a> </p>
 
+<br> <br>
+<div class="class1" >
+</div>
+<div class="class2" >
+
 <!-- Main content -->
-<ng-container *ngIf="selectorflag == 1">
+  <!--<ng-container *ngIf="selectorflag == 1"> -->
 <h2> <b> National Health Service Corps Loan Repayment Program </b> </h2> <br>
 
 <p> The National Health Service Corps Loan Repayment Program recruits health professionals to work in selected health professional shortage areas and, in return, helps repay their qualifying educational loans. </p>
@@ -30,19 +35,19 @@
   <li>   An NHSC-approved facility, or   </li>
   <li>   Located in a Health Professional Shortage Area.   </li> </ol>
 
-<br> <br> <a href="https://www.benefits.gov/benefit/447" target="_blank"> Click to Learn More</a> <br>
-</ng-container>
+ <br> <a href="https://www.benefits.gov/benefit/447" target="_blank"> Click to Learn More</a> <br>
+  <!--</ng-container>
 
-<ng-container *ngIf="selectorflag == 2">
-  <h2> <b>2 National Health Service Corps Loan Repayment Program </b> </h2> <br>
-</ng-container>
-
-  <ng-container *ngIf="selectorflag == 3">
-    <h2> <b>3 National Health Service Corps Loan Repayment Program </b> </h2> <br>
+  <ng-container *ngIf="selectorflag == 2">
+    <h2> <b>2 National Health Service Corps Loan Repayment Program </b> </h2> <br>
   </ng-container>
 
+    <ng-container *ngIf="selectorflag == 3">
+      <h2> <b>3 National Health Service Corps Loan Repayment Program </b> </h2> <br>
+    </ng-container> -->
 
-<!-- Continue Buttons -->
+
+  <!-- Continue Buttons -->
 <p *ngIf="profileFflag=='yes' && whichtab==''&& webpagevalue==''">
   <button mat-button color="primary" routerLink="/Community2">Continue</button>
 </p>
@@ -58,3 +63,7 @@
 <p *ngIf="whichtab!=''">
   <button mat-button color="primary" routerLink="/Community2">Continue</button>
 </p>
+
+</div>
+<div class="class3" >
+</div>

@@ -4,6 +4,12 @@
 <br> <p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''"> <a> We are loading your personalized results.  Meanwhile, please read below.</a></p>
 <br> <p *ngIf="profileAflag=='yes' && whichtab=='' && webpagevalue==''"> <a> We are loading your personalized results.  Meanwhile, please read below.</a></p>
 
+<br> <br>
+<!-- class1 is ad space left-->
+<div class="class1" >
+</div>
+<!-- class2 is center main content -->
+<div class="class2" >
 <!-- Main content -->
 <h2> <b> Business and Industrial Loans </b> </h2> <br>
 
@@ -31,7 +37,13 @@
   <br>  The total amount of Agency loans to one borrower must not exceed $10 million. The Administrator may, at the Administrator's discretion, grant an exception to the $10 million limit for loans of $25 million under certain circumstances. The Secretary may approve guaranteed loans in excess of $25 million, up to $40 million, for rural cooperative organizations that process value-added agricultural commodities. <br>
 </p>
 
-<br> <br> <a href="https://www.benefits.gov/benefit/4735" target="_blank"> Click to Learn More</a> <br>
+<br> <a href="https://www.benefits.gov/benefit/4735" target="_blank"> Click to Learn More</a> <br>
+
+</div>
+<!-- class3 is ad space right-->
+<div class="class3" >
+</div>
+
 
 <!-- Continue Buttons -->
 <p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''">
@@ -76,40 +88,40 @@
 
 <p *ngIf="whichtab=='tab1connect'">
   <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab1">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/AllMembers">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab1dislike'">
   <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab1">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/AllMembers">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab3connect'">
   <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab3dislike'">
   <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab3accept'">
   <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab3decline'">
   <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab3">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab6connect'">
   <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab6">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/RequestSent">Continue to view profiles</button>
 </p>
 
 <p *ngIf="whichtab=='tab6dislike'">
   <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Tab6">Continue to view profiles</button>
+  <button mat-button color="primary" routerLink="/Meetup/RequestSent">Continue to view profiles</button>
 </p>

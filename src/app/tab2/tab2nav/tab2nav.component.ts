@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import awsExports from 'src/aws-exports';
 
-import { API } from 'aws-amplify';
+import {API, Cache} from 'aws-amplify';
 import Amplify, {Auth, Storage} from "aws-amplify";
 import { ActivatedRoute,Router } from '@angular/router';
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
@@ -15,11 +15,15 @@ import {APIService, DatinguserdbStaging} from "../../API.service";
 })
 export class Tab2navComponent implements OnInit {
 
-  router: Router;
 
-  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router) {
+
+  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, private router: Router) {
     Amplify.configure(awsExports);
-    this.router = _router;
+    if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}  else
+    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])} else
+    if(Cache.getItem('profDevade')=="yes") {this.router.navigate(['/Meetup/Step3'])} else
+    if(Cache.getItem('profEevade')=="yes") {this.router.navigate(['/Meetup/Step4'])} else
+    if(Cache.getItem('profFevade')=="yes") {this.router.navigate(['/Meetup/Step5'])}
   }
 
   ngOnInit(): void {

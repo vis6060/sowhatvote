@@ -1,28 +1,21 @@
 
 
-  <mat-tab-group animationDuration="0ms" class="menu-tab"  text-align="center" [selectedIndex]=this.tab1index>
+  <mat-tab-group animationDuration="0ms"   text-align="center" [selectedIndex]=this.tab1index>
 
     <mat-tab label="tab1Alabel" >
-      <ng-template mat-tab-label>
-        tab1A &nbsp;
-      </ng-template>
+     <ng-template  mat-tab-label>Same County Members</ng-template>
       <ng-template matTabContent>
         <app-tab1adisplaynav></app-tab1adisplaynav>   <!--  tab1A code displays -->
       </ng-template>
     </mat-tab>
     <mat-tab label="tab1Blabel">
-      <ng-template mat-tab-label>
-        tab1B &nbsp;
-      </ng-template>
+      <ng-template  mat-tab-label>Same State Members</ng-template>
       <ng-template matTabContent>
         <app-tab1bdisplaynav></app-tab1bdisplaynav>   <!--  tab1B code displays -->
       </ng-template>
     </mat-tab>
     <mat-tab label="tab1Clabel">
-      <ng-template mat-tab-label>
-        tab1C &nbsp;
-        <!--   <a class="example-tab-icon"> ({{tab1Clength}} matches)</a>  -->
-      </ng-template>
+      <ng-template mat-tab-label>Rest of the States Members</ng-template>
       <ng-template matTabContent>
         <app-tab1cdisplaynav></app-tab1cdisplaynav>   <!--  tab1C code displays -->
       </ng-template>

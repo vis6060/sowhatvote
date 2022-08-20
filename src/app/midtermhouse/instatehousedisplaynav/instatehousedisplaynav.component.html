@@ -1,4 +1,9 @@
 
+<!-- class1 is ad space left-->
+<div class="class1" >
+</div>
+<!-- class2 is center main content -->
+<div class="class2" >
 
 <!--Future Comm- show the results -->
  <a *ngIf="prefercateg=='future'&&CandNeutralflag=='yes'">
@@ -161,14 +166,14 @@
         <mat-card-title>Vote on {{CandName10}}'s Overall Performance or Potential</mat-card-title>
         <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
         <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p></a> </a>
-  </mat-card> <mat-divider></mat-divider>
+  </mat-card> <mat-divider></mat-divider> <br>
 
     <!-- Future committee assignments preference of user -->
     <a class="assign_class"></a> <a *ngIf="HOMEstate==statedropdown">   <a *ngIf="FutureComPreferArray10[0]<2">
     <a *ngIf="FutureComCandViewed==-1">
       <form [formGroup]="zeroFormGroup">
         <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
-          <br> <mat-card-title> Please select which U.S. House committees you would like to see {{CandName10}} serve in the year 2023 Congress: </mat-card-title>  <br>
+           <mat-card-title> Please select which U.S. House committees you would like to see {{CandName10}} serve in the year 2023 Congress: </mat-card-title>  <br>
           <mat-form-field class="demo-form-field1" appearance="fill">
             <mat-label>First Preference</mat-label>
             <select matNativeControl required [(ngModel)]=FutureCom1  (change)="futcom($event)" [ngModelOptions]="{standalone: true}">
@@ -547,3 +552,7 @@
   </a>
 </a>
 
+</div>
+<!-- class3 is ad space right-->
+<div class="class3" >
+</div>

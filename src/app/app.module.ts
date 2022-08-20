@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //import { LegacyAmplifyUiModule } from '@aws-amplify/ui-angular/legacy';
-
+import {MatChipsModule} from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatChipsModule } from '@angular/material/chips';
+
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -49,7 +49,7 @@ import { EntrypageComponent } from './entrypage/entrypage.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TermsdialogboxComponent } from './termsdialogbox/termsdialogbox.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +89,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AmplifyAuthenticatorModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDividerModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

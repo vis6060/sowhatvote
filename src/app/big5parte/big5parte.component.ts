@@ -7,6 +7,7 @@ import {MatStepperIntl} from "@angular/material/stepper";
 import {APIService} from "../API.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import awsExports from "../../aws-exports";
+import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 @Injectable()
 export class StepperIntl extends MatStepperIntl {
@@ -23,10 +24,11 @@ export class StepperIntl extends MatStepperIntl {
 export class Big5parteComponent implements OnInit {
 
 
-  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router) {
+  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router,public authenticator: AuthenticatorService) {
     Amplify.configure(awsExports);
     if(Cache.getItem('profileDstatus')=="yes") {Cache.removeItem("profileDstatus");location.reload();}
     if(Cache.getItem('profileEstatus')=="yes") { this.reloadscreenblankit="yes"}
+    if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
   }
 
   reloadscreenblankit=""

@@ -1,6 +1,6 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {MatStepperIntl} from "@angular/material/stepper";
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { FormBuilder, FormGroup,} from '@angular/forms';
 import Amplify, {Auth} from "aws-amplify";
 import { API } from 'aws-amplify';
@@ -8,6 +8,7 @@ import { DatePipe } from '@angular/common';
 
 import {APIService, DatinguserdbStaging} from "../API.service";
 import awsExports from "../../aws-exports";
+import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 @Injectable()
 export class StepperIntl extends MatStepperIntl {
@@ -22,7 +23,11 @@ export class StepperIntl extends MatStepperIntl {
 })
 export class Big5partaeditComponent implements OnInit {
 
-  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute) {Amplify.configure(awsExports);}
+
+  constructor(public datepipe: DatePipe, private _formBuilder: FormBuilder, private _matStepperIntl: MatStepperIntl, private api: APIService, private route: ActivatedRoute, private router: Router,public authenticator: AuthenticatorService) {
+    Amplify.configure(awsExports);
+    if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
+  }
 
   ngOnInit(): void {
     this.zeroFormGroup = this._formBuilder.group({});

@@ -40,3 +40,30 @@
 mat-form-field {
   width: 50%;
 }
+
+mat-button-toggle {
+  white-space: pre-wrap !important;
+}
+
+.class10{
+  width: 75%;
+  float: left;
+  height: 100%;
+  padding: 15px;
+}
+
+.class11 {
+  width: 25%;
+  float: left;
+  height: 100%;
+  padding: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .class11 {
+    display: none;
+  }
+  .class10 {
+    width: 100%;
+  }
+}

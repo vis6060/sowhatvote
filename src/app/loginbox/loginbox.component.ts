@@ -47,10 +47,10 @@ export class LoginboxComponent implements OnInit {
   //  this.movenextpage()
 //    Cache.removeItem("meetupclicked");  Cache.removeItem("midtermclicked"); Cache.removeItem("profileAstatus");
  //   Cache.removeItem("profileDstatus"); Cache.removeItem("profileEstatus"); Cache.removeItem("profileFstatus");
-    console.log('meetupenter login cache', Cache.getItem('meetupenter'));
-    console.log( 'midtermenter login cache', Cache.getItem('midtermenter'))
-    console.log('myaccountenter login cache', Cache.getItem('myaccountenter'))
-    console.log('profileAstatus login cache', Cache.getItem('profileAstatus'))
+ //   console.log('meetupenter login cache', Cache.getItem('meetupenter'));
+//    console.log( 'midtermenter login cache', Cache.getItem('midtermenter'))
+//    console.log('myaccountenter login cache', Cache.getItem('myaccountenter'))
+ //   console.log('profileAstatus login cache', Cache.getItem('profileAstatus'))
   }
 
   reloadComponent() {

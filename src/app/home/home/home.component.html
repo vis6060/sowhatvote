@@ -1,19 +1,28 @@
 
-<!-- below ngif statements are not needed as user first time is not going to know that there is a path called Meetup/Hone or Meetup/Tab1. the below logic slows down page load of tab1 and Home pages -->
+<!-- class10 is center main content -->
+<div class="class10" >
 
-<!-- <a  *ngIf="profilecompPartF=='no'"> -->
-<!-- show them button to enter form  -->
-<!-- </a> -->
-<!-- <a  *ngIf="profilecompPartF=='yes'"> -->
+<!-- Chips for navigation -->
+<a> <b>Search for Community Members options: </b></a> <br>  <mat-chip-list>
+  <mat-chip (click)="search1()">Option #1: Search by Member's State, and Age or Gender or Your County</mat-chip>
+  <mat-chip (click)="search2()">Option #2: Search by Member's State, and Occupation or Industry or Veteran Status or Mentor Status</mat-chip>
+  <mat-chip (click)="search3()">Option #3: Search by State for top 5 most active community members based on their SoWhat Vote! loyalty points</mat-chip> &nbsp; &nbsp; &nbsp; &nbsp;
+  <mat-chip (click)="search4()">Option #4: Search by Member's Facebook Username</mat-chip>
+</mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
 
-<!-- mat drawer container will have search results -->
+  <a> <b>View some of the matching Community Members : </b></a> <br>  <mat-chip-list>
+  <mat-chip (click)="tab1A()">A member in the same County as yours</mat-chip>
+  <mat-chip (click)="tab1B()">A member in the same State as yours</mat-chip>
+  <mat-chip (click)="tab1C()">A member in a different home State</mat-chip>
+  <mat-chip (click)="tab3()">Member(s) who have sent you a connection request</mat-chip>
+  <mat-chip (click)="tab2()">Your mutually accepted connections</mat-chip>
+</mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
 
-<!-- query criteria for users to enter goes here -->
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+
+  <!-- query criteria for users to enter goes here -->
 
     <!-- section1: mandatory state criteria -->
-    <form>
+    <a class="search1"></a>  <form>
       <br> <a> Step1: Select state </a>  <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>State (Required)</mat-label>
@@ -57,6 +66,17 @@
     <button mat-button [disabled]="toggleBoolAgain1" (click)="reloadComponent()">Search Again</button>
 
     <!--section3 Mentor query criteria -->
+<a class="search2"></a>  <form>
+      <br> <a> Step1: Select state </a>  <br>
+      <mat-form-field class="demo-form-field1" appearance="fill">
+        <mat-label>State (Required)</mat-label>
+        <select matNativeControl required [disabled]="toggleBoolState"  [(ngModel)]=stateselection [ngModelOptions]="{standalone: true}">
+          <option value="AL">Alabama</option> <option value="AK">Alaska</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</option> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="FL">Florida</option> <option value="GA">Georgia</option> <option value="HI">Hawaii</option> <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option> <option value="IN">Indiana</option> <option value="IA">Iowa</option> <option value="KS">Kansas</option> <option value="KY">Kentucky</option> <option value="LA">Louisiana</option> <option value="ME">Maine</option> <option value="MD">Maryland</option> <option value="MA">Massachusetts</option> <option value="MI">Michigan</option> <option value="MN">Minnesota</option> <option value="MS">Mississippi</option> <option value="MO">Missouri</option> <option value="MT">Montana</option> <option value="NE">Nebraska</option> <option value="NV">Nevada</option> <option value="NH">New Hampshire</option> <option value="NJ">New Jersey</option> <option value="NM">New Mexico</option> <option value="NY">New York</option> <option value="NC">North Carolina</option> <option value="ND">North Dakota</option> <option value="OH">Ohio</option> <option value="OK">Oklahoma</option> <option value="OR">Oregon</option> <option value="PA">Pennsylvania</option> <option value="PR">Puerto Rico</option> <option value="RI">Rhode Island</option> <option value="SC">South Carolina</option> <option value="SD">South Dakota</option> <option value="TN">Tennessee</option> <option value="TX">Texas</option> <option value="UT">Utah</option> <option value="VT">Vermont</option> <option value="VA">Virginia</option> <option value="WA">Washington</option> <option value="DC">Washington, D.C.</option>  <option value="WV">West Virginia</option> <option value="WI">Wisconsin</option> <option value="WY">Wyoming</option>
+        </select>
+      </mat-form-field>
+    </form>
+
     <br> <a> Step2: Select one or all of the below fields </a>  <br>
 
     <br>  <a> What should be the <b> occupation </b> of your matches?  </a> <br>
@@ -98,11 +118,11 @@
     <!--Mentor search button -->
     <br>   <button mat-button [disabled]="toggleBool2" (click)="executesearchsec2();toggleBool3= true;;toggleBoolState= true;toggleBool1= true;toggleBool2= true;toggleBool0= true;toggleBoolAgain2=false">Search Now</button>
     <button mat-button [disabled]="toggleBoolAgain2" (click)="reloadComponent()">Search Again</button>
-  </mat-drawer>
+
 
 
   <!--section3 Top5 most loyal SWV members that users can connect to do if not already done so -->
-  <form>
+<a class="search3"></a> <form>
     <br> <a> Please select a state to view the top 5 SoWhat Vote Community members in the state and an opportunity to connect with them. </a>  <br>
     <mat-form-field class="demo-form-field1" appearance="fill">
       <mat-label>State (Required)</mat-label>
@@ -118,7 +138,7 @@
   <button mat-button (click)="reloadComponent()">Search Again</button>
 
   <!--section4 Facebook Form-->
-  <form [formGroup]="fifthFormGroup">
+<a class="search4"></a>  <form [formGroup]="fifthFormGroup">
     <br> <a> Please enter the facebook username of a person  </a>
     <mat-form-field class="demo-form-field1" appearance="fill">
       <mat-label>Facebook Username</mat-label>
@@ -132,10 +152,7 @@
   <button mat-button (click)="reloadComponent()">Search Again</button> <br> <br>
   <a *ngIf="nomatchingfacebook=='yes'"> <b> No matches!</b>  This facebook username is not a member of SoWhat Vote Community. Please encourage this person to join the SoWhat Vote community.</a>
   <!-- search results in the center -->
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="itemsalreadyviewed()" (click)="drawer.toggle()">Toggle sidenav</button>
-  </div>
-</mat-drawer-container>
+
 
 <!-- display the tab1A, tab1B or tab1C search results with expansion panel. Each itemid will be loaded in browser, on clicking itemid details displayed -->
 <a *ngIf="nodisplay=='yes'"> Your search returned no results.  Please search again. Please encourage your friends and community members to join SoWhat Vote.
@@ -182,8 +199,8 @@
             <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
             <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
               <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
-              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
-              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation or industry or field of education</mat-button-toggle> <br>
+              <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation or industry or field of education</mat-button-toggle> <br>
               <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
               <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
             </mat-button-toggle-group>
@@ -281,8 +298,8 @@
               <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
               <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
                 <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
-                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
-                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation or industry or field of education</mat-button-toggle> <br>
+                <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation or industry or field of education</mat-button-toggle> <br>
                 <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
                 <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
               </mat-button-toggle-group>
@@ -367,8 +384,8 @@
       <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
       <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation or industry or field of education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation or industry or field of education</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
       </mat-button-toggle-group>
@@ -390,7 +407,7 @@
 <!-- tab3, tab1a, tab1b, tab1c, tab2 display with show all link to library of tabs -->
 
 <!-- tab1A display -->
-<br> <br> <a *ngIf="tab1Anullflag==''"> Tab1A items displayed </a>
+<br> <mat-divider></mat-divider> <br>  <a class="tab1A"></a> <a *ngIf="tab1Anullflag==''">A Member in the <b>Same County</b> as You </a>
 <a *ngIf="initializerflag1A=='yes'">
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
@@ -417,8 +434,8 @@
       <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
       <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation or industry or field of education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation or industry or field of education</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
       </mat-button-toggle-group>
@@ -437,7 +454,7 @@
 </a>
 
 <!-- tab1B display -->
-<br> <br> <a *ngIf="tab1Bnullflag==''"> Tab1B items displayed </a>
+<br> <mat-divider></mat-divider> <br> <a class="tab1B"></a> <a *ngIf="tab1Bnullflag==''">A Member in the <b>Same State</b> as You </a>
 <a *ngIf="initializerflag1B=='yes'">
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
@@ -464,8 +481,8 @@
       <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
       <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation or industry or field of education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation or industry or field of education</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
       </mat-button-toggle-group>
@@ -484,7 +501,7 @@
 </a>
 
 <!-- tab1C display -->
-<br> <br> <a *ngIf="tab1Cnullflag==''"> Tab1C items displayed </a>
+<br> <mat-divider></mat-divider> <br> <a class="tab1C"></a> <a *ngIf="tab1Cnullflag==''">A Member in the <b>Rest of the States</b></a>
 <a *ngIf="initializerflag1C=='yes'">
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
@@ -511,8 +528,8 @@
       <h5><b> Reason for connect </b> (optional) (click as many as applicable): </h5>
       <mat-button-toggle-group fxLayout="column" name="connect interest" aria-label="Reason for connect" multiple>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Dating or make new friends with similar interests" (click)="categ1clicked()">Dating or make new friends with similar interests</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation/industry/education</mat-button-toggle> <br>
-        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation/industry/education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for a Mentor in my occupation/industry/education" (click)="categ2clicked()">Looking for a Mentor in my occupation or industry or field of education</mat-button-toggle> <br>
+        <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Interested in training a Mentee in my occupation/industry/education" (click)="categ3clicked()">Interested in training a Mentee in my occupation or industry or field of education</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Looking for like-minded people to serve our community" (click)="categ4clicked()">Looking for like-minded people to serve our community</mat-button-toggle> <br>
         <mat-button-toggle transition-duration="0.4s" hover="background-color: #e7e7e7" style="border:2px solid red;color:blue;" value="Other" (click)="categ5clicked()">Other</mat-button-toggle> <br>
       </mat-button-toggle-group>
@@ -531,7 +548,7 @@
 </a>
 
 <!-- tab3 display -->
-<br> <br> <a *ngIf="tab3nullflag==''"> Tab3 items displayed </a>
+<br> <mat-divider></mat-divider> <br> <a class="tab3"></a> <a *ngIf="tab3nullflag==''">Members who have sent connect request: <b>Request Received</b></a>
 <a *ngIf="initializerflag3=='yes'">
   <mat-accordion class="example-headers-align" multi>
     <a *ngFor="let dealPer of ngfortab3array; let i = index">
@@ -614,7 +631,7 @@
 </a>
 
 <!-- tab2 display -->
-<br> <br> <a *ngIf="tab2nullflag==''"> Tab2 items displayed </a>
+<br> <mat-divider></mat-divider> <br> <a class="tab2"></a> <a *ngIf="tab2nullflag==''">Members who are now your connection: <b>Mutually Accepted</b></a>
 <a *ngIf="initializerflag2=='yes'">
   <mat-accordion class="example-headers-align" multi>
     <a *ngFor="let dealPer of ngfortab2array; let i = index">
@@ -701,3 +718,8 @@
     </a>
   </mat-accordion>
 </a>
+
+</div>
+<!-- class11 is ad space right-->
+<div class="class11" >
+</div>
