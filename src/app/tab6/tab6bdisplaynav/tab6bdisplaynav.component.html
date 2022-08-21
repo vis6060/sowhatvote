@@ -4,7 +4,7 @@
 </div>
 <!-- class2 is center main content -->
 <div class="class2" >
-
+  <a class="ontop_class"></a>
 <!-- tab6B display -->
 
 <a *ngIf="endofarray6B=='yes'"> Sorry, no more matches. Please visit other sections.
@@ -38,7 +38,8 @@
 
       <mat-card class="example-card">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="onetimenextnext(); clicked = true;">Next Profile</button>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="ontop()"
+                (click)="onetimenextnext(); clicked = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>
@@ -69,7 +70,8 @@
 
       <mat-card class="example-card">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()"
+                (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>
@@ -100,7 +102,8 @@
 
       <mat-card class="example-card">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2back(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2next(); clicked = true;">Next Profile</button>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="ontop()"
+                (click)="viewtoggle2next(); clicked = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>
@@ -130,7 +133,8 @@
 
       <mat-card class="example-card">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()"
+                (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>

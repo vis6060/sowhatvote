@@ -1,32 +1,9 @@
-.example-card {
-  --height: 3092px;
-  --width: 1160px;
-}
 
-.example-container {
-  width: 1000px;
-  height: 1000px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.example-sidenav {
-  padding: 20px;
-}
 
 .mat-tab-label-active {
   color: #00ADEE !important;
 }
 
-.example-action-buttons {
-  padding-bottom: 20px;
-}
 
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
@@ -66,4 +43,8 @@ mat-button-toggle {
   .class10 {
     width: 100%;
   }
+}
+
+.mat-standard-chip {
+  height: auto !important;
 }

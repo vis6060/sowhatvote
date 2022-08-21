@@ -13,9 +13,11 @@ export class AdBComponent implements OnInit {
 
   ngOnInit(): void {
     this.webpageroute()
+    this.delayButton1(2000)
   }
 
   webpagevalue="";whichtab="";profileFflag="";profileAflag=""
+  delayflag1:boolean=true;
 
   async webpageroute() {
     if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"}
@@ -36,6 +38,7 @@ export class AdBComponent implements OnInit {
 //    }).catch(error => {console.log(error.response70);});
   }
 
-
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false};
 
 }

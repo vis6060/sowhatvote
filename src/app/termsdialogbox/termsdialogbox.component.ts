@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Amplify, {API, Auth, Cache, Storage} from "aws-amplify";
 
 @Component({
   selector: 'app-termsdialogbox',
@@ -12,4 +13,6 @@ export class TermsdialogboxComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
+

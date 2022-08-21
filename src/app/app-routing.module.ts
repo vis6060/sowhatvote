@@ -14,7 +14,6 @@ import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component'
 import {AdBComponent} from "./ad-b/ad-b.component";
 import {EntrypageComponent} from "./entrypage/entrypage.component";
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: EntrypageComponent },
@@ -87,7 +86,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

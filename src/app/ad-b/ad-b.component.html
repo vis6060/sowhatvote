@@ -1,17 +1,22 @@
-<a> <b> Ways of Helping Your Community </b></a> <br>
-<a> Page 2 of 2 </a> <br>
 
-<br> <p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''"> <a> We are loading your personalized results.  Meanwhile, please read below.</a></p>
-<br> <p *ngIf="profileAflag=='yes' && whichtab=='' && webpagevalue==''"> <a> We are loading your personalized results.  Meanwhile, please read below.</a></p>
 
-<br> <br>
 <!-- class1 is ad space left-->
 <div class="class1" >
 </div>
 <!-- class2 is center main content -->
 <div class="class2" >
+
+  <h1 style="text-align:center;"> <b> Ways of Helping Your Community </b></h1> <br>
+  <a style="text-align:center;"> Page 2 of 2 </a> <br>
+
+  <mat-card> <a> Results Loading. <br>
+    <br> Meanwhile, please read below and spread awareness about it.
+    <br> This is one possible way of helping our community members.
+    <br> This furthers our mission of working together to create a strong community which helps each other and people in need.</a>
+  </mat-card>
+
 <!-- Main content -->
-<h2> <b> Business and Industrial Loans </b> </h2> <br>
+ <br> <h2 style="text-align:center;"> <b> Business and Industrial Loans </b> </h2> <br>
 
 <p> The purpose of the Business & Industrial (B&I) Guaranteed Loan Program is to improve, develop, or finance business, industry, and employment and improve the economic and environmental climate in rural communities.
 <br> <p> This purpose is achieved by bolstering the existing private credit structure through the guarantee of quality loans which will <b>provide lasting community benefits.</b>  </p>
@@ -37,91 +42,94 @@
   <br>  The total amount of Agency loans to one borrower must not exceed $10 million. The Administrator may, at the Administrator's discretion, grant an exception to the $10 million limit for loans of $25 million under certain circumstances. The Secretary may approve guaranteed loans in excess of $25 million, up to $40 million, for rural cooperative organizations that process value-added agricultural commodities. <br>
 </p>
 
-<br> <a href="https://www.benefits.gov/benefit/4735" target="_blank"> Click to Learn More</a> <br>
+ <a href="https://www.benefits.gov/benefit/4735" target="_blank"> Click to Learn More</a> <br>
+
+
+  <a style="text-align:center;">
+    <mat-card>
+<!-- Continue Buttons -->
+<p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''">
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/Home"><b>Continue</b></button>
+</p>
+
+<p *ngIf="profileAflag=='yes' && whichtab==''&& webpagevalue==''">
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/2022MidtermElections/USSenate"><b>Continue</b></button>
+</p>
+
+<p *ngIf="webpagevalue=='House'">
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/2022MidtermElections/USHouse"><b>Continue to see results of the selected candidate</b></button>
+</p>
+
+<p *ngIf="webpagevalue=='Senate'">
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/2022MidtermElections/USSenate"><b>Continue to see results of the selected candidate</b></button>
+</p>
+
+<p *ngIf="webpagevalue=='Governor'">
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/2022MidtermElections/StateExecutiveOffices"><b>Continue to see results of the selected candidate</b></button>
+</p>
+
+<p *ngIf="whichtab=='homeconnect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/Home"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='homedislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/Home"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='homeaccept'">
+  <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/Home"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='homedecline'">
+  <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/Home"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab1connect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/AllMembers"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab1dislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/AllMembers"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab3connect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/RequestReceived"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab3dislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/RequestReceived"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab3accept'">
+  <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/RequestReceived"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab3decline'">
+  <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/RequestReceived"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab6connect'">
+  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/RequestSent"><b>Continue to view profiles</b></button>
+</p>
+
+<p *ngIf="whichtab=='tab6dislike'">
+  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
+  <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/RequestSent"><b>Continue to view profiles</b></button>
+</p>
+    </mat-card> </a> <br>
 
 </div>
 <!-- class3 is ad space right-->
 <div class="class3" >
 </div>
-
-
-<!-- Continue Buttons -->
-<p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''">
-  <button mat-button color="primary" routerLink="/Meetup/Home">Continue</button>
-</p>
-
-<p *ngIf="profileAflag=='yes' && whichtab==''&& webpagevalue==''">
-  <button mat-button color="primary" routerLink="/2022MidtermElections/USSenate">Continue</button>
-</p>
-
-<p *ngIf="webpagevalue=='House'">
-  <button mat-button color="primary" routerLink="/2022MidtermElections/USHouse">Continue to see results of the selected candidate</button>
-</p>
-
-<p *ngIf="webpagevalue=='Senate'">
-  <button mat-button color="primary" routerLink="/2022MidtermElections/USSenate">Continue to see results of the selected candidate</button>
-</p>
-
-<p *ngIf="webpagevalue=='Governor'">
-  <button mat-button color="primary" routerLink="/2022MidtermElections/StateExecutiveOffices">Continue to see results of the selected candidate</button>
-</p>
-
-<p *ngIf="whichtab=='homeconnect'">
-  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='homedislike'">
-  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='homeaccept'">
-  <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='homedecline'">
-  <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/Home">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab1connect'">
-  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/AllMembers">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab1dislike'">
-  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/AllMembers">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab3connect'">
-  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab3dislike'">
-  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab3accept'">
-  <a> Thank you. Your <b> ACCEPT REQUEST </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab3decline'">
-  <a> Thank you. Your <b> DECLINE REQUEST </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/RequestReceived">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab6connect'">
-  <a> Thank you. Your <b> CONNECT </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/RequestSent">Continue to view profiles</button>
-</p>
-
-<p *ngIf="whichtab=='tab6dislike'">
-  <a> Thank you. Your <b> DISLIKE </b> response has been recorded. </a>
-  <button mat-button color="primary" routerLink="/Meetup/RequestSent">Continue to view profiles</button>
-</p>

@@ -336,6 +336,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   assignfunc(){try {const errorField = this.renderer.selectRootElement('.assign_class');errorField.scrollIntoView();} catch (err) {}}
   comperffunc(){try {const errorField = this.renderer.selectRootElement('.comperf_class');errorField.scrollIntoView();} catch (err) {}}
   issperffunc(){try {const errorField = this.renderer.selectRootElement('.issperf_class');errorField.scrollIntoView();} catch (err) {}}
+  ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
   iss0(){try {const errorField = this.renderer.selectRootElement('.iss0_class');errorField.scrollIntoView();} catch (err) {}}
   iss1(){try {const errorField = this.renderer.selectRootElement('.iss1_class');errorField.scrollIntoView();} catch (err) {}}
   iss2(){try {const errorField = this.renderer.selectRootElement('.iss2_class');errorField.scrollIntoView();} catch (err) {}}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import awsExports from 'src/aws-exports';
 
 import {API, Cache} from 'aws-amplify';
@@ -17,7 +17,7 @@ export class Tab2navComponent implements OnInit {
 
 
 
-  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, private router: Router) {
+  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, private router: Router,private renderer: Renderer2) {
     Amplify.configure(awsExports);
     if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}  else
     if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])} else
@@ -44,6 +44,7 @@ export class Tab2navComponent implements OnInit {
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle="";
   emailshareflag10=""; emailshareflag100="";
+  delayflag1:boolean=true; delayflag2:boolean=true;
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -51,6 +52,12 @@ export class Tab2navComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
+
+  //delay button, so user doesn't quickly click on it and spoil the array of cands
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
+
 
   viewtoggle1next() {this.viewtoggle="yes"; this.initializerflag=""; this.onetimenextflag=""; this.clicked=false
     this.deleteindex0idrecur100Next();
@@ -297,6 +304,8 @@ export class Tab2navComponent implements OnInit {
     this.api.BackinitializeButtonDatingitemtrackingStagingtab2(user.attributes.sub,this.tab2endarrayitemidinitialize,
       +this.tab2length).then((event1) => {this.reloadComponent()})
   }
+
+  ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
 
 
 }

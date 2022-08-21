@@ -78,10 +78,10 @@ export class HomeComponent implements OnInit {
 
   zeroFormGroup: FormGroup;
   public dealsPerArray: Array<DatinguserdbStaging>= []; public dealsPerArrayloyalty: Array<DatinguserdbStaging>= []; public dealsPerfacebook : Array<DatinguserdbStaging>= [];
-  ageselection=""; genderselection=""; occupselection=""; indusselection=""; stateuser=""; stateitemid=""; stateselection=""; stateselectionloyalty="";
+  ageselection=""; genderselection=""; occupselection=""; indusselection=""; stateuser=""; stateitemid=""; stateselection=""; stateselection1="";stateselection2=""; stateselectionloyalty="";
   countyuser=""; countyitemid=""; countyselection=""; veteranselection=""; mentorselection=""; facebookselection="";
   toggleBool0: boolean=true; toggleBool2: boolean=true; toggleBool1: boolean=false; toggleBool3: boolean=false; toggleBoolState: boolean=false; toggleBoolAgain1: boolean=true; toggleBoolAgain2: boolean=true;
-  unsub=""; displayflag=""; nodisplay=""; removefields=""; displayflagloyalty=""; displayflagfacebook="";
+  unsub=""; displayflag="";  nodisplay1="";nodisplay2="";removefields=""; displayflagloyalty=""; displayflagfacebook="";
   InitialSearchArraySize=""; FilteredSearchArraySize=""; FilteredDisplaySearchArraySize=0; searchactedids=[];
   newWidthA=''; newHeightA=''; newWidthAfacebook=''; newHeightAfacebook=''; newWidthAloyalty=''; newHeightAloyalty=''; urlarray=[""]; urlarrayloyalty=[""];
   widtharray=[""]; heightarray=[""]; widtharrayloyalty=[""]; heightarrayloyalty=[""];
@@ -307,7 +307,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -326,7 +326,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -345,7 +345,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -363,7 +363,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -381,7 +381,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -399,7 +399,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -417,7 +417,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -435,7 +435,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay1="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -483,7 +483,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -502,7 +502,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -521,7 +521,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -540,7 +540,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -559,7 +559,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -578,7 +578,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -597,7 +597,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -616,7 +616,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -635,7 +635,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -654,7 +654,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -673,7 +673,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -692,7 +692,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -711,7 +711,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -730,7 +730,7 @@ export class HomeComponent implements OnInit {
         this.dealsPerArray = event1.DatinguserdbStagings as DatinguserdbStaging[];
         this.FilteredSearchArraySize= event1.FilteredSearchArraySize; this.InitialSearchArraySize=event1.InitialSearchArraySize;
         console.log(this.dealsPerArray);
-        if(this.dealsPerArray.length==0) {this.nodisplay="yes";};
+        if(this.dealsPerArray.length==0) {this.nodisplay2="yes";};
         //store the image url1, width1, height1, url2, width2, height2 in that order.
         for (let i = 0; i < this.dealsPerArray.length; i++) {
           Storage.get(this.dealsPerArray[i].s3file).then( res => {this.urlA=res //this gets the signed url, which will be given to html
@@ -1176,6 +1176,7 @@ export class HomeComponent implements OnInit {
   search2(){try {const errorField = this.renderer.selectRootElement('.search2');errorField.scrollIntoView();} catch (err) {}}
   search3(){try {const errorField = this.renderer.selectRootElement('.search3');errorField.scrollIntoView();} catch (err) {}}
   search4(){try {const errorField = this.renderer.selectRootElement('.search4');errorField.scrollIntoView();} catch (err) {}}
+  searchresult(){try {const errorField = this.renderer.selectRootElement('.searchresult');errorField.scrollIntoView();} catch (err) {}}
   tab1A(){try {const errorField = this.renderer.selectRootElement('.tab1A');errorField.scrollIntoView();} catch (err) {}}
   tab1B(){try {const errorField = this.renderer.selectRootElement('.tab1B');errorField.scrollIntoView();} catch (err) {}}
   tab1C(){try {const errorField = this.renderer.selectRootElement('.tab1C');errorField.scrollIntoView();} catch (err) {}}

@@ -4,111 +4,114 @@
 </div>
 <!-- class2 is center main content -->
 <div class="class2" >
-
+  <a class="ontop_class"></a>
 
 <!--Future Comm- show the results -->
 <a *ngIf="prefercateg=='future'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} committee assignments by popular vote: </mat-card-title>
+  <br> <mat-card> <mat-card-title>{{CandName10}} committee assignments by popular vote: </mat-card-title>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>First preference: {{FutureComPreferArray10[3]}} with <b> {{FutureComPreferArray10[2]}} </b> vote(s) in favor </a> <br>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>Second preference: {{FutureComPreferArray10[5]}} with <b> {{FutureComPreferArray10[4]}} </b> vote(s) in favor  </a> <br>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>Third preference: {{FutureComPreferArray10[7]}} with <b> {{FutureComPreferArray10[6]}} </b> vote(s) in favor </a>
-  <br></a> <mat-divider></mat-divider>
+  </mat-card> </a>
 
 <!--Comm- show the results of the category the user had clicked -->
-<a *ngIf="comcateg=='P0sen'">
-  <br>  <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Agriculture, Nutrition, and Forestry Committee: <b> {{CAgricultureYea}} YEA </b> and <b> {{CAgricultureNay}} NAY </b></mat-card-title> <br></a>
-<a *ngIf="comcateg=='P1sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Appropriations Committee: {{CAppropriationsYea}} YEA and {{CAppropriationsNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P2sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Armed Services Committee: {{CArmedYea}} YEA and {{CArmedNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P3sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Banking, Housing, and Urban Affairs Committee: {{CBankingYea}} YEA and {{CBankingNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P4sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Budget Committee: {{CBudgetYea}} YEA and {{CBudgetNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P5sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Commerce, Science, and Transportation Committee: {{CCommerceYea}} YEA and {{CCommerceNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P6sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Energy and Natural Resources Committee: {{CEnergyYea}} YEA and {{CEnergyNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P7sen'">
-  <br>  <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Environment and Public Works Committee: {{CEnvironmentYea}} YEA and {{CEnvironmentNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P8sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Finance Committee: {{CFinanceYea}} YEA and {{CFinanceNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P9sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Foreign Relations Committee: {{CForeignYea}} YEA and {{CForeignNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P10sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Health, Education, Labor, and Pensions Committee: {{CHealthYea}} YEA and {{CHealthNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P11sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Homeland Security and Governmental Affairs Committee: {{CHomelandYea}} YEA and {{CHomelandNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P12sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Indian Affairs Committee: {{CIndianYea}} YEA and {{CIndianNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P13sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Joint Committee on Printing: {{CPrintingYea}} YEA and {{CPrintingNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P14sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Joint Committee on Taxation: {{CTaxationYea}} YEA and {{CTaxationNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P15sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Joint Committee on the Library: {{CLibraryYea}} YEA and {{CLibraryNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P16sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Joint Economic Committee: {{CEconomicYea}} YEA and {{CEconomicNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P17sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Judiciary Committee: {{CJudiciaryYea}} YEA and {{CJudiciaryNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P18sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Rules and Administration Committee: {{CRulesYea}} YEA and {{CRulesNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P19sen'">
-  <br>  <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Select Committee on Ethics: {{CEthicsYea}} YEA and {{CEthicsNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P20sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Select Committee on Intelligence: {{CIntelligenceYea}} YEA and {{CIntelligenceNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P21sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Small Business and Entrepreneurship Committee: {{CBusinessYea}} YEA and {{CBusinessNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P22sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Special Committee on Aging: {{CAgingYea}} YEA and {{CAgingNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="comcateg=='P23sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the Veterans' Affairs Committee: {{CVeteranYea}} YEA and {{CVeteranNay}} NAY </mat-card-title> <br></a> <mat-divider></mat-divider>
+<a *ngIf="comcateg=='P0sen'"> <mat-card>
+  <br>   <mat-card-title>{{CandName10}} performance on the Agriculture, Nutrition, and Forestry Committee: <b> {{CAgricultureYea}} YEA </b> and <b> {{CAgricultureNay}} NAY </b></mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P1sen'"> <mat-card>
+  <br>  <mat-card-title>{{CandName10}} performance on the Appropriations Committee: {{CAppropriationsYea}} YEA and {{CAppropriationsNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P2sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Armed Services Committee: {{CArmedYea}} YEA and {{CArmedNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P3sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Banking, Housing, and Urban Affairs Committee: {{CBankingYea}} YEA and {{CBankingNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P4sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Budget Committee: {{CBudgetYea}} YEA and {{CBudgetNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P5sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Commerce, Science, and Transportation Committee: {{CCommerceYea}} YEA and {{CCommerceNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P6sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Energy and Natural Resources Committee: {{CEnergyYea}} YEA and {{CEnergyNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P7sen'"> <mat-card>
+  <br>  <mat-card-title>{{CandName10}} performance on the Environment and Public Works Committee: {{CEnvironmentYea}} YEA and {{CEnvironmentNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P8sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Finance Committee: {{CFinanceYea}} YEA and {{CFinanceNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P9sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Foreign Relations Committee: {{CForeignYea}} YEA and {{CForeignNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P10sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Health, Education, Labor, and Pensions Committee: {{CHealthYea}} YEA and {{CHealthNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P11sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Homeland Security and Governmental Affairs Committee: {{CHomelandYea}} YEA and {{CHomelandNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P12sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Indian Affairs Committee: {{CIndianYea}} YEA and {{CIndianNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P13sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Joint Committee on Printing: {{CPrintingYea}} YEA and {{CPrintingNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P14sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Joint Committee on Taxation: {{CTaxationYea}} YEA and {{CTaxationNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P15sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Joint Committee on the Library: {{CLibraryYea}} YEA and {{CLibraryNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P16sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Joint Economic Committee: {{CEconomicYea}} YEA and {{CEconomicNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P17sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Judiciary Committee: {{CJudiciaryYea}} YEA and {{CJudiciaryNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P18sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Rules and Administration Committee: {{CRulesYea}} YEA and {{CRulesNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P19sen'"> <mat-card>
+  <br>  <mat-card-title>{{CandName10}} performance on the Select Committee on Ethics: {{CEthicsYea}} YEA and {{CEthicsNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P20sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Select Committee on Intelligence: {{CIntelligenceYea}} YEA and {{CIntelligenceNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P21sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Small Business and Entrepreneurship Committee: {{CBusinessYea}} YEA and {{CBusinessNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P22sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Special Committee on Aging: {{CAgingYea}} YEA and {{CAgingNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="comcateg=='P23sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the Veterans' Affairs Committee: {{CVeteranYea}} YEA and {{CVeteranNay}} NAY </mat-card-title> </mat-card> <br></a>
 
 
 
 <!--Comm- show the results of the category the user had clicked -->
-<a *ngIf="isscateg=='I0sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Abortion Rights: {{IAbortionYea}} YEA and {{IAbortionNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I1sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Gun Control & Public Safety: {{IGunsYea}} YEA and {{IGunsNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I2sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Jobs: {{IJobsYea}} YEA and {{IJobsNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I3sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issues facing Veterans: {{IVeteransYea}} YEA and {{IVeteransNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I4sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Border Security & Immigration: {{IBorderYea}} YEA and {{IBorderNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I5sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issues facing Farmers and Ranchers: {{IFarmersYea}} YEA and {{IFarmersNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I6sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Climate Crisis: {{IClimateYea}} YEA and {{IClimateNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I7sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issues facing Seniors: {{ISeniorsYea}} YEA and {{ISeniorsNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I8sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Defense & National Security: {{IDefenseYea}} YEA and {{IDefenseNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I9sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Energy: {{IEnergyYea}} YEA and {{IEnergyNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I10sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Infrastructure: {{IInfrastructureYea}} YEA and {{IInfrastructureNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I11sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Natural Resources: {{INaturalYea}} YEA and {{INaturalNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I12sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Manufacturing: {{IManufacturingYea}} YEA and {{IManufacturingNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I13sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Public Lands: {{ILandsYea}} YEA and {{ILandsNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I14sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of COVID-19 Response, Drug Prices & Healthcare: {{IHealthcareYea}} YEA and {{IHealthcareNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I15sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Education: {{IEducationYea}} YEA and {{IEducationNay}} NAY </mat-card-title> <br></a>
-<a *ngIf="isscateg=='I16sen'">
-  <br> <mat-card-title>&nbsp; &nbsp; &nbsp;{{CandName10}} performance on the issue of Inflation & Economy: {{IEconomyYea}} YEA and {{IEconomyNay}} NAY </mat-card-title> <br></a> <mat-divider></mat-divider>
+<a *ngIf="isscateg=='I0sen'"> <mat-card>
+  <br>  <mat-card-title>{{CandName10}} performance on the issue of Abortion Rights: {{IAbortionYea}} YEA and {{IAbortionNay}} NAY </mat-card-title> </mat-card> <br> </a>
+<a *ngIf="isscateg=='I1sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Gun Control & Public Safety: {{IGunsYea}} YEA and {{IGunsNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I2sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Jobs: {{IJobsYea}} YEA and {{IJobsNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I3sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issues facing Veterans: {{IVeteransYea}} YEA and {{IVeteransNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I4sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Border Security & Immigration: {{IBorderYea}} YEA and {{IBorderNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I5sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issues facing Farmers and Ranchers: {{IFarmersYea}} YEA and {{IFarmersNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I6sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Climate Crisis: {{IClimateYea}} YEA and {{IClimateNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I7sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issues facing Seniors: {{ISeniorsYea}} YEA and {{ISeniorsNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I8sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Defense & National Security: {{IDefenseYea}} YEA and {{IDefenseNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I9sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Energy: {{IEnergyYea}} YEA and {{IEnergyNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I10sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Infrastructure: {{IInfrastructureYea}} YEA and {{IInfrastructureNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I11sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Natural Resources: {{INaturalYea}} YEA and {{INaturalNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I12sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Manufacturing: {{IManufacturingYea}} YEA and {{IManufacturingNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I13sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Public Lands: {{ILandsYea}} YEA and {{ILandsNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I14sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of COVID-19 Response, Drug Prices & Healthcare: {{IHealthcareYea}} YEA and {{IHealthcareNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I15sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Education: {{IEducationYea}} YEA and {{IEducationNay}} NAY </mat-card-title> </mat-card> <br></a>
+<a *ngIf="isscateg=='I16sen'"> <mat-card>
+  <br> <mat-card-title>{{CandName10}} performance on the issue of Inflation & Economy: {{IEconomyYea}} YEA and {{IEconomyNay}} NAY </mat-card-title> </mat-card> <br></a>
 
+
+ <br> <mat-card>
 <!-- Stays on top, so anytime user can switch to their home state candidates -->
  <button mat-button  (click)="sethomecands()">Cast your Vote & View Voting Results of Candidates/Senators from your Home State of {{HOMEstate}} </button>
+  </mat-card> <br>
 
-
+  <mat-card>
 <!-- User selects which state they would like to view results for -->
-<form >
-  <br> <a>Select state </a>  <br>
+<form > <h3> <b> View Candidates of a State </b> </h3>
+  <a>Select state </a>  <br>
   <mat-form-field class="demo-form-field1" appearance="fill">
     <mat-label>State</mat-label>
     <select matNativeControl [(ngModel)]=statedropdown [ngModelOptions]="{standalone: true}">
@@ -118,15 +121,16 @@
   </mat-form-field>
 </form>
 <button mat-button  (click)="setdropdowncands()">Search for Candidates/Senators in Selected State</button>
+  </mat-card> <br>
 
-
-<br> &nbsp; &nbsp; &nbsp; <b> Found {{tabinstatelength}} Candidate(s)/Senators in the state of {{State10}} for the 2022 U.S. Senate elections!</b> <br>
-
+  <mat-card>
+<b> Found {{tabinstatelength}} Candidate(s)/Senators in the state of {{State10}} for the 2022 U.S. Senate elections!</b> <br>
+  </mat-card>
 
 <!--Display Initial Cand10  -->
 <a *ngIf="initializerflag=='yes' || onetimenextflag=='yes' || viewtoggle!=''">
   <a style="text-align:center;">
-    <br>  &nbsp; &nbsp; &nbsp;     <b> {{Motto10}} </b>
+    <br>     <b> {{Motto10}} </b>
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
       <mat-card-header>
         <img src="assets/USA_Flag.png" alt="USA Flag" style="float:right;width:80px;height:50px;">
@@ -139,20 +143,20 @@
     </mat-card> <mat-divider></mat-divider>
 
     <!-- Chips for navigation -->
-    &nbsp; &nbsp; &nbsp;<a> <b>Vote or View Results for: </b></a> <br>  <mat-chip-list>
+  <br>  <a> <b>Vote or View Results for: </b></a> <br>  <mat-chip-list>
     <mat-chip (click)="overallfunc()">Candidate/Senator Overall Performance</mat-chip>
     <mat-chip (click)="assignfunc()">U.S. Senate Committees assignments to Candidate/Senator</mat-chip>
     <mat-chip (click)="comperffunc()">Candidate/Senator Performance on Senate Committees</mat-chip>
     <mat-chip (click)="issperffunc()">Candidate/Senator Performance on Issues</mat-chip>
-  </mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
+  </mat-chip-list> <br>
 
 
     <!-- Overall Performance Vote and show results -->
     <a class="overall_class"></a> <mat-card class="example-card">
-    <br>  <mat-card-title> {{CandName10}}'s Overall Performance: {{OverallYea10}} YEA and {{OverallNay10}} NAY </mat-card-title> <br>
+    <br>  <mat-card-title> {{CandName10}}'s Overall Performance: <br> {{OverallYea10}} YEA and {{OverallNay10}} NAY </mat-card-title> <br>
     <a *ngIf="HOMEstate==statedropdown">
     <p *ngIf="votedindexesissuecand10[17]==-1">
-        <mat-card-title>Vote on {{CandName10}}'s Overall Performance or Potential</mat-card-title>
+        <mat-card-subtitle>Vote on {{CandName10}}'s Overall Performance or Potential</mat-card-subtitle>
         <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
       <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p> </a>
   </mat-card> <mat-divider></mat-divider> <br>
@@ -188,7 +192,7 @@
       </form> </a> </a>
 
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
-      <br>   <mat-card-title>{{CandName10}}'s committee assignments Voting Results </mat-card-title>
+      <br>   <h3>{{CandName10}}'s committee assignments Voting Results </h3>
       <button mat-button color="primary" routerLink="/Community1"  (click)="ConfclickPreferResults()">View Voting Results</button>
     </mat-card> <mat-divider></mat-divider>
 
@@ -386,18 +390,18 @@
         <button mat-button (click)="NAYclickP23()"><b>Vote NAY</b> for {{CandName10}} on the <b>Veterans' Affairs Committee</b> </button></p> </a>
       <p *ngIf="Coms10new[23]==''">
         <button mat-button color="primary" routerLink="/Community1"  (click)="ConfclickComResults('P23sen')"><b>View Voting Results</b> for {{CandName10}} on the <b>Veterans' Affairs Committee</b> </button></p>
-    </mat-card> <mat-divider></mat-divider> </a>
+    </mat-card> <mat-divider></mat-divider> </a> <br>
 
     <!-- Issues rating-->
     <a class="issperf_class"></a>  <br>  <mat-card-title>Vote or View Results of {{CandName10}}'s <b> Performance or Potential </b> on the following <b> Issues </b>: </mat-card-title>
-    &nbsp; &nbsp; &nbsp;  <mat-chip-list>
+      <mat-chip-list>
     <mat-chip (click)="iss0()">Abortion Rights</mat-chip> <mat-chip (click)="iss1()">Gun Control & Public Safety</mat-chip> <mat-chip (click)="iss2()">Jobs</mat-chip>
     <mat-chip (click)="iss3()">Veterans</mat-chip> <mat-chip (click)="iss4()">Border Security & Immigration</mat-chip> <mat-chip (click)="iss5()">Farmers and Ranchers</mat-chip>
     <mat-chip (click)="iss6()">Climate Crisis</mat-chip> <mat-chip (click)="iss7()">Seniors</mat-chip> <mat-chip (click)="iss8()">Defense & National Security</mat-chip>
     <mat-chip (click)="iss9()">Energy</mat-chip> <mat-chip (click)="iss10()">Infrastructure</mat-chip> <mat-chip (click)="iss11()">Natural Resources</mat-chip>
     <mat-chip (click)="iss12()">Manufacturing</mat-chip> <mat-chip (click)="iss13()">Public Lands</mat-chip> <mat-chip (click)="iss14()">COVID-19 Response, Drug Prices & Healthcare</mat-chip>
     <mat-chip (click)="iss15()">Education</mat-chip> <mat-chip (click)="iss16()">Inflation & Economy</mat-chip>
-  </mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
+  </mat-chip-list> <br>
 
 
     <a class="iss0_class"></a> <mat-card class="example-card"> <!-- Issue 0 -->
@@ -521,23 +525,23 @@
   </mat-card> <mat-divider></mat-divider>
 
     <!-- Next and back buttons-->
-    <mat-card class="example-card">
+  <br>  <mat-card class="example-card">
       <a *ngIf="initsearchflag=='yes'"> <button mat-button color="primary"  (click)="reloadComponent()">See All Results</button> &nbsp; &nbsp; &nbsp; </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle==''">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="ontop()" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='yes' && viewtoggle==''">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='yes'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle2back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="ontop()" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='no'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
-    </mat-card> <mat-divider></mat-divider>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+    </mat-card> <mat-divider></mat-divider> <br>
 
-    &nbsp; &nbsp; &nbsp;  <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a>
+    <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a>
   </a>
 </a>
 

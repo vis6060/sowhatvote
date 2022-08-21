@@ -72,8 +72,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
   setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
 
-  viewtoggle1next() {
-    //window.scrollTo(0,0);
+  viewtoggle1next() {window.scrollTo(0,0);
     this.CandName10= this.CandName1000; this.District10=this.District1000; this.Party10=this.Party1000; this.State10=this.State1000;
     this.Website10=this.Website1000;this.PictureAttribution10=this.PictureAttribution1000; this.Motto10=this.Motto1000;
     this.OverallYea10=this.OverallYea1000;this.OverallNay10=this.OverallNay1000; this.s3file10=this.s3file1000;this.Coms10=this.Coms1000;
@@ -83,8 +82,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
     this.deleteindex0idrecur100Next();
   }
 
-  viewtoggle2next() {
-    //window.scrollTo(0,0);
+  viewtoggle2next() {window.scrollTo(0,0);
     this.CandName10= this.CandName100; this.District10=this.District100; this.Party10=this.Party100; this.State10=this.State100;
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100; this.s3file10=this.s3file100;this.Coms10=this.Coms100;
@@ -95,7 +93,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   }
 
   onetimenextnext() {
-    //window.scrollTo(0,0);
+    window.scrollTo(0,0);
     this.CandName10= this.CandName100; this.District10=this.District100; this.Party10=this.Party100; this.State10=this.State100;
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100; this.s3file10=this.s3file100;this.Coms10=this.Coms100;
@@ -386,6 +384,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   comperffunc(){try {const errorField = this.renderer.selectRootElement('.comperf_class');errorField.scrollIntoView();} catch (err) {}}
   issperffunc(){try {const errorField = this.renderer.selectRootElement('.issperf_class');errorField.scrollIntoView();} catch (err) {}}
   ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
+  searchresult(){try {const errorField = this.renderer.selectRootElement('.searchresult_class');errorField.scrollIntoView();} catch (err) {}}
   iss0(){try {const errorField = this.renderer.selectRootElement('.iss0_class');errorField.scrollIntoView();} catch (err) {}}
   iss1(){try {const errorField = this.renderer.selectRootElement('.iss1_class');errorField.scrollIntoView();} catch (err) {}}
   iss2(){try {const errorField = this.renderer.selectRootElement('.iss2_class');errorField.scrollIntoView();} catch (err) {}}

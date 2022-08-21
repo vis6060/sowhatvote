@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import { v4 as uuid } from 'uuid';
 import awsExports from 'src/aws-exports';
 
@@ -17,7 +17,7 @@ import {APIService, DatinguserdbStaging} from "../../API.service";
 export class Tab1cdisplaynavComponent implements OnInit {
 
   router: Router;
-  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router) {
+  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router, private renderer: Renderer2) {
     Amplify.configure(awsExports); this.router = _router;
   }
 
@@ -38,6 +38,7 @@ export class Tab1cdisplaynavComponent implements OnInit {
   tab1Clength="0"; tab1Clengthnext="0";
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle="";
+  delayflag1:boolean=true; delayflag2:boolean=true;
 
   //refreshes the browser upon button click of next or dislike or connectme
   reloadComponent() {
@@ -47,6 +48,12 @@ export class Tab1cdisplaynavComponent implements OnInit {
     this.router.navigate([currentUrl]);
     //   this.delay(10000);
   }
+
+  //delay button, so user doesn't quickly click on it and spoil the array of cands
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
+
 
   //stores tab1A index in table
   async putindextab1A() {
@@ -321,6 +328,9 @@ export class Tab1cdisplaynavComponent implements OnInit {
     this.api.BackinitializeButtonDatingitemtrackingStagingtab1C(user.attributes.sub,this.tab1Cendarrayitemidinitialize,
       +this.tab1Clength).then((event1) => {this.reloadComponent()})
   }
+
+  ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
+
 
 }
 

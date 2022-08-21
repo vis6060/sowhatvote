@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {APIService, DatinguserdbStaging} from "../../API.service";
@@ -13,7 +13,7 @@ import awsExports from "../../../aws-exports";
 export class Tab6bdisplaynavComponent implements OnInit {
 
   router: Router;
-  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router) {
+  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router, private renderer: Renderer2) {
     Amplify.configure(awsExports);
     this.router = _router;
   }
@@ -33,6 +33,7 @@ export class Tab6bdisplaynavComponent implements OnInit {
   tab6Blength="0"; tab6Blengthnext="0";
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle="";
+  delayflag1:boolean=true; delayflag2:boolean=true;
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -40,6 +41,11 @@ export class Tab6bdisplaynavComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
+
+  //delay button, so user doesn't quickly click on it and spoil the array of cands
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
 
   //stores tab1B index in table
   async putindextab1B() {
@@ -233,5 +239,7 @@ export class Tab6bdisplaynavComponent implements OnInit {
     this.api.BackinitializeButtonDatingitemtrackingStagingtab6B(user.attributes.sub,this.tab6Bendarrayitemidinitialize,
       +this.tab6Blength).then((event1) => {this.reloadComponent()})
   }
+
+  ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
 
 }

@@ -50,6 +50,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TermsdialogboxComponent } from './termsdialogbox/termsdialogbox.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
+import {RouterModule} from "@angular/router";
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +91,7 @@ import {MatDividerModule} from '@angular/material/divider';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

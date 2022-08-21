@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import { v4 as uuid } from 'uuid';
 import awsExports from 'src/aws-exports';
 
@@ -18,7 +18,7 @@ export class Tab3bdisplaynavComponent implements OnInit {
 
   router: Router;
 
-  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router) {
+  constructor(public authenticator: AuthenticatorService, private api: APIService, private route: ActivatedRoute, _router: Router,private renderer: Renderer2) {
     Amplify.configure(awsExports);
     this.router = _router;
   }
@@ -38,6 +38,7 @@ export class Tab3bdisplaynavComponent implements OnInit {
   tab3Blength="0"; tab3Blengthnext="0";
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle="";
+  delayflag1:boolean=true; delayflag2:boolean=true;
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -45,6 +46,12 @@ export class Tab3bdisplaynavComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
   }
+
+  //delay button, so user doesn't quickly click on it and spoil the array of cands
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  async delayButton2(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag2(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
+
 
   //stores tab1B index in table
   async putindextab1B() {
@@ -313,5 +320,6 @@ export class Tab3bdisplaynavComponent implements OnInit {
       +this.tab3Blength).then((event1) => {this.reloadComponent()})
   }
 
+  ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
 
 }

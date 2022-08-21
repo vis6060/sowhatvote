@@ -11,26 +11,20 @@ export class AdAComponent implements OnInit {
 
   constructor(private api: APIService,) {
   // if(Cache.getItem('')!=null) {Cache.removeItem("");}
-    if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"}
-    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
   }
 
   ngOnInit(): void {
-    this.webpageroute()
     this.randomgen()
+    this.delayButton1(2000)
   }
 
   webpagevalue="";whichtab=""; profileFflag="";profileAflag=""
+  webpageobtained=""; whichobtained=""; delayflag1:boolean=true;
 
-  async webpageroute() {
-    const user = await Auth.currentAuthenticatedUser();
-//has the comcategory for whom the results need to be display as view results button was clicked and then there were two ad pages.
-    this.api.Getwebpagevalue(user.attributes.sub).then((event2) => {this.webpagevalue=event2.comcateg as unknown as any;});
-    //this gets the whichtab value and also blanks it.
-    this.api.Getwhichtab(user.attributes.sub).then((event1) => {this.whichtab=event1.comcateg as unknown as any;});
-}
+  async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
+  setbuttonflag1() {this.delayflag1=false};
 
-selectorflag:number
+  selectorflag:number
 //random number generator which chooses which view section to show
    randomgen() {//this finds a number between 1 and 10, inclusive of both
   let  min = Math.ceil(1);

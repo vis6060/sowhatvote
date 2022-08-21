@@ -3,17 +3,17 @@
 <div class="class10" >
 
 <!-- Chips for navigation -->
-<a> <b>Search for Community Members options: </b></a> <br>  <mat-chip-list>
-  <mat-chip (click)="search1()">Option #1: Search by Member's State, and Age or Gender or Your County</mat-chip>
-  <mat-chip (click)="search2()">Option #2: Search by Member's State, and Occupation or Industry or Veteran Status or Mentor Status</mat-chip>
-  <mat-chip (click)="search3()">Option #3: Search by State for top 5 most active community members based on their SoWhat Vote! loyalty points</mat-chip> &nbsp; &nbsp; &nbsp; &nbsp;
-  <mat-chip (click)="search4()">Option #4: Search by Member's Facebook Username</mat-chip>
+<a> <b>Search for Community Members: </b></a> <br>  <mat-chip-list>
+  <mat-chip (click)="search1()">Option 1: Search by Member's State, and Age or Gender or Your County</mat-chip>
+  <mat-chip (click)="search2()">Option 2: Search by Member's State, and Occupation or Industry or Veteran Status or Mentor Status</mat-chip>
+  <mat-chip (click)="search3()">Option 3: Search by State for top 5 most active community members based on their SoWhat Vote! loyalty points</mat-chip>
+  <mat-chip (click)="search4()">Option 4: Search by Member's Facebook Username</mat-chip>
 </mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
 
-  <a> <b>View some of the matching Community Members : </b></a> <br>  <mat-chip-list>
-  <mat-chip (click)="tab1A()">A member in the same County as yours</mat-chip>
-  <mat-chip (click)="tab1B()">A member in the same State as yours</mat-chip>
-  <mat-chip (click)="tab1C()">A member in a different home State</mat-chip>
+  <a> <b>View some pre-selected matching Community Members : </b></a> <br>  <mat-chip-list>
+  <mat-chip (click)="tab1A()">A member in the Same County as yours</mat-chip>
+  <mat-chip (click)="tab1B()">A member in the Same State as yours</mat-chip>
+  <mat-chip (click)="tab1C()">A Member in any State</mat-chip>
   <mat-chip (click)="tab3()">Member(s) who have sent you a connection request</mat-chip>
   <mat-chip (click)="tab2()">Your mutually accepted connections</mat-chip>
 </mat-chip-list> &nbsp; &nbsp; &nbsp; <mat-divider></mat-divider>
@@ -22,8 +22,8 @@
   <!-- query criteria for users to enter goes here -->
 
     <!-- section1: mandatory state criteria -->
-    <a class="search1"></a>  <form>
-      <br> <a> Step1: Select state </a>  <br>
+  <form> <a class="search1"></a>  <h2 class="search1">Option 1: Search by Member's State, and Age or Gender or Your County</h2>
+      <br> <a> <b> Step1: Select state</b> </a>  <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>State (Required)</mat-label>
         <select matNativeControl required [disabled]="toggleBoolState"  [(ngModel)]=stateselection [ngModelOptions]="{standalone: true}">
@@ -35,7 +35,7 @@
 
     <!--section2: meetup query criteria -->
     <form>
-      <br> <a> Step2: Select one or all of the below fields </a>  <br>
+      <br> <a> <b> Step2: Select one or all of the below fields </b> </a>  <br>
       <br> <a> Age </a>  <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Age range (years)</mat-label>
@@ -48,26 +48,30 @@
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Gender</mat-label>
         <select matNativeControl [disabled]="toggleBool1" (change)="togglesearchfields($event)" [(ngModel)]="genderselection" [ngModelOptions]="{standalone: true}"> <br>
-          <option value=""></option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option> <br>
+          <option value=""></option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option>
         </select>
       </mat-form-field>
     </form>
 
-    <br> <a> Are you looking for someone in <b> {{countyuser}} </b>? </a>  <br>
+     <a> Are you looking for someone in <b> {{countyuser}} </b>? </a>  <br>
     <mat-form-field class="demo-form-field1" appearance="fill">
       <mat-label>County</mat-label>
       <select matNativeControl [disabled]="toggleBool1" (change)="togglesearchfields($event)" [(ngModel)]=countyselection [ngModelOptions]="{standalone: true}">
         <option value=""></option>  <option value="Yes">Yes</option>
       </select>
-    </mat-form-field>
+      <mat-hint>Please leave blank if the answer is no.</mat-hint>
+    </mat-form-field> <br>
 
     <!--Meetup search button -->
-    <br> <button mat-button [disabled]="toggleBool0" (click)="executesearchsec1(); toggleBool1= true;toggleBoolState= true;toggleBool3= true; toggleBool0= true;toggleBool2= true;toggleBoolAgain1=false">Search Now</button>
-    <button mat-button [disabled]="toggleBoolAgain1" (click)="reloadComponent()">Search Again</button>
+    <br> <button mat-button [disabled]="toggleBool0" (click)="searchresult()"  (click)="executesearchsec1(); toggleBool1= true;toggleBoolState= true;toggleBool3= true; toggleBool0= true;toggleBool2= true;toggleBoolAgain1=false">Search Now</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button mat-button [disabled]="toggleBoolAgain1" (click)="reloadComponent()">Search Again</button> <br>
+
+  <a *ngIf="nodisplay1=='yes'"> <b> Your search returned no results.  Please search again. <br> Please encourage your friends and community members to join SoWhat Vote!.
+  <br> We will together create a strong community which helps each other and people in need.</b> <br></a> <mat-divider></mat-divider> <br>
 
     <!--section3 Mentor query criteria -->
-<a class="search2"></a>  <form>
-      <br> <a> Step1: Select state </a>  <br>
+  <a class="search2"></a>  <h2>Option 2: Search by Member's State, and Occupation or Industry or Veteran Status or Mentor Status</h2>  <form>
+      <br> <a> <b> Step1: Select state </b> </a>  <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>State (Required)</mat-label>
         <select matNativeControl required [disabled]="toggleBoolState"  [(ngModel)]=stateselection [ngModelOptions]="{standalone: true}">
@@ -77,9 +81,9 @@
       </mat-form-field>
     </form>
 
-    <br> <a> Step2: Select one or all of the below fields </a>  <br>
+    <br> <a> <b> Step2: Select one or all of the below fields </b> </a>  <br>
 
-    <br>  <a> What should be the <b> occupation </b> of your matches?  </a> <br>
+     <a> What should be the <b> occupation </b> of your matches?  </a> <br>
     <a  *ngIf="removefields!='yes'">
       <app-occupation-search (newItemEvent)="addItem($event)"></app-occupation-search>
     </a>
@@ -96,7 +100,7 @@
           </mat-option>
         </mat-autocomplete>
         <mat-hint align="start">Please begin typing to see most relevant drop-down options</mat-hint>
-      </mat-form-field>
+      </mat-form-field> <br>
     </a>
 
     <br> <a> Are you looking to connect with an <b> armed forces veteran </b>? </a>  <br>
@@ -105,7 +109,8 @@
       <select matNativeControl [disabled]="toggleBool3" (change)="togglesearchfields1($event)" [(ngModel)]=veteranselection [ngModelOptions]="{standalone: true}">
         <option value=""></option>  <option value="Yes">Yes</option>
       </select>
-    </mat-form-field>
+      <mat-hint>Please leave blank if the answer is no.</mat-hint>
+    </mat-form-field> <br>
 
     <br> <a> Are you looking to connect with a <b> mentor </b> in your industry, occupation or community? </a>  <br>
     <mat-form-field class="demo-form-field1" appearance="fill">
@@ -113,17 +118,20 @@
       <select matNativeControl [disabled]="toggleBool3" (change)="togglesearchfields1($event)" [(ngModel)]=mentorselection [ngModelOptions]="{standalone: true}">
         <option value=""></option>  <option value="Yes">Yes</option>
       </select>
-    </mat-form-field>
+      <mat-hint>Please leave blank if the answer is no.</mat-hint>
+    </mat-form-field> <br>
 
     <!--Mentor search button -->
-    <br>   <button mat-button [disabled]="toggleBool2" (click)="executesearchsec2();toggleBool3= true;;toggleBoolState= true;toggleBool1= true;toggleBool2= true;toggleBool0= true;toggleBoolAgain2=false">Search Now</button>
-    <button mat-button [disabled]="toggleBoolAgain2" (click)="reloadComponent()">Search Again</button>
+    <br>   <button mat-button [disabled]="toggleBool2" (click)="searchresult()"  (click)="executesearchsec2();toggleBool3= true;;toggleBoolState= true;toggleBool1= true;toggleBool2= true;toggleBool0= true;toggleBoolAgain2=false">Search Now</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button mat-button [disabled]="toggleBoolAgain2" (click)="reloadComponent()">Search Again</button> <br>
 
+  <a *ngIf="nodisplay2=='yes'"> <b> Your search returned no results.  Please search again. <br> Please encourage your friends and community members to join SoWhat Vote!.
+    <br> We will together create a strong community which helps each other and people in need.</b> <br></a> <mat-divider></mat-divider> <br>
 
 
   <!--section3 Top5 most loyal SWV members that users can connect to do if not already done so -->
-<a class="search3"></a> <form>
-    <br> <a> Please select a state to view the top 5 SoWhat Vote Community members in the state and an opportunity to connect with them. </a>  <br>
+  <a class="search3"></a> <h2>Option 3: Search by State for top 5 most active community members based on their SoWhat Vote! loyalty points</h2> <form>
+     <a> Please select a state to view the top 5 SoWhat Vote Community members in the state and an opportunity to connect with them. </a>  <br>
     <mat-form-field class="demo-form-field1" appearance="fill">
       <mat-label>State (Required)</mat-label>
       <select matNativeControl required  [(ngModel)]=stateselectionloyalty [ngModelOptions]="{standalone: true}">
@@ -134,12 +142,13 @@
   </form>
 
   <!--Top5 loyalty search button -->
-  <br> <button mat-button (click)="executesearchsec3()">Search Now</button>
-  <button mat-button (click)="reloadComponent()">Search Again</button>
+  <br> <button mat-button (click)="searchresult()"  (click)="executesearchsec3()">Search Now</button> &nbsp; &nbsp; &nbsp; &nbsp;
+  <button mat-button (click)="reloadComponent()">Search Again</button> <br> <mat-divider></mat-divider> <br>
+
 
   <!--section4 Facebook Form-->
-<a class="search4"></a>  <form [formGroup]="fifthFormGroup">
-    <br> <a> Please enter the facebook username of a person  </a>
+  <a class="search4"></a>  <h2>Option 4: Search by Member's Facebook Username</h2>  <form [formGroup]="fifthFormGroup">
+     <a> Please enter a facebook username  </a> <br>
     <mat-form-field class="demo-form-field1" appearance="fill">
       <mat-label>Facebook Username</mat-label>
       <input  matInput placeholder="username" formControlName="fifthCtrl" required #message1 maxlength="30" [(ngModel)]="facebookselection"> <br>
@@ -148,17 +157,16 @@
   </form>
 
   <!-- Facebook username specific search button -->
-  <br> <button mat-button (click)="executesearchsec4()">Search Now</button>
-  <button mat-button (click)="reloadComponent()">Search Again</button> <br> <br>
-  <a *ngIf="nomatchingfacebook=='yes'"> <b> No matches!</b>  This facebook username is not a member of SoWhat Vote Community. Please encourage this person to join the SoWhat Vote community.</a>
+  <br> <button mat-button (click)="searchresult()"  (click)="executesearchsec4()">Search Now</button> &nbsp; &nbsp; &nbsp; &nbsp;
+  <button mat-button (click)="reloadComponent()">Search Again</button> <br>
+  <a *ngIf="nomatchingfacebook=='yes'"> <b> No matches! <br> This facebook username is not a member of SoWhat Vote Community.<br> Please encourage this person to join the SoWhat Vote! community. <br> We will together create a strong community which helps each other and people in need. </b></a>
+  <br> <mat-divider></mat-divider> <br>
   <!-- search results in the center -->
 
 
 <!-- display the tab1A, tab1B or tab1C search results with expansion panel. Each itemid will be loaded in browser, on clicking itemid details displayed -->
-<a *ngIf="nodisplay=='yes'"> Your search returned no results.  Please search again. Please encourage your friends and community members to join SoWhat Vote.
-  We will together create a strong community which helps each other and people in need.</a>
-
-<a *ngIf="displayflag=='yes'">
+  <a class="searchresult"></a>
+<a *ngIf="displayflag=='yes'">  <h1 style="text-align:center;"> <b> Search Result(s) </b></h1>
   <br> <a> Showing <b> {{FilteredSearchArraySize}} </b> unseen results out of a possible <b> {{InitialSearchArraySize}} </b> search results</a> <br>
   <div class="example-action-buttons">
     <button mat-button (click)="accordion.openAll()">Expand All Search Results</button>
@@ -257,7 +265,7 @@
 </a>
 
 <!-- Section3 search results for top5 most loyal members -->
-<a *ngIf="displayflagloyalty=='yes'">
+<a *ngIf="displayflagloyalty=='yes'"> <h1 style="text-align:center;"> <b> Search Results </b></h1>
   <div class="example-action-buttons">
     <button mat-button (click)="accordion.openAll()">Expand All Search Results</button>
     <button mat-button (click)="accordion.closeAll()">Collapse All Search Results</button>
@@ -358,7 +366,7 @@
 
 <!-- Section4 search result for searching for a user in SWV DB using the facebook username -->
 <br> <br>
-<a *ngIf="displayflagfacebook=='yes'">
+<a *ngIf="displayflagfacebook=='yes'"> <h1 style="text-align:center;"> <b> Search Result </b></h1>
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
       <mat-card-header>
@@ -407,7 +415,9 @@
 <!-- tab3, tab1a, tab1b, tab1c, tab2 display with show all link to library of tabs -->
 
 <!-- tab1A display -->
-<br> <mat-divider></mat-divider> <br>  <a class="tab1A"></a> <a *ngIf="tab1Anullflag==''">A Member in the <b>Same County</b> as You </a>
+<br> <mat-divider></mat-divider> <br> <h1 style="text-align:center;"> <b> Browse Select Member Profiles </b></h1>
+
+  <a class="tab1A"></a> <h2 *ngIf="tab1Anullflag==''">A Member in the <b>Same County</b> as yours </h2>
 <a *ngIf="initializerflag1A=='yes'">
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
@@ -442,19 +452,22 @@
     </mat-card>
   </a>
 
-  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+  <a style="text-align:center;">
+  <mat-card>
     <button  mat-button [disabled]="clicked101" routerLink="/Community1"  (click)="removehomeitemidtabs(dealPer81.stateuser, dealPer81.countyuser,0)"
              (click)="connectmetab61Apb(dealPer81.userid); clicked101 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
     <button  mat-button  [disabled]="clicked101" routerLink="/Community1"  (click)="removehomeitemidtabs(dealPer81.stateuser, dealPer81.countyuser,0)"
              (click)="disliketab51Apb(dealPer81.userid); clicked101 = true;" >Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
     <button  mat-button  [disabled]="clicked101"  (click)="removehomeitemidtabs(dealPer81.stateuser, dealPer81.countyuser,0)"
-             (click)="nexthomeprofile(dealPer81.userid,dealPer81.stateuser, dealPer81.countyuser); clicked101 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-  </mat-action-row>
+             (click)="nexthomeprofile(dealPer81.userid,dealPer81.stateuser, dealPer81.countyuser); clicked101 = true;"
+             routerLink="/Meetup/AllMembers">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    <button  mat-button  routerLink="/Meetup/AllMembers">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+  </mat-card> </a>
   <a *ngIf="clicked101==true"> Thank you.  Your response has been recorded. </a>
 </a>
 
 <!-- tab1B display -->
-<br> <mat-divider></mat-divider> <br> <a class="tab1B"></a> <a *ngIf="tab1Bnullflag==''">A Member in the <b>Same State</b> as You </a>
+<br> <mat-divider></mat-divider> <br> <a class="tab1B"></a> <h2 *ngIf="tab1Bnullflag==''">A Member in the <b>Same State</b> as yours </h2>
 <a *ngIf="initializerflag1B=='yes'">
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
@@ -489,19 +502,22 @@
     </mat-card>
   </a>
 
-  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+  <a style="text-align:center;">
+    <mat-card>
     <button  mat-button [disabled]="clicked102" routerLink="/Community1"  (click)="removehomeitemidtabs(dealPer82.stateuser, dealPer82.countyuser,0)"
              (click)="connectmetab61Apb(dealPer82.userid); clicked102 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
     <button  mat-button  [disabled]="clicked102" routerLink="/Community1"  (click)="removehomeitemidtabs(dealPer82.stateuser, dealPer82.countyuser,0)"
              (click)="disliketab51Apb(dealPer82.userid); clicked102 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
     <button  mat-button  [disabled]="clicked102"  (click)="removehomeitemidtabs(dealPer82.stateuser, dealPer82.countyuser,0)"
-             (click)="nexthomeprofile(dealPer82.userid,dealPer82.stateuser, dealPer82.countyuser); clicked102 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-  </mat-action-row>
+             (click)="nexthomeprofile(dealPer82.userid,dealPer82.stateuser, dealPer82.countyuser); clicked102 = true;"
+             routerLink="/Meetup/AllMembers">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <button  mat-button  routerLink="/Meetup/AllMembers">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    </mat-card> </a>
   <a *ngIf="clicked102==true"> Thank you.  Your response has been recorded. </a>
 </a>
 
 <!-- tab1C display -->
-<br> <mat-divider></mat-divider> <br> <a class="tab1C"></a> <a *ngIf="tab1Cnullflag==''">A Member in the <b>Rest of the States</b></a>
+<br> <mat-divider></mat-divider> <br> <a class="tab1C"></a> <h2 *ngIf="tab1Cnullflag==''">A Member in the <b>Rest of the States</b></h2>
 <a *ngIf="initializerflag1C=='yes'">
   <a style="text-align:center;">
     <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
@@ -536,19 +552,22 @@
     </mat-card>
   </a>
 
-  <mat-action-row class="example-card" style="text-align:center;" fxLayoutAlign="space-around center">
+  <a style="text-align:center;">
+    <mat-card>
     <button  mat-button [disabled]="clicked103" routerLink="/Community1"  (click)="removehomeitemidtabs(dealPer83.stateuser, dealPer83.countyuser,0)"
              (click)="connectmetab61Apb(dealPer83.userid); clicked103 = true;">Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;
     <button  mat-button  [disabled]="clicked103" routerLink="/Community1"  (click)="removehomeitemidtabs(dealPer83.stateuser, dealPer83.countyuser,0)"
              (click)="disliketab51Apb(dealPer83.userid); clicked103 = true;">Dislike</button> &nbsp; &nbsp; &nbsp; &nbsp;
     <button  mat-button  [disabled]="clicked103"  (click)="removehomeitemidtabs(dealPer83.stateuser, dealPer83.countyuser,0)"
-             (click)="nexthomeprofile(dealPer83.userid,dealPer83.stateuser, dealPer83.countyuser); clicked103 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
-  </mat-action-row>
+             (click)="nexthomeprofile(dealPer83.userid,dealPer83.stateuser, dealPer83.countyuser); clicked103 = true;"
+             routerLink="/Meetup/AllMembers">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <button  mat-button  routerLink="/Meetup/AllMembers">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    </mat-card> </a>
   <a *ngIf="clicked103==true"> Thank you.  Your response has been recorded. </a>
 </a>
 
 <!-- tab3 display -->
-<br> <mat-divider></mat-divider> <br> <a class="tab3"></a> <a *ngIf="tab3nullflag==''">Members who have sent connect request: <b>Request Received</b></a>
+<br> <mat-divider></mat-divider> <br> <a class="tab3"></a> <h2 *ngIf="tab3nullflag==''">Members who have sent connect request: <b>Request Received</b></h2>
 <a *ngIf="initializerflag3=='yes'">
   <mat-accordion class="example-headers-align" multi>
     <a *ngFor="let dealPer of ngfortab3array; let i = index">
@@ -599,7 +618,8 @@
           </a>
         </a>
 
-        <mat-action-row class="example-card" style="text-align:center;" fxLayout="column" fxLayoutAlign="space-around center">
+        <a style="text-align:center;">
+          <mat-card>
           <a *ngIf="i==0">
             <button mat-button (click)="nextStep()" routerLink="/Community1" [disabled]="clicked104" (click)="removetab3(i)"
                     (click)="declinerequesttab3(dealPer.userid,interestcateginittemp31); clicked104 = true;">Decline Request</button> &nbsp; &nbsp; &nbsp; &nbsp;
@@ -621,9 +641,9 @@
                     (click)="declinerequesttab3(dealPer.userid,interestcateginittemp33); clicked106 = true;">Decline Request</button> &nbsp; &nbsp; &nbsp; &nbsp;
             <button  mat-button routerLink="/Community1" [disabled]="clicked106"  (click)="removetab3(i)"
                      (click)="acceptrequesttab3(dealPer.userid,interestcateginittemp33); clicked106 = true;">Accept Request</button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
-            <button  mat-button  (click)="removetab3(i)" (click)="nexttab3(dealPer.userid)" routerLink="/Meetup/Tab3">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+            <button  mat-button  (click)="removetab3(i)" (click)="nexttab3(dealPer.userid)" routerLink="/Meetup/RequestReceived">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
           </a>
-        </mat-action-row>
+          </mat-card> </a>
 
       </mat-expansion-panel>
     </a>
@@ -631,7 +651,7 @@
 </a>
 
 <!-- tab2 display -->
-<br> <mat-divider></mat-divider> <br> <a class="tab2"></a> <a *ngIf="tab2nullflag==''">Members who are now your connection: <b>Mutually Accepted</b></a>
+<br> <mat-divider></mat-divider> <br> <a class="tab2"></a> <h2 *ngIf="tab2nullflag==''">Members who are now your connection: <b>Mutually Accepted</b></h2>
 <a *ngIf="initializerflag2=='yes'">
   <mat-accordion class="example-headers-align" multi>
     <a *ngFor="let dealPer of ngfortab2array; let i = index">
@@ -699,7 +719,8 @@
 
         </a>
 
-        <mat-action-row class="example-card" style="text-align:center;" fxLayout="column" fxLayoutAlign="space-around center">
+        <a style="text-align:center;">
+          <mat-card>
           <a *ngIf="i==0">
             <button  mat-button (click)="nextStep()" [disabled]="clicked107" (click)="removetab2(i)"
                      (click)="nexttab2(dealPer.userid); clicked107 = true;">Next Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
@@ -710,14 +731,19 @@
           </a>
           <a *ngIf="i==2">
             <button  mat-button [disabled]="clicked109" (click)="removetab2(i)"
-                     (click)="nexttab2(dealPer.userid); clicked109 = true;" routerLink="/Meetup/Tab2">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
+                     (click)="nexttab2(dealPer.userid); clicked109 = true;" routerLink="/Meetup/MutuallyAccepted">Show All</button> &nbsp; &nbsp; &nbsp; &nbsp;
           </a>
-        </mat-action-row>
+          </mat-card> </a>
 
       </mat-expansion-panel>
     </a>
   </mat-accordion>
-</a>
+</a> <mat-divider></mat-divider> <br>
+
+  <a style="text-align:center;">
+    <mat-card>
+      <button  mat-button  routerLink="/Meetup/AllMembers">Show All Member Profiles</button> &nbsp; &nbsp; &nbsp; &nbsp;
+    </mat-card> </a> <br>
 
 </div>
 <!-- class11 is ad space right-->
