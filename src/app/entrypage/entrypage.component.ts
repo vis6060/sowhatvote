@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TermsdialogboxComponent} from "../termsdialogbox/termsdialogbox.component";
-import {MatDialog} from '@angular/material/dialog';
+import {Cache} from "aws-amplify";
+
 
 @Component({
   selector: 'app-entrypage',
@@ -9,17 +9,14 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class EntrypageComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  openTerms() {
-    const dialogRef = this.dialog.open(TermsdialogboxComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+  async mimicmidtermclick() {
+    const expiration = new Date().valueOf()
+    Cache.setItem('midtermenter', 'yes', {expires: expiration + 60000});
   }
 
 }

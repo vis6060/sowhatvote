@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticatorService } from '@aws-amplify/ui-angular';
-import Amplify, {Auth, Cache, Predictions, Storage} from "aws-amplify";
+import Amplify, {Auth, Cache,  Storage} from "aws-amplify";
 import awsExports from "src/aws-exports";
 import {API} from 'aws-amplify';
-import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
+import { CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from "../big5parta/big5parta.component";
 import {APIService, DatinguserdbStaging} from "../API.service";
 import {MatDialog} from '@angular/material/dialog';
 import { Hub } from 'aws-amplify';
-import {TermsdialogboxComponent} from "../termsdialogbox/termsdialogbox.component";
+
 
 @Component({
   selector: 'app-loginbox',
@@ -33,17 +33,15 @@ export class LoginboxComponent implements OnInit {
   //    console.log('A new auth event has happened: ', data.payload.data.username + ' has ' + data.payload.event);
       if(data.payload.event=="signIn") {location.reload();}
       if(data.payload.event=="signOut") {location.reload()}
-      if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus")} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
-      if(Cache.getItem('profileFstatus')=="yes") {Cache.removeItem("profileFstatus")} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
-  //    if(Cache.getItem('usernoexist')=="yes") {Cache.removeItem("usernoexist"); this.router.navigate(['/Meetup/Step0'])} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
-
+  //    if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus")} //cannot have these as when we go from step0 to Community2 page, community2page needs the profileAstatus flag //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+  //    if(Cache.getItem('profileFstatus')=="yes") {Cache.removeItem("profileFstatus")} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+      //    if(Cache.getItem('usernoexist')=="yes") {Cache.removeItem("usernoexist"); this.router.navigate(['/Meetup/Step0'])} //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
     })
   }
 
   ngOnInit(): void {
     this.showexistingprofile()
-
- //   this.showemail();
+    //   this.showemail();
   //  this.movenextpage()
 //    Cache.removeItem("meetupclicked");  Cache.removeItem("midtermclicked"); Cache.removeItem("profileAstatus");
  //   Cache.removeItem("profileDstatus"); Cache.removeItem("profileEstatus"); Cache.removeItem("profileFstatus");
@@ -216,14 +214,5 @@ export class LoginboxComponent implements OnInit {
     },
   };
 
-  openTerms() {
-    const dialogRef = this.dialog.open(TermsdialogboxComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
 }
-
-

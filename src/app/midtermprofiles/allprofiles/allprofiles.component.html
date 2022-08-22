@@ -5,7 +5,7 @@
 <!-- class2 is center main content -->
 <div class="class2" >
 
-<a> <b> Names of all Candidates and Senators on SoWhat Vote </b></a>
+<h1 style="text-align:center;"> <b> Names of all Candidates and Senators on SoWhat Vote! </b></h1>
 
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
   <!-- This is the tree node template for leaf nodes -->
@@ -25,6 +25,10 @@
     {{node.name}}
   </mat-tree-node>
 </mat-tree>
+
+  <br> <br> <mat-divider></mat-divider>
+  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+
 
 </div>
 <!-- class3 is ad space right-->

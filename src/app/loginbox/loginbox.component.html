@@ -19,7 +19,7 @@
     >
       I agree with the Terms & Conditions and Privacy Policy
     </amplify-checkbox>
-    <button mat-button class="terms-button" (click)="openTerms()">Review Terms & Conditions and Privacy Policy</button>
+    <button mat-button class="terms-button" routerLink="/TermsPrivacy">Review Terms & Conditions and Privacy Policy</button>
   </ng-template>
 
   <!-- signed-in content override -->
@@ -41,6 +41,12 @@
 <div class="class4" >
 
 <ng-container *ngIf="authenticator.route === 'authenticated'">
+
+  <a style="text-align:center;">
+    <mat-card>
+      <button mat-button routerLink="/2022MidtermElections/USSenate">Visit Midterm Elections Survey Page</button>
+    </mat-card> </a> <br>
+
 <!-- Show the tabs on top and the content underneath it -->
 <!--tab1: Display all the contents of the Meetup data form they enetered and option to edit it-->
 <mat-tab-group animationDuration="0ms">

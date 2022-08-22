@@ -33,12 +33,13 @@ export class Big5partaComponent implements OnInit {
     Amplify.configure(awsExports); this.router = _router;
     if(Cache.getItem('profileAstatus')=="yes") { this.reloadscreenblankit="yes"}
     if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
+    this.movenextpage()
   }
   reloadscreenblankit=""
 
   ngOnInit(): void {
     this.zeroFormGroup = this._formBuilder.group({});
-    this.movenextpage()
+  //  this.movenextpage()
   }
 
   //refreshes the browser upon button click of next or dislike or connectme
@@ -51,13 +52,14 @@ export class Big5partaComponent implements OnInit {
 
 locationreload() {  location.reload();}
 
-  //movenextpage() { if(Cache.getItem('profileAstatus')=="yes") {this.seccompleteA();this.router.navigate(['/2022MidtermElections/USSenate'])}}
+  movenextpage() { if(Cache.getItem('profileAstatus')=="yes") {this.seccompleteA();}}
 
-   movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('midtermclicked')=="yes" || Cache.getItem('midtermenter')=="yes") )  {
-    this.seccompleteA();}
+ //  movenextpage() { if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('midtermclicked')=="yes" || Cache.getItem('midtermenter')=="yes") )  {
+  //  this.seccompleteA();}
 
-  else if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes"))  {
-       this.seccompleteA(); }}
+ // else if(Cache.getItem('profileAstatus')=="yes" && (Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes"))  {
+   //    this.seccompleteA(); }}
+
 
 //to enure that zip codes are only numbers
   numberOnly(event:any): boolean {
@@ -219,14 +221,14 @@ locationreload() {  location.reload();}
    if(Cache.getItem('midtermclicked')=="yes" || Cache.getItem('midtermenter')=="yes") {
      this.router.navigate(['/Community1']) }
    if(Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes") {
-     this.router.navigate(['/Meetup/Step3'])
-   }
+     this.router.navigate(['/Meetup/Step3'])}
+
     }).catch(error => {console.log(error.response3);});
   }
 
   async seccompleteflag() {
     const expiration = new Date().valueOf()
-    Cache.setItem('profileAstatus', 'yes', { expires: expiration +1800000 }); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+    Cache.setItem('profileAstatus', 'yes', { expires: expiration +60000 }); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
   }
 
 

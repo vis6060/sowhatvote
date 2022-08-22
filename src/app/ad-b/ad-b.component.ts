@@ -9,19 +9,22 @@ import {APIService} from "../API.service";
 })
 export class AdBComponent implements OnInit {
 
-  constructor(private api: APIService,) { }
+  constructor(private api: APIService,) {
+    if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"; console.log("profileAflagsetinconsrructor")}
+    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
+  }
 
   ngOnInit(): void {
     this.webpageroute()
     this.delayButton1(2000)
+
   }
 
   webpagevalue="";whichtab="";profileFflag="";profileAflag=""
   delayflag1:boolean=true;
 
   async webpageroute() {
-    if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"}
-    if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
+
     const user = await Auth.currentAuthenticatedUser();
 //has the comcategory for whom the results need to be display as view results button was clicked and then there were two ad pages.
     this.api.Getwebpagevalue(user.attributes.sub).then((event2) => {this.webpagevalue=event2.comcateg as unknown as any;});
