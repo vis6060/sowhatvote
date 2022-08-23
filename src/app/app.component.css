@@ -6,6 +6,11 @@
 {  justify-content: left;
 }
 
+.mat-tab-link, .mat-tab-label, .mat-tab-label-active{
+  min-width: 0!important;
+  padding: 3px!important;
+  margin: 3px!important;
+}
 
 .class1{
   width: 25%;

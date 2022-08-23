@@ -9,8 +9,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="authenticator.route != 'authenticated'">
   <nav mat-tab-nav-bar>
     <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/MyAccount" (click)="midtermclickedI()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/MyAccount" (click)="meetupclickedI()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/MyAccount" (click)="midtermclickedI()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/MyAccount" (click)="meetupclickedI()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
@@ -19,8 +19,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="authenticator.route === 'authenticated' && usernoexist=='yes'">
   <nav mat-tab-nav-bar>
     <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="midtermclickedA()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="meetupclickedA()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="midtermclickedA()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="meetupclickedA()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
     <!--   <mat-icon class="icontext" aria-hidden="false">logout</mat-icon> -->
   </nav>
@@ -31,8 +31,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="authenticator.route === 'authenticated' && profilecompPartA=='no' ">
   <nav mat-tab-nav-bar>
     <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="midtermclickedA()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="meetupclickedA()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="midtermclickedA()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="meetupclickedA()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
     <!--   <mat-icon class="icontext" aria-hidden="false">logout</mat-icon> -->
   </nav>
@@ -42,8 +42,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="profilecompPartA=='yes' && profilecompPartD=='no' && authenticator.route === 'authenticated'">
 <nav mat-tab-nav-bar>
   <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step3" (click)="meetupclicked()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step3" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
@@ -51,8 +51,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="profilecompPartD=='yes' && profilecompPartE=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
     <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step4" (click)="meetupclicked()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step4" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
@@ -60,8 +60,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="profilecompPartE=='yes' && profilecompPartF=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
     <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/Step5" (click)="meetupclicked()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Step5" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
@@ -69,8 +69,8 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <a *ngIf="authenticator.route === 'authenticated' && profilecompPartF=='yes' ">
   <nav mat-tab-nav-bar>
     <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
-    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Midterm Elections</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/Home" (click)="meetupclicked()"><b>Connect with your Community</b></a>
+    <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/Home" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
   </nav>
 </a>
@@ -83,9 +83,9 @@ steps, espcially for profile picture there could be interuption. tell user they 
   <nav mat-tab-nav-bar>
     <a mat-tab-link class="class5" routerLink="/Meetup/Home"><b>Home</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/AllMembers"><b>Browse All Members</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/MutuallyAccepted"><b>View Mutually Accepted Request</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/RequestReceived"><b>To Connect Request Received</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/RequestSent"><b>Connect Request Sent by You</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/MutuallyAccepted"><b>Mutually Accepted Request</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/RequestReceived"><b>Connect Request Received</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/RequestSent"><b>Connect Request Sent</b></a>
   </nav>
 </a>
 
@@ -94,9 +94,9 @@ steps, espcially for profile picture there could be interuption. tell user they 
   <nav mat-tab-nav-bar>
     <a mat-tab-link class="class5" routerLink="/Meetup/Home"><b>Home</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/AllMembers"><b>Browse All Members</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/MutuallyAccepted"><b>View Mutually Accepted Request</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/RequestReceived"><b>To Connect Request Received</b></a>
-    <a mat-tab-link class="class5" routerLink="/Meetup/RequestSent"><b>Connect Request Sent by You</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/MutuallyAccepted"><b>Mutually Accepted Request</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/RequestReceived"><b>Connect Request Received</b></a>
+    <a mat-tab-link class="class5" routerLink="/Meetup/RequestSent"><b>Connect Request Sent</b></a>
   </nav>
 </a>
 

@@ -224,6 +224,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/loyaltyadd": {
+      "name": "/loyaltyadd",
+      "lambdaFunction": "test48aa9bd44",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
