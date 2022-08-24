@@ -33,6 +33,8 @@ export class Big5partaeditComponent implements OnInit {
     this.zeroFormGroup = this._formBuilder.group({});
   }
 
+  locationreload() {  location.reload();}
+
   zeroFormGroup: FormGroup;
   agestore1=""; educationstore1=""; genderstore1="";
   toggleBool0: boolean=true;

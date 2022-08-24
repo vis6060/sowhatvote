@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'Meetup/Step4', component: Big5parteComponent,},
   { path: 'Meetup/Step5', component: Big5partfComponent,},
   { path: 'TermsPrivacy', component: TermsdialogboxComponent,},
+
   {
     path: '2022MidtermElections/USSenate',
     loadChildren: () =>
@@ -44,6 +45,11 @@ const routes: Routes = [
   },
   {
     path: '2022MidtermElections/AllProfileNames',
+    loadChildren: () =>
+      import('./midtermprofiles/midtermprofiles.module').then((m) => m.MidtermprofilesModule),
+  },
+  {
+    path: 'AllProfileNames',
     loadChildren: () =>
       import('./midtermprofiles/midtermprofiles.module').then((m) => m.MidtermprofilesModule),
   },

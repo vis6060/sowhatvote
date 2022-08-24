@@ -415,6 +415,13 @@ export class Tab3displaynavComponent implements OnInit {
       new Date().valueOf()).then((event1) => {})
   }
 
+  async loyaltynext() {
+    const user = await Auth.currentAuthenticatedUser();
+    //20points for clicking the next button
+    const paramsp3 = {body: {userid: user.attributes.sub,}}
+    API.post("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+  }
+
   ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
 
 

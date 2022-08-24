@@ -19,8 +19,8 @@ export class AppComponent {
     this.routeOnRefresh()
     this.routeOnRefreshmidterm()
  //   this.refreshtab()
-    console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
-    console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
+   console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
+   console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
     console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
     console.log( 'midtermclicked homepage cache', Cache.getItem('midtermclicked'))
     console.log('myaccountenter homepage cache', Cache.getItem('myaccountenter'))
@@ -129,8 +129,6 @@ export class AppComponent {
       this.routeflagmidterm = "yes"
     }
   }
-
-
 
 
 }

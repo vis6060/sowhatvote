@@ -612,9 +612,14 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     data: {voteflag: 'I16nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I16sen');
     this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I16nsen", "I16sen",100).then((event) => {});});}
 
-
+  async loyaltyview() {
+  const user = await Auth.currentAuthenticatedUser();
+  //this removes the itemid from index 0 position, do this only once the itemid has move to the other tab
+  const paramsp3 = {body: {userid: user.attributes.sub,}}
+  API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
 }
 
+}
 export interface DialogDatasenate {
   voteflag: 'Overallysen' | 'Overallnsen' |'P0ysen' |'P0nsen' |'P1ysen' |'P1nsen' |'P2ysen' |'P2nsen'|'P3ysen' |'P3nsen'|'P4ysen' |'P4nsen'|'P5ysen' |'P5nsen'|'P6ysen' |'P6nsen'
     |'P7ysen' |'P7nsen'|'P8ysen' |'P8nsen'|'P9ysen' |'P9nsen'|'P10ysen' |'P10nsen'|'P11ysen' |'P11nsen'|'P12ysen' |'P12nsen'|'P13ysen' |'P13nsen'|'P14ysen' |'P14nsen'|'P15ysen' |'P15nsen'

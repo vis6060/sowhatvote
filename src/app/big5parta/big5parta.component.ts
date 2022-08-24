@@ -131,7 +131,7 @@ locationreload() {  location.reload();}
         loyalty: this.loyalty+5000, profilename: this.profilename,
         profilecompPartA:this.profilecompPartA,
         profilecompPartD:this.profilecompPartD, profilecompPartE:this.profilecompPartE, profilecompPartF:this.profilecompPartF,
-        newWidth:this.newWidth, newHeight:this.newHeight,
+        newWidth:this.newWidth, newHeight:this.newHeight, cookiestatus:"",
       Step3Edit:this.Step3Edit,Step4Edit:this.Step4Edit,Step5Edit:this.Step5Edit,
         timestamp:new Date().toLocaleDateString('en-us', {day:"numeric", month:"long", year:"numeric"}),
         timeunix:new Date().valueOf(), lastmeetupviewdate: new Date().valueOf(),

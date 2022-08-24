@@ -84,6 +84,11 @@
           </section>
         </mat-card-content>
       </mat-card>
+
+
+
+      <br>   <button mat-button (click)="locationreload()" >Reset Form Content(s)</button> <br>
+
       <a *ngIf="ziperrorflag=='yes'">
         <b> <br> Please enter a valid zipcode. </b>
         <button  mat-button (click)="reloadComponent()" >Reset This Page</button>

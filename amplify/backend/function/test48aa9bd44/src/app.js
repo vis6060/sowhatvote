@@ -17,14 +17,14 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-let tableName = "";
+let tableName = "datinguserdb";
 if (process.env.ENV && process.env.ENV !== "NONE") {
   tableName = tableName + '-' + process.env.ENV;
 }
 
 const userIdPresent = false; // TODO: update in case is required to use that definition
-const partitionKeyName = "";
-const partitionKeyType = "";
+const partitionKeyName = "userid";
+const partitionKeyType = "S";
 const sortKeyName = "";
 const sortKeyType = "";
 const hasSortKey = sortKeyName !== "";
@@ -149,9 +149,27 @@ app.put(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [
+      { AttributeName: "userid", AttributeType: "S" }
+    ],
+    Key: {
+      "userid": req.body.userid,
+    },
+    UpdateExpression: "set loyalty=loyalty + :increment", //used in voting instate section
+//    ExpressionAttributeNames:{
+ //     "#loyalty": req.body.loyalty
+ //   },
+    ExpressionAttributeValues: {
+      ":increment": 50,
+    },
+    ReturnValues: "ALL_OLD"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
@@ -164,7 +182,6 @@ app.put(path, function(req, res) {
 /************************************
 * HTTP post method for insert object *
 *************************************/
-
 app.post(path, function(req, res) {
 
   if (userIdPresent) {
@@ -173,14 +190,32 @@ app.post(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [
+      { AttributeName: "userid", AttributeType: "S" }
+    ],
+    Key: {
+      "userid": req.body.userid,
+    },
+    UpdateExpression: "set loyalty=loyalty + :increment", //used in voting instate section
+//    ExpressionAttributeNames:{
+ //     "#loyalty": req.body.loyalty
+  //  },
+    ExpressionAttributeValues: {
+      ":increment": 20,
+    },
+    ReturnValues: "ALL_OLD"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
-      res.json({error: err, url: req.url, body: req.body});
-    } else {
-      res.json({success: 'post call succeed!', url: req.url, data: data})
+      res.json({ error: err, url: req.url, body: req.body });
+    } else{
+      res.json({ success: 'put call succeed!', url: req.url, data: data })
     }
   });
 });

@@ -10,7 +10,7 @@
 <a *ngIf="endofarray5=='yes'"> Sorry, no more matches. Please visit other sections.
 </a>
 
-<a *ngIf="endofarray5!='yes'"> <b> We found {{tab5length}} matches!</b>
+<a *ngIf="endofarray5!='yes'"> <b> We found {{tab5length}} matches!</b> <br>
 
   <!-- on screen refresh-ngoinit executes this for index0 itemid -->
   <a *ngIf="initializerflag=='yes' && onetimenextflag==''">
@@ -52,7 +52,7 @@
         </button> &nbsp; &nbsp; &nbsp; &nbsp; <br> <br>
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="ontop()"
-                (click)="onetimenextnext(); clicked = true;">Next Profile</button>
+                (click)="loyaltynext()"      (click)="onetimenextnext(); clicked = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>
@@ -97,7 +97,7 @@
         >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;<br> <br>
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()"
-                (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+                (click)="loyaltynext()"    (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>
@@ -142,7 +142,7 @@
         >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;<br> <br>
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="viewtoggle2back(); clicked = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
         <button mat-button [disabled]="clicked" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="ontop()"
-                (click)="viewtoggle2next(); clicked = true;">Next Profile</button>
+                (click)="loyaltynext()"   (click)="viewtoggle2next(); clicked = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>
@@ -186,7 +186,7 @@
         >Connect Me</button> &nbsp; &nbsp; &nbsp; &nbsp;<br> <br>
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;">Previous Profile</button> &nbsp; &nbsp; &nbsp; &nbsp;
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()"
-                (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
+                (click)="loyaltynext()"    (click)="viewtoggle1next(); clicked1 = true;">Next Profile</button>
       </mat-card>
     </a>
   </a>

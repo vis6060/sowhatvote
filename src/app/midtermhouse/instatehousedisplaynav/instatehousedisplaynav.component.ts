@@ -22,7 +22,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   constructor(public dialog: MatDialog, public authenticator: AuthenticatorService, private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router,private titlecasePipe:TitleCasePipe,private renderer: Renderer2) {
     Amplify.configure(awsExports); this.router = _router;
     if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
-    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
+//    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
 
   ngOnInit(): void {
@@ -645,6 +645,12 @@ export class InstatehousedisplaynavComponent implements OnInit {
     data: {voteflag: 'I16n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I16');
     this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I16n", "I16",100).then((event) => {});});}
 
+  async loyaltyview() {
+    const user = await Auth.currentAuthenticatedUser();
+    //this removes the itemid from index 0 position, do this only once the itemid has move to the other tab
+    const paramsp3 = {body: {userid: user.attributes.sub,}}
+    API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+  }
 
 }
 

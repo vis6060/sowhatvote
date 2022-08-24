@@ -6,11 +6,7 @@
 {  justify-content: left;
 }
 
-.mat-tab-link, .mat-tab-label, .mat-tab-label-active{
-  min-width: 0!important;
-  padding: 3px!important;
-  margin: 3px!important;
-}
+
 
 .class1{
   width: 25%;
@@ -44,5 +40,10 @@
   }
   .class5 {
     font-size: 9px;
+  }
+  .mat-tab-link, .mat-tab-label, .mat-tab-label-active{
+    min-width: 0!important;
+    padding: 3px!important;
+    margin: 3px!important;
   }
 }

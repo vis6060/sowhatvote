@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {API, Auth, Cache} from "aws-amplify";
 import {APIService} from "../API.service";
+import {Router} from "@angular/router";
+import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 @Component({
   selector: 'app-ad-a',
@@ -9,8 +11,10 @@ import {APIService} from "../API.service";
 })
 export class AdAComponent implements OnInit {
 
-  constructor(private api: APIService,) {
+
+  constructor(private api: APIService,private router: Router,public authenticator: AuthenticatorService) {
   // if(Cache.getItem('')!=null) {Cache.removeItem("");}
+ //   if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])} //SEO crawlers can then access the html conetents
   }
 
   ngOnInit(): void {
@@ -26,9 +30,9 @@ export class AdAComponent implements OnInit {
 
   selectorflag:number
 //random number generator which chooses which view section to show
-   randomgen() {//this finds a number between 1 and 10, inclusive of both
+   randomgen() {//this finds a number between 1 and 6, inclusive of both
   let  min = Math.ceil(1);
-  let   max = Math.floor(3);
+  let   max = Math.floor(6);
      this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
    }
 

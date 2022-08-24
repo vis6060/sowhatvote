@@ -22,7 +22,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
     Amplify.configure(awsExports);
     this.router = _router;
     if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
-    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
+//    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
 
   ngOnInit(): void {
@@ -501,6 +501,14 @@ export class InstategovernordisplaynavComponent implements OnInit {
   async NAYclickP25() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
     data: {voteflag: 'P25ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P25gov');
     this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P25ngov", "P25gov",100).then((event) => {});});}
+
+  async loyaltyview() {
+    const user = await Auth.currentAuthenticatedUser();
+    //this removes the itemid from index 0 position, do this only once the itemid has move to the other tab
+    const paramsp3 = {body: {userid: user.attributes.sub,}}
+    API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+  }
+
 }
 
 export interface DialogDatagovern {
