@@ -30,6 +30,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     this.gethompage1Binitialize();
     this.zeroFormGroup = this._formBuilder.group({});
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
+    this.randomgen()
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
@@ -618,6 +619,15 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   const paramsp3 = {body: {userid: user.attributes.sub,}}
   API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
 }
+
+  selectorflag:number
+//random number generator which chooses which view section to show
+  randomgen() {//this finds a number between 1 and 6, inclusive of both
+    let  min = Math.ceil(1);
+    let   max = Math.floor(6);
+    this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
 
 }
 export interface DialogDatasenate {
