@@ -8,7 +8,6 @@
 
   <p>Participate in surveys and rate the performance of US senators, US house of representatives, and state officials of your home state
     on issues that matter to the community. </p>
-  <p> View survey results of all candidates. </p>
   <p>Connect with community members who share a similar interest. </p>
 
 
@@ -17,20 +16,34 @@
   <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount">Get Started</button>
     </mat-card> </a> <br>
 
-  <mat-divider></mat-divider>
-  <p> <button mat-button class="terms-button"  routerLink="/AllProfileNames">List of all 2022 Midterm Election Candidates on SoWhat Vote!</button> </p>
-  <p> <button mat-button class="terms-button"  routerLink="/Community1">Ways of Helping Your Community Part 1</button> </p>
-  <p> <button mat-button class="terms-button"  routerLink="/Community2">Ways of Helping Your Community Part 2</button> </p> <br>
+  <!-- cookie banner-->
+  <!--   <button mat-button onclick="dataLayer.push({event:'gtm.elementVisibility', ads_data_redaction: true});"
+  (click)="clicked1 = true;">Cookie Accept Initial</button> -->
+  <button mat-button onclick="gtag('set', {ads_data_redaction: true})" (click)="clicked1 = true;">Cookie Accept Initial</button>
 
-  <mat-divider></mat-divider>
-  <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.
-    <mat-icon inline=true>copyright</mat-icon>2022 SoWhat Vote, LLC. All rights reserved. </p>
-<p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
-<small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+  <mat-card  *ngIf="clicked1==true || banner=='yes'"> <a id="GTM-TVJ45PB">Cont Displayed</a> </mat-card>
 
 
 
-</div>
-<!-- class11 is ad space right-->
+    <mat-divider></mat-divider>
+    <p> <button mat-button class="terms-button"  routerLink="/AllProfileNames">List of all 2022 Midterm Election Candidates on SoWhat Vote!</button> </p>
+    <p> <button mat-button class="terms-button"  routerLink="/Community1">Ways of Helping Your Community Part 1</button> </p>
+    <p> <button mat-button class="terms-button"  routerLink="/Community2">Ways of Helping Your Community Part 2</button> </p> <br>
+
+    <mat-divider></mat-divider>
+    <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.
+      <mat-icon inline=true>copyright</mat-icon>2022 SoWhat Vote, LLC. All rights reserved. </p>
+  <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
+    <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: false})" (click)="clicked2 = true;">
+      <small>Do not sell my personal information </small></button> </p>
+    <mat-card  *ngIf="clicked2==true"> <a id="/"><small>Thank you. Your response has been recorded </small></a> </mat-card>
+
+
+  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+
+
+
+  </div>
+  <!-- class11 is ad space right-->
 <div class="class11" >
 </div>

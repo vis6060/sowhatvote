@@ -14,6 +14,7 @@ import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component'
 import {AdBComponent} from "./ad-b/ad-b.component";
 import {EntrypageComponent} from "./entrypage/entrypage.component";
 import {TermsdialogboxComponent} from "./termsdialogbox/termsdialogbox.component";
+import {CookiebannerComponent} from "./cookiebanner/cookiebanner.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'Meetup/Step4', component: Big5parteComponent,},
   { path: 'Meetup/Step5', component: Big5partfComponent,},
   { path: 'TermsPrivacy', component: TermsdialogboxComponent,},
-
+  { path: 'Cookie', component: CookiebannerComponent,},
   {
     path: '2022MidtermElections/USSenate',
     loadChildren: () =>

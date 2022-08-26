@@ -1,0 +1,28 @@
+
+
+<h4> <small> We value your privacy </small></h4>
+
+<p> <small> We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic.
+  By clicking "Accept All", you consent to our use of cookies.
+<button mat-button style="color:blue; text-decoration: underline;" class="terms-button" routerLink="/TermsPrivacy">Privacy Policy</button> </small> </p>
+
+<a style="text-align:right;">
+  <button mat-button onclick="gtag('set', {ads_data_redaction: true});
+     gtag('consent', 'update', {
+  ad_storage: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'denied',
+  personalization_storage: 'denied',
+  security_storage: 'denied'
+  })" (click)="changemind()"
+  >Reject All</button> &nbsp;  &nbsp;  &nbsp;  &nbsp;
+
+  <button mat-button  (click)="changemind()">Accept All</button> </a> <!-- no event need to be sent to google as by default cookies are granted -->
+
+
+
+<!-- this will set the deny cookies value -->
+ <a  *ngIf="clicked1==true"> <a id="GTM-TVJ45PB"></a>thank you</a>
+
+
+

@@ -50,7 +50,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TermsdialogboxComponent } from './termsdialogbox/termsdialogbox.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {RouterModule} from "@angular/router";
+import {WindowReferenceService} from "./window-reference.service";
+import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +68,8 @@ import {RouterModule} from "@angular/router";
     Industrylevel2newComponent,
     AdBComponent,
     EntrypageComponent,
-    TermsdialogboxComponent
+    TermsdialogboxComponent,
+    CookiebannerComponent
   ],
   imports: [
     BrowserModule,
@@ -92,6 +96,7 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     MatDialogModule,
     MatDividerModule,
+    MatSnackBarModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
