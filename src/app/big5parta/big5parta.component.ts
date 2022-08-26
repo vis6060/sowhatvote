@@ -228,7 +228,7 @@ locationreload() {  location.reload();}
 
   async seccompleteflag() {
     const expiration = new Date().valueOf()
-    Cache.setItem('profileAstatus', 'yes', { expires: expiration +60000 }); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+    Cache.setItem('profileAstatus', 'yes', { expires: expiration +1800000 }); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
   }
 
 
