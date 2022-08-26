@@ -32,8 +32,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import {DirectAccessGuardService} from "./direct-access-guard.service";
 import { AdAComponent } from './ad-a/ad-a.component';
 import { LoginboxComponent } from './loginbox/loginbox.component';
 import { Big5partaComponent } from './big5parta/big5parta.component';
@@ -51,8 +49,6 @@ import { TermsdialogboxComponent } from './termsdialogbox/termsdialogbox.compone
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {RouterModule} from "@angular/router";
-import {WindowReferenceService} from "./window-reference.service";
 import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
 @NgModule({
   declarations: [
@@ -98,7 +94,8 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     MatDividerModule,
     MatSnackBarModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+ // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 //@ts-ignore

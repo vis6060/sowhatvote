@@ -15,7 +15,7 @@ export class EntrypageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.openSnackBar()
+  //  this.openSnackBar()
   }
 
   clicked1:boolean;clicked2:boolean; banner=""

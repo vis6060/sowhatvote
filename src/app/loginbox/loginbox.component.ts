@@ -141,7 +141,8 @@ export class LoginboxComponent implements OnInit {
 
       if(Cache.getItem('myaccountenter')=="yes") { this.router.navigate(['/MyAccount']) } else
       if(response1.data[0].profilecompPartA=='no') {this.router.navigate(['/Meetup/Step0'])} else
-      if(Cache.getItem('midtermenter')=="yes")  {this.router.navigate(['/2022MidtermElections/USSenate'])} else
+      if(Cache.getItem('midtermenter')=="yes")
+      {this.router.navigate(['/2022MidtermElections/USSenate'])} else
       if(response1.data[0].profilecompPartD=='no') {this.router.navigate(['/Meetup/Step3']) } else
       if(response1.data[0].profilecompPartE=='no') {this.router.navigate(['/Meetup/Step4']) } else
       if(response1.data[0].profilecompPartF=='no') {this.router.navigate(['/Meetup/Step5']) } else

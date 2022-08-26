@@ -23,6 +23,9 @@ export class InstategovernordisplaynavComponent implements OnInit {
     this.router = _router;
     if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
 //    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
+    const expiration = new Date().valueOf()
+    Cache.setItem('midtermenter', 'yes', { expires: expiration +1800000 }); // 30min as login needs to happen and PartA form needs to be completed
+
   }
 
   ngOnInit(): void {

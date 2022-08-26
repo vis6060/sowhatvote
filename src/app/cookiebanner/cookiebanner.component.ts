@@ -8,7 +8,9 @@ import {Cache} from "aws-amplify";
 })
 export class CookiebannerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    Cache.clear();
+  }
 
   ngOnInit(): void {
   }

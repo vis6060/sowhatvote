@@ -35,7 +35,10 @@ export class HomeComponent implements OnInit {
   router: Router;
   constructor(public authenticator: AuthenticatorService,public datepipe: DatePipe, private _matStepperIntl: MatStepperIntl,  private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router, private renderer: Renderer2) {
     Amplify.configure(awsExports); this.router = _router;
+    if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
     if(Cache.getItem('profileFstatus')=="yes") {Cache.removeItem("profileFstatus");location.reload();}
+    if(Cache.getItem('meetupenter')=="yes") {Cache.removeItem("meetupenter");} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
+
   }
 
   ngOnInit(): void {

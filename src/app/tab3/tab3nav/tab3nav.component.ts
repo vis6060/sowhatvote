@@ -27,10 +27,13 @@ export class Tab3navComponent implements OnInit {
   constructor(public datepipe: DatePipe, public authenticator: AuthenticatorService,private router: Router) {
     Amplify.configure(awsExports);
     if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])} else
-    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])} else
+   // if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])} else
     if(Cache.getItem('profDevade')=="yes") {this.router.navigate(['/Meetup/Step3'])} else
     if(Cache.getItem('profEevade')=="yes") {this.router.navigate(['/Meetup/Step4'])} else
     if(Cache.getItem('profFevade')=="yes") {this.router.navigate(['/Meetup/Step5'])}
+    const expiration = new Date().valueOf()
+    Cache.setItem('meetupenter', 'yes', { expires: expiration +1800000 }); // 30min as login needs to happen and PartA form needs to be completed
+
   }
 
   ngOnInit(): void {

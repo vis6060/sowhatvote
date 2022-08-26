@@ -23,7 +23,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     this.router = _router;
  if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
  if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
- //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
+    if(Cache.getItem('midtermenter')=="yes") {Cache.removeItem("midtermenter");} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
+     //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
 
   ngOnInit(): void {

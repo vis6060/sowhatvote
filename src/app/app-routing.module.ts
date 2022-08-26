@@ -10,11 +10,12 @@ import { Big5parteComponent } from './big5parte/big5parte.component';
 import { Big5partfComponent } from './big5partf/big5partf.component';
 import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component';
 
-//import {DirectAccessGuardService} from "./direct-access-guard.service";
+
 import {AdBComponent} from "./ad-b/ad-b.component";
 import {EntrypageComponent} from "./entrypage/entrypage.component";
 import {TermsdialogboxComponent} from "./termsdialogbox/termsdialogbox.component";
 import {CookiebannerComponent} from "./cookiebanner/cookiebanner.component";
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
