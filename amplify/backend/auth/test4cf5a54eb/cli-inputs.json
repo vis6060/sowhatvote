@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "test4cf5a54eb_identitypool_cf5a54eb",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "test4cf5a54eb",
     "userPoolName": "test4cf5a54eb_userpool_cf5a54eb",
     "autoVerifiedAttributes": [
@@ -36,7 +36,7 @@
     "sharedId": "cf5a54eb",
     "resourceName": "test4cf5a54eb",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
+    "useDefault": "defaultSocial",
     "usernameAttributes": [
       "email"
     ],
@@ -57,6 +57,14 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": []
+    "dependsOn": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "test4a894b7e7-a894b7e7",
+    "authProvidersUserPool": [
+      "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.sowhatvote.org/MyAccount/\"],\"LogoutURLs\":[\"https://www.sowhatvote.org/Community1/\"]}",
+    "authProviders": []
   }
 }

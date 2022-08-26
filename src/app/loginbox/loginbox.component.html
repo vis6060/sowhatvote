@@ -1,7 +1,8 @@
 
 
 
-<amplify-authenticator [services]="services" [loginMechanisms]="['email']" initialState="signUp">
+<amplify-authenticator [services]="services" [socialProviders]="['google']"
+                       [loginMechanisms]="['email']" initialState="signUp">
   <!-- sign-up-field override -->
   <ng-template
     amplifySlot="sign-up-form-fields"
