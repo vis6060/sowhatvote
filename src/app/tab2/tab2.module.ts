@@ -7,6 +7,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {RouterModule} from "@angular/router";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {RouterModule} from "@angular/router";
     MatGridListModule,
     FlexLayoutModule,
     MatButtonToggleModule,
+    MatDividerModule,
   ]
 })
 export class Tab2Module { }

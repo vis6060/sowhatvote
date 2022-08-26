@@ -9,6 +9,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {Tab3displaynavComponent} from "../tab3/tab3displaynav/tab3displaynav.component";
 import {Tab3bdisplaynavComponent} from "../tab3/tab3bdisplaynav/tab3bdisplaynav.component";
+import {MatDividerModule} from "@angular/material/divider";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {Tab3bdisplaynavComponent} from "../tab3/tab3bdisplaynav/tab3bdisplaynav.
     MatGridListModule,
     FlexLayoutModule,
     MatButtonToggleModule,
+    MatDividerModule,
   ]
 })
 export class Tab3Module { }

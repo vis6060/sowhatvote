@@ -10,6 +10,7 @@ import { Tab1adisplaynavComponent } from './tab1adisplaynav/tab1adisplaynav.comp
 import {RouterModule} from "@angular/router";
 import { Tab1bdisplaynavComponent } from './tab1bdisplaynav/tab1bdisplaynav.component';
 import { Tab1cdisplaynavComponent } from './tab1cdisplaynav/tab1cdisplaynav.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { Tab1cdisplaynavComponent } from './tab1cdisplaynav/tab1cdisplaynav.comp
     MatGridListModule,
     FlexLayoutModule,
     MatButtonToggleModule,
+    MatDividerModule,
   ]
 })
 export class Tab1Module { }

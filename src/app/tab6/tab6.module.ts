@@ -11,6 +11,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatDividerModule} from "@angular/material/divider";
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     MatGridListModule,
     FlexLayoutModule,
     MatButtonToggleModule,
+    MatDividerModule,
   ]
 })
 export class Tab6Module { }
