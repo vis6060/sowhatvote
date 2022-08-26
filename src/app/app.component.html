@@ -8,7 +8,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <!-- go the appropariate form Step which is incomplete-->
 <a *ngIf="authenticator.route != 'authenticated'">
   <nav mat-tab-nav-bar>
-    <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+    <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/MyAccount" (click)="midtermclickedI()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/MyAccount" (click)="meetupclickedI()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
@@ -18,7 +18,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <!-- first time user, their profile does not even exist in the datinguserdb table, so no profile flags. -->
 <a *ngIf="authenticator.route === 'authenticated' && usernoexist=='yes'">
   <nav mat-tab-nav-bar>
-    <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+    <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="midtermclickedA()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="meetupclickedA()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
@@ -30,7 +30,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <!-- go the appropariate form Step which is incomplete-->
 <a *ngIf="authenticator.route === 'authenticated' && profilecompPartA=='no' ">
   <nav mat-tab-nav-bar>
-    <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+    <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="midtermclickedA()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/Step0" (click)="meetupclickedA()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
@@ -41,7 +41,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 <!--<a *ngIf="profilecompPartD=='no' && profilecompPartA=='yes' && authenticator.route === 'authenticated' "> -->
 <a *ngIf="profilecompPartA=='yes' && profilecompPartD=='no' && authenticator.route === 'authenticated'">
 <nav mat-tab-nav-bar>
-  <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+  <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/Step3" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
@@ -50,7 +50,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 
 <a *ngIf="profilecompPartD=='yes' && profilecompPartE=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
-    <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+    <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/Step4" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
@@ -59,7 +59,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 
 <a *ngIf="profilecompPartE=='yes' && profilecompPartF=='no' && authenticator.route === 'authenticated'">
   <nav mat-tab-nav-bar>
-    <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+    <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/Step5" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
@@ -68,7 +68,7 @@ steps, espcially for profile picture there could be interuption. tell user they 
 
 <a *ngIf="authenticator.route === 'authenticated' && profilecompPartF=='yes' ">
   <nav mat-tab-nav-bar>
-    <img src="assets/Logo.png" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
+    <img src="assets/Logo.ico" routerLink="/" alt="SoWhat Vote!" style="float:left;width:80px;height:50px;">
     <a mat-tab-link class="class5" routerLink="/2022MidtermElections/USSenate" (click)="midtermclicked()"><b>2022 Elections</b></a>
     <a mat-tab-link class="class5" routerLink="/Meetup/Home" (click)="meetupclicked()"><b>Community Connect</b></a>
     <a mat-tab-link> <mat-icon class="icontext" (click)="myaccountclicked()" routerLink="/MyAccount">account_circle</mat-icon> </a>
