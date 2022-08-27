@@ -59,11 +59,13 @@
     "breakCircularDependency": true,
     "dependsOn": [],
     "hostedUI": true,
-    "hostedUIDomainName": "test4a894b7e7-a894b7e7",
+    "hostedUIDomainName": "test44cbde066-4cbde066",
     "authProvidersUserPool": [
-      "Google"
+      "Facebook",
+      "Google",
+      "LoginWithAmazon"
     ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}},{\"ProviderName\":\"LoginWithAmazon\",\"authorize_scopes\":\"profile profile:user_id\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"user_id\"}}]",
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.sowhatvote.org/MyAccount/\"],\"LogoutURLs\":[\"https://www.sowhatvote.org/Community1/\"]}",
     "authProviders": []
   }
