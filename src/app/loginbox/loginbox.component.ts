@@ -31,8 +31,8 @@ export class LoginboxComponent implements OnInit {
     //  const { payload } = data;
    //   this.onAuthEvent(payload);
   //    console.log('A new auth event has happened: ', data.payload.data.username + ' has ' + data.payload.event);
-      const expiration = new Date().valueOf()
-      if(data.payload.event=="signIn") {Cache.setItem('midtermenter', 'yes', { expires: expiration +1800000 });location.reload();}
+  //    const expiration = new Date().valueOf()
+      if(data.payload.event=="signIn") {location.reload();}
       if(data.payload.event=="signOut") {location.reload()}
    //   if(Cache.getItem('profileAstatus')!="yes") { Cache.setItem('midtermenter', 'yes', { expires: expiration +1800000 }) ;}
   //    if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus")} //cannot have these as when we go from step0 to Community2 page, community2page needs the profileAstatus flag //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
