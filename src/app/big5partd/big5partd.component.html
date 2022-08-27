@@ -33,7 +33,7 @@
 <p *ngIf="toggleBool5=='true'">Please answer all questions to move to next section.</p>
 
 
-    <br>   <button mat-button (click)="locationreload()" >Reset Form Content(s)</button> <br>
+    <br>   <button mat-button (click)="reloadComponent()" >Reset Form Content(s)</button> <br>
 
 <div *ngIf="toggleBool5=='false'&& editstep3flag==''">
   <button mat-button  (click)="seccompleteflag()" (click)="locationreload()" > Next</button>
