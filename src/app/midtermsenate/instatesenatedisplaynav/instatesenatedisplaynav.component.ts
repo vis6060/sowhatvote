@@ -21,10 +21,14 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   constructor(public dialog: MatDialog, public authenticator: AuthenticatorService, private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router,private titlecasePipe:TitleCasePipe,private renderer: Renderer2) {
     Amplify.configure(awsExports);
     this.router = _router;
- if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
+
  if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
     if(Cache.getItem('midtermenter')=="yes") {Cache.removeItem("midtermenter");} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
-     //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
+    if(Cache.getItem('meetupclicked')=="yes") {Cache.removeItem("meetupclicked");}
+    if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
+
+
+    //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
 
   ngOnInit(): void {
