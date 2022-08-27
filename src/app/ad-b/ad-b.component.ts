@@ -15,6 +15,9 @@ export class AdBComponent implements OnInit {
     if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"; console.log("profileAflagsetinconsrructor")}
     if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
  //   if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
+    console.log("webpagevalue is", this.webpagevalue)
+    console.log("whichtab is", this.whichtab)
+    console.log("profileAflag is",this.profileAflag)
   }
 
   ngOnInit(): void {
