@@ -33,6 +33,13 @@ export class Big5partaeditComponent implements OnInit {
     this.zeroFormGroup = this._formBuilder.group({});
   }
 
+  reloadComponent() {
+    let currentUrl = this.router.url;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([currentUrl]);
+  }
+
   locationreload() {  location.reload();}
 
   zeroFormGroup: FormGroup;

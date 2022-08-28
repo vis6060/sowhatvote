@@ -32,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdAComponent } from './ad-a/ad-a.component';
+
 import { LoginboxComponent } from './loginbox/loginbox.component';
 import { Big5partaComponent } from './big5parta/big5parta.component';
 import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component';
@@ -41,7 +41,7 @@ import { Big5parteComponent } from './big5parte/big5parte.component';
 import { Big5partfComponent } from './big5partf/big5partf.component';
 import { OccupationComponent } from './occupation/occupation.component';
 import { Industrylevel2newComponent } from './industrylevel2new/industrylevel2new.component';
-import { AdBComponent } from './ad-b/ad-b.component';
+
 import { EntrypageComponent } from './entrypage/entrypage.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -53,7 +53,6 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AdAComponent,
     LoginboxComponent,
     Big5partaComponent,
     Big5partaeditComponent,
@@ -62,7 +61,6 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     Big5partfComponent,
     OccupationComponent,
     Industrylevel2newComponent,
-    AdBComponent,
     EntrypageComponent,
     TermsdialogboxComponent,
     CookiebannerComponent
@@ -94,8 +92,8 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     MatDividerModule,
     MatSnackBarModule
   ],
-//  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+//  providers: [],
   bootstrap: [AppComponent]
 })
 //@ts-ignore
