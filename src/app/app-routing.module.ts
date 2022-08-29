@@ -12,7 +12,7 @@ import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component'
 
 import {EntrypageComponent} from "./entrypage/entrypage.component";
 import {TermsdialogboxComponent} from "./termsdialogbox/termsdialogbox.component";
-import {BlockComponent} from "./block/block.component";
+
 
 
 const routes: Routes = [
@@ -94,8 +94,7 @@ const routes: Routes = [
       import('./tab6/tab6.module').then(
         (m) => m.Tab6Module
       )
-  },
-  { path: '404', component: BlockComponent,},
+  }
 ];
 
 

@@ -50,7 +50,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
-import { BlockComponent } from './block/block.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +64,6 @@ import { BlockComponent } from './block/block.component';
     EntrypageComponent,
     TermsdialogboxComponent,
     CookiebannerComponent,
-    BlockComponent
   ],
   imports: [
     BrowserModule,
