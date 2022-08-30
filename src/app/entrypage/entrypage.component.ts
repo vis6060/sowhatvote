@@ -13,7 +13,7 @@ export class EntrypageComponent implements OnInit {
 
   constructor(public authenticator: AuthenticatorService, private _snackBar: MatSnackBar) {
     if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
-    if(Cache.getItem('myaccountenter')=="yes") { location.reload()}
+    if(Cache.getItem('myaccountenter')=="yes") {Cache.removeItem("myaccountenter"); location.reload()}
   }
 
   ngOnInit(): void {
