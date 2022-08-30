@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Cache} from "aws-amplify";
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CookiebannerComponent} from "../cookiebanner/cookiebanner.component";
+import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 @Component({
   selector: 'app-entrypage',
@@ -10,8 +11,9 @@ import {CookiebannerComponent} from "../cookiebanner/cookiebanner.component";
 })
 export class EntrypageComponent implements OnInit {
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(public authenticator: AuthenticatorService, private _snackBar: MatSnackBar) {
     if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
+    if(Cache.getItem('myaccountenter')=="yes") { location.reload()}
   }
 
   ngOnInit(): void {

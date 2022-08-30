@@ -12,9 +12,13 @@
 
 
   <a style="text-align:center;">
-    <mat-card>
+    <mat-card *ngIf="authenticator.route != 'authenticated'">
   <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount">Get Started</button>
-    </mat-card> </a> <br>
+    </mat-card>
+    <mat-card *ngIf="authenticator.route === 'authenticated'">
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate">Get Started</button>
+    </mat-card>
+  </a> <br>
 
   <h3>Express Your Voice With a Comment  </h3>
   <div class="fb-comments" data-href="https://www.sowhatvote.org" data-width="100%" data-numposts="10"></div>
