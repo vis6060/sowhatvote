@@ -23,8 +23,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     this.router = _router;
 
  if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
-    if(Cache.getItem('midtermenter')=="yes") {Cache.removeItem("midtermenter");} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
-    if(Cache.getItem('meetupclicked')=="yes") {Cache.removeItem("meetupclicked");}
+    if(Cache.getItem('midtermenter')=="yes") {Cache.removeItem("midtermenter"); location.reload()} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
+    if(Cache.getItem('meetupclicked')=="yes") {Cache.removeItem("meetupclicked"); location.reload()}
     if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
 
 

@@ -32,6 +32,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
     this.gethompage1Binitialize()
     this.zeroFormGroup = this._formBuilder.group({});
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
+    this.randomgen()
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array

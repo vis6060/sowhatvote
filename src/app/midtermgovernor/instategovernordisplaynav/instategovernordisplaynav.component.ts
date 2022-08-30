@@ -30,6 +30,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage1Binitialize();
+    this.randomgen()
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array

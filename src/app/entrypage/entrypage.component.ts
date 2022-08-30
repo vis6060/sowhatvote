@@ -22,7 +22,7 @@ export class EntrypageComponent implements OnInit {
 
   async mimicmidtermclick() {
     const expiration = new Date().valueOf()
-    Cache.setItem('midtermenter', 'yes', {expires: expiration + 60000});
+    Cache.setItem('midtermenter', 'yes', {expires: expiration + 1800000});
   }
 
   openSnackBar() {

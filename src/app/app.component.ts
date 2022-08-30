@@ -84,37 +84,37 @@ export class AppComponent {
 
   meetupclickedI() {
     const expiration = new Date().valueOf()
-      Cache.setItem('meetupenter', 'yes', { expires: expiration +60000 });
+      Cache.setItem('meetupenter', 'yes', { expires: expiration +1800000 });
       }
 
   midtermclickedI() {
     const expiration = new Date().valueOf()
-    Cache.setItem('midtermenter', 'yes', { expires: expiration +60000 });}
+    Cache.setItem('midtermenter', 'yes', { expires: expiration +1800000 });}
 
   myaccountclicked() {
     const expiration = new Date().valueOf()
-    Cache.setItem('myaccountenter', 'yes', { expires: expiration +60000 });
+    Cache.setItem('myaccountenter', 'yes', { expires: expiration +1800000 });
       }
 
   meetupclickedA() {this.meetupflag="yes"; this.midtermflag="no";
     const expiration = new Date().valueOf()
-    Cache.setItem('meetupclicked', 'yes', { expires: expiration +60000 }); //expires after 1minute, time is in ms.
+    Cache.setItem('meetupclicked', 'yes', { expires: expiration +1800000 }); //expires after 1minute, time is in ms.
   }
 
   midtermclickedA() {this.meetupflag="no"; this.midtermflag="yes";
     const expiration = new Date().valueOf()
-    Cache.setItem('midtermclicked', 'yes', { expires: expiration +60000 }); //expires after 1minute, time is in ms.
+    Cache.setItem('midtermclicked', 'yes', { expires: expiration +1800000 }); //expires after 1minute, time is in ms.
   }
 
   meetupclicked() {this.meetupflag="yes"; this.midtermflag="no";
     const expiration = new Date().valueOf()
-    Cache.setItem('meetupclicked', 'yes', { expires: expiration +60000 }); //expires after 1minute, time is in ms.
+    Cache.setItem('meetupclicked', 'yes', { expires: expiration +1800000 }); //expires after 1minute, time is in ms.
 
   }
 
   midtermclicked() {this.meetupflag="no"; this.midtermflag="yes";
     const expiration = new Date().valueOf()
-    Cache.setItem('midtermclicked', 'yes', { expires: expiration +60000 }); //expires after 1minute, time is in ms.
+    Cache.setItem('midtermclicked', 'yes', { expires: expiration +1800000 }); //expires after 1minute, time is in ms.
   }
 
   //when user is on tab1 and they refresh the screen, then below routeflag will ensure the tab1, tab2, tab3, tab6 toolbar will appear
