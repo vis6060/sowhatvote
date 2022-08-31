@@ -33,17 +33,17 @@
   <br>  <div class="fb-like" data-href="https://www.sowhatvote.org" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
   </mat-card>
 
-  <mat-divider></mat-divider>
+ <br> <mat-divider></mat-divider>
     <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p>
      <p> <mat-icon inline=true>copyright</mat-icon>2022 SoWhat Vote, LLC. All rights reserved. </p>
   <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
-    <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: false})" (click)="clicked2 = true;">
+    <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: false})" (click)="donotsellstore()"
+                (click)="clicked2 = true;">
       <small>Do not sell my personal information </small></button> </p>
-    <mat-card  *ngIf="clicked2==true"> <a id="/"><small>Thank you. Your response has been recorded </small></a> </mat-card>
+    <mat-card  *ngIf="clicked2==true"> <a id="GTM-TVJ45PB"><small>Thank you. Your response has been recorded </small></a> </mat-card>
 
 
   <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
-
 
 
   </div>

@@ -231,6 +231,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/cookie": {
+      "name": "/cookie",
+      "lambdaFunction": "test4c0a40a03",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
