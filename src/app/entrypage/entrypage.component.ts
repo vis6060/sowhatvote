@@ -17,7 +17,7 @@ export class EntrypageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  //  this.openSnackBar()
+    this.openSnackBar()
   }
 
   clicked1:boolean;clicked2:boolean; banner=""
@@ -41,6 +41,6 @@ export class EntrypageComponent implements OnInit {
     });
   }
 
-  // if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
+
 
 }
