@@ -6,7 +6,10 @@
 <div class="class2" >
   <a class="ontop_class"></a>
   <a style="text-align:center;"> <h2>U.S. Senate Senators/Candidates for 2022 Midterm Elections </h2> </a>
-<!--Future Comm- show the results -->
+  <!--communicated to google tags that permission to store user info is denied-->
+  <a  *ngIf="cookiedenied=='yes'"> <a id="GTM-TVJ45PB"></a></a>
+
+  <!--Future Comm- show the results -->
 <a *ngIf="prefercateg=='future'">
   <br> <mat-card> <mat-card-title>{{CandName10}} committee assignments by popular vote: </mat-card-title>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>First preference: {{FutureComPreferArray10[3]}} with <b> {{FutureComPreferArray10[2]}} </b> vote(s) in favor </a> <br>

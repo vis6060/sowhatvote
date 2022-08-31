@@ -28,7 +28,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     if(Cache.getItem('midtermenter')=="yes") {Cache.removeItem("midtermenter"); location.reload()} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
     if(Cache.getItem('meetupclicked')=="yes") {Cache.removeItem("meetupclicked"); location.reload()}
     if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
-
+    if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
 
     //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
@@ -65,6 +65,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   CandNameSearch="";s3fileSearch=""; DistrictSearch="";PartySearch="";StateSearch="";WebsiteSearch="";PictureAttributionSearch="";MottoSearch=""; OverallYeaSearch=""; OverallNaySearch="";FirstComPreferSearch=[]; SecondComPreferSearch=[]; ThirdComPreferSearch=[];
   Coms100new=[]; FirstComPrefer100=[]; SecondComPrefer100=[]; ThirdComPrefer100=[];
   Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[]; statedropdown=''; HOMEstate=''
+
+  cookiedenied=""
 
   reloadComponent() {
     let currentUrl = this.router.url;

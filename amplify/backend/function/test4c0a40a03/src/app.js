@@ -192,14 +192,32 @@ app.post(path, function(req, res) {
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: req.body,
+    KeySchema: [
+      { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [
+      { AttributeName: "userid", AttributeType: "S" }
+    ],
+    Key: {
+      "userid": req.body.userid,
+    },
+    UpdateExpression: "set cookiestatus= :t1", //used in voting instate section
+//    ExpressionAttributeNames:{
+    //     "#loyalty": req.body.loyalty
+    //   },
+    ExpressionAttributeValues: {
+      ":t1": "no",
+    },
+    ReturnValues: "ALL_OLD"
   }
-  dynamodb.put(putItemParams, (err, data) => {
+
+  dynamodb.update(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
-      res.json({error: err, url: req.url, body: req.body});
-    } else {
-      res.json({success: 'post call succeed!', url: req.url, data: data})
+      res.json({ error: err, url: req.url, body: req.body });
+    } else{
+      res.json({ success: 'put call succeed!', url: req.url, data: data })
     }
   });
 });

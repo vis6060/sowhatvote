@@ -69,10 +69,16 @@ export class AppComponent {
       console.log('profilecompPartD database status', response1.data[0].profilecompPartD)
       console.log('profilecompPartE database status', response1.data[0].profilecompPartE)
       console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
+
+      //get logged-in user cookie status, if cookie status is blank which means they have not responded to my banner
+      if(response1.data[0].cookiestatus=='') { Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
+      if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });}
+
       ;}).catch(error => {console.log(error.response1);
   //    if(error.response1==undefined && this.authenticator.route=="authenticated")
       //   {const expiration = new Date().valueOf()
     //    this.router.navigate(['/Meetup/Step0']); Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
+
 
        const expiration = new Date().valueOf()
         if(error.response1==undefined) {this.usernoexist="yes";
@@ -132,6 +138,8 @@ export class AppComponent {
       this.routeflagmidterm = "yes"
     }
   }
+
+
 
 
 }
