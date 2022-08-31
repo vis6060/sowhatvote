@@ -2125,5 +2125,11 @@
       "service": "Comprehend",
       "interpretType": "interpretText"
     }
+  },
+  "analytics": {
+    "test4pinpoint": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

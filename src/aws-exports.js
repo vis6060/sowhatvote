@@ -166,6 +166,8 @@ const awsmobile = {
     ],
     "aws_user_files_s3_bucket": "test4images171405-staging",
     "aws_user_files_s3_bucket_region": "us-west-2",
+    "aws_mobile_analytics_app_id": "9f943ef5cf874c1582d24ccbe140a7ba",
+    "aws_mobile_analytics_app_region": "us-west-2",
     "predictions": {
         "identify": {
             "identifyLabels": {

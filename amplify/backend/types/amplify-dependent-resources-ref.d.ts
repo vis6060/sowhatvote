@@ -518,5 +518,12 @@ export type AmplifyDependentResourcesAttributes = {
             "region": "string",
             "type": "string"
         }
+    },
+    "analytics": {
+        "test4pinpoint": {
+            "Region": "string",
+            "Id": "string",
+            "appName": "string"
+        }
     }
 }
