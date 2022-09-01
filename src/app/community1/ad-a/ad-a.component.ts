@@ -12,9 +12,11 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 export class AdAComponent implements OnInit {
 
 
-  constructor(private api: APIService,private router: Router,public authenticator: AuthenticatorService) {
+  constructor(public authenticator: AuthenticatorService) {
   // if(Cache.getItem('')!=null) {Cache.removeItem("");}
  //   if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])} //SEO crawlers can then access the html conetents
+    if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+    if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
   }
 
   ngOnInit(): void {
@@ -24,6 +26,8 @@ export class AdAComponent implements OnInit {
 
   webpagevalue="";whichtab=""; profileFflag="";profileAflag=""
   webpageobtained=""; whichobtained=""; delayflag1:boolean=true;
+
+  cookiedenied=""; stateuserCA=""
 
   async delayButton1(ms: number) {await new Promise(resolve => setTimeout(()=>this.setbuttonflag1(), ms)).then();}
   setbuttonflag1() {this.delayflag1=false};

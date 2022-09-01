@@ -92,6 +92,10 @@ export class AppComponent {
         if(error.response1==undefined) {this.usernoexist="yes";
           Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
       });
+
+    //if user is not authenticated, open the snackbar this way
+    if(this.authenticator.route!="authenticated") { this.openSnackBar() }
+
   }
 
 

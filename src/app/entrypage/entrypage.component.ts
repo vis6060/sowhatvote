@@ -29,6 +29,10 @@ export class EntrypageComponent implements OnInit {
 
   //cookiestatus set to yes meaning permission is denied to store user info
   async donotsellstore() {
+    //for a non-logged user set the cache, so it can be used in Community1 and Community2 pages
+    const expiration = new Date().valueOf()
+    Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });
+    //for logged in user set the cookiestatus in db
     const user = await Auth.currentAuthenticatedUser();
     if(this.authenticator.route=="authenticated") {
       const paramspN = {body: {userid:user.attributes.sub}}
