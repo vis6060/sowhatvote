@@ -86,10 +86,7 @@ export class AppComponent {
   //    if(error.response1==undefined && this.authenticator.route=="authenticated")
       //   {const expiration = new Date().valueOf()
     //    this.router.navigate(['/Meetup/Step0']); Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
-
-      //if user is not authenticated, open the snackbar this way
-      if(this.authenticator.route!="authenticated") { this.openSnackBar() }
-
+      
        const expiration = new Date().valueOf()
         if(error.response1==undefined) {this.usernoexist="yes";
           Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}

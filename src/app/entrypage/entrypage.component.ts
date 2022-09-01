@@ -11,13 +11,14 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 })
 export class EntrypageComponent implements OnInit {
 
-  constructor(public authenticator: AuthenticatorService, ) {
+  constructor(public authenticator: AuthenticatorService, private _snackBar: MatSnackBar) {
   //  if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
     if(Cache.getItem('myaccountenter')=="yes") {Cache.removeItem("myaccountenter"); location.reload()}
   }
 
   ngOnInit(): void {
-
+    //if user is not authenticated, open the snackbar this way
+    if(this.authenticator.route!="authenticated") { this.openSnackBar() }
   }
 
   clicked1:boolean;clicked2:boolean; banner=""
@@ -40,6 +41,12 @@ export class EntrypageComponent implements OnInit {
     }
   }
 
+
+  openSnackBar() {
+    const snackBar =  this._snackBar.openFromComponent(CookiebannerComponent, {
+      data: {preClose: () => {snackBar.dismiss()} } //pass a function to be called when you want to close the snackbar
+    });
+  }
 
 
 
