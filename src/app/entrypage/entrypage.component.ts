@@ -36,7 +36,7 @@ export class EntrypageComponent implements OnInit {
   }
 
   openSnackBar() {
-    if(this.banner=="") {
+    if(this.banner=="yes") {
     const snackBar =  this._snackBar.openFromComponent(CookiebannerComponent, {
       data: {preClose: () => {snackBar.dismiss()} } //pass a function to be called when you want to close the snackbar
     });}
