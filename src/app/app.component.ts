@@ -86,6 +86,7 @@ export class AppComponent {
       });
   }
 
+  
   meetupflag=""; routeString=""; routeflag=""; midtermflag=""; routeflagmidterm="";
 
   meetupclickedI() {
