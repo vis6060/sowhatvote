@@ -41,13 +41,12 @@ export class EntrypageComponent implements OnInit {
     }
   }
 
-
+//this is the snackbar specifically for the situation when user is not logged in.
   openSnackBar() {
-    if(Cache.getItem('bannernoshow')=="yes") {
+    if(Cache.getItem('bannernoshow')!="yes" && this.authenticator.route!="authenticated") {
     const snackBar =  this._snackBar.openFromComponent(CookiebannerComponent, {
       data: {preClose: () => {snackBar.dismiss()} } //pass a function to be called when you want to close the snackbar
     }); }
-
   }
 
 
