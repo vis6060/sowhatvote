@@ -86,7 +86,7 @@ export class AppComponent {
   //    if(error.response1==undefined && this.authenticator.route=="authenticated")
       //   {const expiration = new Date().valueOf()
     //    this.router.navigate(['/Meetup/Step0']); Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
-      
+
        const expiration = new Date().valueOf()
         if(error.response1==undefined) {this.usernoexist="yes";
           Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}
@@ -150,6 +150,7 @@ export class AppComponent {
 
 
   openSnackBar() {
+
       const snackBar =  this._snackBar.openFromComponent(CookiebannerComponent, {
         data: {preClose: () => {snackBar.dismiss()} } //pass a function to be called when you want to close the snackbar
       });

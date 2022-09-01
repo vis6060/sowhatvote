@@ -4,7 +4,7 @@
 <div class="class2" >
 
 <h1 style="text-align:center;"> <b> Ways of Helping Your Community
-  <a  *ngIf="cookiedenied=='yes'">
+  <a  *ngIf="(cookiedenied=='yes' && authenticator.route != 'authenticated') || (cookiedenied=='yes' && stateuserCA=='yes')">
     <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">!</a>
   </a>
 

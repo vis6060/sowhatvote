@@ -22,9 +22,11 @@ export class CookiebannerComponent implements OnInit {
 
   clicked1:boolean;clicked2:boolean
 
-  changemind() {
+  bannernoshowf() {
     const expiration = new Date().valueOf()
-    Cache.setItem('bannernoshow', 'yes', {expires: expiration + 60000}); //43,200sec are in 12hrs
+    if(this.authenticator.route!="authenticated") {
+      Cache.setItem('bannernoshow', 'yes', {expires: expiration + 1800000}); //43,200sec are in 12hrs
+    }
   }
 
   dismiss(){
