@@ -5,7 +5,12 @@
 <!-- class2 is center main content -->
 <div class="class2" >
   <a class="ontop_class"></a>
-  <a style="text-align:center;"> <h2>U.S. House of Representatives Candidates for 2022 Midterm Elections </h2> </a>
+  <a style="text-align:center;"> <h2>U.S. House of Representatives Candidates for 2022 Midterm Elections
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
+      <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">.</a>
+    </a>
+  </h2> </a>
 <!--Future Comm- show the results -->
  <a *ngIf="prefercateg=='future'&&CandNeutralflag=='yes'">
    <br> <mat-card>  <mat-card-title>{{CandNameNeutral}} committee assignments by popular vote: </mat-card-title>

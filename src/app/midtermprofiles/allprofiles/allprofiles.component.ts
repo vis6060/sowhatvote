@@ -1,6 +1,8 @@
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {Component, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {Cache} from "aws-amplify";
+import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 @Component({
   selector: 'app-allprofiles',
@@ -9,13 +11,17 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 })
 export class AllprofilesComponent implements OnInit {
 
-  constructor() {
+  constructor(public authenticator: AuthenticatorService) {
     this.dataSource.data = TREE_DATA;
+    if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+    if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
   }
 
   ngOnInit(): void {
   //  console.log(this.HouseAL[0])
   }
+
+  cookiedenied=""; stateuserCA=""
 
   private _transformer = (node: FoodNode, level: number) => {
     return {

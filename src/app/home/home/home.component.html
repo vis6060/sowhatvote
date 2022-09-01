@@ -3,7 +3,13 @@
 <div class="class10" >
 
 <!-- Chips for navigation -->
-<a> <b>Search for Community Members: </b></a> <br>  <mat-chip-list>
+<a> <b>Search for Community Members:
+  <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+  <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
+    <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">-</a>
+  </a>
+
+</b></a> <br>  <mat-chip-list>
   <mat-chip (click)="search1()">Option 1: Search by Member's State, and Age or Gender or Your County</mat-chip>
   <mat-chip (click)="search2()">Option 2: Search by Member's State, and Occupation or Industry or Veteran Status or Mentor Status</mat-chip>
   <mat-chip (click)="search3()">Option 3: Search by State for top 5 most active community members based on their SoWhat Vote! loyalty points</mat-chip>

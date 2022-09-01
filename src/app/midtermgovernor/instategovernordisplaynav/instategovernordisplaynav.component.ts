@@ -56,6 +56,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   statedropdown=''; HOMEstate=''
 
+  cookiedenied="";stateuserCA="";
+
   reloadComponent() {
     let currentUrl = this.router.url;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -146,6 +148,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemidinitialize=response1.data[4];
       this.HOMEstate=response1.data[6];
       console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       this.gethompageF1Ainitialize()
       if(+this.tabinstatelength==1) {this.clicked0=true}
     }).catch(error => {console.log(error.response1)});

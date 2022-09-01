@@ -40,6 +40,8 @@ export class Tab1adisplaynavComponent implements OnInit {
   viewtoggle="";
   delayflag1:boolean=true; delayflag2:boolean=true;
 
+  cookiedenied="";stateuserCA="";
+
   //refreshes the browser upon button click of next or dislike or connectme
   reloadComponent() {
     let currentUrl = this.router.url;

@@ -97,6 +97,7 @@ export class HomeComponent implements OnInit {
   clicked50: boolean=false; clicked51: boolean=false; clicked52: boolean=false; clicked53: boolean=false; clicked54: boolean=false; clicked55: boolean=false;
   fifthFormGroup: FormGroup; nomatchingfacebook="";
   profilecompPartF="";
+  cookiedenied="";stateuserCA="";
 
   //All disable scenarios: 1) Initial display: Step2a(Meetup) and Step2b(Mentor) nothing entered, then disable search1 and search2 buttons.
   //2) Step2a something entered, then, enable Search1 button and disable entire Step2b form fields and for occup field use the removefields flag to remove it from HTML view
@@ -152,6 +153,8 @@ export class HomeComponent implements OnInit {
             lastmeetupviewdate:new Date().valueOf(), weeknumber:this.weektext.concat(JSON.stringify(currentweek)).concat(" ",JSON.stringify(currentyear))}}
         API.put("datingapitest4", "/userdbapitime", paramsp2).then(response2 => {}).catch(error => {console.log(error.response2);});
       }
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
     }).catch(error => {console.log(error.response1a);});
   }
 

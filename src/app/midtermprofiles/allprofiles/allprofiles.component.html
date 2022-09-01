@@ -5,7 +5,11 @@
 <!-- class2 is center main content -->
 <div class="class2" >
 
-<h1 style="text-align:center;"> <b> Names of all Candidates and Senators on SoWhat Vote! </b></h1>
+<h1 style="text-align:center;"> <b> Names of all Candidates and Senators on SoWhat Vote!
+  <a  *ngIf="(cookiedenied=='yes' && authenticator.route != 'authenticated') || (cookiedenied=='yes' && stateuserCA=='yes')">
+    <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">!</a>
+  </a>
+</b></h1>
 
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
   <!-- This is the tree node template for leaf nodes -->
