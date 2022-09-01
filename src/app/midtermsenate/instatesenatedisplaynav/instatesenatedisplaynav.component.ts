@@ -28,7 +28,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     if(Cache.getItem('midtermenter')=="yes") {Cache.removeItem("midtermenter"); location.reload()} //incase user directly enters house link, then they are taken to login and StepA completion page and then Senate homepage. the midtermenter will ensure this routing.
     if(Cache.getItem('meetupclicked')=="yes") {Cache.removeItem("meetupclicked"); location.reload()}
     if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
-    if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+
 
     //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
@@ -156,6 +156,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       this.tabinstatedisplayitemidnext=response1.data[1]; this.tabinstatedisplayitemidtwo=response1.data[2];
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemidinitialize=response1.data[4];
       this.HOMEstate=response1.data[6];
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"} //this needs to be here to ensure app.component.ts have enough time to do an API call and retrieve the value
       console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
       this.gethompageF1Ainitialize()
       if(+this.tabinstatelength==1) {this.clicked0=true}
@@ -185,6 +186,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       this.FutureComCandViewed=event4.FutureComCandViewed as unknown as any;});
     this.GetIssueInitialize(this.tabinstatedisplayitemid)
     this.getitem2initialize()
+
   }
 
   //var1 is candname
@@ -632,8 +634,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   selectorflag:number
 //random number generator which chooses which view section to show
   randomgen() {//this finds a number between 1 and 6, inclusive of both
-    let  min = Math.ceil(1);
-    let   max = Math.floor(3);
+    let  min = Math.ceil(0);
+    let   max = Math.floor(0);
     this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
   }
 

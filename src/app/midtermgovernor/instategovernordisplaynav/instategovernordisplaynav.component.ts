@@ -516,8 +516,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
   selectorflag:number
 //random number generator which chooses which view section to show
   randomgen() {//this finds a number between 1 and 6, inclusive of both
-    let  min = Math.ceil(1);
-    let   max = Math.floor(2);
+    let  min = Math.ceil(0);
+    let   max = Math.floor(0);
     this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
   }
 
