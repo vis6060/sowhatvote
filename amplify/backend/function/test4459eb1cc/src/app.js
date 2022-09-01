@@ -78,7 +78,7 @@ app.get(path + hashKeyPath, function(req, res) {
 
   let queryParams = {
     TableName: tableName,
-    ProjectionExpression: "profilecompPartF, profilecompPartA,profilecompPartB,profilecompPartC,profilecompPartD,profilecompPartE",
+    ProjectionExpression: "profilecompPartF, profilecompPartA,profilecompPartD,profilecompPartE,cookiestatus",
     KeySchema: [
       { AttributeName: "userid", KeyType: "RANGE" }  //Sort key
     ],

@@ -73,7 +73,7 @@ export class AppComponent {
       console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
 
       //get logged-in user cookie status, if cookie status is blank which means they have not responded to my banner
-      if(response1.data[0].cookiestatus!='yes' || response1.data[0].cookiestatus!='no') { Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
+      if(response1.data[0].cookiestatus=='') { Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
       if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });}
 
       ;}).catch(error => {console.log(error.response1);
