@@ -80,6 +80,7 @@ export class AppComponent {
       if(response1.data[0].cookiestatus=='') {this.openSnackBar() ;Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
       if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });
         console.log('cookiedenied cache', Cache.getItem('cookiedenied'))}
+      Cache.setItem('stateuser', response1.data[0].stateuser, { expires: expiration +1800000 });
 
       ;}).catch(error => {console.log(error.response1);
   //    if(error.response1==undefined && this.authenticator.route=="authenticated")
