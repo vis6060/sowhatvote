@@ -38,8 +38,6 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     this.zeroFormGroup = this._formBuilder.group({});
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
     this.randomgen()
-    if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
-    if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
   }
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
@@ -158,6 +156,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       this.tabinstatedisplayitemidnext=response1.data[1]; this.tabinstatedisplayitemidtwo=response1.data[2];
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemidinitialize=response1.data[4];
       this.HOMEstate=response1.data[6];
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       //this needs to be here to ensure app.component.ts have enough time to do an API call and retrieve the value
       console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
       this.gethompageF1Ainitialize()
