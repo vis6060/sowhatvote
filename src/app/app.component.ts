@@ -1,8 +1,11 @@
-import {Component, OnInit, ViewEncapsulation, NgModule} from '@angular/core';
+//import {Component, OnInit, ViewEncapsulation, NgModule} from '@angular/core';
+import {Component,  ViewEncapsulation,} from '@angular/core';
 import {API, Auth, Cache} from "aws-amplify";
 import { Location } from '@angular/common';
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
-import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {CookiebannerComponent} from "./cookiebanner/cookiebanner.component";
+//import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +15,8 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
 
-  constructor(public authenticator: AuthenticatorService,private readonly location: Location, private router: Router) {}
+  constructor(public authenticator: AuthenticatorService,private readonly location: Location,
+              private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.level2tabRest()
@@ -73,7 +77,7 @@ export class AppComponent {
       console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
 
       //get logged-in user cookie status, if cookie status is blank which means they have not responded to my banner
-      if(response1.data[0].cookiestatus=='') { Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
+      if(response1.data[0].cookiestatus=='') {this.openSnackBar() ;Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
       if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });
         console.log('cookiedenied cache', Cache.getItem('cookiedenied'))}
 
@@ -144,6 +148,11 @@ export class AppComponent {
   }
 
 
+  openSnackBar() {
+      const snackBar =  this._snackBar.openFromComponent(CookiebannerComponent, {
+        data: {preClose: () => {snackBar.dismiss()} } //pass a function to be called when you want to close the snackbar
+      });
+  }
 
 
 }

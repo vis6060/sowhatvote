@@ -12,12 +12,12 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 export class EntrypageComponent implements OnInit {
 
   constructor(public authenticator: AuthenticatorService, private _snackBar: MatSnackBar) {
-    if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
+  //  if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
     if(Cache.getItem('myaccountenter')=="yes") {Cache.removeItem("myaccountenter"); location.reload()}
   }
 
   ngOnInit(): void {
-    this.openSnackBar()
+  //  this.openSnackBar()
   }
 
   clicked1:boolean;clicked2:boolean; banner=""
