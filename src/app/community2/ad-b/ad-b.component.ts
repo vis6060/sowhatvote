@@ -18,6 +18,8 @@ export class AdBComponent implements OnInit {
     console.log("webpagevalue is", this.webpagevalue)
     console.log("whichtab is", this.whichtab)
     console.log("profileAflag is",this.profileAflag)
+    if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+    if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
   }
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class AdBComponent implements OnInit {
 
   webpagevalue="";whichtab="";profileFflag="";profileAflag=""
   delayflag1:boolean=true;
+  cookiedenied=""; stateuserCA=""
 
   async webpageroute() {
 
