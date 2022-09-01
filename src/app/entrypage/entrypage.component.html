@@ -37,7 +37,7 @@
     <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p>
      <p> <mat-icon inline=true>copyright</mat-icon>2022 SoWhat Vote, LLC. All rights reserved. </p>
   <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
-    <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: false})" (click)="donotsellstore()"
+    <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: true})" (click)="donotsellstore()"
                 (click)="clicked2 = true;">
       <small>Do not sell my personal information </small></button> </p>
     <mat-card  *ngIf="clicked2==true"> <a id="GTM-TVJ45PB"><small>Thank you. Your response has been recorded </small></a> </mat-card>
