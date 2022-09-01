@@ -11,6 +11,7 @@ export class TermsdialogboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    Cache.clear();
   }
 
 

@@ -34,6 +34,8 @@ export class AppComponent {
     console.log('profFevade homepage cache', Cache.getItem('profFevade'))
     console.log('countyuser cache', Cache.getItem('countyuser'))
     console.log('stateuser cache', Cache.getItem('stateuser'))
+    console.log('bannernoshow cache', Cache.getItem('bannernoshow'))
+    console.log('cookiedenied cache', Cache.getItem('cookiedenied'))
   //  console.log('naturalWidth cache', Cache.getItem('naturalWidth'))
   //  console.log('naturalHeight cache', Cache.getItem('naturalHeight'))
  //   console.log('newWidth cache', Cache.getItem('newWidth'))
@@ -86,7 +88,7 @@ export class AppComponent {
       });
   }
 
-  
+
   meetupflag=""; routeString=""; routeflag=""; midtermflag=""; routeflagmidterm="";
 
   meetupclickedI() {
