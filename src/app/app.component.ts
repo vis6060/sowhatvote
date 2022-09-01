@@ -58,7 +58,7 @@ export class AppComponent {
   async level2tabRest(){
     const user = await Auth.currentAuthenticatedUser();    const expiration = new Date().valueOf()
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => {
+    API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => { console.log(response1)
       this.profilecompPartF=response1.data[0].profilecompPartF;  this.profilecompPartA=response1.data[0].profilecompPartA;
       this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
 
@@ -73,7 +73,7 @@ export class AppComponent {
       console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
 
       //get logged-in user cookie status, if cookie status is blank which means they have not responded to my banner
-      if(response1.data[0].cookiestatus=='') { Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
+      if(response1.data[0].cookiestatus!='yes' || response1.data[0].cookiestatus!='no') { Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
       if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });}
 
       ;}).catch(error => {console.log(error.response1);
