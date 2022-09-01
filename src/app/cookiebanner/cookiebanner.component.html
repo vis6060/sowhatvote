@@ -14,16 +14,15 @@
   functionality_storage: 'denied',
   personalization_storage: 'denied',
   security_storage: 'denied'
-  })" (click)="dismiss()" (click)="changemind()"  (click)="donotsellstoreYes()"
+  })" (click)="dismiss()"   (click)="donotsellstoreYes()"
   >Reject All</button> &nbsp;  &nbsp;  &nbsp;  &nbsp;
 
-  <button mat-button (click)="dismiss()" (click)="changemind()" (click)="donotsellstoreNo()"
+  <button mat-button (click)="dismiss()"  (click)="donotsellstoreNo()"
             >Accept All</button> </a> <!-- no event need to be sent to google as by default cookies are granted -->
 
-<button mat-button color="primary" (click)="dismiss()">Dismiss</button>
 
 <!-- this will set the deny cookies value -->
- <a  *ngIf="clicked1==true"> <a id="GTM-TVJ45PB"></a>thank you</a>
+<!--  <a  *ngIf="clicked1==true"> <a id="GTM-TVJ45PB"></a>thank you</a> -->
 
 
 
