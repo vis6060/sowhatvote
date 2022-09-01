@@ -77,7 +77,7 @@ export class AppComponent {
       console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
 
       //get logged-in user cookie status, if cookie status is blank which means they have not responded to my banner
-      if(response1.data[0].cookiestatus=='') {this.openSnackBar() ;Cache.setItem('bannernoshow', 'yes', { expires: expiration +1800000 });}
+      if(response1.data[0].cookiestatus=='') {this.openSnackBar() }
       if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });
         console.log('cookiedenied cache', Cache.getItem('cookiedenied'))}
       Cache.setItem('stateuser', response1.data[0].stateuser, { expires: expiration +1800000 });
@@ -150,7 +150,6 @@ export class AppComponent {
 
 
   openSnackBar() {
-
       const snackBar =  this._snackBar.openFromComponent(CookiebannerComponent, {
         data: {preClose: () => {snackBar.dismiss()} } //pass a function to be called when you want to close the snackbar
       });
