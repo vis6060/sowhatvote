@@ -59,7 +59,7 @@ export class AdBComponent implements OnInit {
 //random number generator which chooses which view section to show
   randomgen() {//this finds a number between 1 and 6, inclusive of both
     let  min = Math.ceil(1);
-    let   max = Math.floor(3);
+    let   max = Math.floor(25);
     this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
   }
 

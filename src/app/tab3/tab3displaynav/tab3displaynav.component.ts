@@ -44,7 +44,7 @@ export class Tab3displaynavComponent implements OnInit {
   urlAnext:string; //signed url to the image stored in s3
   viewtoggle="";
   delayflag1:boolean=true; delayflag2:boolean=true;
-
+  cookiedenied="";stateuserCA="";
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -166,6 +166,8 @@ export class Tab3displaynavComponent implements OnInit {
       this.tab3expire30daycheck=response1.data[6];
       console.log(this.tab3displayitemid); console.log(this.tab3displayitemidnext);
       this.gethompageF3initialize()
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       if(+this.tab3length==1) {this.clicked0=true}
       if(+this.tab3length==0) {this.endofarray3="yes"}
     }).catch(error => {console.log(error.response1)

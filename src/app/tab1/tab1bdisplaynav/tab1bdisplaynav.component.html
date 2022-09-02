@@ -5,7 +5,12 @@
 <!-- class2 is center main content -->
 <div class="class2" >
   <a class="ontop_class"></a>
-  <a style="text-align:center;"> <h2>Connect with Members from <b> Same State</b> as yours </h2> </a>
+ <h2>Connect with Members from <b> Same State</b> as Yours
+    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
+      <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+      <a id="GTM-TVJ45PB" >:</a>
+    </a>
+  </h2>
 <!-- tab1B display -same state -->
 
 <a *ngIf="endofarray1B=='yes'"> Sorry, no more matches. Please visit other sections.

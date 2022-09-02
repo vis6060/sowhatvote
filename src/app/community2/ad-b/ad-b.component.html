@@ -47,12 +47,14 @@
     <p>Frequency of Payments: monthly or quarterly. After you graduate, leave school, or drop below half-time enrollment, you have a six-month grace period before you begin repayment.</p>
 <p>Prepayment Penalties: none</p>
     <p>Fees: You'll pay a fee of up to four percent of the loan, deducted proportionately from each loan disbursement. Because of this deduction, you'll receive slightly less than the amount you're borrowing.</p>
-    <a style="text-align:center;" href="" target="_blank"> Click to Learn More</a> <br>
 
     <br><h3>Apply Process</h3>
 <p> To apply for Direct Stafford Loans, fill out the Free Application for Federal Student Aid (FAFSA). You can apply online using FAFSA on the Web at https://studentaid.ed.gov/sa/fafsa (the faster and easier way), or you can get a paper FAFSA from your high school, local library, postsecondary school, or by calling the Federal Student Aid Information Center at 1-800-4-FED-AID (1-800-433-3243). TTY users for the hearing impaired can call 1-847-688-2567.</p>
 <p>If you applied for Federal student aid for the previous school year, you can probably file a Renewal FAFSA for the next year. By using a Renewal FAFSA, you will only have to update any information that has changed and fill in a few new answers. </p>
+    <a style="text-align:center;" href="https://www.benefits.gov/benefit/4370" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 2">
     <!-- 1c -->
     <br><h2 style="text-align:center;"><b>Compensated Work Therapy </b></h2><br>
 
@@ -65,7 +67,9 @@
 
 <p>Employment is a critical protective factor against suicide, homelessness and substance use. CWT is a vital employment and therapeutic work program assisting Veterans with job barriers faced from mental health or physical disabilities.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/4745" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 3">
     <!-- 1d -->
     <br><h2 style="text-align:center;"><b>Senior Community Service Employment Program (SCSEP) </b></h2><br>
 
@@ -76,9 +80,10 @@
       55 years of age or older, and
       Unemployed </p>
 
-
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/89" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 4">
     <!-- 1e -->
     <br><h2 style="text-align:center;"><b>Weatherization Assistance Program for Low-Income Persons </b></h2><br>
 
@@ -95,7 +100,9 @@
      </ul>
 <p>If you receive Supplemental Security Income or Aid to Families with Dependent Children, you are automatically eligible to receive weatherization services.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/580" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 5">
     <!-- 1f -->
     <br><h2 style="text-align:center;"><b> Summer Food Service Program</b></h2><br>
 
@@ -105,11 +112,11 @@
     <p>All children and teens (age 18 and under) who visit an approved SFSP feeding site can receive meals at no cost.
       No registrations or applications are required. Meals are also available for people with disabilities who are over age 18 and participate in school programs for the mentally or physically disabled.  </p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/1451" target="_blank"> Click to Learn More</a> <br>
-    <p> SoWhat Vote! Comments: Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support.  It has been shown statistically that a person with 4-year college degree earns more over their lifetime compared to someone who has not completed college. Our veterans deserve a good paying job after their service and sacrifices.  Please educate the veteran community of this work therapy benefit. We all deserve a decent standard of living and be able to meet our basic needs.  The low-income families are the ones who need our person help the most.  Please help spread the word about this and other government programs to help the homeless and low-income families live a respectable life. </p>
-  </ng-container>
+    <!--   <p> SoWhat Vote! Comments: Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support.  It has been shown statistically that a person with 4-year college degree earns more over their lifetime compared to someone who has not completed college. Our veterans deserve a good paying job after their service and sacrifices.  Please educate the veteran community of this work therapy benefit. We all deserve a decent standard of living and be able to meet our basic needs.  The low-income families are the ones who need our person help the most.  Please help spread the word about this and other government programs to help the homeless and low-income families live a respectable life. </p> -->
+     </ng-container>
 
-  <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 2">
+     <!-- Next benefit -->
+  <ng-container *ngIf="selectorflag == 6">
 
     <!-- 2a -->
     <br><h2 style="text-align:center;"><b>Retired and Senior Volunteer Program </b></h2><br>
@@ -121,7 +128,9 @@
     <p>In order to qualify for this benefit program, you must be interested in volunteering and you must be 55 years of age or older.  </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/884" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 7">
     <!-- 2b -->
     <br><h2 style="text-align:center;"><b> Literature Fellowships</b></h2><br>
 
@@ -133,7 +142,9 @@
     <p> In order to qualify for this benefit program, you must be a U.S. citizen or permanent resident with current or past experience as a published writer or translator. </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/851" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 8">
     <!-- 2c -->
     <br><h2 style="text-align:center;"><b>Medicare Prescription Drug Plans </b></h2><br>
 
@@ -158,7 +169,9 @@
    <li>When certain events happen in your life, like if you move or you lose other insurance coverage. These chances to make changes are called Special Enrollment Periods (SEPs). Rules about when you can make changes and the type of changes you can make are different for each SEP.</li>
     </ul>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/2202" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 9">
     <!-- 2d -->
     <br><h2 style="text-align:center;"><b> Supplemental Security Income (SSI) </b></h2><br>
 
@@ -179,12 +192,12 @@
       <li>Income and resources of certain members in your household, like a spouse or a parent of a minor child.</li>
     </ol>
       <a style="text-align:center;" href="https://www.benefits.gov/benefit/4412" target="_blank"> Click to Learn More</a> <br>
-    <p> SoWhat Vote! Comments: This is a good benefit to help our seniors financially and an opportunity for them to make friends. This can help their overall wellbeing and lead a happy long life.  There are lot of community members who have an inclination in creative arts, but are unable to pursue for financial reasons.  Please help these members financially and motivate them to pursue their dreams. The literature fellowships from the government can only help a select few. A lot of people depend on Medicare health insurance to help them meet the high costs of healthcare and drugs.  Please educate your community on how they can avail the maximum Medicare benefits and obtain supplemental security income. </p>
-  </ng-container>
+    <!--   <p> SoWhat Vote! Comments: This is a good benefit to help our seniors financially and an opportunity for them to make friends. This can help their overall wellbeing and lead a happy long life.  There are lot of community members who have an inclination in creative arts, but are unable to pursue for financial reasons.  Please help these members financially and motivate them to pursue their dreams. The literature fellowships from the government can only help a select few. A lot of people depend on Medicare health insurance to help them meet the high costs of healthcare and drugs.  Please educate your community on how they can avail the maximum Medicare benefits and obtain supplemental security income. </p> -->
+     </ng-container>
 
 
-  <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 3">
+     <!-- Next benefit -->
+  <ng-container *ngIf="selectorflag == 10">
   <!-- 3a -->
   <br><h2 style="text-align:center;"><b> Senior Companion Program </b></h2><br>
 
@@ -195,7 +208,8 @@
   <p>In order to qualify for this benefit program, you must be interested in volunteering and you must be 60 years of age or older.  </p>
 
   <a style="text-align:center;" href="https://www.benefits.gov/benefit/877" target="_blank"> Click to Learn More</a> <br>
-
+  </ng-container>
+  <ng-container *ngIf="selectorflag == 11">
     <!-- 3b -->
     <br><h2 style="text-align:center;"><b> Medicare Program </b></h2><br>
 
@@ -212,7 +226,8 @@
     <p>To find out if you’re eligible for Medicare, contact Social Security at 1-800-772-1213 or use the Medicare Eligibility & Premium Calculator to get an estimate of when you’re eligible for Medicare and your premium amount. TTY users can call 1-800-325-0778.  </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/598" target="_blank"> Click to Learn More</a> <br>
-
+  </ng-container>
+  <ng-container *ngIf="selectorflag == 12">
     <!-- 3c -->
     <br><h2 style="text-align:center;"><b>Travel Reimbursement</b></h2><br>
 
@@ -245,7 +260,8 @@
     <p>To qualify for special mode transportation, a Veteran must meet one of the administrative eligibility criteria; a VA health care provider must determine that a special mode of transport is medically required and be traveling in relation to VA or VA-authorized non-VA care. </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/314" target="_blank"> Click to Learn More</a> <br>
-
+  </ng-container>
+  <ng-container *ngIf="selectorflag == 13">
     <!-- 3d -->
     <br><h2 style="text-align:center;"><b> 7(a) Small Business Loan </b></h2><br>
 
@@ -310,12 +326,12 @@
     </ul>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/1497" target="_blank"> Click to Learn More</a> <br>
     <a style="text-align:center;" href="https://www.sba.gov/funding-programs/loans/lender-match" target="_blank">Find a SBA Lender Tool</a> <br>
-    <p> SoWhat Vote! Comments: This is a good benefit to help our seniors financially and an opportunity for them to make friends. This can help their overall wellbeing and lead a happy long life.  A lot of people depend on Medicare health insurance to help them meet the high costs of healthcare and drugs.  Please educate your community on how they can avail the maximum Medicare benefits.  Please educate the veteran community of how they can be reimbursed for their necessary travels. Lastly, small businesses help our economy grow as majority of people are employed in these businesses.  These government loan programs can be a make or break for these small businesses and startups. </p>
-  </ng-container>
+    <!--  <p> SoWhat Vote! Comments: This is a good benefit to help our seniors financially and an opportunity for them to make friends. This can help their overall wellbeing and lead a happy long life.  A lot of people depend on Medicare health insurance to help them meet the high costs of healthcare and drugs.  Please educate your community on how they can avail the maximum Medicare benefits.  Please educate the veteran community of how they can be reimbursed for their necessary travels. Lastly, small businesses help our economy grow as majority of people are employed in these businesses.  These government loan programs can be a make or break for these small businesses and startups. </p> -->
+    </ng-container>
 
 
-  <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 4">
+    <!-- Next benefit -->
+  <ng-container *ngIf="selectorflag == 14">
 
     <!-- 4a -->
     <br><h2 style="text-align:center;"><b> Business and Industrial Loans</b></h2><br>
@@ -349,7 +365,9 @@
 <p>The maximum repayment for loans on real estate will not exceed 30 years; machinery and equipment repayment will not exceed the useful life of the machinery and equipment purchased with loan funds or 15 years, whichever is less; and working capital repayment will not exceed seven years.</p>
 <p>The total amount of Agency loans to one borrower must not exceed $10 million. The Administrator may, at the Administrator's discretion, grant an exception to the $10 million limit for loans of $25 million under certain circumstances. The Secretary may approve guaranteed loans in excess of $25 million, up to $40 million, for rural cooperative organizations that process value-added agricultural commodities.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/4735" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 15">
       <!-- 4b -->
       <br><h2 style="text-align:center;"><b> Education Loan Consolidation</b></h2><br>
 
@@ -385,7 +403,9 @@
       <li> Fees: None </li> </ul>
 <p> There is no application fee to complete a Direct Consolidation Loan application. You may be contacted by private companies that offer to help you consolidate your loans, for a fee. These companies have no affiliation with the U.S. Department of Education (ED) or ED's Federal Loan Servicers.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/602" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 16">
     <!-- 4c -->
     <br><h2 style="text-align:center;"><b> American Opportunity Tax Credit (AOTC)</b></h2><br>
 
@@ -420,7 +440,9 @@
     <br><h3>Application</h3>
     <p> To claim AOTC, you must file a federal tax return, complete the Form 8863 and attach the completed form to your Form 1040 or Form 1040A. Use the information on the Form 1098-T Tuition Statement, received from the educational institution the student attended. The form includes the institution’s federal identification number, the student’s taxpayer identification number, payments received, amounts billed or refunds made for tuition and related expenses, scholarships administered by the institution, and the student’s enrollment and graduate status. </p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/5938" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 17">
     <!-- 4d -->
     <br><h2 style="text-align:center;"><b> Home Rehabilitation Mortgage Insurance</b></h2><br>
 
@@ -454,11 +476,11 @@
 
     <p>HUD requires that properties financed under this program meet certain basic energy efficiency and structural standards. </p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/4432" target="_blank"> Click to Learn More</a> <br>
-    <p> SoWhat Vote! Comments: Small businesses help our economy grow as majority of people are employed in these businesses.  These government loan programs can be a make or break for these small businesses and startups. Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support. Large educational loans with high interest rates are a challenge that many young people in our community have to endure. Also, please help educate the low-income community on the education tax credits they can avail.  It has been shown statistically that a person with 4-year college degree earns more over their lifetime compared to someone who has not completed college.  Several low-income homeowners can benefit from the government benefit to help them improve their house condition. </p>
-  </ng-container>
+    <!-- <p> SoWhat Vote! Comments: Small businesses help our economy grow as majority of people are employed in these businesses.  These government loan programs can be a make or break for these small businesses and startups. Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support. Large educational loans with high interest rates are a challenge that many young people in our community have to endure. Also, please help educate the low-income community on the education tax credits they can avail.  It has been shown statistically that a person with 4-year college degree earns more over their lifetime compared to someone who has not completed college.  Several low-income homeowners can benefit from the government benefit to help them improve their house condition. </p> -->
+   </ng-container>
 
-  <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 5">
+   <!-- Next benefit -->
+  <ng-container *ngIf="selectorflag == 18">
 
     <!-- 5a -->
     <br><h2 style="text-align:center;"><b> Certified Development Company (CDC) (504) Loan Program </b></h2><br>
@@ -497,7 +519,8 @@
     <br><h3>Application Material</h3>
     <p>504 loans are available exclusively through Certified Development Companies (CDCs). First, find a CDC in your area to ensure you are dealing with a qualified lender.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/1499" target="_blank"> Click to Learn More</a> <br>
-
+  </ng-container>
+  <ng-container *ngIf="selectorflag == 19">
     <!-- 5b -->
     <br><h2 style="text-align:center;"><b>Equity Investment - Small Business Investment Company (SBIC) Program </b></h2><br>
 
@@ -550,7 +573,8 @@
       <li>   More than 10% of investable capital in any one business </li>
     </ul>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/4366" target="_blank"> Click to Learn More</a> <br>
-
+  </ng-container>
+  <ng-container *ngIf="selectorflag == 20">
     <!-- 5c -->
     <br><h2 style="text-align:center;"><b>Free Application for Federal Student Aid (FAFSA)</b></h2><br>
 
@@ -570,8 +594,8 @@
       <li>    Other requirements may apply. Contact your school's financial aid office for more information </li>
      </ul>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/4426" target="_blank"> Click to Learn More</a> <br>
-
-
+  </ng-container>
+  <ng-container *ngIf="selectorflag == 21">
     <!-- 5d -->
     <br><h2 style="text-align:center;"><b>Home Loan for Regular Purchase</b></h2><br>
 
@@ -610,11 +634,11 @@
    <p>   On a no-down-payment loan, you can borrow up to the Fannie Mae/Freddie Mac conforming loan limit in most areas—and more in some high-cost counties. You can borrow more than this amount if you want to make a down payment. </p>
   <p> You’ll want to keep closing costs in mind when refinancing a loan, as they can add up to thousands of dollars. Before you decide to refinance, divide your closing costs by how much you expect to save every month by refinancing to see if it’s worth it. While your lender can advise you on the costs and benefits of the transaction, you’ll want to be sure you understand what you’re getting into.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/292" target="_blank"> Click to Learn More</a> <br>
-    <p> SoWhat Vote! Comments: Small businesses help our economy grow as majority of people are employed in these businesses.  These government loan programs can be a make or break for these small businesses and startups. The SBIR programs help in novel scientific discoveries. Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support. Large educational loans with high interest rates are a challenge that many young people in our community have to endure.  A home loan from the government can go a long way in helping the veterans become first time homeowners. </p>
-  </ng-container>
+    <!--    <p> SoWhat Vote! Comments: Small businesses help our economy grow as majority of people are employed in these businesses.  These government loan programs can be a make or break for these small businesses and startups. The SBIR programs help in novel scientific discoveries. Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support. Large educational loans with high interest rates are a challenge that many young people in our community have to endure.  A home loan from the government can go a long way in helping the veterans become first time homeowners. </p> -->
+      </ng-container>
 
-  <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 6">
+      <!-- Next benefit -->
+  <ng-container *ngIf="selectorflag == 22">
 
     <!-- 6a -->
     <br><h2 style="text-align:center;"><b> Direct PLUS Loans</b></h2><br>
@@ -640,7 +664,9 @@
     <br><h3>Apply</h3>
 <p>If your child's school participates in the Direct Loan program, you can obtain a Direct PLUS Loan application from your child's school. To apply for a FFEL PLUS Loan, you can get an application through your child's school, from a lender that participates in the FFEL program, or from the guaranty agency in your state.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/4372" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+    <ng-container *ngIf="selectorflag == 23">
     <!-- 6b -->
     <br><h2 style="text-align:center;"><b>Financial Aid Programs</b></h2><br>
 
@@ -668,7 +694,9 @@
     <p>To apply for Perkins Loans, fill out the Free Application for Federal Student Aid (FAFSA) online (the faster and easier way), or you can get a paper FAFSA from your high school, local library, postsecondary school, or by calling the Federal Student Aid Information Center at 1-800-4-FED-AID (1-800-433-3243). </p>
    <p>If you applied for Federal student aid for the previous school year, you can probably file a Renewal FAFSA for the next year. By using a Renewal FAFSA, you will only have to update any information that has changed and fill in a few new answers.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/418" target="_blank"> Click to Learn More</a> <br>
+    </ng-container>
 
+      <ng-container *ngIf="selectorflag == 24">
     <!-- 6c -->
     <br><h2 style="text-align:center;"><b>Housing Finance Agencies (HFA) Risk Sharing</b></h2><br>
 
@@ -678,8 +706,9 @@
     <p>In order to qualify for this benefit program, you must plan to purchase or have purchased a multiunit rental building and be in need of assistance or guidance regarding land or property ownership.  </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/842" target="_blank"> Click to Learn More</a> <br>
+      </ng-container>
 
-
+        <ng-container *ngIf="selectorflag == 25">
     <!-- 6d -->
     <br><h2 style="text-align:center;"><b>  Loan Management</b></h2><br>
 
@@ -709,15 +738,15 @@
       <li>   Deed-in-Lieu of Foreclosure: The Veteran voluntarily deeds the property to the servicer to avoid the foreclosure process, with VA paying the difference between the payoff and the net property value. </li>
     </ul>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/5933" target="_blank"> Click to Learn More</a> <br>
-    <p> SoWhat Vote! Comments: Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support. Large educational loans with high interest rates are a challenge that many young people in our community have to endure.  Several low-income families become homeless as they struggle with maintaining their mortgage payments and property taxes.  Please help these families in any way with your personal finances as well as educating them about the various housing government programs. Lastly, a home loan from the government can go a long way in helping the veterans become first time homeowners. </p>
-  </ng-container>
+    <!--    <p> SoWhat Vote! Comments: Let’s help more of our community members complete a 4-year college and graduate degrees by providing them with mentorship, career guidance and monetary support. Large educational loans with high interest rates are a challenge that many young people in our community have to endure.  Several low-income families become homeless as they struggle with maintaining their mortgage payments and property taxes.  Please help these families in any way with your personal finances as well as educating them about the various housing government programs. Lastly, a home loan from the government can go a long way in helping the veterans become first time homeowners. </p> -->
+      </ng-container>
 
 
 
 
-  <a style="text-align:center;">
-    <mat-card>
-<!-- Continue Buttons -->
+      <a style="text-align:center;">
+        <mat-card>
+    <!-- Continue Buttons -->
 <p *ngIf="profileFflag=='yes' && whichtab=='' && webpagevalue==''">
   <button mat-button  [disabled]="delayflag1" color="primary" routerLink="/Meetup/Home"><b>Continue</b></button>
 </p>

@@ -39,6 +39,7 @@ export class Tab1cdisplaynavComponent implements OnInit {
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle="";
   delayflag1:boolean=true; delayflag2:boolean=true;
+  cookiedenied="";stateuserCA="";
 
   //refreshes the browser upon button click of next or dislike or connectme
   reloadComponent() {
@@ -194,6 +195,8 @@ export class Tab1cdisplaynavComponent implements OnInit {
       this.tab1Clength=response1.data[3]; this.tab1Cendarrayitemidinitialize=response1.data[4];
       console.log(this.tab1Cdisplayitemid); console.log(this.tab1Cdisplayitemidnext);
       this.gethompageF1Ainitialize()
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       if(+this.tab1Clength==1) {this.clicked0=true}
       if(+this.tab1Clength==0) {this.endofarray1C="yes"}
     }).catch(error => {console.log(error.response1)

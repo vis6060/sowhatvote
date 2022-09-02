@@ -39,6 +39,8 @@ export class Tab1bdisplaynavComponent implements OnInit {
   viewtoggle="";
   delayflag1:boolean=true; delayflag2:boolean=true;
 
+  cookiedenied="";stateuserCA="";
+
   reloadComponent() {
     let currentUrl = this.router.url;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -187,6 +189,8 @@ export class Tab1bdisplaynavComponent implements OnInit {
       this.tab1Blength=response1.data[3]; this.tab1Bendarrayitemidinitialize=response1.data[4];
       console.log(this.tab1Bdisplayitemid); console.log(this.tab1Bdisplayitemidnext);
       this.gethompageF1Ainitialize()
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       if(+this.tab1Blength==1) {this.clicked0=true}
       if(+this.tab1Blength==0) {this.endofarray1B="yes"}
     }).catch(error => {console.log(error.response1)

@@ -18,8 +18,11 @@ export class EntrypageComponent implements OnInit {
 
   ngOnInit(): void {
     //if user is not authenticated, open the snackbar this way
-    if(this.authenticator.route!="authenticated") { this.openSnackBar() }
+  this.delaySnack(2000)
   }
+
+  async delaySnack(ms: number) {await new Promise(resolve => setTimeout(()=>this.openSnackBar(), ms)).then();}
+
 
   clicked1:boolean;clicked2:boolean; banner=""
 

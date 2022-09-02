@@ -39,6 +39,7 @@ export class Tab3bdisplaynavComponent implements OnInit {
   clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false;
   viewtoggle="";
   delayflag1:boolean=true; delayflag2:boolean=true;
+  cookiedenied="";stateuserCA="";
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -187,6 +188,8 @@ export class Tab3bdisplaynavComponent implements OnInit {
       this.tab3Blength=response1.data[3]; this.tab3Bendarrayitemidinitialize=response1.data[4];
       console.log(this.tab3Bdisplayitemid); console.log(this.tab3Bdisplayitemidnext);
       this.gethompageF1Ainitialize()
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       if(+this.tab3Blength==1) {this.clicked0=true}
       if(+this.tab3Blength==0) {this.endofarray3B="yes"}
     }).catch(error => {console.log(error.response1)

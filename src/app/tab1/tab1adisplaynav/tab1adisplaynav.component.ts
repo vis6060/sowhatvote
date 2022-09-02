@@ -190,6 +190,8 @@ export class Tab1adisplaynavComponent implements OnInit {
       this.tab1Alength=response1.data[3]; this.tab1Aendarrayitemidinitialize=response1.data[4];
       console.log(this.tab1Adisplayitemid); console.log(this.tab1Adisplayitemidnext);
       this.gethompageF1Ainitialize()
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       if(+this.tab1Alength==1) {this.clicked0=true}
       if(+this.tab1Alength==0) {this.endofarray1A="yes"}
     }).catch(error => {console.log(error.response1)

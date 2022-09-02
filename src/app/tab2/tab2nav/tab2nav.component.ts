@@ -48,6 +48,8 @@ export class Tab2navComponent implements OnInit {
   viewtoggle="";
   emailshareflag10=""; emailshareflag100="";
   delayflag1:boolean=true; delayflag2:boolean=true;
+  cookiedenied="";stateuserCA="";
+
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -109,6 +111,8 @@ export class Tab2navComponent implements OnInit {
       this.tab2length=response1.data[3]; this.tab2endarrayitemidinitialize=response1.data[4];
       console.log(this.tab2displayitemid); console.log(this.tab2displayitemidnext);
       this.gethompageF1Ainitialize()
+      if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
+      if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       if(+this.tab2length==1) {this.clicked0=true}
       if(+this.tab2length==0) {this.endofarray2="yes"}
     }).catch(error => {console.log(error.response1)
