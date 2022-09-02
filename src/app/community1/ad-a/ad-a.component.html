@@ -5,7 +5,9 @@
 
 <h1 style="text-align:center;"> <b> Ways of Helping Your Community
   <a  *ngIf="(cookiedenied=='yes' && authenticator.route != 'authenticated') || (cookiedenied=='yes' && stateuserCA=='yes')">
-    <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">!</a>
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+    <a id="GTM-TVJ45PB" >:</a>
+    <a  onload="gtag('set', 'ads_data_redaction', true)">-</a>
   </a>
 
 </b></h1> <br>
@@ -133,7 +135,9 @@
  </ol>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/5949" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 7">
     <!-- 2b -->
     <br><h2 style="text-align:center;"><b>AIDS Research Loan Repayment Program</b></h2><br>
 
@@ -145,7 +149,9 @@
 
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/480" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 8">
     <!-- 2c -->
     <br><h2 style="text-align:center;"><b> Clinical Research Loan Repayment Program </b></h2><br>
 
@@ -156,7 +162,9 @@
     <p>In order to qualify for this benefit program, you must be a U.S. citizen (or U.S. national or permanent resident) and have a M.D., Ph.D., Psy. D., Pharm. D., D.O., D.D.S., D.M.D., D.P.M., D.C., N.D., O.D., D.V.M., or equivalent doctoral degree from an accredited institution.  </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/2687" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 9">
     <!-- 2d -->
     <br><h2 style="text-align:center;"><b> Clinical Research Loan Repayment Program for Individuals from Disadvantaged Backgrounds </b></h2><br>
 
@@ -167,7 +175,9 @@
     <p>In order to qualify for this benefit program, you must be a U.S. citizen (or U.S. national or permanent resident) and have a M.D., Ph.D., Psy. D., Pharm. D., D.O., D.D.S., D.M.D., D.P.M., D.C., N.D., O.D., D.V.M., or equivalent doctoral degree from an accredited institution. You must also certify your disadvantaged background status by submitting a written statement from your health professions school, documentation that you received Loans for Disadvantaged Students, or documentation that you received a scholarship from the Department of Health and Human Services (HHS) under the Scholarship for Individuals with Exceptional Financial Need.  </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/467" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 10">
     <!-- 2e -->
     <br><h2 style="text-align:center;"><b> Cash-Out Refinance Loan</b></h2><br>
 
@@ -203,7 +213,7 @@
      </ng-container>
 
      <!-- Next benefit -->
-    <ng-container *ngIf="selectorflag == 3">
+    <ng-container *ngIf="selectorflag == 11">
 
       <!-- 3a -->
       <br><h2 style="text-align:center;"><b>Contraception and Infertility Research Loan Repayment Program </b></h2><br>
@@ -215,7 +225,9 @@
       <p>In order to qualify for this benefit program, you must be qualified/certified/licensed for laboratory or clinical research, you must be or have been a health care professional, and you must be pursuing a doctoral, master's, research fellow, clinical or nursing degree.  </p>
 
       <a style="text-align:center;" href="https://www.benefits.gov/benefit/469" target="_blank"> Click to Learn More</a> <br>
+    </ng-container>
 
+  <ng-container *ngIf="selectorflag == 12">
       <!-- 3b -->
       <br><h2 style="text-align:center;"><b>Extramural Clinical Research Loan Repayment Program for Individuals from Disadvantaged Backgrounds  </b></h2><br>
 
@@ -227,7 +239,9 @@
       <p>In order to qualify for this benefit program, you must have student loans greater than or equal to 20% of your institutional base salary and you must have completed doctoral level education.  </p>
 
       <a style="text-align:center;" href="https://www.benefits.gov/benefit/688" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 13">
       <!-- 3c -->
       <br><h2 style="text-align:center;"><b>General Research Loan Repayment Program</b></h2><br>
 
@@ -238,7 +252,9 @@
       <p>In order to qualify for this benefit program, participants must be a U.S. national, citizen, or permanent resident qualified/certified/licensed for laboratory or clinical research, have a health professional doctoral degree or equivalent, have student loan debt, and be employed by or have a firm commitment of employment at the NIH.  </p>
 
       <a style="text-align:center;" href="https://www.benefits.gov/benefit/6172" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 14">
       <!-- 3d -->
       <br><h2 style="text-align:center;"><b>National Institute on Minority Health and Health Disparities (NIMHD) Loan Repayment Program </b></h2><br>
 
@@ -293,7 +309,7 @@
         </ng-container>
 
       <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 4">
+  <ng-container *ngIf="selectorflag == 15">
 
     <!-- 4a -->
     <br><h2 style="text-align:center;"><b>National Institutes of Health Loan Repayment Programs (LRPs)  </b></h2><br>
@@ -339,7 +355,9 @@
     <p>NIH will repay your lenders for qualified educational loans issued by any U.S. government entity, accredited U.S. academic institutions, and/or commercial lenders that are subject to examination and supervision in their capacity as lending institutions by an agency of the United States or the state in which the lender has its principal place of business.  </p>
     <p>Qualified educational loans are loans that were used for school tuition or other reasonable educational or living expenses (including room/board and transportation) while attending undergraduate, graduate, medical, dental, or veterinary schools. LRP awards are not retroactive, thus loan balances paid down or paid-in-full prior to the start date of an LRP award will not be factored in the calculation of an award. NIH also will not repay any late fees, penalty fees, additional interest charges, or collection costs.  </p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/476" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 16">
     <!-- 4b -->
     <br><h2 style="text-align:center;"><b> Qualified Disabled and Working Individuals (QDWI) Program </b></h2><br>
 
@@ -361,7 +379,9 @@
       <li>   Married couple resource limit $6,000 </li>
          </ol>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/6180" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 17">
     <!-- 4c -->
     <br><h2 style="text-align:center;"><b> Qualified Medicare Beneficiary (QMB) Program </b></h2><br>
 
@@ -377,7 +397,9 @@
       <li>    Married couple resource limit $11,600  </li>
     </ol>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/6177" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 18">
     <!-- 4d -->
     <br><h2 style="text-align:center;"><b> Qualifying Individual (QI) Program </b></h2><br>
 
@@ -393,8 +415,10 @@
       <li>   Married couple resource limit $11,600  </li>
     </ol>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/6176" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
-    <!--4d -->
+  <ng-container *ngIf="selectorflag == 19">
+    <!--4e -->
     <br><h2 style="text-align:center;"><b>Volunteer Income Tax Assistance (VITA) </b></h2><br>
 
     <p>The Volunteer Income Tax Assistance (VITA) program offers free tax help to people who generally make $54,000 or less, persons with disabilities, the elderly and limited English speaking taxpayers who need assistance in preparing their own tax returns.  </p>
@@ -414,8 +438,9 @@
     <!--   <p> SoWhat Vote! Comments: This is a great opportunity to serve the healthcare needs of the community and at the same time the loan repayment will help an individual fulfil their dreams of serving in the healthcare industry. The work that a person does when they pursue a career in biomedical and clinical research fields can be satisfying.  A lot of people depend on Medicare health insurance to help them meet the high costs of healthcare and drugs.  Please educate your community on how they can avail the maximum Medicare benefits.  Lastly, please inform your community that there are government programs to help them complete their taxes and get the most tax return. </p> -->
     </ng-container>
 
+
     <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 5">
+  <ng-container *ngIf="selectorflag == 20">
 
     <!-- 5a -->
     <br><h2 style="text-align:center;"><b> Assets for Independence </b></h2><br>
@@ -441,7 +466,9 @@
       <li>   Tribal governments.  </li>
     </ol>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/628" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 21">
     <!-- 5b -->
     <br><h2 style="text-align:center;"><b> Specified Low-Income Medicare Beneficiary (SLMB) Program </b></h2><br>
 
@@ -457,8 +484,10 @@
       <li>  Married couple resource limit: $11,600  </li>
     </ol>
     <p>    Please Note: These limits change from year to year, so please check the Medicare Savings Programs page for the most up to date income requirements. </p>
-    <a style="text-align:center;" href="" target="_blank"> Click to Learn More</a> <br>
+    <a style="text-align:center;" href="https://www.benefits.gov/benefit/6178" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 22">
     <!-- 5c -->
     <br><h2 style="text-align:center;"><b> Pediatric Research Loan Repayment Program</b></h2><br>
 
@@ -468,7 +497,9 @@
     <p> To be eligible for this benefit program, you must be a U.S. citizen (or U.S. national or permanent resident) and have a M.D., Ph.D., Psy.D., Pharm. D., D.O., D.D.S., D.M.D., D.P.M., D.C., N.D., DVM or equivalent doctoral degree from an accredited institution. </p>
     <p>The NIH Extramural LRP application cycle is open from September 1 through November 15 each year. If the cycle is open please visit the Loan Repayment Program Application page to begin your application.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/2689" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 23">
     <!-- 5d -->
     <br><h2 style="text-align:center;"><b>Community Mental Health Services Block Grant</b></h2><br>
 
@@ -478,7 +509,9 @@
     <br><h3>Eligbility</h3>
     <p>The grant is awarded to the 59 states and territories of the United States according to a formula established by congress. Eligible states and territories must submit an annual application to SAMHSA. States and territories further disseminate the funding to providers of service.  </p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/765" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 24">
     <!-- 5e -->
     <br><h2 style="text-align:center;"><b> Microloan Program</b></h2><br>
 
@@ -516,7 +549,7 @@
      </ng-container>
 
      <!-- Next benefit -->
-  <ng-container *ngIf="selectorflag == 6">
+  <ng-container *ngIf="selectorflag == 25">
 
     <!-- 6a -->
     <br><h2 style="text-align:center;"><b> Nursing Education Loan Repayment Program</b></h2><br>
@@ -572,7 +605,9 @@
     <br><h3>Tax Liability</h3>
     <p>The full loan repayment award is taxable.</p>
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/449" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 26">
     <!-- 6b -->
     <br><h2 style="text-align:center;"><b> DOT’s Small Business Innovation Research (SBIR) program</b></h2><br>
 
@@ -607,7 +642,9 @@
     </ol>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/6188" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 27">
     <!-- 6c -->
     <br><h2 style="text-align:center;"><b> Federal Supplemental Educational Opportunity Grants </b></h2><br>
 
@@ -629,7 +666,9 @@
     The U.S. Department of Education's Student Aid on the Web-the gateway to Federal student aid, offers a single source of free information not only for applying for Federal aid, but also on choosing a career, selecting a school, and identifying non-Federal resources to pay for higher education. </p>
 
     <a style="text-align:center;" href="https://www.benefits.gov/benefit/595" target="_blank"> Click to Learn More</a> <br>
+  </ng-container>
 
+  <ng-container *ngIf="selectorflag == 28">
     <!-- 6d -->
     <br><h2 style="text-align:center;"><b>D.C. Higher Education Financial Services  </b></h2><br>
 

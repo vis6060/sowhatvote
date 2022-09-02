@@ -3,10 +3,12 @@
 <div class="class10" >
 
 <!-- Chips for navigation -->
-<a> <b>Search for Community Members:
+<a> <b>Search for Community Members
   <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
   <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
-    <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">-</a>
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+    <a id="GTM-TVJ45PB" >:</a>
+    <a  onload="gtag('set', 'ads_data_redaction', true)">-</a>
   </a>
 
 </b></a> <br>  <mat-chip-list>

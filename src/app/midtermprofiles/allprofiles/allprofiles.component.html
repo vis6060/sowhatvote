@@ -7,8 +7,11 @@
 
 <h1 style="text-align:center;"> <b> Names of all Candidates and Senators on SoWhat Vote!
   <a  *ngIf="(cookiedenied=='yes' && authenticator.route != 'authenticated') || (cookiedenied=='yes' && stateuserCA=='yes')">
-    <a id="GTM-TVJ45PB" onpageshow="gtag('set', {ads_data_redaction: true})">!</a>
-  </a>
+
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+      <a id="GTM-TVJ45PB" >:</a>
+      <a  onload="gtag('set', 'ads_data_redaction', true)">-</a>
+    </a>
 </b></h1>
 
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
