@@ -238,6 +238,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/marketemail": {
+      "name": "/marketemail",
+      "lambdaFunction": "test4e1c40d78",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

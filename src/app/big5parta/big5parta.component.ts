@@ -2,13 +2,14 @@ import { Component,Injectable, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { FormBuilder, FormGroup,} from '@angular/forms';
 import {MatStepperIntl} from '@angular/material/stepper';
-import Amplify, {Auth, Cache} from "aws-amplify";
+import Amplify, {Auth, Analytics, Cache} from "aws-amplify";
 import { API } from 'aws-amplify';
 import { DatePipe } from '@angular/common';
 
 import {APIService, DatinguserdbStaging} from "../API.service";
 import awsExports from "../../aws-exports";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
+
 
 export interface User {
   name: string;
@@ -96,7 +97,24 @@ locationreload() {  location.reload();}
         this.api.DropdownUpdateArraysenate(user.attributes.sub, responseF.data[0].state).then((event1) => {})
         this.api.DropdownUpdateArray(user.attributes.sub, responseF.data[0].state).then((event1) => {})
         this.api.DropdownUpdateArraygovern(user.attributes.sub, responseF.data[0].state).then((event1) => {})
-        this.midterminitialize( responseF.data[0].state)
+        this.midterminitialize( responseF.data[0].state);
+
+
+          Analytics.updateEndpoint({
+            address: user.attributes.email,
+            attributes: {
+              marketingemail: [this.marketingemail],
+              stateuser:[this.statedatabase]
+            },
+            channelType: 'EMAIL',
+            optOut: 'NONE',
+            userAttributes: {
+              email: [user.attributes.email]
+            },
+            userId: user.attributes.email,
+          })
+
+
       }
     }).catch(error => {console.log(error.responseF); this.ziperrorflag="yes";});
   }
@@ -128,7 +146,7 @@ locationreload() {  location.reload();}
         unsubscribematchingme: this.unsubscribematchingme, mentoragree:this.mentoragree, menteeagree:this.menteeagree, makemoneyside:this.makemoneyside,
         veteran:this.veteran, emailshareagree:this.emailshareagree,
         userdescription:this.userdescription, s3file:this.s3file, zipuserentered:this.zipuserentered,
-        loyalty: this.loyalty+5000, profilename: this.profilename,
+        loyalty: this.loyalty+5000, profilename: this.profilename, marketingemail: this.marketingemail,
         profilecompPartA:this.profilecompPartA,
         profilecompPartD:this.profilecompPartD, profilecompPartE:this.profilecompPartE, profilecompPartF:this.profilecompPartF,
         newWidth:this.newWidth, newHeight:this.newHeight, cookiestatus:"",
@@ -148,6 +166,8 @@ locationreload() {  location.reload();}
 
     const paramsp3 = {body: {userid: user.attributes.sub, itemidstab1C:[]}}
     API.post("datingapi1Ct4", "/itemapitab1Cinit1", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+
+
   }
 
   //initialize usercandarraydisplay table for midterm
@@ -201,6 +221,20 @@ locationreload() {  location.reload();}
     console.log(this.veteran)
     const paramspI = {body: {userid: user.attributes.sub, veteran:"Yes"}}
     API.put("datingapitest4", "/userdbapimoney", paramspI).then(responseI => {console.log("successI");}).catch(error => {console.log(error.responseI);});
+
+    Analytics.updateEndpoint({
+      address: user.attributes.email,
+      attributes: {
+        veteran: [this.veteran],
+      },
+      channelType: 'EMAIL',
+      optOut: 'NONE',
+      userAttributes: {
+        email: [user.attributes.email]
+      },
+      userId: user.attributes.email,
+    })
+
   }
 
   //this changes to true when the user checks the box that they agree to share email address
@@ -211,6 +245,30 @@ locationreload() {  location.reload();}
     const paramspB = {body: {userid: user.attributes.sub, emailshareagree:this.emailshareagree}}
     API.put("datingapitest4", "/userdbapiemail", paramspB).then(responseB => {console.log("successB");}).catch(error => {console.log(error.responseB);});
   }
+
+  //this changes to true when the user checks the box that they agree to share email address
+  marketingemail = true;
+  async boxevent20(event:any) {
+    const user = await Auth.currentAuthenticatedUser();
+    const paramspB = {body: {userid: user.attributes.sub, marketingemail:this.marketingemail}}
+    API.put("datingapitest4", "/marketemail", paramspB).then(responseB => {console.log("successB");}).catch(error => {console.log(error.responseB);});
+
+    //the marketingemail value could be true or false when stored. the above endpoint call will store the value the first time user completes the form. But, prior to clicking next if they change their mind, then the below will capture the endpoint change
+    Analytics.updateEndpoint({
+      address: user.attributes.email,
+      attributes: {
+        marketingemail: [this.marketingemail]
+      },
+      channelType: 'EMAIL',
+      optOut: 'NONE',
+      userAttributes: {
+        email: [user.attributes.email]
+      },
+      userId: user.attributes.email,
+    })
+
+  }
+
 
   //record that Section A is complete.
   async seccompleteA() {
@@ -227,10 +285,12 @@ locationreload() {  location.reload();}
   }
 
   async seccompleteflag() {
-    const expiration = new Date().valueOf()
-    Cache.setItem('profileAstatus', 'yes', { expires: expiration +1800000 }); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
-  }
+    const user = await Auth.currentAuthenticatedUser();
 
+    const expiration = new Date().valueOf()
+    Cache.setItem('profileAstatus', 'yes', {expires: expiration + 1800000}); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+
+  }
 
 }
 

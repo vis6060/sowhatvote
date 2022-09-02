@@ -8,7 +8,7 @@
   <!--  <a style="text-align:center;"> <h2> </h2> </a> -->
 
 <!-- Age store -->
-<br> <h3> Please complete these fields so we can deliver a personalized experience. </h3>  <br>
+<br> <h3> Please complete these fields for a personalized experience. </h3>  <br>
 
 <mat-stepper  class="demo-stepper" orientation="vertical" [linear]="true" #stepper>
   <mat-step [stepControl]="zeroFormGroup">
@@ -20,7 +20,6 @@
                placeholder="Ex. 94105" value="94043" required [(ngModel)]="zipuserentered" [ngModelOptions]="{standalone: true}">
         <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
       </mat-form-field>
-
 
       <br> <a> Please select your age </a>  <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
@@ -36,7 +35,17 @@
           <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option> <br>
         </select>
       </mat-form-field>
-      <br>  <br> <a> Education </a> <br>
+
+      <br>   <mat-card>
+      <mat-card-content>
+        <section class="example-section">
+          <input type="checkbox" class="example-margin" [(ngModel)]="marketingemail" [ngModelOptions]="{standalone: true}"
+                 (change)="boxevent20($event)">Yes, I would like to receive emails on Midterm Elections candidates survey results and community members connect requests.
+        </section>
+      </mat-card-content>
+    </mat-card>
+
+      <br> <a> Education </a> <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Education</mat-label>
         <select matNativeControl required [(ngModel)]="educationstore1" [ngModelOptions]="{standalone: true}"
@@ -44,6 +53,8 @@
           <option value="Less than a high school diploma">Less than a high school diploma</option> <option value="High school diploma">High school diploma</option> <option value="Some college or associate's degree">Some college or associate's degree</option> <option value="Bachelor's degree">Bachelor's degree</option> <option value="Master's degree">Master's degree</option> <option value="Greater than a Master's degree">Greater than a Master's degree</option>
         </select>
       </mat-form-field>
+
+
       <mat-card>
         <mat-card-content>
           <section class="example-section">
@@ -52,7 +63,8 @@
           </section>
         </mat-card-content>
       </mat-card>
-      <mat-card>
+
+      <!--    <mat-card>
         <mat-card-content>
           <section class="example-section">
             <input type="checkbox" class="example-margin" [(ngModel)]="mentoragree" [ngModelOptions]="{standalone: true}"
@@ -67,15 +79,17 @@
                    (change)="boxevent6($event)">Are you <b> looking for a Mentor </b> in your occupation/industry/education?<br>
           </section>
         </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-content>
-          <section class="example-section">
-            <input type="checkbox" class="example-margin" [(ngModel)]="makemoneyside" [ngModelOptions]="{standalone: true}"
-                   (change)="boxevent7($event)">Would you like to learn about <b> side jobs </b> and <b> community networking opportunities </b> to <b> make extra money?</b> <br>
-          </section>
-        </mat-card-content>
-      </mat-card>
+      </mat-card> -->
+
+      <!--    <mat-card>
+            <mat-card-content>
+              <section class="example-section">
+                <input type="checkbox" class="example-margin" [(ngModel)]="makemoneyside" [ngModelOptions]="{standalone: true}"
+                       (change)="boxevent7($event)">Would you like to learn about <b> side jobs </b> and <b> community networking opportunities </b> to <b> make extra money?</b> <br>
+              </section>
+            </mat-card-content>
+          </mat-card>  -->
+
       <mat-card>
         <mat-card-content>
           <section class="example-section">

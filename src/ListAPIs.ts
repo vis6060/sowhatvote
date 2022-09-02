@@ -33,6 +33,7 @@
 //API datingapitest4/userdbapitime (get avail) corresponds to datinguserdb table and *0ce function(partition key is userid)
 //API datingapitest4/loyaltyadd (get avail) corresponds to datinguserdb table and *d44 function(partition key is userid)
 //API datingapitest4/cookie (get avail) corresponds to datinguserdb table and *a03 function(partition key is userid)
+//API datingapitest4/marketemail (get,post avail) corresponds to datinguserdb table and *d78 function(partition key is userid)
 //API datingapitest4/userdbapizip corresponds to masterzipcountymaptable table and *b57 function(partition key is userid)
 //API datingapitest4/itemapitab1A  corresponds to datingitemtracking table and *765 function(partition key is userid)
 //API datingapitest4/itemapitab1Afor corresponds to datingitemtracking table and *d64 function(partition key is userid)

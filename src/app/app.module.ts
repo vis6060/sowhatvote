@@ -92,7 +92,7 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     MatDividerModule,
     MatSnackBarModule
   ],
-//  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+ // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   providers: [],
   bootstrap: [AppComponent]
 })

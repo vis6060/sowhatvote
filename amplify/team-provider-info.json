@@ -440,6 +440,10 @@
         "test4c0a40a03": {
           "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
           "s3Key": "amplify-builds/test4c0a40a03-6376664f4178696d564e-build.zip"
+        },
+        "test4e1c40d78": {
+          "deploymentBucketName": "amplify-amplifyd738dd6664444-staging-171405-deployment",
+          "s3Key": "amplify-builds/test4e1c40d78-394c56586d396b712f61-build.zip"
         }
       }
     }

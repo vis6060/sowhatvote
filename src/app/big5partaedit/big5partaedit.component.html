@@ -34,6 +34,7 @@
           <option value="Less than a high school diploma">Less than a high school diploma</option> <option value="High school diploma">High school diploma</option> <option value="Some college or associate's degree">Some college or associate's degree</option> <option value="Bachelor's degree">Bachelor's degree</option> <option value="Master's degree">Master's degree</option> <option value="Greater than a Master's degree">Greater than a Master's degree</option>
         </select>
       </mat-form-field>
+
       <mat-card>
         <mat-card-content>
           <section class="example-section">
@@ -42,31 +43,33 @@
           </section>
         </mat-card-content>
       </mat-card>
-      <mat-card>
-        <mat-card-content>
-          <section class="example-section">
-            <input type="checkbox" class="example-margin" [(ngModel)]="mentoragree" [ngModelOptions]="{standalone: true}"
-                   (change)="boxevent5($event)">Are you interested in <b> training a Mentee </b> in your occupation/industry/education?<br>
-          </section>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-content>
-          <section class="example-section">
-            <input type="checkbox" class="example-margin" [(ngModel)]="menteeagree" [ngModelOptions]="{standalone: true}"
-                   (change)="boxevent6($event)">Are you <b> looking for a Mentor </b> in your occupation/industry/education?<br>
-          </section>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-content>
-          <section class="example-section">
-            <input type="checkbox" class="example-margin" [(ngModel)]="makemoneyside" [ngModelOptions]="{standalone: true}"
-                   (change)="boxevent7($event)">Would you like to learn about <b> side jobs </b> and <b> community networking opportunities </b> to <b> make extra money?</b> <br>
-          </section>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
+
+      <!--    <mat-card>
+            <mat-card-content>
+              <section class="example-section">
+                <input type="checkbox" class="example-margin" [(ngModel)]="mentoragree" [ngModelOptions]="{standalone: true}"
+                       (change)="boxevent5($event)">Are you interested in <b> training a Mentee </b> in your occupation/industry/education?<br>
+              </section>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-content>
+              <section class="example-section">
+                <input type="checkbox" class="example-margin" [(ngModel)]="menteeagree" [ngModelOptions]="{standalone: true}"
+                       (change)="boxevent6($event)">Are you <b> looking for a Mentor </b> in your occupation/industry/education?<br>
+              </section>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-content>
+              <section class="example-section">
+                <input type="checkbox" class="example-margin" [(ngModel)]="makemoneyside" [ngModelOptions]="{standalone: true}"
+                       (change)="boxevent7($event)">Would you like to learn about <b> side jobs </b> and <b> community networking opportunities </b> to <b> make extra money?</b> <br>
+              </section>
+            </mat-card-content>
+          </mat-card>-->
+
+          <mat-card>
         <mat-card-content>
           <section class="example-section">
             <input type="checkbox" class="example-margin" [(ngModel)]="emailshareagree" [ngModelOptions]="{standalone: true}"
