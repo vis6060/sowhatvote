@@ -26,7 +26,17 @@
           <option value="Male">Male</option> <option value="Female">Female</option> <option value="LGBTQIA+">LGBTQIA+</option> <br>
         </select>
       </mat-form-field>
-      <br>  <br> <a> Education </a> <br>
+
+      <br>   <mat-card>
+      <mat-card-content>
+        <section class="example-section">
+          <input type="checkbox" class="example-margin" [(ngModel)]="marketingemail" [ngModelOptions]="{standalone: true}"
+                 (change)="boxevent20($event)">Yes, I would like to receive emails on Midterm Elections candidates survey results and community members connect requests.
+        </section>
+      </mat-card-content>
+    </mat-card>
+
+        <br> <a> Education </a> <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Education</mat-label>
         <select matNativeControl required [(ngModel)]="educationstore1" [ngModelOptions]="{standalone: true}"

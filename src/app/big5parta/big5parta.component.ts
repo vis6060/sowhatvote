@@ -99,7 +99,7 @@ locationreload() {  location.reload();}
         this.api.DropdownUpdateArraygovern(user.attributes.sub, responseF.data[0].state).then((event1) => {})
         this.midterminitialize( responseF.data[0].state);
 
-
+      if(this.marketingemail==true) {
           Analytics.updateEndpoint({
             address: user.attributes.email,
             attributes: {
@@ -113,7 +113,21 @@ locationreload() {  location.reload();}
             },
             userId: user.attributes.email,
           })
-
+      } else if(this.marketingemail==false) {
+        Analytics.updateEndpoint({
+          address: user.attributes.email,
+          attributes: {
+            marketingemail: [this.marketingemail],
+            stateuser:[this.statedatabase]
+          },
+          channelType: 'EMAIL',
+          optOut: 'ALL',
+          userAttributes: {
+            email: [user.attributes.email]
+          },
+          userId: user.attributes.email,
+        })
+      }
 
       }
     }).catch(error => {console.log(error.responseF); this.ziperrorflag="yes";});
@@ -228,7 +242,6 @@ locationreload() {  location.reload();}
         veteran: [this.veteran],
       },
       channelType: 'EMAIL',
-      optOut: 'NONE',
       userAttributes: {
         email: [user.attributes.email]
       },
@@ -254,18 +267,35 @@ locationreload() {  location.reload();}
     API.put("datingapitest4", "/marketemail", paramspB).then(responseB => {console.log("successB");}).catch(error => {console.log(error.responseB);});
 
     //the marketingemail value could be true or false when stored. the above endpoint call will store the value the first time user completes the form. But, prior to clicking next if they change their mind, then the below will capture the endpoint change
-    Analytics.updateEndpoint({
-      address: user.attributes.email,
-      attributes: {
-        marketingemail: [this.marketingemail]
-      },
-      channelType: 'EMAIL',
-      optOut: 'NONE',
-      userAttributes: {
-        email: [user.attributes.email]
-      },
-      userId: user.attributes.email,
-    })
+    if(this.marketingemail==true) {
+      Analytics.updateEndpoint({
+        address: user.attributes.email,
+        attributes: {
+          marketingemail: [this.marketingemail]
+        },
+        channelType: 'EMAIL',
+        optOut: 'NONE',
+        userAttributes: {
+          email: [user.attributes.email]
+        },
+        userId: user.attributes.email,
+      })
+    }
+    else if (this.marketingemail==false) {
+      Analytics.updateEndpoint({
+        address: user.attributes.email,
+        attributes: {
+          marketingemail: [this.marketingemail]
+        },
+        channelType: 'EMAIL',
+        optOut: 'ALL',
+        userAttributes: {
+          email: [user.attributes.email]
+        },
+        userId: user.attributes.email,
+      })
+    }
+
 
   }
 

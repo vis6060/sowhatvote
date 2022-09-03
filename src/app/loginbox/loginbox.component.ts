@@ -128,7 +128,7 @@ export class LoginboxComponent implements OnInit {
   industrylevel1= {} as User;
 
   mentoragree = false;  menteeagree = false; makemoneyside = false; veteran = false;  emailshareagree = false;
-
+  marketingemail=true
  profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
 
   countyuser=""; stateuser=""; readyflag=""; email=""
@@ -161,7 +161,7 @@ export class LoginboxComponent implements OnInit {
       this.profilename=response1.data[0].profilename; this.facebookbusername=response1.data[0].facebookbusername;
       this.userdescription=response1.data[0].userdescription; this.industrylevel1=response1.data[0].industrylevel1;
       this.industrylevel2=response1.data[0].industrylevel2; this.occup=response1.data[0].occup;
-      this.email=response1.data[0].email
+      this.email=response1.data[0].email; this.marketingemail=response1.data[0].marketingemail
       //this gets the signed URL for new dimension image to display
 
       this.unsubscribematchingme=response1.data[0].unsubscribematchingme;
