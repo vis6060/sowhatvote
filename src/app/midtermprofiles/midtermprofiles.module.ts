@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from "@angular/material/card";
 @NgModule({
   declarations: [
     AllprofilesComponent
@@ -14,7 +15,8 @@ import {MatDividerModule} from '@angular/material/divider';
     RouterModule.forChild([{ path: '', component: AllprofilesComponent }]),
     MatTreeModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
   ]
 })
 export class MidtermprofilesModule { }
