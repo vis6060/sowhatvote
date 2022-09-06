@@ -23,7 +23,7 @@ import Amplify from "aws-amplify";
 import awsconfig from "src/aws-exports";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AmplifyAuthenticatorModule} from "@aws-amplify/ui-angular";
-
+//import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 Amplify.configure(awsconfig);
 import aws_exports from "src/aws-exports";
@@ -90,10 +90,11 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+  //  MatCarouselModule.forRoot()
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
-//  providers: [],
+//  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 //@ts-ignore

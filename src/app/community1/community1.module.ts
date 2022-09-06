@@ -4,6 +4,8 @@ import {RouterModule} from "@angular/router";
 import {AdAComponent} from "./ad-a/ad-a.component";
 import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 
@@ -15,7 +17,7 @@ import {MatDividerModule} from "@angular/material/divider";
     CommonModule,
     RouterModule.forChild([{ path: '', component: AdAComponent }]),
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
   ]
 })
 export class Community1Module { }

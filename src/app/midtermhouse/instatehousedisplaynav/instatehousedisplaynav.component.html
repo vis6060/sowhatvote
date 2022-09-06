@@ -103,7 +103,7 @@
 
   <br>  <mat-card>
 <!-- Stays on top, so anytime user can switch to their home state candidates -->
- <button mat-button  (click)="sethomecands()">Cast your Opinion & View Survey Results of Candidates from your Home State of {{HOMEstate}} </button>
+ <button mat-button  (click)="sethomecands()">Cast your Opinion & View Survey Results of Candidates from your <b>Home State</b> of {{HOMEstate}} </button>
 </mat-card> <br>
 
   <mat-card>
@@ -118,7 +118,7 @@
     </select>
   </mat-form-field>
 </form>
-<button mat-button  (click)="setdropdowncands()">Search for Candidates in Selected State</button>
+<button mat-button  (click)="setdropdowncands()">Search for Candidates in <b>Selected State</b></button>
   </mat-card> <br>
 
   <mat-card>
@@ -164,7 +164,7 @@
     <!-- Chips for navigation -->
     <a> <b>Vote<sup>*</sup> or View Results for: </b></a> <br>  <mat-chip-list>
     <mat-chip (click)="overallfunc()">Candidate's Overall Performance</mat-chip>
-    <mat-chip (click)="assignfunc()">U.S. House Committees assignments to Candidates</mat-chip>
+    <mat-chip (click)="assignfunc()">U.S. House Committees assignments of a Candidate</mat-chip>
     <mat-chip (click)="comperffunc()">Candidate's Performance on House Committees</mat-chip>
     <mat-chip (click)="issperffunc()">Candidate's Performance on Issues</mat-chip>
   </mat-chip-list>  <br>
@@ -185,21 +185,21 @@
     <a *ngIf="FutureComCandViewed==-1">
       <form [formGroup]="zeroFormGroup">
         <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-around center">
-           <mat-card-title> Please select which U.S. House committees you would like to see {{CandName10}} serve in the year 2023 Congress: </mat-card-title>  <br>
+           <mat-card-title> Please select which U.S. House committees you would like to see {{CandName10}} serve in the year 2023 Congress: </mat-card-title> <mat-icon matTooltip="Today, committee assignments are decided by party leadership behind closed doors. Now, with SoWhat Vote!, have your voice heard and inform the party leadership of your choice of committee that you would like to see the person serve in.">help</mat-icon>  <br>
           <mat-form-field class="demo-form-field1" appearance="fill">
-            <mat-label>First Preference</mat-label>
+            <mat-label>First Committee Preference</mat-label>
             <select matNativeControl required [(ngModel)]=FutureCom1  (change)="futcom($event)" [ngModelOptions]="{standalone: true}">
               <option value="Agriculture">Agriculture Committee</option> <option value="Financial">Financial Services Committee</option> <option value="Education">Education and Labor Committee</option> <option value="Appropriations">Appropriations Committee</option> <option value="Administration">House Administration Committee</option> <option value="Foreign">Foreign Affairs Committee</option> <option value="Transportation">Transportation and Infrastructure Committee</option> <option value="Veterans">Veterans' Affairs Committee</option> <option value="Climate">Climate Crisis Committee</option> <option value="Energy">Energy and Commerce Committee</option> <option value="Ethics">Ethics Committee</option> <option value="Ways">Ways and Means Committee</option> <option value="Science">Science, Space, and Technology Committee</option> <option value="Armed">Armed Services Committee</option> <option value="Judiciary">Judiciary Committee</option> <option value="Homeland">Homeland Security Committee</option> <option value="Budget">Budget Committee</option> <option value="Natural">Natural Resources Committee</option> <option value="Oversight">Oversight and Reform Committee</option> <option value="Small">Small Business Committee</option> <option value="Taxation">Joint Committee on Taxation Committee</option> <option value="Intelligence">Intelligence Committee</option>
             </select>
           </mat-form-field>
           <br>     <mat-form-field class="demo-form-field1" appearance="fill">
-          <mat-label>Second Preference</mat-label>
+          <mat-label>Second Committee Preference</mat-label>
           <select matNativeControl required [(ngModel)]=FutureCom2 (change)="futcom($event)" [ngModelOptions]="{standalone: true}">
             <option value="Agriculture">Agriculture Committee</option> <option value="Financial">Financial Services Committee</option> <option value="Education">Education and Labor Committee</option> <option value="Appropriations">Appropriations Committee</option> <option value="Administration">House Administration Committee</option> <option value="Foreign">Foreign Affairs Committee</option> <option value="Transportation">Transportation and Infrastructure Committee</option> <option value="Veterans">Veterans' Affairs Committee</option> <option value="Climate">Climate Crisis Committee</option> <option value="Energy">Energy and Commerce Committee</option> <option value="Ethics">Ethics Committee</option> <option value="Ways">Ways and Means Committee</option> <option value="Science">Science, Space, and Technology Committee</option> <option value="Armed">Armed Services Committee</option> <option value="Judiciary">Judiciary Committee</option> <option value="Homeland">Homeland Security Committee</option> <option value="Budget">Budget Committee</option> <option value="Natural">Natural Resources Committee</option> <option value="Oversight">Oversight and Reform Committee</option> <option value="Small">Small Business Committee</option> <option value="Taxation">Joint Committee on Taxation Committee</option> <option value="Intelligence">Intelligence Committee</option>
           </select>
         </mat-form-field>
           <br>      <mat-form-field class="demo-form-field1" appearance="fill">
-          <mat-label>Third Preference</mat-label>
+          <mat-label>Third Committee Preference</mat-label>
           <select matNativeControl required [(ngModel)]=FutureCom3 (change)="futcom($event)" [ngModelOptions]="{standalone: true}">
             <option value="Agriculture">Agriculture Committee</option> <option value="Financial">Financial Services Committee</option> <option value="Education">Education and Labor Committee</option> <option value="Appropriations">Appropriations Committee</option> <option value="Administration">House Administration Committee</option> <option value="Foreign">Foreign Affairs Committee</option> <option value="Transportation">Transportation and Infrastructure Committee</option> <option value="Veterans">Veterans' Affairs Committee</option> <option value="Climate">Climate Crisis Committee</option> <option value="Energy">Energy and Commerce Committee</option> <option value="Ethics">Ethics Committee</option> <option value="Ways">Ways and Means Committee</option> <option value="Science">Science, Space, and Technology Committee</option> <option value="Armed">Armed Services Committee</option> <option value="Judiciary">Judiciary Committee</option> <option value="Homeland">Homeland Security Committee</option> <option value="Budget">Budget Committee</option> <option value="Natural">Natural Resources Committee</option> <option value="Oversight">Oversight and Reform Committee</option> <option value="Small">Small Business Committee</option> <option value="Taxation">Joint Committee on Taxation Committee</option> <option value="Intelligence">Intelligence Committee</option>
           </select>
@@ -599,8 +599,26 @@
       <a href="https://www.banking.senate.gov/hearings/examining-student-loan-servicers-and-their-impact-on-workers" target="_blank"> Click to Learn More</a> <br>
   </mat-card>
 
-
-
+  <!-- Facebook Comments box per candidate -->
+  <br>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
 
 
   <br> <br> <mat-divider></mat-divider>

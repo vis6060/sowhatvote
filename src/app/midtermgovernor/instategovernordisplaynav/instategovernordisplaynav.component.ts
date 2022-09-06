@@ -46,7 +46,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
   District10="";Party10="";State10="";Office10="";Website10="";PictureAttribution10="";Motto10=""; OverallYea10=""; OverallNay10="";AllOffices10='';
   District100=""; Party100="";State100="";Office100="";Website100="";PictureAttribution100="";Motto100=""; OverallYea100=""; OverallNay100=""; AllOffices100='';
   District1000="";Party1000="";State1000="";Office1000="";Website1000="";PictureAttribution1000="";Motto1000=""; OverallYea1000=""; OverallNay1000=""; AllOffices1000=''
-  CandName10=""; CandName100="";CandName1000=""
+  CandName10=""; CandName100="";CandName1000="";
   votedindexes=[]; comcateg=""; votedindexesissue=[]; isscateg=""; prefercateg=""; votedindexesissuecand10=[];votedindexesissuecand100=[];votedindexesissuecand1000=[];
 
   BorderYea=0;	BorderNay=0;	ImmigrationYea=0;	ImmigrationNay=0;	AbortionYea=0;	AbortionNay=0;	TransgenderYea=0;	TransgenderNay=0;	VotingYea=0;	VotingNay=0;	SafetyYea=0;	SafetyNay=0;	EducationYea=0;	EducationNay=0;	VeteransYea=0;	VeteransNay=0;	JobsYea=0;	JobsNay=0;	ClimateYea=0;	ClimateNay=0;	HomelessnessYea=0;	HomelessnessNay=0;	MentalYea=0;	MentalNay=0;	GunsYea=0;	GunsNay=0;	CostYea=0;	CostNay=0;	FarmersYea=0;	FarmersNay=0;	PermanentYea=0;	PermanentNay=0;	EconomyYea=0;	EconomyNay=0;	HealthcareYea=0;	HealthcareNay=0;	InfrastructureYea=0;	InfrastructureNay=0;	EnergyYea=0;	EnergyNay=0;	CannabisYea=0;	CannabisNay=0;	TaxesYea=0;	TaxesNay=0;	LandsYea=0;	LandsNay=0;	SeniorsYea=0;	SeniorsNay=0;	ManufacturingYea=0;	ManufacturingNay=0;	HousingYea=0;	HousingNay=0;

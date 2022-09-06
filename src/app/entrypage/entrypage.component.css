@@ -1,4 +1,8 @@
 
+.banner {
+  max-width: 400px;
+  border: none
+}
 
 .mat-icon {
   vertical-align: text-bottom;
@@ -25,6 +29,11 @@
   padding: 15px;
 }
 
+.imtip {
+  position: absolute;
+
+}
+
 @media screen and (max-width: 600px) {
   .class11 {
     display: none;
@@ -32,4 +41,5 @@
   .class10 {
     width: 100%;
   }
+
 }

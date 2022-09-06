@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from "@angular/material/icon";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatTooltipModule
   ]
 })
 export class MidtermhouseModule { }

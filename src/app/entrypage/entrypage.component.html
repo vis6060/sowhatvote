@@ -2,7 +2,92 @@
 
 <!-- class10 is center main content -->
 <div class="class10" >
+
+  <div fxLayout="row wrap" >   <!-- row wrap will help put the second mat-card in second row when screen size small. fxflex will help change the image size with smaller screens -->
+    <div  fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <mat-card>
+        <br> <br> <br> <br>
 <h1 style="text-align:center;"><b>Make your voice count!</b></h1>
+        <h3 style="text-align:center;">Easily Discuss, With New Friends, and Provide the Community's Opinion to Aspiring and Existing U.S. Senators, House of Representatives, Governors and Others.</h3>
+        <a style="text-align:center;">
+          <div *ngIf="authenticator.route != 'authenticated'">
+            <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started</b></button>
+          </div>
+          <div *ngIf="authenticator.route === 'authenticated'">
+            <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started</b></button>
+          </div>
+        </a>
+        <br> <br> <br> <br> <br> <br> <br> <br>
+    </mat-card>
+    </div>
+
+    <div  fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+
+
+      <div *ngIf="delayflag1 == true && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+    <img src="assets/animate/F1.png" >
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == true && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+          <img src="assets/animate/F2.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == true && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+            <img src="assets/animate/F3.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == true && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+          <img src="assets/animate/F4.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == true && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+         <img src="assets/animate/F5.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == true && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+      <img src="assets/animate/F6.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == true && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+      <img src="assets/animate/F7.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == true && delayflag9 == false && delayflag10 == false">
+      <img src="assets/animate/F8.png" class="imtip">
+      </div>
+      <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == true && delayflag10 == false">
+      <img src="assets/animate/BanFull.png" class="imtip">
+      </div>
+
+    </div>
+</div>
+  <br> <br>
+  <!-- show one quote immediately after the entry banner  -->
+  <mat-card *ngIf="selectorflag == 1">
+      <a style="font-family: cursive, 'Times New Roman', Times, serif;">"The effect of [a representative democracy is] to refine and enlarge the public views, by passing them through the medium of a chosen body of citizens, whose wisdom may best discern the true interest of the nation…” </a>
+    <br>  <a style="float: right"> <small>-James Madison (4th U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 2">
+       <a style="font-family: cursive, 'Times New Roman', Times, serif;">"That government is the strongest of which every man feels himself a part." </a>
+    <br>  <a style="float: right"> <small>-Thomas Jefferson (3rd U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 3">
+      <a style="font-family: cursive, 'Times New Roman', Times, serif;">"Politics ought to be the part-time profession of every citizen who would protect the rights and privileges of free men." </a>
+    <br>  <a style="float: right"> <small>-Dwight Eisenhower (34th U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 4">
+     <a style="font-family: cursive, 'Times New Roman', Times, serif;">"Let us have faith that right makes might, and in that faith, let us, to the end, dare to do our duty as we understand it." </a>
+    <br>  <a style="float: right"> <small>-Abraham Lincoln (16th U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 5">
+    <a style="font-family: cursive, 'Times New Roman', Times, serif;"> "Public sentiment is everything. With public sentiment, nothing can fail; without it nothing can succeed."</a>
+    <br>  <a style="float: right"> <small>-Abraham Lincoln (16th U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 6">
+      <a style="font-family: cursive, 'Times New Roman', Times, serif;">"The legitimate object of government is 'to do for the people what needs to be done, but which they can not, by individual effort, do at all, or do so well, for themselves'." </a>
+    <br>  <a style="float: right"> <small>-Abraham Lincoln (16th U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 7">
+     <a style="font-family: cursive, 'Times New Roman', Times, serif;">Sir, my concern is not whether God is on our side; my greatest concern is to be on God's side, for God is always right. </a>
+    <br>  <a style="float: right"> <small>-Abraham Lincoln (16th U.S. President) </small></a> <br>
+  </mat-card>
+  <mat-card *ngIf="selectorflag == 8">
+     <a style="font-family: cursive, 'Times New Roman', Times, serif;">Public opinion in this country is everything. </a>
+    <br>  <a style="float: right"> <small>-Abraham Lincoln (16th U.S. President) </small></a> <br>
+  </mat-card>
 
   <p>Our mission is to make the collective communtiy voices heard.</p>
 
@@ -11,14 +96,7 @@
   <p>Connect with community members who share a similar interest. </p>
 
 
-  <a style="text-align:center;">
-    <mat-card *ngIf="authenticator.route != 'authenticated'">
-  <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount">Get Started</button>
-    </mat-card>
-    <mat-card *ngIf="authenticator.route === 'authenticated'">
-      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate">Get Started</button>
-    </mat-card>
-  </a> <br>
+<br>
 
 
  <br> <mat-divider></mat-divider>
@@ -48,6 +126,7 @@
 
 
   <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+
 
 
   </div>
