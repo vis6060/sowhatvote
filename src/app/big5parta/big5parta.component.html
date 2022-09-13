@@ -18,10 +18,10 @@
         <mat-label>Zipcode</mat-label>
         <input matInput (keypress)="numberOnly($event)" (change)="boxevent10($event)" type="text"  #postalCode maxlength="5"
                placeholder="Ex. 94105" value="94043" required [(ngModel)]="zipuserentered" [ngModelOptions]="{standalone: true}">
-        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        <mat-hint align="start">Format: Five digit zip code. First digit entered should not be a zero. For example: if your zip code is 03103 in New Hampshire, then please enter 3103.</mat-hint>
       </mat-form-field>
 
-      <br> <a> Please select your age </a>  <br>
+    <br>  <br> <br>  <br> <a> Please select your age </a>  <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Age range (years)</mat-label>
         <select matNativeControl required [(ngModel)]=agestore1 [ngModelOptions]="{standalone: true}">

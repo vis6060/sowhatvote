@@ -93,8 +93,8 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     MatSnackBarModule,
   //  MatCarouselModule.forRoot()
   ],
-//  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+//  providers: [],
   bootstrap: [AppComponent]
 })
 //@ts-ignore

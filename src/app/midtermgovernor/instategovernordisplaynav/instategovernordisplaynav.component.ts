@@ -30,8 +30,12 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   ngOnInit(): void {
     this.gethompage1Binitialize();
+    this.delayonTop(1500)
     this.randomgen()
   }
+
+  async delayonTop(ms: number) {await new Promise(resolve => setTimeout(()=>this.ontop(), ms)).then();}
+
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
   tabinstatedisplayitemidnext:string="";  //"next" is index1 in array and "nextnext" is index2 in array to check their unsubscribe status and whether needs to be deleted from array
@@ -56,7 +60,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   statedropdown=''; HOMEstate=''
 
-  cookiedenied="";stateuserCA="";
+  cookiedenied="";stateuserCA=""; overalldisapper="";
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -71,6 +75,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
   setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
 
   viewtoggle1next() {window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName1000; this.Party10=this.Party1000; this.State10=this.State1000; this.District10=this.District1000; this.AllOffices10=this.AllOffices1000
     this.Website10=this.Website1000;this.PictureAttribution10=this.PictureAttribution1000; this.Motto10=this.Motto1000; this.Office10=this.Office1000;
     this.OverallYea10=this.OverallYea1000;this.OverallNay10=this.OverallNay1000;
@@ -82,6 +87,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
   }
 
   viewtoggle2next() { window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName100; this.Party10=this.Party100; this.State10=this.State100; this.District10=this.District100; this.AllOffices10=this.AllOffices100
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;this.Office10=this.Office100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100;
@@ -93,6 +99,7 @@ export class InstategovernordisplaynavComponent implements OnInit {
   }
 
   onetimenextnext() {window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName100; this.Party10=this.Party100; this.State10=this.State100; this.District10=this.District100;this.AllOffices10=this.AllOffices100
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100; this.Office10=this.Office100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100;
@@ -347,12 +354,21 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
 //Issues confirmation button. Updates the voting results and store loyalty points. and stores that an ID has been voted on, so same button doesn't appear again.  var1 is candidatename. var2 is s3file picture filename.
   //Dialog box pop-up for voting confirmation
-  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'Overallygov'},}).afterClosed().subscribe(result => {
-    this.api.OverallResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"Overallygov", "Overallgov",100).then((event) => {});});}
-  async NAYclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'Overallngov'},}).afterClosed().subscribe(result => {
-    this.api.OverallResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"Overallngov", "Overallgov",100).then((event) => {});});}
+//  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
+ //   data: {voteflag: 'Overallygov'},}).afterClosed().subscribe(result => {
+ //   this.api.OverallResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"Overallygov", "Overallgov",100).then((event) => {});});}
+ // async NAYclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
+ //   data: {voteflag: 'Overallngov'},}).afterClosed().subscribe(result => {
+ //   this.api.OverallResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"Overallngov", "Overallgov",100).then((event) => {});});}
+
+  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser(); this.overalldisapper='yes'
+    this.api.OverallResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"Overallygov", "Overallgov",100)
+  }
+
+  async NAYclick2z() {const user = await Auth.currentAuthenticatedUser(); this.overalldisapper='yes'
+    this.api.OverallResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"Overallngov", "Overallgov",100)
+  }
+
   async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
     data: {voteflag: 'P0ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POgov');
     this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P0ygov", "P0gov",100).then((event) => {});});}

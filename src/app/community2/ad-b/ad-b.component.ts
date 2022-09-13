@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import {API, Auth, Cache} from "aws-amplify";
 import {APIService} from "../../API.service";
 import {Router} from "@angular/router";
@@ -11,7 +11,7 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 })
 export class AdBComponent implements OnInit {
 
-  constructor(private api: APIService,private router: Router,public authenticator: AuthenticatorService) {
+  constructor(private api: APIService,private router: Router,public authenticator: AuthenticatorService,private renderer: Renderer2) {
     if(Cache.getItem('profileAstatus')=="yes") {this.profileAflag="yes"; console.log("profileAflagsetinconsrructor")}
     if(Cache.getItem('profileFstatus')=="yes") {this.profileFflag="yes"}
  //   if(this.authenticator.route!="authenticated") {this.router.navigate(['/MyAccount'])}
@@ -20,13 +20,17 @@ export class AdBComponent implements OnInit {
     console.log("profileAflag is",this.profileAflag)
     if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
     if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
+    this.webpageroute()
+ //   this.delayonTop(500)
   }
 
   ngOnInit(): void {
-    this.webpageroute()
     this.delayButton1(2000)
+  this.ontop()
     this.randomgen()
   }
+
+  async delayonTop(ms: number) {await new Promise(resolve => setTimeout(()=>this.ontop(), ms)).then();}
 
   webpagevalue="";whichtab="";profileFflag="";profileAflag=""
   delayflag1:boolean=true;
@@ -62,5 +66,8 @@ export class AdBComponent implements OnInit {
     let   max = Math.floor(25);
     this.selectorflag=Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  ontop(){try {const errorField = this.renderer.selectRootElement('.ontop_class');errorField.scrollIntoView();} catch (err) {}}
+
 
 }

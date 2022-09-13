@@ -25,15 +25,19 @@ export class InstatehousedisplaynavComponent implements OnInit {
 //    if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
     const expiration = new Date().valueOf()
     Cache.setItem('midtermenter', 'yes', { expires: expiration +1800000 }); // 30min as login needs to happen and PartA form needs to be completed
+    if(Cache.getItem('searchbutton')=="yes") {this.clicked21=false; Cache.removeItem("searchbutton") }
 
   }
 
   ngOnInit(): void {
     this.gethompage1Binitialize()
+    this.delayonTop(1500)
     this.zeroFormGroup = this._formBuilder.group({});
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
     this.randomgen()
   }
+
+  async delayonTop(ms: number) {await new Promise(resolve => setTimeout(()=>this.ontop(), ms)).then();}
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
   tabinstatedisplayitemidnext:string="";  //"next" is index1 in array and "nextnext" is index2 in array to check their unsubscribe status and whether needs to be deleted from array
@@ -42,7 +46,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   initializerflag=""; onetimenextflag=""; backflag=""; backflagnext=""; futureflag=""; initsearchflag=""; CandNeutralflag=""
   public CandSearch: CandNameOutArray;
   tabinstatelength="0"; tabinstatelengthnext="0";
-  clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false; delayflag1:boolean=true; delayflag2:boolean=true;
+  clicked0: boolean=false;clicked: boolean=false; clicked1: boolean=false; delayflag1:boolean=true; delayflag2:boolean=true; clicked20: boolean=false; clicked21: boolean=true;
   viewtoggle=""; urlA:string;   urlAnext:string; urlA1000:string; urlSearch:string; s3file10=""; s3file100=""; s3file1000=""; //signed url to the image stored in s3
   stateuser=""; loyalty=0; FindDistrict='https://www.house.gov/representatives/find-your-representative';
   click10=''; click11='';click12='';
@@ -63,9 +67,10 @@ export class InstatehousedisplaynavComponent implements OnInit {
   Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[];
 
   statedropdown=''; HOMEstate=''
-  cookiedenied="";stateuserCA="";
+  cookiedenied="";stateuserCA=""; overalldisapper="";
 
-  reloadComponent() {
+
+reloadComponent() {
     let currentUrl = this.router.url;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
@@ -78,6 +83,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   setbuttonflag1() {this.delayflag1=false;this.delayflag2=true;}; setbuttonflag2() {this.delayflag2=false;this.delayflag1=true;}
 
   viewtoggle1next() {window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName1000; this.District10=this.District1000; this.Party10=this.Party1000; this.State10=this.State1000;
     this.Website10=this.Website1000;this.PictureAttribution10=this.PictureAttribution1000; this.Motto10=this.Motto1000;
     this.OverallYea10=this.OverallYea1000;this.OverallNay10=this.OverallNay1000; this.s3file10=this.s3file1000;this.Coms10=this.Coms1000;
@@ -88,6 +94,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
   }
 
   viewtoggle2next() {window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName100; this.District10=this.District100; this.Party10=this.Party100; this.State10=this.State100;
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100; this.s3file10=this.s3file100;this.Coms10=this.Coms100;
@@ -99,6 +106,7 @@ export class InstatehousedisplaynavComponent implements OnInit {
 
   onetimenextnext() {
     window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName100; this.District10=this.District100; this.Party10=this.Party100; this.State10=this.State100;
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100; this.s3file10=this.s3file100;this.Coms10=this.Coms100;
@@ -168,7 +176,8 @@ export class InstatehousedisplaynavComponent implements OnInit {
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
     API.get("storeresultt4", "/store/m", paramsp1).then(response1 => { console.log(response1)
       this.District10=response1.data[0].District; this.Party10=response1.data[0].Party; this.Website10=response1.data[0].Website;
-      this.State10=response1.data[0].StateCand;this.statedropdown=response1.data[0].StateCand; this.PictureAttribution10=response1.data[0].PictureAttribution;
+      this.State10=response1.data[0].StateCand; this.PictureAttribution10=response1.data[0].PictureAttribution;
+      this.statedropdown=response1.data[0].StateCand;
       this.CandName10=this.tabinstatedisplayitemid; this.Motto10=response1.data[0].Motto; this.OverallYea10=response1.data[0].OverallYea;
       this.OverallNay10=response1.data[0].OverallNay; this.s3file10=response1.data[0].s3file;
       this.Coms10=response1.data[0].Coms; this.Coms10new=JSON.parse(response1.data[0].Coms)
@@ -340,6 +349,10 @@ export class InstatehousedisplaynavComponent implements OnInit {
         this.initsearchflag = "yes";});
     }).catch(error => {console.log(error);this.nomatchinglastname='yes'});
   }
+// set cache when Step1 search button is clicked, so on screen reload Step2 search button is enabled
+  async searchcache() {   const expiration = new Date().valueOf()
+    Cache.setItem('searchbutton', 'yes', {expires: expiration + 300000}); //these are set for 30min, so in case user wants to make a change then the right way is for them to come to MyAccount screen and then edit sections. But, A flag has to be there for 30min as maybe Commnity1, Community2 and US Senate tabs code depends on this flag being alive
+  }
 
   //future comittee: this will do a temp store of the webpagevalue and prefercateg, so that after the ads we know where the user was.
   async ConfclickPreferResults(){
@@ -411,18 +424,34 @@ export class InstatehousedisplaynavComponent implements OnInit {
   iss15(){try {const errorField = this.renderer.selectRootElement('.iss15_class');errorField.scrollIntoView();} catch (err) {}}
   iss16(){try {const errorField = this.renderer.selectRootElement('.iss16_class');errorField.scrollIntoView();} catch (err) {}}
 
-  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'Overally'},}).afterClosed().subscribe(result => {
-    this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overally", "Overall",100).then((event) => {});});}
-  async NAYclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'Overalln'},}).afterClosed().subscribe(result => {
-    this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overalln", "Overall",100).then((event) => {});});}
-  async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P0y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('PO');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0y", "P0",100).then((event) => {});});}
-  async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P0n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('PO');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0n", "P0",100).then((event) => {});});}
+ // async YEAclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
+ //   data: {voteflag: 'Overally'},}).afterClosed().subscribe(result => {
+ //   this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overally", "Overall",100).then((event) => {});});}
+ // async NAYclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
+ //   data: {voteflag: 'Overalln'},}).afterClosed().subscribe(result => {
+  //  this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overalln", "Overall",100).then((event) => {});});}
+
+  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser(); this.overalldisapper='yes'
+    this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overally", "Overall",100)
+  }
+  async NAYclick2z() { const user = await Auth.currentAuthenticatedUser(); this.overalldisapper = 'yes'
+    this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overalln", "Overall",100)
+  }
+
+  async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0y", "P0",100)
+  }
+
+  async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0n", "P0",100)
+  }
+
+ // async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
+  //  data: {voteflag: 'P0y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('PO');
+   // this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0y", "P0",100).then((event) => {});});}
+  //async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
+  //  data: {voteflag: 'P0n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('PO');
+   // this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0n", "P0",100).then((event) => {});});}
   async YEAclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
     data: {voteflag: 'P1y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1');
     this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P1y", "P1",100).then((event) => {});});}

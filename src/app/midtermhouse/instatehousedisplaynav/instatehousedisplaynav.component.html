@@ -5,12 +5,7 @@
 <!-- class2 is center main content -->
 <div class="class2" >
   <a class="ontop_class"></a>
-  <a style="text-align:center;"> <h2>U.S. House of Representatives Candidates for 2022 Midterm Elections
-    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
-    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
-      <a id="GTM-TVJ45PB" >:</a>
-    </a>
-  </h2> </a>
+
 <!--Future Comm- show the results -->
  <a *ngIf="prefercateg=='future'&&CandNeutralflag=='yes'">
    <br> <mat-card>  <mat-card-title>{{CandNameNeutral}} committee assignments by popular vote: </mat-card-title>
@@ -101,36 +96,45 @@
 <a *ngIf="isscateg=='I16'&&CandNeutralflag=='yes'"> <mat-card>
   <br> <mat-card-title>{{CandNameNeutral}} performance on the issue of Inflation & Economy: <br> {{IEconomyYea}} YEA and {{IEconomyNay}} NAY </mat-card-title> </mat-card> <br></a>
 
+  <a style="text-align:center;"> <h2>U.S. House of Representatives Candidates for 2022 Midterm Elections
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
+      <a id="GTM-TVJ45PB" >:</a>
+    </a>
+  </h2> </a>
+
   <br>  <mat-card>
 <!-- Stays on top, so anytime user can switch to their home state candidates -->
  <button mat-button  (click)="sethomecands()">Cast your Opinion & View Survey Results of Candidates from your <b>Home State</b> of {{HOMEstate}} </button>
 </mat-card> <br>
 
+  <a style="text-align:center;">
   <mat-card>
 <!-- User selects which state they would like to view results for -->
 <form > <h3> <b> View Candidates of a State </b> </h3>
-  <a>Select state </a>  <br>
+  <a><b>Step 1: Select a state</b>  </a>  <br>
   <mat-form-field class="demo-form-field1" appearance="fill">
     <mat-label>State</mat-label>
     <select matNativeControl  [(ngModel)]=statedropdown [ngModelOptions]="{standalone: true}">
-      <option value="AL">Alabama</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</option> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="FL">Florida</option> <option value="GA">Georgia</option> <option value="HI">Hawaii</option> <option value="ID">Idaho</option>
+   <option value="AL">Alabama</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</option> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="FL">Florida</option> <option value="GA">Georgia</option> <option value="HI">Hawaii</option> <option value="ID">Idaho</option>
       <option value="IL">Illinois</option> <option value="IN">Indiana</option> <option value="IA">Iowa</option> <option value="KS">Kansas</option> <option value="KY">Kentucky</option> <option value="LA">Louisiana</option> <option value="ME">Maine</option> <option value="MD">Maryland</option> <option value="MA">Massachusetts</option> <option value="MI">Michigan</option> <option value="MN">Minnesota</option> <option value="MS">Mississippi</option> <option value="MO">Missouri</option> <option value="MT">Montana</option> <option value="NE">Nebraska</option> <option value="NV">Nevada</option> <option value="NH">New Hampshire</option> <option value="NJ">New Jersey</option> <option value="NM">New Mexico</option> <option value="NY">New York</option> <option value="NC">North Carolina</option> <option value="ND">North Dakota</option> <option value="OH">Ohio</option> <option value="OK">Oklahoma</option> <option value="OR">Oregon</option> <option value="PA">Pennsylvania</option> <option value="RI">Rhode Island</option> <option value="SC">South Carolina</option> <option value="SD">South Dakota</option> <option value="TN">Tennessee</option> <option value="TX">Texas</option> <option value="UT">Utah</option> <option value="VT">Vermont</option> <option value="VA">Virginia</option> <option value="WA">Washington</option> <option value="WV">West Virginia</option> <option value="WI">Wisconsin</option> <option value="WY">Wyoming</option>
     </select>
   </mat-form-field>
 </form>
-<button mat-button  (click)="setdropdowncands()">Search for Candidates in <b>Selected State</b></button>
-  </mat-card> <br>
+<button mat-button (click)="searchcache()" (click)="setdropdowncands()">Search for Candidates in <b>Selected State</b></button>
+  </mat-card>
 
   <mat-card>
     <b> Found {{tabinstatelength}} candidate(s) in the state of {{State10}} for the 2022 U.S. House of Representatives elections!</b> <br>
     </mat-card>
-
+  </a>
 
 <!-- Find a particular person -->
 <a style="text-align:center;">
   <mat-card>
     <form [formGroup]="fifthFormGroup">
-      <a> Filter results by Candidate Last Name </a> <br>
+      <a> <b> Step 2 (optional): Filter results</b> by Candidate Last Name. Please Select State in Above DropDown. Then, Please Click
+        "Search For Candidates in Select State" </a> <br>
       <mat-form-field class="demo-form-field1" appearance="fill">
         <mat-label>Candidate Last Name</mat-label>
         <input  matInput formControlName="fifthCtrl" required #message1 maxlength="20" [(ngModel)]="CandLastNameSelect"> <br>
@@ -139,9 +143,13 @@
       <p> <a href={{FindDistrict}} target="_blank">Click Here</a> to find the U.S. House of Representative for your home voting district.</p>
     </form>
 
-    <!-- username specific search button -->
-    <button mat-button (click)="searchresult()" (click)="executesearch()">Search Now</button> &nbsp; &nbsp; &nbsp; <button mat-button  (click)="reloadComponent()">Reset</button>
-    <a *ngIf="nomatchinglastname=='yes'"> <br> <b> No matches!</b> Please check the list in the Introduction section for list of available candidates </a>
+
+  <!-- username specific search button -->
+    <button mat-button (click)="searchresult()" [disabled]="clicked20" [disabled]="clicked21" (click)="executesearch();clicked20 = true;">Search Now</button> &nbsp; &nbsp; &nbsp; <button mat-button [disabled]="clicked21"  (click)="reloadComponent()">Reset</button>
+    <a *ngIf="nomatchinglastname=='yes'"> <br> Sorry, there are <b> no matches!</b> Please check the list in the
+      Introduction section for list of available candidates. Also, please ensure that a state is selected is in above dropdown and
+      then please click "Search For Candidates in Select State".
+    </a>
   </mat-card> </a> <mat-divider></mat-divider>
 
   <a class="searchresult_class"></a>
@@ -172,12 +180,14 @@
     <!-- Overall Performance Vote and show results -->
     <a class="overall_class"></a> <mat-card class="example-card">
     <br>  <mat-card-title> {{CandName10}}'s Overall Performance: <br> {{OverallYea10}} YEA and {{OverallNay10}} NAY </mat-card-title> <br>
+    <div *ngIf="overalldisapper==''">
     <a *ngIf="HOMEstate==statedropdown">
     <a *ngIf="votedissuecounter10[17]<2">
       <p *ngIf="votedindexesissuecand10[17]==-1">
         <mat-card-subtitle>Vote on {{CandName10}}'s Overall Performance or Potential</mat-card-subtitle>
         <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p></a> </a>
+        <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p></a> </a> </div>
+    <div *ngIf="overalldisapper=='yes'"> Thank you for your response! </div>
   </mat-card> <mat-divider></mat-divider> <br>
 
     <!-- Future committee assignments preference of user -->
@@ -219,8 +229,8 @@
       <a *ngIf="Coms10new[0]==''"> <mat-card class="example-card"> <!-- Committe 0 -->
         <a *ngIf="HOMEstate==statedropdown"> <p *ngIf="Coms10new[0]=='' && votedindexes[0]==-1">
         <mat-card-subtitle>{{CandName10}} <b> Performance </b> on the <b> Agriculture Committee </b> </mat-card-subtitle> <a href="https://agriculture.house.gov/" target="_blank">https://agriculture.house.gov/</a> <br>
-        <button mat-button (click)="YEAclickP0()"> <b> Vote YEA </b> for {{CandName10}} on the <b> Agriculture Committee </b> </button> &nbsp; &nbsp; &nbsp;
-          <button mat-button (click)="NAYclickP0()"><b> Vote NAY </b> for {{CandName10}} on the <b> Agriculture Committee </b> </button></p> </a>
+        <button mat-button routerLink="/Community1" (click)="YEAclickP0()" (click)="ConfclickComResults('P0')"> <b> Vote YEA </b> for {{CandName10}} on the <b> Agriculture Committee </b> </button> &nbsp; &nbsp; &nbsp;
+          <button mat-button routerLink="/Community1" (click)="NAYclickP0()" (click)="ConfclickComResults('P0')"><b> Vote NAY </b> for {{CandName10}} on the <b> Agriculture Committee </b> </button></p> </a>
       <p *ngIf="Coms10new[0]==''">
         <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P0')"> <b> View Survey Results </b> for {{CandName10}} on the <b> Agriculture Committee </b></button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
@@ -544,19 +554,19 @@
 
     <!-- Next and back buttons-->
   <br>  <mat-card class="example-card">
-      <a *ngIf="initsearchflag=='yes'"> <button mat-button color="primary"  (click)="reloadComponent()">See All Results</button> &nbsp; &nbsp; &nbsp; </a>
+      <a *ngIf="initsearchflag=='yes'"> <button mat-button color="primary"  (click)="reloadComponent()">See All Candidates in Selected State</button> &nbsp; &nbsp; &nbsp; </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle==''">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;"> <b> Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="ontop()" [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button (click)="ontop()" [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="delayonTop(2000)" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='yes' && viewtoggle==''">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="ontop()" [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate </b> </button> </a>
+        <button mat-button (click)="ontop()" [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="delayonTop(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate </b> </button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='yes'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle2back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="ontop()" [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button (click)="ontop()" [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="delayonTop(2000)" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='no'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="ontop()" [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button (click)="ontop()" [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="delayonTop(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
     </mat-card> <mat-divider></mat-divider> <br>
 
     <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a> <br>
@@ -601,28 +611,20 @@
 
   <!-- Facebook Comments box per candidate -->
   <br>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
-  <a *ngIf="CandName10== ''"> <h2> <b>Express Your Voice With a Comment</b> </h2>  </a>
+  <!-- Facebook Comments box per candidate -->
+  <br>  <h2> <b>Express Your Voice With a Comment on our Facebook Page </b> </h2>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+  <a *ngIf="CandName10== ''"> <h2>  </h2>  </a>
+
 
 
   <br> <br> <mat-divider></mat-divider>
-  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+  <br>  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
   <br> <small> Earn SoWhat Vote! 100 loyalty points by clicking YEA or NAY. Also, earn 50 loyalty points by viewing survey results. </small>
 
 </div>

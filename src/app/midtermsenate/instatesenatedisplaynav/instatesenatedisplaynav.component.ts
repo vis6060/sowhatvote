@@ -9,7 +9,7 @@ import { TitleCasePipe } from '@angular/common';
 import {MatDialog,} from '@angular/material/dialog';
 import {ConfdialogsenateComponent} from "../confdialogsenate/confdialogsenate.component";
 
-Analytics.record({ name: 'albumVisit' });
+//Analytics.record({ name: 'albumVisit' });
 
 @Component({
   selector: 'app-instatesenatedisplaynav',
@@ -29,16 +29,18 @@ export class InstatesenatedisplaynavComponent implements OnInit {
     if(Cache.getItem('meetupclicked')=="yes") {Cache.removeItem("meetupclicked"); location.reload()}
     if(Cache.getItem('profileAstatus')=="yes") {Cache.removeItem("profileAstatus");location.reload();}
 
-
     //   if(Cache.getItem('profAevade')=="yes") {this.router.navigate(['/Meetup/Step0'])}
   }
 
   ngOnInit(): void {
     this.gethompage1Binitialize();
+    this.delayonTop(1500)
     this.zeroFormGroup = this._formBuilder.group({});
     this.fifthFormGroup = this._formBuilder.group({fifthCtrl: ['', Validators.required],});
     this.randomgen()
   }
+
+  async delayonTop(ms: number) {await new Promise(resolve => setTimeout(()=>this.ontop(), ms)).then();}
 
   tabinstatedisplayitemid:string=""; tabinstatedisplayitemidtwo:string=""; //this has the itemid profile to display to user for tab1A which is index0 in array
   tabinstatedisplayitemidnext:string="";  //"next" is index1 in array and "nextnext" is index2 in array to check their unsubscribe status and whether needs to be deleted from array
@@ -66,7 +68,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   Coms100new=[]; FirstComPrefer100=[]; SecondComPrefer100=[]; ThirdComPrefer100=[];
   Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[]; statedropdown=''; HOMEstate=''
 
-  cookiedenied="";stateuserCA="";
+  cookiedenied="";stateuserCA="";  overalldisapper="";
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -82,6 +84,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
 
   viewtoggle1next() {window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName1000; this.Party10=this.Party1000; this.State10=this.State1000;
     this.Website10=this.Website1000;this.PictureAttribution10=this.PictureAttribution1000; this.Motto10=this.Motto1000;
     this.OverallYea10=this.OverallYea1000;this.OverallNay10=this.OverallNay1000; this.s3file10=this.s3file1000;this.Coms10=this.Coms1000;
@@ -92,6 +95,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   }
 
   viewtoggle2next() { window.scrollTo(0,0);
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName100; this.Party10=this.Party100; this.State10=this.State100;
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100; this.s3file10=this.s3file100;this.Coms10=this.Coms100;
@@ -102,6 +106,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   }
 
   onetimenextnext() {window.scrollTo(0,0);
+    //initialize these results if statemenets enablers to blank, so once a result is seen and then when the user clicks next, they won't see the old result for next set of candidates.
+    this.prefercateg=""; this.comcateg=""; this.isscateg="";
     this.CandName10= this.CandName100; this.Party10=this.Party100; this.State10=this.State100;
     this.Website10=this.Website100;this.PictureAttribution10=this.PictureAttribution100; this.Motto10=this.Motto100;
     this.OverallYea10=this.OverallYea100;this.OverallNay10=this.OverallNay100; this.s3file10=this.s3file100;this.Coms10=this.Coms100;
@@ -205,6 +211,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
         API.get("issresultt4", "/isssenate/m", paramsp7).then(response7 => {this.IAbortionYea=+response7.data[0].IAbortionYea; this.IAbortionNay=+response7.data[0].IAbortionNay; this.IGunsYea=+response7.data[0].IGunsYea; this.IGunsNay=+response7.data[0].IGunsNay; this.IJobsYea=+response7.data[0].IJobsYea; this.IJobsNay=+response7.data[0].IJobsNay; this.IVeteransYea=+response7.data[0].IVeteransYea; this.IVeteransNay=+response7.data[0].IVeteransNay; this.IBorderYea=+response7.data[0].IBorderYea; this.IBorderNay=+response7.data[0].IBorderNay; this.IFarmersYea=+response7.data[0].IFarmersYea; this.IFarmersNay=+response7.data[0].IFarmersNay; this.IClimateYea=+response7.data[0].IClimateYea; this.IClimateNay=+response7.data[0].IClimateNay; this.ISeniorsYea=+response7.data[0].ISeniorsYea; this.ISeniorsNay=+response7.data[0].ISeniorsNay; this.IDefenseYea=+response7.data[0].IDefenseYea; this.IDefenseNay=+response7.data[0].IDefenseNay; this.IEnergyYea=+response7.data[0].IEnergyYea; this.IEnergyNay=+response7.data[0].IEnergyNay; this.IInfrastructureYea=+response7.data[0].IInfrastructureYea; this.IInfrastructureNay=+response7.data[0].IInfrastructureNay; this.INaturalYea=+response7.data[0].INaturalYea; this.INaturalNay=+response7.data[0].INaturalNay; this.IManufacturingYea=+response7.data[0].IManufacturingYea; this.IManufacturingNay=+response7.data[0].IManufacturingNay; this.ILandsYea=+response7.data[0].ILandsYea; this.ILandsNay=+response7.data[0].ILandsNay; this.IHealthcareYea=+response7.data[0].IHealthcareYea; this.IHealthcareNay=+response7.data[0].IHealthcareNay; this.IEducationYea=+response7.data[0].IEducationYea; this.IEducationNay=+response7.data[0].IEducationNay; this.IEconomyYea=+response7.data[0].IEconomyYea; this.IEconomyNay=+response7.data[0].IEconomyNay;}).catch(error => {console.log(error.response7)});
       this.prefercateg = event3.prefercateg as unknown as any;
       this.isscateg = event3.isscateg as unknown as any;this.comcateg = event3.comcateg as unknown as any;
+      console.log("comcateg is",this.comcateg)
     });
   }
 
@@ -316,6 +323,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
       +this.tabinstatelength).then((event1) => {this.reloadComponent()})
   }
 
+
+
   //future comittee: this will do a temp store of the webpagevalue and prefercateg, so that after the ads we know where the user was.
   async ConfclickPreferResults(){
     const user = await Auth.currentAuthenticatedUser();
@@ -371,18 +380,33 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
   //Issues confirmation button. Updates the voting results and store loyalty points. and stores that an ID has been voted on, so same button doesn't appear again.  var1 is candidatename. var2 is s3file picture filename.
   //Dialog box pop-up for voting confirmation
-  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'Overallysen'},}).afterClosed().subscribe(result => {
-    this.api.OverallResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"Overallysen", "Overallsen",100).then((event) => {});});}
-  async NAYclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'Overallnsen'},}).afterClosed().subscribe(result => {
-    this.api.OverallResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"Overallnsen", "Overallsen",100).then((event) => {});});}
-  async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P0ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POsen');
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0ysen", "P0sen",100).then((event) => {});});}
-  async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P0nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POsen');
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0nsen", "P0sen",100).then((event) => {});});}
+ // async YEAclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
+  //  data: {voteflag: 'Overallysen'},}).afterClosed().subscribe(result => {
+  //  this.api.OverallResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"Overallysen", "Overallsen",100).then((event) => {});});}
+ // async NAYclick2z() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
+  //  data: {voteflag: 'Overallnsen'},}).afterClosed().subscribe(result => {
+  //  this.api.OverallResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"Overallnsen", "Overallsen",100).then((event) => {});});}
+
+  async YEAclick2z() {const user = await Auth.currentAuthenticatedUser(); this.overalldisapper='yes'
+    this.api.OverallResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"Overallysen", "Overallsen",100)
+  }
+
+  async NAYclick2z() { const user = await Auth.currentAuthenticatedUser(); this.overalldisapper='yes'
+    this.api.OverallResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"Overallnsen", "Overallsen",100)
+  }
+
+  async YEAclickP0() {const user = await Auth.currentAuthenticatedUser()
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0ysen", "P0sen",100)}
+  async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0nsen", "P0sen",100)}
+
+
+ // async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
+   // data: {voteflag: 'P0ysen'},}).afterClosed().subscribe(result => {
+   // this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0ysen", "P0sen",100).then((event) => {});});}
+ // async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
+ //   data: {voteflag: 'P0nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POsen');
+ //   this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0nsen", "P0sen",100).then((event) => {});});}
   async YEAclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
     data: {voteflag: 'P1ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1sen');
     this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P1ysen", "P1sen",100).then((event) => {});});}
@@ -628,7 +652,6 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
   async loyaltyview() {
   const user = await Auth.currentAuthenticatedUser();
-  //this removes the itemid from index 0 position, do this only once the itemid has move to the other tab
   const paramsp3 = {body: {userid: user.attributes.sub,}}
   API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
 }

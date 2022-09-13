@@ -5,12 +5,7 @@
 <!-- class2 is center main content -->
 <div class="class2" >
   <a class="ontop_class"></a>
-  <a style="text-align:center;"> <h2>State Offices Candidates for 2022 Midterm Elections
-    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
-    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
-      <a id="GTM-TVJ45PB" >:</a>
-    </a>
-  </h2> </a>
+
 <!--Comm- show the results of the category the user had clicked -->
 <a *ngIf="comcateg=='P0gov'"> <mat-card>
   <br>  <mat-card-title>{{CandName10}} performance on the issue of Border Security:<br> <b> {{BorderYea}} YEA </b> and <b> {{BorderNay}} NAY </b></mat-card-title> </mat-card> <br></a>
@@ -64,6 +59,13 @@
   <br> <mat-card-title>{{CandName10}} performance on the issue of Manufacturing: <br> {{ManufacturingYea}} YEA and {{ManufacturingNay}} NAY </mat-card-title> </mat-card> <br></a>
 <a *ngIf="comcateg=='P25gov'"> <mat-card>
   <br> <mat-card-title>{{CandName10}} performance on the issue of Housing: <br> {{HousingYea}} YEA and {{HousingNay}} NAY </mat-card-title> </mat-card> <br></a>
+
+  <a style="text-align:center;"> <h2>State Offices Candidates for 2022 Midterm Elections
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
+      <a id="GTM-TVJ45PB" >:</a>
+    </a>
+  </h2> </a>
 
   <br> <mat-card>
 <!-- Stays on top, so anytime user can switch to their home state candidates -->
@@ -140,10 +142,12 @@
     <!-- Overall Performance Vote and show results -->
      <mat-card class="example-card">
     <br>  <mat-card-title> {{CandName10}}'s Overall Performance: <br> {{OverallYea10}} YEA and {{OverallNay10}} NAY </mat-card-title> <br>
+       <div *ngIf="overalldisapper==''">
        <a *ngIf="HOMEstate==statedropdown"> <p *ngIf="votedindexesissuecand10[0]==-1">
       <mat-card-subtitle>Vote<a *ngIf="District10!=''"><sup>*</sup></a> on {{CandName10}}'s Overall Performance or Potential</mat-card-subtitle>
       <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
-         <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p> </a>
+         <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p> </a> </div>
+       <div *ngIf="overalldisapper=='yes'"> Thank you for your response! </div>
   </mat-card> <mat-divider></mat-divider>
 
     <!-- Committes performance voting and show results buttons.  blank means that committee button needs to show. -->
@@ -392,16 +396,16 @@
   <br>  <mat-card class="example-card">
         <a *ngIf="onetimenextflag=='' && viewtoggle==''">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="ontop()"  (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="delayonTop(2000)"  (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf=" onetimenextflag=='yes' && viewtoggle==''">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="delayonTop(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="onetimenextflag=='' && viewtoggle=='yes'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle2back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="ontop()" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="delayonTop(2000)" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf=" onetimenextflag=='' && viewtoggle=='no'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0"  [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0"  [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="delayonTop(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
     </mat-card> <mat-divider></mat-divider> <br>
 
       <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a> <br>
@@ -500,7 +504,7 @@
 
 
   <br> <br> <mat-divider></mat-divider>
-  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+  <br>  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
   <small> Earn SoWhat Vote! 100 loyalty points by clicking YEA or NAY. Also, earn 50 loyalty points by viewing survey results. </small>
 
 

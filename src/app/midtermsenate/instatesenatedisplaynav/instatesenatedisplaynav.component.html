@@ -5,12 +5,7 @@
 <!-- class2 is center main content -->
 <div class="class2" >
   <a class="ontop_class"></a>
-  <a style="text-align:center;"> <h2>U.S. Senate Senators/Candidates for 2022 Midterm Elections
-  <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
-  <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
-    <a id="GTM-TVJ45PB" >:</a>
-    </a>
-  </h2> </a>
+
 
   <!--Future Comm- show the results -->
 <a *ngIf="prefercateg=='future'">
@@ -108,6 +103,12 @@
 <a *ngIf="isscateg=='I16sen'"> <mat-card>
   <br> <mat-card-title>{{CandName10}} performance on the issue of Inflation & Economy:<br> {{IEconomyYea}} YEA and {{IEconomyNay}} NAY </mat-card-title> </mat-card> <br></a>
 
+  <a style="text-align:center;"> <h2>U.S. Senate Senators/Candidates for 2022 Midterm Elections
+    <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+    <a  *ngIf="cookiedenied=='yes' && stateuserCA=='yes'">
+      <a id="GTM-TVJ45PB" >:</a>
+    </a>
+  </h2> </a>
 
  <br> <mat-card>
 <!-- Stays on top, so anytime user can switch to their home state candidates -->
@@ -159,12 +160,14 @@
 
     <!-- Overall Performance Vote and show results -->
     <a class="overall_class"></a> <mat-card class="example-card">
-    <br>  <mat-card-title> {{CandName10}}'s Overall Performance: <br> {{OverallYea10}} YEA and {{OverallNay10}} NAY </mat-card-title> <br>
+    <br>  <mat-card-title> {{CandName10}}'s Overall Performance: <br> {{OverallYea10}} YEA's and {{OverallNay10}} NAY's </mat-card-title> <br>
+   <div *ngIf="overalldisapper==''">
     <a *ngIf="HOMEstate==statedropdown">
     <p *ngIf="votedindexesissuecand10[17]==-1">
         <mat-card-subtitle>Vote on {{CandName10}}'s Overall Performance or Potential</mat-card-subtitle>
-        <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
-      <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p> </a>
+        <button mat-button  (click)="YEAclick2z()"  > <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
+      <button mat-button  (click)="NAYclick2z()" > <b>Vote NAY </b> for {{CandName10}} </button> </p> </a> </div>
+    <div *ngIf="overalldisapper=='yes'"> Thank you for your response! </div>
   </mat-card> <mat-divider></mat-divider> <br>
 
     <!-- Future committee assignments preference of user -->
@@ -208,8 +211,8 @@
     <a *ngIf="Coms10new[0]==''"> <mat-card class="example-card"> <!-- Committe 0 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[0]=='' && votedindexes[0]==-1">
         <mat-card-subtitle>{{CandName10}} <b> Performance </b> on the <b>Agriculture, Nutrition, and Forestry Committee </b> </mat-card-subtitle> <a href="https://www.agriculture.senate.gov/" target="_blank">https://www.agriculture.senate.gov/</a> <br>
-        <button mat-button (click)="YEAclickP0()"> <b> Vote YEA </b> for {{CandName10}} on the <b>Agriculture, Nutrition, and Forestry Committee </b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP0()"><b> Vote NAY </b> for {{CandName10}} on the <b>Agriculture, Nutrition, and Forestry Committee </b> </button></p> </a>
+        <button mat-button routerLink="/Community1" (click)="YEAclickP0()" (click)="ConfclickComResults('P0sen')"> <b> Vote YEA </b> for {{CandName10}} on the <b>Agriculture, Nutrition, and Forestry Committee </b> </button> &nbsp; &nbsp; &nbsp;
+        <button mat-button routerLink="/Community1" (click)="NAYclickP0()" (click)="ConfclickComResults('P0sen')"><b> Vote NAY </b> for {{CandName10}} on the <b>Agriculture, Nutrition, and Forestry Committee </b> </button></p> </a>
       <p *ngIf="Coms10new[0]==''">
         <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"   (click)="ConfclickComResults('P0sen')"> <b> View Survey Results </b> for {{CandName10}} on the <b>Agriculture, Nutrition, and Forestry  Committee </b></button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
@@ -535,16 +538,16 @@
       <a *ngIf="initsearchflag=='yes'"> <button mat-button color="primary"  (click)="reloadComponent()">See All Results</button> &nbsp; &nbsp; &nbsp; </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle==''">
         <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="initializeclick1itemidback(); clicked = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="ontop()" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked" [disabled]="clicked0" (click)="delayButton1(2000)" (click)="delayonTop(2000)" (click)="onetimenextnext(); clicked = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='yes' && viewtoggle==''">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="delayonTop(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='yes'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle2back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="ontop()" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag2" (click)="delayButton1(2000)" (click)="delayonTop(2000)" (click)="viewtoggle2next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
       <a *ngIf="initsearchflag==''&& onetimenextflag=='' && viewtoggle=='no'">
         <button mat-button [disabled]="clicked1" [disabled]="clicked0" (click)="viewtoggle1back(); clicked1 = true;"><b>Previous Candidate</b></button> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="ontop()" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
+        <button mat-button [disabled]="clicked1" [disabled]="clicked0" [disabled]="delayflag1" (click)="delayButton2(2000)" (click)="delayonTop(2000)" (click)="viewtoggle1next(); clicked1 = true;"><b>Next Candidate</b></button> </a>
     </mat-card> <mat-divider></mat-divider> <br>
 
     <a *ngIf="PictureAttribution10!=''"> Photo Source: {{PictureAttribution10}} </a>
@@ -718,7 +721,7 @@
 
 
   <br> <mat-divider></mat-divider>
-  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+  <br> <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
  <br> <small> Earn SoWhat Vote! 100 loyalty points by clicking YEA or NAY. Also, earn 50 loyalty points by viewing survey results. </small>
 
 </div>

@@ -21,7 +21,9 @@ export class EntrypageComponent implements OnInit {
     //if user is not authenticated, open the snackbar this way
   this.delaySnack(2000)
     this.randomgen()
-    this.delayfunc(100); this.delayfunc(100+(7000*1)); this.delayfunc(100+(7000*2));
+ //   this.delayfunc(100);
+  //this.delayfunc(100+(7000*1));
+    //this.delayfunc(100+(7000*2));
   //this.delayfunc(0+(7000*2)); this.delayfunc(0+(7000*3)); this.delayfunc(0+(7000*4)); this.delayfunc(0+(7000*5)); this.delayfunc(0+(7000*6)); this.delayfunc(0+(7000*7)); this.delayfunc(0+(7000*8)); this.delayfunc(0+(7000*9)); this.delayfunc(0+(7000*10)); this.delayfunc(0+(7000*11));
   }
 //so, that there is time for the API call to load which checks whether the user is authenticated or not
