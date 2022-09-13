@@ -23,29 +23,29 @@ export class AppComponent {
     this.routeOnRefresh()
     this.routeOnRefreshmidterm()
  //   this.refreshtab()
-   console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
-   console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
-    console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
-    console.log( 'midtermclicked homepage cache', Cache.getItem('midtermclicked'))
-    console.log('myaccountenter homepage cache', Cache.getItem('myaccountenter'))
-    console.log('profileAstatus homepage cache', Cache.getItem('profileAstatus'))
-    console.log('profileDstatus cache', Cache.getItem('profileDstatus'))
-    console.log('profileEstatus cache', Cache.getItem('profileEstatus'))
-    console.log('profileFstatus cache', Cache.getItem('profileFstatus'))
-    console.log('profAevade homepage cache', Cache.getItem('profAevade'))
-    console.log('profDevade homepage cache', Cache.getItem('profDevade'))
-    console.log('profEevade homepage cache', Cache.getItem('profEevade'))
-    console.log('profFevade homepage cache', Cache.getItem('profFevade'))
-    console.log('countyuser cache', Cache.getItem('countyuser'))
-    console.log('stateuser cache', Cache.getItem('stateuser'))
-    console.log('bannernoshow cache', Cache.getItem('bannernoshow'))
-    console.log('cookiedenied cache', Cache.getItem('cookiedenied'))
+ //  console.log('meetupenter homepage cache', Cache.getItem('meetupenter'));
+ //  console.log( 'midtermenter homepage cache', Cache.getItem('midtermenter'))
+ //   console.log( 'meetupclicked homepage cache', Cache.getItem('meetupclicked'))
+ //   console.log( 'midtermclicked homepage cache', Cache.getItem('midtermclicked'))
+ //   console.log('myaccountenter homepage cache', Cache.getItem('myaccountenter'))
+  //  console.log('profileAstatus homepage cache', Cache.getItem('profileAstatus'))
+  //  console.log('profileDstatus cache', Cache.getItem('profileDstatus'))
+  //  console.log('profileEstatus cache', Cache.getItem('profileEstatus'))
+  //  console.log('profileFstatus cache', Cache.getItem('profileFstatus'))
+  //  console.log('profAevade homepage cache', Cache.getItem('profAevade'))
+  //  console.log('profDevade homepage cache', Cache.getItem('profDevade'))
+    //console.log('profEevade homepage cache', Cache.getItem('profEevade'))
+  //  console.log('profFevade homepage cache', Cache.getItem('profFevade'))
+  //  console.log('countyuser cache', Cache.getItem('countyuser'))
+  //  console.log('stateuser cache', Cache.getItem('stateuser'))
+  //  console.log('bannernoshow cache', Cache.getItem('bannernoshow'))
+  //  console.log('cookiedenied cache', Cache.getItem('cookiedenied'))
   //  console.log('naturalWidth cache', Cache.getItem('naturalWidth'))
   //  console.log('naturalHeight cache', Cache.getItem('naturalHeight'))
  //   console.log('newWidth cache', Cache.getItem('newWidth'))
   //  console.log('newHeight cache', Cache.getItem('newHeight'))
   //  console.log('toggleBool7 cache', Cache.getItem('toggleBool7'))
-    console.log('editstep5flag cache', Cache.getItem('editstep5flag'))
+ //   console.log('editstep5flag cache', Cache.getItem('editstep5flag'))
   }
 
   profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";
@@ -62,7 +62,7 @@ export class AppComponent {
   async level2tabRest(){
     const user = await Auth.currentAuthenticatedUser();    const expiration = new Date().valueOf()
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
-    API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => { console.log(response1)
+    API.get("datingapitest4", "/userdbapiname/m", paramsp1).then(response1 => { //console.log(response1)
       this.profilecompPartF=response1.data[0].profilecompPartF;  this.profilecompPartA=response1.data[0].profilecompPartA;
       this.profilecompPartD=response1.data[0].profilecompPartD;this.profilecompPartE=response1.data[0].profilecompPartE;
 
@@ -71,18 +71,19 @@ export class AppComponent {
       if(response1.data[0].profilecompPartE=='no')  {   Cache.setItem('profEevade', 'yes', { expires: expiration +60000 }); }
       if(response1.data[0].profilecompPartF=='no') {  Cache.setItem('profFevade', 'yes', { expires: expiration +60000 });}
 
-      console.log('profilecompPartA database status', response1.data[0].profilecompPartA)
-      console.log('profilecompPartD database status', response1.data[0].profilecompPartD)
-      console.log('profilecompPartE database status', response1.data[0].profilecompPartE)
-      console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
+    //  console.log('profilecompPartA database status', response1.data[0].profilecompPartA)
+    //  console.log('profilecompPartD database status', response1.data[0].profilecompPartD)
+    //  console.log('profilecompPartE database status', response1.data[0].profilecompPartE)
+    //  console.log('profilecompPartF database status', response1.data[0].profilecompPartF)
 
       //get logged-in user cookie status, if cookie status is blank which means they have not responded to my banner
       if(response1.data[0].cookiestatus=='') {this.openSnackBar() }
       if(response1.data[0].cookiestatus=='yes') { Cache.setItem('cookiedenied', 'yes', { expires: expiration +1800000 });
-        console.log('cookiedenied cache', Cache.getItem('cookiedenied'))}
+      //  console.log('cookiedenied cache', Cache.getItem('cookiedenied'))
+      }
       Cache.setItem('stateuser', response1.data[0].stateuser, { expires: expiration +1800000 });
 
-      ;}).catch(error => {console.log(error.response1);
+      ;}).catch(error => { //console.log(error.response1);
   //    if(error.response1==undefined && this.authenticator.route=="authenticated")
       //   {const expiration = new Date().valueOf()
     //    this.router.navigate(['/Meetup/Step0']); Cache.setItem('usernoexist', 'yes', { expires: expiration +60000 });}

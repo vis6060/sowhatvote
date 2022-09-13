@@ -46,7 +46,11 @@ export class EntrypageComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     if(this.authenticator.route=="authenticated") {
       const paramspN = {body: {userid:user.attributes.sub}}
-      API.put("datingapitest4", "/cookie", paramspN).then(responseN => {console.log("successN");}).catch(error => {console.log(error.responseN);});
+      API.put("datingapitest4", "/cookie", paramspN).then(responseN => {
+      //  console.log("successN");
+      }).catch(error => {
+      //  console.log(error.responseN);
+      });
     }
   }
 

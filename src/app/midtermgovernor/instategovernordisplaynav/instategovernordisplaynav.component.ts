@@ -149,17 +149,19 @@ export class InstategovernordisplaynavComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
     API.get("initializeuserarrayt4", "/initgovern/m", paramsp1).then(response1 =>
-    { console.log(response1) //this is the entire row of the user of itemtracking table
+    {// console.log(response1) //this is the entire row of the user of itemtracking table
       this.tabinstatedisplayitemid=response1.data[0];
       this.tabinstatedisplayitemidnext=response1.data[1]; this.tabinstatedisplayitemidtwo=response1.data[2];
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemidinitialize=response1.data[4];
       this.HOMEstate=response1.data[6];
-      console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
+   //   console.log(this.tabinstatedisplayitemid); console.log(this.tabinstatedisplayitemidnext);
       if(Cache.getItem('cookiedenied')=="yes") {this.cookiedenied="yes"}
       if(Cache.getItem('stateuser')=="CA") {this.stateuserCA="yes"}
       this.gethompageF1Ainitialize()
       if(+this.tabinstatelength==1) {this.clicked0=true}
-    }).catch(error => {console.log(error.response1)});
+    }).catch(error => {
+    //  console.log(error.response1)
+    });
   }
 
   async gethompageF1Ainitialize() {
@@ -167,7 +169,8 @@ export class InstategovernordisplaynavComponent implements OnInit {
     //below code works, able to use graphql api to obtain id specific records from the graphql api attached table
     //retrieves basic info on itemid1
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
-    API.get("storeresultt4", "/storegovern/m", paramsp1).then(response1 => { console.log(response1)
+    API.get("storeresultt4", "/storegovern/m", paramsp1).then(response1 => {
+     // console.log(response1)
       this.Party10=response1.data[0].Party; this.State10=response1.data[0].StateCand; this.statedropdown=response1.data[0].StateCand;
       this.District10=response1.data[0].District;
       this.Website10=response1.data[0].Website; this.PictureAttribution10=response1.data[0].PictureAttribution;
@@ -178,9 +181,11 @@ export class InstategovernordisplaynavComponent implements OnInit {
       Storage.get(response1.data[0].s3file).then( res => {this.urlA=res;
        if(response1.data[0].newWidth!='') {
           this.newWidth10=response1.data[0].newWidth; this.newHeight10=response1.data[0].newHeight}});
-      this.initializerflag = "yes";  }).catch(error => {console.log(error.response1)});
+      this.initializerflag = "yes";  }).catch(error => {
+      //  console.log(error.response1)
+      });
     //Issue category-gets kill flags on whether overall issue category has been voted. votedindexesissue is an array of indicies, position0 index in this array is I0 categ, position1 index in this array is I1 categ
-    this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemid).then((event4) => {console.log(event4)
+    this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemid).then((event4) => {//console.log(event4)
       this.votedindexesissuecand10=event4.VotedIdsFlagArrayCand as unknown as any;});
     this.GetIssueInitialize(this.tabinstatedisplayitemid)
     this.getitem2initialize()
@@ -190,11 +195,13 @@ export class InstategovernordisplaynavComponent implements OnInit {
   async GetIssueInitialize(var1:string) {const user = await Auth.currentAuthenticatedUser();
     //Com category-gets kill flags on whether a com category has been voted. votedindexes is an array of indices, position0 index in this array is P0 categ, position1 index in this array is P1 categ
     //Issue category for whom the results need to be display as view results button was clicked and then there were two ad pages. this also sets the isscategory to blank after reading it.
-    this.api.GetIssueCateggovern(user.attributes.sub,var1).then((event3) => {console.log(event3)
-      this.votedindexes = event3.VotedIdsFlagArray as unknown as any; console.log(this.votedindexes)
+    this.api.GetIssueCateggovern(user.attributes.sub,var1).then((event3) => {//console.log(event3)
+      this.votedindexes = event3.VotedIdsFlagArray as unknown as any; //console.log(this.votedindexes)
       //Com results. has the results of all categories from the ushouserepcandscoms table
       let paramsp6 = {headers: {}, response: true, queryStringParameters: {CandName:this.tabinstatedisplayitemid} };
-      API.get("issresultt4", "/issgovern/m", paramsp6).then(response6 => {this.BorderYea=+response6.data[0].BorderYea; this.BorderNay=+response6.data[0].BorderNay;  this.ImmigrationYea=+response6.data[0].ImmigrationYea; this.ImmigrationNay=+response6.data[0].ImmigrationNay; this.AbortionYea=+response6.data[0].AbortionYea;  this.AbortionNay=+response6.data[0].AbortionNay; this.TransgenderYea=+response6.data[0].TransgenderYea; this.TransgenderNay=+response6.data[0].TransgenderNay; this.VotingYea=+response6.data[0].VotingYea; this.VotingNay=+response6.data[0].VotingNay; this.SafetyYea=+response6.data[0].SafetyYea; this.SafetyNay=+response6.data[0].SafetyNay; this.EducationYea=+response6.data[0].EducationYea; this.EducationNay=+response6.data[0].EducationNay; this.VeteransYea=+response6.data[0].VeteransYea; this.VeteransNay=+response6.data[0].VeteransNay; this.JobsYea=+response6.data[0].JobsYea; this.JobsNay=+response6.data[0].JobsNay; this.ClimateYea=+response6.data[0].ClimateYea; this.ClimateNay=+response6.data[0].ClimateNay; this.HomelessnessYea=+response6.data[0].HomelessnessYea; this.HomelessnessNay=+response6.data[0].HomelessnessNay; this.MentalYea=+response6.data[0].MentalYea; this.MentalNay=+response6.data[0].MentalNay; this.GunsYea=+response6.data[0].GunsYea; this.GunsNay=+response6.data[0].GunsNay; this.CostYea=+response6.data[0].CostYea; this.CostNay=+response6.data[0].CostNay; this.FarmersYea=+response6.data[0].FarmersYea; this.FarmersNay=+response6.data[0].FarmersNay; this.PermanentYea=+response6.data[0].PermanentYea; this.PermanentNay=+response6.data[0].PermanentNay; this.EconomyYea=+response6.data[0].EconomyYea; this.EconomyNay=+response6.data[0].EconomyNay; this.HealthcareYea=+response6.data[0].HealthcareYea; this.HealthcareNay=+response6.data[0].HealthcareNay; this.InfrastructureYea=+response6.data[0].InfrastructureYea; this.InfrastructureNay=+response6.data[0].InfrastructureNay; this.EnergyYea=+response6.data[0].EnergyYea; this.EnergyNay=+response6.data[0].EnergyNay; this.CannabisYea=+response6.data[0].CannabisYea; this.CannabisNay=+response6.data[0].CannabisNay; this.TaxesYea=+response6.data[0].TaxesYea; this.TaxesNay=+response6.data[0].TaxesNay; this.LandsYea=+response6.data[0].LandsYea; this.LandsNay=+response6.data[0].LandsNay; this.SeniorsYea=+response6.data[0].SeniorsYea; this.SeniorsNay=+response6.data[0].SeniorsNay;this.ManufacturingYea=+response6.data[0].ManufacturingYea; this.ManufacturingNay=+response6.data[0].ManufacturingNay;this.HousingYea=+response6.data[0].HousingYea; this.HousingNay=+response6.data[0].HousingNay;}).catch(error => {console.log(error.response6)});
+      API.get("issresultt4", "/issgovern/m", paramsp6).then(response6 => {this.BorderYea=+response6.data[0].BorderYea; this.BorderNay=+response6.data[0].BorderNay;  this.ImmigrationYea=+response6.data[0].ImmigrationYea; this.ImmigrationNay=+response6.data[0].ImmigrationNay; this.AbortionYea=+response6.data[0].AbortionYea;  this.AbortionNay=+response6.data[0].AbortionNay; this.TransgenderYea=+response6.data[0].TransgenderYea; this.TransgenderNay=+response6.data[0].TransgenderNay; this.VotingYea=+response6.data[0].VotingYea; this.VotingNay=+response6.data[0].VotingNay; this.SafetyYea=+response6.data[0].SafetyYea; this.SafetyNay=+response6.data[0].SafetyNay; this.EducationYea=+response6.data[0].EducationYea; this.EducationNay=+response6.data[0].EducationNay; this.VeteransYea=+response6.data[0].VeteransYea; this.VeteransNay=+response6.data[0].VeteransNay; this.JobsYea=+response6.data[0].JobsYea; this.JobsNay=+response6.data[0].JobsNay; this.ClimateYea=+response6.data[0].ClimateYea; this.ClimateNay=+response6.data[0].ClimateNay; this.HomelessnessYea=+response6.data[0].HomelessnessYea; this.HomelessnessNay=+response6.data[0].HomelessnessNay; this.MentalYea=+response6.data[0].MentalYea; this.MentalNay=+response6.data[0].MentalNay; this.GunsYea=+response6.data[0].GunsYea; this.GunsNay=+response6.data[0].GunsNay; this.CostYea=+response6.data[0].CostYea; this.CostNay=+response6.data[0].CostNay; this.FarmersYea=+response6.data[0].FarmersYea; this.FarmersNay=+response6.data[0].FarmersNay; this.PermanentYea=+response6.data[0].PermanentYea; this.PermanentNay=+response6.data[0].PermanentNay; this.EconomyYea=+response6.data[0].EconomyYea; this.EconomyNay=+response6.data[0].EconomyNay; this.HealthcareYea=+response6.data[0].HealthcareYea; this.HealthcareNay=+response6.data[0].HealthcareNay; this.InfrastructureYea=+response6.data[0].InfrastructureYea; this.InfrastructureNay=+response6.data[0].InfrastructureNay; this.EnergyYea=+response6.data[0].EnergyYea; this.EnergyNay=+response6.data[0].EnergyNay; this.CannabisYea=+response6.data[0].CannabisYea; this.CannabisNay=+response6.data[0].CannabisNay; this.TaxesYea=+response6.data[0].TaxesYea; this.TaxesNay=+response6.data[0].TaxesNay; this.LandsYea=+response6.data[0].LandsYea; this.LandsNay=+response6.data[0].LandsNay; this.SeniorsYea=+response6.data[0].SeniorsYea; this.SeniorsNay=+response6.data[0].SeniorsNay;this.ManufacturingYea=+response6.data[0].ManufacturingYea; this.ManufacturingNay=+response6.data[0].ManufacturingNay;this.HousingYea=+response6.data[0].HousingYea; this.HousingNay=+response6.data[0].HousingNay;}).catch(error => {
+      //  console.log(error.response6)
+      });
       //Issues results from the ushouserepcandsissues table
       this.isscateg = event3.isscateg as unknown as any;this.comcateg = event3.comcateg as unknown as any;
     });
@@ -216,7 +223,9 @@ export class InstategovernordisplaynavComponent implements OnInit {
       });
        this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemidnext).then((event5) => {
         this.votedindexesissuecand100=event5.VotedIdsFlagArrayCand as unknown as any;});
-    }).catch(error => {console.log(error.response2)});
+    }).catch(error => {
+    //  console.log(error.response2)
+    });
   }
 
   //for tab1A start, extract the itemid from the array in the itemtracking table
@@ -224,14 +233,16 @@ export class InstategovernordisplaynavComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
     API.get("initializeuserarrayt4", "/initgovern/m", paramsp1).then(response1 =>
-    { console.log(response1) //this is the entire row of the user of itemtracking table
+    { //console.log(response1) //this is the entire row of the user of itemtracking table
       this.tabinstatedisplayitemid=response1.data[0];
       this.tabinstatedisplayitemidindex1=response1.data[1]
       this.tabinstatelength=response1.data[3]; this.tabinstateendarrayitemid=response1.data[4];
-      console.log(this.tabinstatedisplayitemidindex1);
+   //   console.log(this.tabinstatedisplayitemidindex1);
       this.gethompageF1Arecur10(this.tabinstatedisplayitemidindex1)
       if(+this.tabinstatelength==1) {this.clicked0=true}
-    }).catch(error => {console.log(error.response1)});
+    }).catch(error => {
+    //  console.log(error.response1)
+    });
   }
 
 //var1 is candname
@@ -251,7 +262,9 @@ export class InstategovernordisplaynavComponent implements OnInit {
        });
       this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,var1).then((event5) => {
         this.votedindexesissuecand1000=event5.VotedIdsFlagArrayCand as unknown as any;});
-    }).catch(error => {console.log(error.response1)});
+    }).catch(error => {
+    //  console.log(error.response1)
+    });
   }
 
   //for tab1A start, extract the itemid from the array in the itemtracking table
@@ -259,14 +272,16 @@ export class InstategovernordisplaynavComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     let paramsp1 = {headers: {}, response: true, queryStringParameters: {userid:user.attributes.sub} };
     API.get("initializeuserarrayt4", "/initgovern/m", paramsp1).then(response1 =>
-    { console.log(response1) //this is the entire row of the user of itemtracking table
+    { //console.log(response1) //this is the entire row of the user of itemtracking table
       this.tabinstatedisplayitemidnext=response1.data[0];
       this.tabinstatedisplayitemidindex1next=response1.data[1];
       this.tabinstatelengthnext=response1.data[3]; this.tabinstateendarrayitemidnext=response1.data[4];
-      console.log(this.tabinstatedisplayitemidindex1next);
+   //   console.log(this.tabinstatedisplayitemidindex1next);
       this.gethompageF1Arecur100();
       if(+this.tabinstatelengthnext==1) {this.clicked0=true}
-    }).catch(error => {console.log(error.response1)});
+    }).catch(error => {
+    //  console.log(error.response1)
+    });
   }
 
   async gethompageF1Arecur100() {
@@ -286,7 +301,9 @@ export class InstategovernordisplaynavComponent implements OnInit {
       });
       this.api.ListVotedIdsIssuesflagsgovern(user.attributes.sub,this.tabinstatedisplayitemidindex1next).then((event5) => {
         this.votedindexesissuecand100=event5.VotedIdsFlagArrayCand as unknown as any;});
-    }).catch(error => {console.log(error.response2)});
+    }).catch(error => {
+    //  console.log(error.response2)
+    });
   };
 
   //in tab1A, back button clicked, bring the itemid from the end of the array to index0 position.
@@ -320,7 +337,11 @@ export class InstategovernordisplaynavComponent implements OnInit {
   async ConfclickComResults( var2:string){
     const user = await Auth.currentAuthenticatedUser();
     const paramspG = {body: {userid:user.attributes.sub, webpagevalue: "Governor", comcateg: var2, categcol:"comcateg"}}
-    API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {console.log("successG");}).catch(error => {console.log(error.responseG);});
+    API.post("initializeuserarrayt4", "/index", paramspG).then(responseG => {
+    //  console.log("successG");
+    }).catch(error => {
+      //  console.log(error.responseG);
+      });
   }
 
   //scroll to appropriate section
@@ -530,7 +551,11 @@ export class InstategovernordisplaynavComponent implements OnInit {
     const user = await Auth.currentAuthenticatedUser();
     //this removes the itemid from index 0 position, do this only once the itemid has move to the other tab
     const paramsp3 = {body: {userid: user.attributes.sub,}}
-    API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {console.log("success3");}).catch(error => {console.log(error.response3);});
+    API.put("datingapitest4", "/loyaltyadd", paramsp3).then(response3 => {
+    //  console.log("success3");
+    }).catch(error => {
+    //  console.log(error.response3);
+    });
   }
 
   selectorflag:number
