@@ -58,35 +58,35 @@
        <!-- show one quote immediately after the entry banner  -->
   <mat-card *ngIf="selectorflag == 1">
       <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">"The effect of [a representative democracy is] to refine and enlarge the public views, by passing them through the medium of a chosen body of citizens, whose wisdom may best discern the true interest of the nation…” </h2>
-    <br>  <h2 style="float: right"> -James Madison (4th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> James Madison  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 2">
        <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">"That government is the strongest of which every man feels himself a part." </h2>
-    <br>  <h2 style="float: right"> -Thomas Jefferson (3rd U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Thomas Jefferson  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 3">
       <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">"Politics ought to be the part-time profession of every citizen who would protect the rights and privileges of free men." </h2>
-    <br>  <h2 style="float: right"> -Dwight Eisenhower (34th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Dwight Eisenhower  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 4">
      <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">"Let us have faith that right makes might, and in that faith, let us, to the end, dare to do our duty as we understand it." </h2>
-    <br>  <h2 style="float: right"> -Abraham Lincoln (16th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Abraham Lincoln  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 5">
     <h2 style="font-family: cursive, 'Times New Roman', Times, serif;"> "Public sentiment is everything. With public sentiment, nothing can fail; without it nothing can succeed."</h2>
-    <br>  <h2 style="float: right"> -Abraham Lincoln (16th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Abraham Lincoln  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 6">
       <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">"The legitimate object of government is 'to do for the people what needs to be done, but which they can not, by individual effort, do at all, or do so well, for themselves'." </h2>
-    <br>  <h2 style="float: right"> -Abraham Lincoln (16th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Abraham Lincoln  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 7">
      <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">Sir, my concern is not whether God is on our side; my greatest concern is to be on God's side, for God is always right. </h2>
-    <br>  <h2 style="float: right"> -Abraham Lincoln (16th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Abraham Lincoln  </h2> <br>
   </mat-card>
   <mat-card *ngIf="selectorflag == 8">
      <h2 style="font-family: cursive, 'Times New Roman', Times, serif;">Public opinion in this country is everything. </h2>
-    <br>  <h2 style="float: right"> -Abraham Lincoln (16th U.S. President) </h2> <br>
+    <br>  <h2 style="float: left"> Abraham Lincoln </h2> <br>
   </mat-card>
 
   <br> <br>
@@ -171,10 +171,9 @@
  <br>
   <mat-card>
     <h1>Thank you for your generosity</h1>
-    <h2>Please support our mission. Our services are free to ensure every member of the community has an opportunity to participate in SoWhat Vote! surveys and have their voice reach elected officials.
- <br>   To helps us meet continued operating expenses of keeping site functional, we’ve set up this campaign with a <b> goal of $10,000 by 30th September 2022 </b>.
-  <br>   Every donation makes a difference. Thank you for your consideration.
-  <br>  <a style="text-align:center;" href="https://www.paypal.com/donate/?hosted_button_id=EZ7ZW8QQ6K4W2" target="_blank">Donate with PayPal or Any Debit or Credit Card</a>  </h2>
+    <h2>Please support our mission. Our services are free to ensure every person has an opportunity to participate in SoWhat Vote! surveys and have their voice reach elected officials.
+ <br> <br>  To helps us keep site functional, we’ve set up this campaign with a <b> goal of $10,000 by 30th September 2022 </b>.
+  <br> <br> <a style="text-align:center;" href="https://www.paypal.com/donate/?hosted_button_id=EZ7ZW8QQ6K4W2" target="_blank">Donate with PayPal or Any Debit or Credit Card</a>  </h2>
   </mat-card>
 
   <!-- Facebook comments  -->
@@ -190,13 +189,24 @@
 <br>  <div class="g-ytsubscribe" data-channelid="UCmXs05oBqO2F3LBgSxvbNsg" data-layout="full" data-count="default"></div>
   </mat-card>
 
-  <br>  <mat-divider></mat-divider>
+  <!-- Get Started Button again  -->
+ <br>  <br>  <br> <a style="text-align:center;">
+    <div *ngIf="authenticator.route != 'authenticated'">
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started with SoWhat Vote!</b></button>
+    </div>
+    <div *ngIf="authenticator.route === 'authenticated'">
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started with SoWhat Vote!</b></button>
+    </div>
+  </a>
+
+  <br>  <br>  <br> <mat-divider></mat-divider>
   <p> <button mat-button class="terms-button"  routerLink="/AllProfileNames">List of all 2022 Midterm Election Candidates on SoWhat Vote!</button> </p>
   <p> <button mat-button class="terms-button"  routerLink="/Community1">Ideas on Helping Your Community </button> </p>
   <p> <button mat-button class="terms-button"  routerLink="/Community2">More Ideas on Helping Your Community </button> </p>
 
 
   <br> <mat-divider></mat-divider>
+  <div style="background-color:rgb(130,224,170)">
     <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p>
      <p> <mat-icon inline=true>copyright</mat-icon>2022 SoWhat Vote, LLC. All rights reserved. </p>
   <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
@@ -208,7 +218,7 @@
 
   <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
 
-
+</div>
 
   </div>
   <!-- class11 is ad space right-->
