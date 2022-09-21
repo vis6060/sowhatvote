@@ -4,7 +4,7 @@
 <div class="class10" >
 
   <div fxLayout="row wrap" >   <!-- row wrap will help put the second mat-card in second row when screen size small. fxflex will help change the image size with smaller screens -->
-    <div  fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+    <div  fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
       <mat-card>
         <br> <br> <br>
 <h1 style="text-align:center;"><b>Make your voice count! </b></h1>
@@ -18,42 +18,46 @@
             <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started</b></button>
           </div>
         </a>
+        <h3><b>
+      <br>    <a routerLink="/TermsGiftcard" target="_blank">WIN A $10 AMAZON GIFTCARD FOR A LIMITED TIME BY
+          VOTING ON CANDIDATES PERFORMANCE ON THIS SITE. SEE DETAILS.</a>
+           </b></h3>
         <br> <br> <br> <br>
     </mat-card>
     </div>
 
-    <div  fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
-      <img src="assets/F9.jpg" >
+    <!--   <div  fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+       <img src="assets/F9.jpg" >
 
-      <!--      <div *ngIf="delayflag1 == true && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-         <img src="assets/F1.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == true && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-               <img src="assets/F2.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == true && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-                 <img src="assets/F3.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == true && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-               <img src="assets/F4.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == true && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-              <img src="assets/F5.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == true && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-           <img src="assets/F6.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == true && delayflag8 == false && delayflag9 == false && delayflag10 == false">
-           <img src="assets/F7.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == true && delayflag9 == false && delayflag10 == false">
-           <img src="assets/F8.jpg" >
-           </div>
-           <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == true && delayflag10 == false">
-           <img src="assets/F9.jpg" >
-           </div>   -->
+           <div *ngIf="delayflag1 == true && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+          <img src="assets/F1.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == true && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+                <img src="assets/F2.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == true && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+                  <img src="assets/F3.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == true && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+                <img src="assets/F4.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == true && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+               <img src="assets/F5.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == true && delayflag7 == false && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+            <img src="assets/F6.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == true && delayflag8 == false && delayflag9 == false && delayflag10 == false">
+            <img src="assets/F7.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == true && delayflag9 == false && delayflag10 == false">
+            <img src="assets/F8.jpg" >
+            </div>
+            <div *ngIf="delayflag1 == false && delayflag2 == false && delayflag3 == false && delayflag4 == false && delayflag5 == false && delayflag6 == false && delayflag7 == false && delayflag8 == false && delayflag9 == true && delayflag10 == false">
+            <img src="assets/F9.jpg" >
+            </div>
 
-         </div>
+         </div> -->
      </div>
        <br> <br>
        <!-- show one quote immediately after the entry banner  -->

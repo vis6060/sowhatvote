@@ -50,6 +50,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
+import { GiftcardComponent } from './giftcard/giftcard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     EntrypageComponent,
     TermsdialogboxComponent,
     CookiebannerComponent,
+    GiftcardComponent,
   ],
   imports: [
     BrowserModule,

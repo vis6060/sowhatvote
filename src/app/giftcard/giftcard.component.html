@@ -1,0 +1,96 @@
+
+<div  style="padding:15px">
+
+  <h1>SoWhat Vote!<sup><span>&#174;</span></sup> Amazon Gift Card Giveaway - Official Rules</h1>
+
+  <p> Dated: 18 September 2022 </p>
+
+ <h3> ELIGIBILITY: </h3>
+ <p> Open only to persons who are 18 years of age or older. All applicable federal, state and local laws and
+   regulations apply. Void where prohibited or restricted by law. NO PURCHASE NECESSARY. </p>
+
+<br>  <h3>CONTEST PERIOD:  </h3>
+<p> The Contest entry period begins on Monday, September 19, 2022 and ends at 9pm Eastern Standard Time on Sunday,
+  September 25, 2022 (the "Contest Period"). </p>
+
+  <br> <h3>HOW TO ENTER:  </h3>
+  <p>During the Contest Period, use the SoWhat Vote! website to earn points.  </p>
+
+  <br> <h3>POINTS EARNING METHOD:   </h3>
+  <p>Points are earned by interacting with various features of the site: </p>
+  <ul> <li>New Account Creation: <b> 5000 points </b> </li>
+    <li> 2022 Elections Survey Voting YEA or NAY:<b> 100 points</b> </li>
+    <li>  2022 Elections Survey Viewing Results:<b> 50 points</b> </li>
+    <li>  Community Connect - Accepting a Request:<b> 50 points</b> </li>
+    <li>  Community Connect - Sending a Connect Request: <b>20 points</b> </li>
+    <li>   Community Connect - Viewing Profiles by clicking on "Next Profile": <b>20 points</b> </li>
+  </ul>
+
+  <br> <h3>POINTS STATUS:  </h3>
+  <p>a)	After you create an account, the
+    <a routerLink="/MyAccount" target="_blank">MyAccount</a> page has a real-time status of
+    your points earned since your account was created. <br>
+    b)	To see if you are one of the users with the highest points, please visit the Community Connect section
+    <a routerLink="/Meetup/Home" target="_blank">Community Connect</a>
+    (https://www.sowhatvote.org/Meetup/Home)
+  </p>
+
+  <br>  <h3>WINNER SELECTION: </h3>
+  <p>At the end of the Contest Period, one SoWhat Vote user with the highest points on the site will be selected. The winner
+    will be notified via email provided when they registered at SoWhat Vote.  The winner shall respond
+    to this notification email within 24 hours to claim the gift card.  If the person fails to respond to the email
+    in this timeframe, then their gift card award will be forfeited and given to the next highest points user.
+    This new winner will again have 24 hours to claim the gift card. This process will continue till a winner is
+    found or there are no more SoWhat Vote users to give this reward.  Once the user acknowledges the email, an
+    electronic gift card will be sent to their email address within 7 days. </p>
+
+  <p>The winning notification email will ask for the user to upload their picture on SoWhat Vote by going through the steps
+    here at <a routerLink="/Meetup/Home" target="_blank">Community Connect</a>.  By accepting
+    the gift card, the user agrees that SoWhat Vote can use their information and/or picture for marketing purposes
+    on this site as well as on any social media platform.  For example, there could be a post on Facebook
+    informing people that there is a contest winner along with the person’s photo. </p>
+
+  <p>Once the user accepts the award, their points counter will be set to zero.  The winning user can once again
+    accumulate points and be eligible for subsequent contests. </p>
+
+  <p> All decisions made by SoWhat Vote on the Contest shall be final and not open to discussion.</p>
+
+  <br>  <h3>Winning Prize:  </h3>
+  <p> One (1) Amazon Gift Cards worth $10. Approximate Retail Value (ARV) of Prize: $10. No prize substitution or
+    cash equivalent of prize. No prize transfer.</p>
+
+  <br> <h3>CONDITIONS: </h3>
+  <p>SoWhat Vote, LLC reserves the right, at its sole discretion, to cancel, terminate, modify or suspend the
+    Contest (or portion thereof).   SoWhat Vote, LLC also reserves the right at its sole discretion to disqualify
+    any individual. All federal, state and local taxes on prize and any expenses not specified herein are the sole
+    responsibility of winner. Should a dispute arise regarding the identity of the claimant, SoWhat Vote, LLC
+    reserves the sole right to determine the eligible party. By using the SoWhat Vote Service, entrant waives all
+    rights to bring (and covenants not to bring) any claim against SoWhat Vote, LLC or any others associated with
+    this Contest. Entrants further agree to release and hold harmless SoWhat Vote, LLC from any and all liability
+    arising from their participation in the Contest, or SoWhat Vote, LLC use of any entry information. Any disputes
+    that may arise hereunder shall be governed in all respects by the clauses mentioned in SoWhat Vote, LLC
+    <a routerLink="/TermsPrivacy"  target="_blank">Terms of Service</a>
+    (https://www.sowhatvote.org/TermsPrivacy). </p>
+
+  <br> <h3>PUBLICITY AND RELEASE: </h3>
+  <p>As a condition of entry into the Contest and receiving the winning gift card, except where prohibited by law,
+    the winner by accepting a prize grants to SoWhat Vote LLC, all right, title and interest in to publicize,
+    broadcast, display and/or otherwise use the Contest entrant’s name, city, state, and biographical material
+    (collectively, “Licensed Rights”) in any media for advertising and publicity purposes, without additional
+    review, compensation, or approval of the winner. By using the SoWhat Vote Service, entrants agree to be
+    bound by these Official Rules.  </p>
+
+  <br>  <h3>SPONSOR: </h3>
+  <p>SoWhat Vote LLC. 312 W. 2nd St #1349, Casper, WY 82601 </p>
+
+  <br>  <br> <a style="text-align:center;">
+  <div *ngIf="authenticator.route != 'authenticated'">
+    <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started with SoWhat Vote!</b></button>
+  </div>
+  <div *ngIf="authenticator.route === 'authenticated'">
+    <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started with SoWhat Vote!</b></button>
+  </div>
+</a>
+
+
+</div>
