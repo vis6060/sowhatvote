@@ -5,3 +5,8 @@
 mat-form-field {
   width: 100%;
 }
+
+.mat-raised-button{
+  color: #f0fff3;
+  background-color: #2874A6;
+}
