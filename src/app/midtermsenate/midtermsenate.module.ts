@@ -19,7 +19,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ConfdialogsenateComponent } from '../midtermsenate/confdialogsenate/confdialogsenate.component';
-import {ClipboardModule} from '@angular/cdk/clipboard';
 
 
 @NgModule({
@@ -45,7 +44,6 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     ReactiveFormsModule,
     MatIconModule,
     MatTooltipModule,
-    ClipboardModule
   ]
 })
 export class MidtermsenateModule { }

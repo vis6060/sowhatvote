@@ -70,7 +70,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[]; statedropdown=''; HOMEstate=''
 
   cookiedenied="";stateuserCA="";  overalldisapper="";
-  valuecopy=""
+
 
   reloadComponent() {
     let currentUrl = this.router.url;

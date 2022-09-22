@@ -13,16 +13,13 @@
   <!--Future Comm- show the results -->
 <a *ngIf="prefercateg=='future'">
   <br>
-  <textarea id="clipboard-example-textarea" cols="30" rows="10" [(ngModel)]="valuecopy">
   <mat-card>
-
     <mat-card-title>{{CandName10}} committee assignments by popular vote: </mat-card-title>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>First preference: {{FutureComPreferArray10[3]}} with <b> {{FutureComPreferArray10[2]}} </b> vote(s) in favor </a> <br>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>Second preference: {{FutureComPreferArray10[5]}} with <b> {{FutureComPreferArray10[4]}} </b> vote(s) in favor  </a> <br>
   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a>Third preference: {{FutureComPreferArray10[7]}} with <b> {{FutureComPreferArray10[6]}} </b> vote(s) in favor </a>
+    <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Please Tweet Result to @sowhat_vote</a>
   </mat-card>
-    </textarea>
-  <button [cdkCopyToClipboard]="valuecopy">Copy to clipboard</button>
     </a>
 
 <!--Comm- show the results of the category the user had clicked -->
