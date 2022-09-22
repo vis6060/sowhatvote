@@ -9,6 +9,7 @@ import { TitleCasePipe } from '@angular/common';
 import {MatDialog,} from '@angular/material/dialog';
 import {ConfdialogsenateComponent} from "../confdialogsenate/confdialogsenate.component";
 
+
 //Analytics.record({ name: 'albumVisit' });
 
 @Component({
@@ -69,6 +70,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
   Coms1000new=[]; FirstComPrefer1000=[]; SecondComPrefer1000=[]; ThirdComPrefer1000=[]; statedropdown=''; HOMEstate=''
 
   cookiedenied="";stateuserCA="";  overalldisapper="";
+  valuecopy=""
 
   reloadComponent() {
     let currentUrl = this.router.url;
