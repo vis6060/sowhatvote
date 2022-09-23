@@ -17,6 +17,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfdialoggovernComponent } from '../midtermgovernor/confdialoggovern/confdialoggovern.component';
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ConfdialoggovernComponent } from '../midtermgovernor/confdialoggovern/c
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
   ]
 })
 export class MidtermgovernorModule { }

@@ -24,9 +24,7 @@
            </b></h3>
      <br>   <div class="fb-like" data-href="https://www.sowhatvote.org" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
         <!--    <br>  <div class="fb-share-button" data-href="https://www.sowhatvote.org/2022MidtermElections/USSenate" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sowhatvote.org%2F2022MidtermElections%2FUSSenate&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->
-            <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @sowhat_vote</a>
-    <br>   <a href="https://twitter.com/sowhat_vote?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @sowhat_vote</a>
-              <br> <br>
+                   <br> <br>
           </mat-card>
           </div>
 
@@ -164,7 +162,7 @@
       <mat-card >
         <br> <br> <br> <br>
         <h2  style="line-height: 1.8"> We were inspired by the statewide amendment proposals that are on an election ballot. Based on
-          all the information the person has to choose a Yes or No.  We have replicated this simplicity of decision making at SoWhat Vote! with a Yea or a Nay.
+          all the information the person has to choose a Yes or No.  We have replicated this simplicity of decision making with a Yea or a Nay.
         </h2>
         <br> <br> <br> <br>
       </mat-card>
@@ -180,7 +178,7 @@
  <br>
   <mat-card>
     <h1>Thank you for your generosity</h1>
-    <h2>Please support our mission. Our services are free to ensure every person has an opportunity to participate in SoWhat Vote! surveys and have their voice reach elected officials.
+    <h2>Please support our mission. Our services are free to ensure every person has an opportunity to participate in surveys and have their voice reach elected officials.
  <br> <br>  To helps us keep site functional, we’ve set up this campaign with a <b> goal of $10,000 by 30th September 2022 </b>.
   <br> <br> <a style="text-align:center;" href="https://www.paypal.com/donate/?hosted_button_id=EZ7ZW8QQ6K4W2" target="_blank">Donate with PayPal or Any Debit or Credit Card</a>  </h2>
   </mat-card>
@@ -191,9 +189,10 @@
   <div class="fb-comments" data-href="https://www.sowhatvote.org" data-width="100%" data-numposts="10"></div>
   </mat-card>
 
- <br>  <mat-card> <h2> Please share the mission of SoWhat Vote! with your friends </h2>
+ <br>  <mat-card> <h2> Please share our mission with your friends </h2>
   <br>  <div class="fb-like" data-href="https://www.sowhatvote.org" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
-  </mat-card>
+<br>  <a href="https://twitter.com/sowhat_vote?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"  data-size="large">Follow @sowhat_vote</a>
+</mat-card>
  <br> <mat-card> <h2> Please <b> subscribe to our YouTube channel</b> to learn about ideas on how to make a difference in <b> your community</b> </h2>
 <br>  <div class="g-ytsubscribe" data-channelid="UCmXs05oBqO2F3LBgSxvbNsg" data-layout="full" data-count="default"></div>
   </mat-card>
@@ -201,39 +200,38 @@
   <!-- Get Started Button again  -->
  <br>  <br>  <br> <a style="text-align:center;">
     <div *ngIf="authenticator.route != 'authenticated'">
-      <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started with SoWhat Vote!</b></button>
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started</b></button>
     </div>
     <div *ngIf="authenticator.route === 'authenticated'">
-      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started with SoWhat Vote!</b></button>
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started</b></button>
     </div>
   </a>
 
   <br>  <br>  <br> <mat-divider></mat-divider>
-  <p> <button mat-button class="terms-button"  routerLink="/AllProfileNames">List of all 2022 Midterm Election Candidates on SoWhat Vote!</button> </p>
+  <p> <button mat-button class="terms-button"  routerLink="/AllProfileNames">List of all 2022 Midterm Election Candidates</button> </p>
   <p> <button mat-button class="terms-button"  routerLink="/Community1">Ideas on Helping Your Community </button> </p>
   <p> <button mat-button class="terms-button"  routerLink="/Community2">More Ideas on Helping Your Community </button> </p>
 
 
   <br> <mat-divider></mat-divider>
   <div style="background-color:rgb(130,224,170)">
-    <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p>
-     <p> <mat-icon inline=true>copyright</mat-icon>2022 SOWHAT VOTE LLC. All rights reserved. </p>
-    <p> Paid for by SOWHAT VOTE LLC </p>
-    <p> SOWHAT VOTE LLC </p>
-    <p> Reach us at: info@sowhatvote.org </p>
-    <p> 111 NORTH WABASH AVE. SUITE #1187, CHICAGO, IL 60602. Phone: 1-414-533-4538.  </p>
-  <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
-    <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: true})" (click)="donotsellstore()"
-                (click)="clicked2 = true;">
-      <small>Do not sell my personal information </small></button> </p>
-    <mat-card  *ngIf="clicked2==true"> <a id="GTM-TVJ45PB"><small>Thank you. Your response has been recorded </small></a> </mat-card>
+    <!--  <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p> -->
+      <p> <mat-icon inline=true>copyright</mat-icon>2022 SOWHAT VOTE. All rights reserved. </p>
+     <p> Paid for by SOWHAT VOTE </p>
+     <p> Reach us at: info@sowhatvote.org </p>
+     <p> 111 NORTH WABASH AVE. SUITE #1187, CHICAGO, IL 60602. Phone: 1-414-533-4538.  </p>
+   <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
+     <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: true})" (click)="donotsellstore()"
+                 (click)="clicked2 = true;">
+       <small>Do not sell my personal information </small></button> </p>
+     <mat-card  *ngIf="clicked2==true"> <a id="GTM-TVJ45PB"><small>Thank you. Your response has been recorded </small></a> </mat-card>
 
 
-  <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys on SoWhat Vote! DOES NOT represent the actual 2022 midterm election voting results. The SoWhat Vote! survey results are only for educational purposes. </small>
+   <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys DOES NOT represent the actual 2022 midterm election voting results. The survey results are only for educational purposes. </small>
 
-</div>
+ </div>
 
-  </div>
-  <!-- class11 is ad space right-->
+   </div>
+   <!-- class11 is ad space right-->
 <div class="class11" >
 </div>

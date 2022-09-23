@@ -1,3 +1,9 @@
 .mat-tab-label-active {
   color: #00ADEE !important;
 }
+
+.colorc{
+  color: #f0fff3;
+  background-color: #3498DB;
+  border-radius: 4px;
+}
