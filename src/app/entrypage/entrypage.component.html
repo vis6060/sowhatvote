@@ -126,7 +126,7 @@
         (Guns, Abortion, Immigration, Inflation, Crime, COVID, Climate, Veterans, Farmers, Seniors, etc.)
         and on 20+ US Senate or US House committees (Banking, Health, Agriculture, etc.) that they are a member of.
         <br>   <br>  You can also choose which committees you would like candidates to serve in the 2023 Congress session.
-        <br>   <br> Discuss issues, find, and implement solutions as a group with new found friends, on SoWhat Vote, from across the country.
+        <br>   <br> Discuss issues, find, and implement solutions as a group with new found friends, on SoWhat Vote!, from across the country.
         <br>   <br>  Become a mentor or mentee in your professional or educational field to help your community members grow in their career.
       </h2>
     </mat-card>
@@ -200,10 +200,10 @@
   <!-- Get Started Button again  -->
  <br>  <br>  <br> <a style="text-align:center;">
     <div *ngIf="authenticator.route != 'authenticated'">
-      <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started</b></button>
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started with SoWhat Vote!</b></button>
     </div>
     <div *ngIf="authenticator.route === 'authenticated'">
-      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started</b></button>
+      <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started with SoWhat Vote!</b></button>
     </div>
   </a>
 
@@ -216,23 +216,21 @@
   <br> <mat-divider></mat-divider>
   <div style="background-color:rgb(130,224,170)">
     <!--  <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p> -->
-      <p> <mat-icon inline=true>copyright</mat-icon>2022 SOWHAT VOTE. All rights reserved. </p>
-     <p> Political Ad paid for by SOWHAT VOTE</p>
-    <p> SOWHAT VOTE</p>
-     <p> Reach us at: info@sowhatvote.org </p>
-     <p> 111 NORTH WABASH AVE. SUITE #1187, CHICAGO, IL 60602. Phone: 1-414-533-4538.  </p>
-   <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
-     <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: true})" (click)="donotsellstore()"
-                 (click)="clicked2 = true;">
-       <small>Do not sell my personal information </small></button> </p>
-     <mat-card  *ngIf="clicked2==true"> <a id="GTM-TVJ45PB"><small>Thank you. Your response has been recorded </small></a> </mat-card>
+      <p> <mat-icon inline=true>copyright</mat-icon>2022 SOWHAT VOTE LLC. All rights reserved. </p>
+    <!--   <p> Reach us at: info@sowhatvote.org </p>
+           <p> 111 NORTH WABASH AVE. SUITE #1187, CHICAGO, IL 60602. Phone: 1-414-533-4538.  </p> -->
+     <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
+       <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: true})" (click)="donotsellstore()"
+                   (click)="clicked2 = true;">
+         <small>Do not sell my personal information </small></button> </p>
+       <mat-card  *ngIf="clicked2==true"> <a id="GTM-TVJ45PB"><small>Thank you. Your response has been recorded </small></a> </mat-card>
 
 
-   <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys DOES NOT represent the actual 2022 midterm election voting results. The survey results are only for educational purposes. </small>
-
- </div>
+     <small> Disclaimer: Please visit your local Secretary of State office for the latest candidate and election information. The voting in the surveys DOES NOT represent the actual 2022 midterm election voting results. The survey results are only for educational purposes. </small>
 
    </div>
-   <!-- class11 is ad space right-->
+
+     </div>
+     <!-- class11 is ad space right-->
 <div class="class11" >
 </div>
