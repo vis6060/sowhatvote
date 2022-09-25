@@ -6,7 +6,9 @@
 <div class="class2" >
   <a class="ontop_class"></a>
   <a class="fb-share-button" data-href="https://www.sowhatvote.org/2022MidtermElections/USSenate" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sowhatvote.org%2F2022MidtermElections%2FUSSenate&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"> <button class="colorc"> <mat-icon >facebook</mat-icon> Share </button>  </a> </a>
-  &nbsp; &nbsp; &nbsp;<a href="https://twitter.com/sowhat_vote?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"  data-size="large">Follow @sowhat_vote</a>
+  &nbsp; &nbsp; &nbsp;<a href="https://twitter.com/sowhat_vote?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"  data-size="large"><button class="colorc">
+  <svg class='fontawesomesvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+  Follow </button></a>
 
 
 <!--Comm- show the results of the category the user had clicked -->
@@ -64,7 +66,7 @@
   <br> <mat-card-title>{{CandName10}} performance on the issue of Housing: <br> {{HousingYea}} YEA and {{HousingNay}} NAY </mat-card-title> </mat-card> <br></a>
 
   <mat-card>
-    <h3>Please support our mission and help reach campaign <b> goal of $10,000 by 30th September 2022 </b>.
+    <h3>Please support our mission and help reach campaign <b> goal of $10,000 by 30th September 2022 </b>
       <br>  <a style="text-align:center;" href="https://www.paypal.com/donate/?hosted_button_id=EZ7ZW8QQ6K4W2" target="_blank">Donate with PayPal or Any Debit or Credit Card</a>  </h3>
   </mat-card>
 
@@ -153,8 +155,8 @@
        <div *ngIf="overalldisapper==''">
        <a *ngIf="HOMEstate==statedropdown"> <p *ngIf="votedindexesissuecand10[0]==-1">
       <mat-card-subtitle>Vote<a *ngIf="District10!=''"><sup>*</sup></a> on {{CandName10}}'s Overall Performance or Potential</mat-card-subtitle>
-      <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} </button> &nbsp; &nbsp; &nbsp;
-         <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} </button> </p> </a> </div>
+      <button mat-button  (click)="YEAclick2z()"> <b> Vote YEA </b> for {{CandName10}} (100 points)</button> &nbsp; &nbsp; &nbsp;
+         <button mat-button  (click)="NAYclick2z()"> <b>Vote NAY </b> for {{CandName10}} (100 points)</button> </p> </a> </div>
        <div *ngIf="overalldisapper=='yes'"> Thank you for your response! </div>
   </mat-card> <mat-divider></mat-divider>
 
@@ -194,210 +196,210 @@
     <a *ngIf="Coms10new[0]==''"> <a class="iss0_class"></a> <mat-card class="example-card"> <!-- Committe 0 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[0]=='' && votedindexes[0]==-1">
         <mat-card-subtitle>{{CandName10}} <b> Performance </b> on the issue of<b> Border Security </b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP0()"> <b> Vote YEA </b> for {{CandName10}} on<b> Border Security </b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP0()"><b> Vote NAY </b> for {{CandName10}} on<b> Border Security </b> </button></p> </a>
+        <button mat-button (click)="YEAclickP0()"> <b> Vote YEA </b> for {{CandName10}} on<b> Border Security</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP0()"><b> Vote NAY </b> for {{CandName10}} on<b> Border Security</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[0]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P0gov')"> <b> View Survey Results </b> for {{CandName10}} on<b> Border Security </b></button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P0gov')"> <b> View Survey Results </b> for {{CandName10}} on<b> Border Security</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[1]==''"> <a class="iss1_class"></a> <mat-card class="example-card"> <!-- Committe 1 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[1]==''&& votedindexes[1]==-1">
         <mat-card-subtitle>{{CandName10}} <b> Performance</b> on the issue of<b> Immigration </b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP1()"> <b> Vote YEA </b> for {{CandName10}} on<b> Immigration</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP1()"><b>Vote NAY</b> for {{CandName10}} on<b> Immigration</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP1()"> <b> Vote YEA </b> for {{CandName10}} on<b> Immigration</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP1()"><b>Vote NAY</b> for {{CandName10}} on<b> Immigration</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[1]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P1gov')"><b> View Survey Results </b>> for {{CandName10}} on<b> Immigration </b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P1gov')"><b> View Survey Results </b>> for {{CandName10}} on<b> Immigration</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[2]==''"> <a class="iss2_class"></a> <mat-card class="example-card"> <!-- Committe 2 -->
       <a *ngIf="HOMEstate==statedropdown">   <p *ngIf="Coms10new[2]==''&& votedindexes[2]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Abortion Rights</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP2()"><b>Vote YEA</b> for {{CandName10}} on<b> Abortion Rights</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP2()"><b>Vote NAY</b> for {{CandName10}} on<b> Abortion Rights</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP2()"><b>Vote YEA</b> for {{CandName10}} on<b> Abortion Rights</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP2()"><b>Vote NAY</b> for {{CandName10}} on<b> Abortion Rights</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[2]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P2gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Abortion Rights</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P2gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Abortion Rights</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[3]==''"> <a class="iss3_class"></a> <mat-card class="example-card"> <!-- Committe 3 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[3]==''&& votedindexes[3]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Transgender Rights</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP3()"><b>Vote YEA</b> for {{CandName10}} on<b> Transgender Rights </b></button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP3()"><b>Vote NAY</b> for {{CandName10}} on<b> Transgender Rights</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP3()"><b>Vote YEA</b> for {{CandName10}} on<b> Transgender Rights</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP3()"><b>Vote NAY</b> for {{CandName10}} on<b> Transgender Rights</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[3]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P3gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Transgender Rights </b></button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P3gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Transgender Rights</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[4]==''"> <a class="iss4_class"></a> <mat-card class="example-card"> <!-- Committe 4 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[4]==''&& votedindexes[4]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Voting Rights & Election Laws</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP4()"><b>Vote YEA</b> for {{CandName10}} on<b> Voting Rights & Election Laws</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP4()"><b>Vote NAY</b> for {{CandName10}} on<b> Voting Rights & Election Laws</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP4()"><b>Vote YEA</b> for {{CandName10}} on<b> Voting Rights & Election Laws</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP4()"><b>Vote NAY</b> for {{CandName10}} on<b> Voting Rights & Election Laws</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[4]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P4gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Voting Rights & Election Laws </b></button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P4gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Voting Rights & Election Laws</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[5]==''"> <a class="iss5_class"></a> <mat-card class="example-card"> <!-- Committe 5 -->
       <a *ngIf="HOMEstate==statedropdown"> <p *ngIf="Coms10new[5]==''&& votedindexes[5]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Safety</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP5()"><b>Vote YEA</b> for {{CandName10}} on<b> Safety</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP5()"><b>Vote NAY</b> for {{CandName10}} on<b> Safety</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP5()"><b>Vote YEA</b> for {{CandName10}} on<b> Safety</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP5()"><b>Vote NAY</b> for {{CandName10}} on<b> Safety</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[5]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P5gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Safety</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P5gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Safety</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[6]==''"> <a class="iss6_class"></a> <mat-card class="example-card"> <!-- Committe 6 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[6]==''&& votedindexes[6]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Education</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP6()"><b>Vote YEA</b> for {{CandName10}} on<b> Education</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP6()"><b>Vote NAY</b> for {{CandName10}} on<b> Education</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP6()"><b>Vote YEA</b> for {{CandName10}} on<b> Education</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP6()"><b>Vote NAY</b> for {{CandName10}} on<b> Education</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[6]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P6gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Education</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P6gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Education</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[7]==''"> <a class="iss7_class"></a> <mat-card class="example-card"> <!-- Committe 7 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[7]==''&& votedindexes[7]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issues facing<b> Veterans</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP7()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Veterans</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP7()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Veterans</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP7()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Veterans</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP7()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Veterans</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[7]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P7gov')"><b>View Survey Results</b> for {{CandName10}} on issues facing<b> Veterans</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickComResults('P7gov')"><b>View Survey Results</b> for {{CandName10}} on issues facing<b> Veterans</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[8]==''"> <a class="iss8_class"></a> <mat-card class="example-card"> <!-- Committe 8 -->
       <a *ngIf="HOMEstate==statedropdown">   <p *ngIf="Coms10new[8]==''&& votedindexes[8]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of <b> Jobs</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP8()"><b>Vote YEA</b> for {{CandName10}} on<b> Jobs</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP8()"><b>Vote NAY</b> for {{CandName10}} on<b> Jobs</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP8()"><b>Vote YEA</b> for {{CandName10}} on<b> Jobs</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP8()"><b>Vote NAY</b> for {{CandName10}} on<b> Jobs</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[8]==''">
-        <button mat-button color="primary" routerLink="/Community1"  (click)="loyaltyview()" (click)="ConfclickComResults('P8gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Jobs</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1"  (click)="loyaltyview()" (click)="ConfclickComResults('P8gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Jobs</b> (50 points)</button></p>
     </mat-card>   <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[9]==''"> <a class="iss9_class"></a> <mat-card class="example-card"> <!-- Committe 9 -->
       <a *ngIf="HOMEstate==statedropdown"> <p *ngIf="Coms10new[9]==''&& votedindexes[9]==-1">
         <mat-card-subtitle>{{CandName10}} <b>Performance</b> on the issue of <b> Climate</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP9()"><b>Vote YEA</b> for {{CandName10}} on<b> Climate</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP9()"><b>Vote NAY</b> for {{CandName10}} on<b> Climate</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP9()"><b>Vote YEA</b> for {{CandName10}} on<b> Climate</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP9()"><b>Vote NAY</b> for {{CandName10}} on<b> Climate</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[9]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P9gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Climate</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P9gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Climate</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[10]==''"> <a class="iss10_class"></a> <mat-card class="example-card"> <!-- Committe 10 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[10]==''&& votedindexes[10]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Homelessness</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP10()"><b>Vote YEA</b> for {{CandName10}} on<b> Homelessness</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP10()"><b>Vote NAY</b> for {{CandName10}} on<b> Homelessness</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP10()"><b>Vote YEA</b> for {{CandName10}} on<b> Homelessness</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP10()"><b>Vote NAY</b> for {{CandName10}} on<b> Homelessness</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[10]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P10gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Homelessness</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P10gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Homelessness</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[11]==''"> <a class="iss11_class"></a> <mat-card class="example-card"> <!-- Committe 11 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[11]==''&& votedindexes[11]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Mental Health</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP11()"><b>Vote YEA</b> for {{CandName10}} on<b> Mental Health</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP11()"><b>Vote NAY</b> for {{CandName10}} on<b> Mental Health</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP11()"><b>Vote YEA</b> for {{CandName10}} on<b> Mental Health</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP11()"><b>Vote NAY</b> for {{CandName10}} on<b> Mental Health</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[11]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P11gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Mental Health</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P11gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Mental Health</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[12]==''"> <a class="iss12_class"></a> <mat-card class="example-card"> <!-- Committe 12 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[12]==''&& votedindexes[12]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Guns</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP12()"><b>Vote YEA</b> for {{CandName10}} on<b> Guns</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP12()"><b>Vote NAY</b> for {{CandName10}} on<b> Guns</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP12()"><b>Vote YEA</b> for {{CandName10}} on<b> Guns</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP12()"><b>Vote NAY</b> for {{CandName10}} on<b> Guns</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[12]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P12gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Guns</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P12gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Guns</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[13]==''"> <a class="iss13_class"></a> <mat-card class="example-card"> <!-- Committe 13 -->
       <a *ngIf="HOMEstate==statedropdown"> <p *ngIf="Coms10new[13]==''&& votedindexes[13]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Cost of Living</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP13()"><b>Vote YEA</b> for {{CandName10}} on<b> Cost of Living</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP13()"><b>Vote NAY</b> for {{CandName10}} on<b> Cost of Living</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP13()"><b>Vote YEA</b> for {{CandName10}} on<b> Cost of Living</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP13()"><b>Vote NAY</b> for {{CandName10}} on<b> Cost of Living</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[13]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P13gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Cost of Living</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P13gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Cost of Living</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[14]==''"> <a class="iss14_class"></a> <mat-card class="example-card"> <!-- Committe 14 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[14]==''&& votedindexes[14]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issues facing<b> Farmers & Ranchers </b></mat-card-subtitle>
-        <button mat-button (click)="YEAclickP14()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Farmers & Ranchers</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP14()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Farmers & Ranchers</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP14()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Farmers & Ranchers</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP14()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Farmers & Ranchers</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[14]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P14gov')"><b>View Survey Results</b> for {{CandName10}} on issues facing<b> Farmers & Ranchers</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P14gov')"><b>View Survey Results</b> for {{CandName10}} on issues facing<b> Farmers & Ranchers</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[15]==''"> <a class="iss15_class"></a> <mat-card class="example-card"> <!-- Committe 15 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[15]==''&& votedindexes[15]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Permanent Fund</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP15()"><b>Vote YEA</b> for {{CandName10}} on<b> Permanent Fund</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP15()"><b>Vote NAY</b> for {{CandName10}} on<b> Permanent Fund</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP15()"><b>Vote YEA</b> for {{CandName10}} on<b> Permanent Fund</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP15()"><b>Vote NAY</b> for {{CandName10}} on<b> Permanent Fund</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[15]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P15gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Permanent Fund</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P15gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Permanent Fund</b> (50 points)</button></p>
     </mat-card>   <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[16]==''"> <a class="iss16_class"></a> <mat-card class="example-card"> <!-- Committe 16 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[16]==''&& votedindexes[16]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Economy</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP16()"><b>Vote YEA</b> for {{CandName10}} on<b> Economy</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP16()"><b>Vote NAY</b> for {{CandName10}} on<b> Economy</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP16()"><b>Vote YEA</b> for {{CandName10}} on<b> Economy</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP16()"><b>Vote NAY</b> for {{CandName10}} on<b> Economy</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[16]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P16gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Economy</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P16gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Economy</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[17]==''"> <a class="iss17_class"></a> <mat-card class="example-card"> <!-- Committe 17 -->
       <a *ngIf="HOMEstate==statedropdown">   <p *ngIf="Coms10new[17]==''&& votedindexes[17]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> COVID-19 Response & Healthcare</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP17()"><b>Vote YEA</b> for {{CandName10}} on<b> COVID-19 Response & Healthcare</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP17()"><b>Vote NAY</b> for {{CandName10}} on<b> COVID-19 Response & Healthcare</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP17()"><b>Vote YEA</b> for {{CandName10}} on<b> COVID-19 Response & Healthcare</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP17()"><b>Vote NAY</b> for {{CandName10}} on<b> COVID-19 Response & Healthcare</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[17]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P17gov')"><b>View Survey Results</b> for {{CandName10}} on<b> COVID-19 Response & Healthcare</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P17gov')"><b>View Survey Results</b> for {{CandName10}} on<b> COVID-19 Response & Healthcare</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[18]==''"> <a class="iss18_class"></a> <mat-card class="example-card"> <!-- Committe 18 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[18]==''&& votedindexes[18]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Infrastructure</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP18()"><b>Vote YEA</b> for {{CandName10}} on<b> Infrastructure</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP18()"><b>Vote NAY</b> for {{CandName10}} on<b> Infrastructure</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP18()"><b>Vote YEA</b> for {{CandName10}} on<b> Infrastructure</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP18()"><b>Vote NAY</b> for {{CandName10}} on<b> Infrastructure</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[18]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P18gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Infrastructure</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P18gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Infrastructure</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[19]==''"> <a class="iss19_class"></a> <mat-card class="example-card"> <!-- Committe 19 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[19]==''&& votedindexes[19]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Energy</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP19()"><b>Vote YEA</b> for {{CandName10}} on<b> Energy</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP19()"><b>Vote NAY</b> for {{CandName10}} on<b> Energy</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP19()"><b>Vote YEA</b> for {{CandName10}} on<b> Energy</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP19()"><b>Vote NAY</b> for {{CandName10}} on<b> Energy</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[19]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P19gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Energy</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P19gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Energy</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[20]==''"> <a class="iss20_class"></a> <mat-card class="example-card"> <!-- Committe 20 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[20]==''&& votedindexes[20]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Cannabis</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP20()"><b>Vote YEA</b> for {{CandName10}} on<b> Cannabis</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP20()"><b>Vote NAY</b> for {{CandName10}} on<b> Cannabis</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP20()"><b>Vote YEA</b> for {{CandName10}} on<b> Cannabis</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP20()"><b>Vote NAY</b> for {{CandName10}} on<b> Cannabis</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[20]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P20gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Cannabis</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P20gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Cannabis</b> (50 points)</button></p>
     </mat-card>  <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[21]==''"> <a class="iss21_class"></a> <mat-card class="example-card"> <!-- Committe 21 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[21]==''&& votedindexes[21]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Taxes</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP21()"><b>Vote YEA</b> for {{CandName10}} on<b> Taxes</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP21()"><b>Vote NAY</b> for {{CandName10}} on<b> Taxes</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP21()"><b>Vote YEA</b> for {{CandName10}} on<b> Taxes</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP21()"><b>Vote NAY</b> for {{CandName10}} on<b> Taxes</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[21]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P21gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Taxes</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P21gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Taxes</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[22]==''"> <a class="iss22_class"></a> <mat-card class="example-card"> <!-- Committe 22 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[22]==''&& votedindexes[22]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Public Lands</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP22()"><b>Vote YEA</b> for {{CandName10}} on<b> Public Lands</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP22()"><b>Vote NAY</b> for {{CandName10}} on<b> Public Lands</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP22()"><b>Vote YEA</b> for {{CandName10}} on<b> Public Lands</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP22()"><b>Vote NAY</b> for {{CandName10}} on<b> Public Lands</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[22]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P22gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Public Lands</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P22gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Public Lands</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[23]==''"> <a class="iss23_class"></a> <mat-card class="example-card"> <!-- Committe 23 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[23]==''&& votedindexes[23]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issues facing<b> Seniors</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP23()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Seniors</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP23()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Seniors</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP23()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Seniors</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP23()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Seniors</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[23]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P23gov')"><b>View Survey Results</b> for {{CandName10}} on issues facing<b> Seniors</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P23gov')"><b>View Survey Results</b> for {{CandName10}} on issues facing<b> Seniors</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[24]==''"> <a class="iss24_class"></a> <mat-card class="example-card"> <!-- Committe 24 -->
       <a *ngIf="HOMEstate==statedropdown">   <p *ngIf="Coms10new[24]==''&& votedindexes[24]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Manufacturing</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP24()"><b>Vote YEA</b> for {{CandName10}} on<b> Manufacturing</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP24()"><b>Vote NAY</b> for {{CandName10}} on<b> Manufacturing</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP24()"><b>Vote YEA</b> for {{CandName10}} on<b> Manufacturing</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP24()"><b>Vote NAY</b> for {{CandName10}} on<b> Manufacturing</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[24]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P24gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Manufacturing</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P24gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Manufacturing</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
     <a *ngIf="Coms10new[25]==''"> <a class="iss25_class"></a> <mat-card class="example-card"> <!-- Committe 25 -->
       <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="Coms10new[25]==''&& votedindexes[25]==-1">
         <mat-card-subtitle>{{CandName10}}<b> Performance</b> on the issue of<b> Housing</b> </mat-card-subtitle>
-        <button mat-button (click)="YEAclickP25()"><b>Vote YEA</b> for {{CandName10}} on<b> Housing</b> </button> &nbsp; &nbsp; &nbsp;
-        <button mat-button (click)="NAYclickP25()"><b>Vote NAY</b> for {{CandName10}} on<b> Housing</b> </button></p> </a>
+        <button mat-button (click)="YEAclickP25()"><b>Vote YEA</b> for {{CandName10}} on<b> Housing</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
+        <button mat-button (click)="NAYclickP25()"><b>Vote NAY</b> for {{CandName10}} on<b> Housing</b> (100 points)</button></p> </a>
       <p *ngIf="Coms10new[25]==''">
-        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P25gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Housing</b> </button></p>
+        <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()" (click)="ConfclickComResults('P25gov')"><b>View Survey Results</b> for {{CandName10}} on<b> Housing</b> (50 points)</button></p>
     </mat-card> <mat-divider></mat-divider> </a>
 
     <!-- Next and back buttons-->
