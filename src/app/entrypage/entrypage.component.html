@@ -9,7 +9,7 @@
         <br> <br>
 <h1 style="text-align:center;"><b>Make your voice count! </b></h1>
         <h2 style="text-align:center;"> Vote on the Performance of 2022 Midterm Election Candidates for their position on Individual Issues and on their work done in the U.S. Senate or House Committees </h2>
-        <h3 style="text-align:center;">Easily Discuss, With Friends, and Provide Your Opinion to Aspiring and Existing U.S. Senators, U.S House of Representatives, Governors and Other Elected Officials for Free.</h3>
+        <h3 style="text-align:center;">Easily Discuss, With Friends, and Provide Your Opinion to Aspiring and Existing U.S. Senators, U.S House of Representatives, Governors and State Elected Officials for Free.</h3>
         <a style="text-align:center;">
           <div *ngIf="authenticator.route != 'authenticated'">
             <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started</b></button>
@@ -227,10 +227,11 @@
 
   <br> <mat-divider></mat-divider>
   <div style="background-color:rgb(130,224,170)">
-    <!--  <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p> -->
+     <p> SOWHAT VOTE!<sup><span>&#174;</span></sup> is a registered trademark with the United States Patent & Trademark Office.</p>
       <p> <mat-icon inline=true>copyright</mat-icon>2022 SOWHAT VOTE LLC. All rights reserved. </p>
-    <!--   <p> Reach us at: info@sowhatvote.org </p>
-           <p> 111 NORTH WABASH AVE. SUITE #1187, CHICAGO, IL 60602. Phone: 1-414-533-4538.  </p> -->
+    <p>Political Ad Paid for by SOWHAT VOTE LLC. </p>
+      <p> Reach us at: info@sowhatvote.org </p>
+           <p> 111 NORTH WABASH AVE. SUITE #1187, CHICAGO, IL 60602. Phone: 1-414-533-4538.  </p>
      <p> <button mat-button class="terms-button"  routerLink="/TermsPrivacy">Terms & Conditions and Privacy Policy</button> </p>
        <p> <button mat-button class="terms-button" onclick="gtag('set', {ads_data_redaction: true})" (click)="donotsellstore()"
                    (click)="clicked2 = true;">
