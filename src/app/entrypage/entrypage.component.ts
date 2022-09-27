@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {API, Auth, Cache} from "aws-amplify";
+import {API, Auth, Cache, Storage} from "aws-amplify";
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CookiebannerComponent} from "../cookiebanner/cookiebanner.component";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
@@ -21,6 +21,7 @@ export class EntrypageComponent implements OnInit {
     //if user is not authenticated, open the snackbar this way
   this.delaySnack(2000)
     this.randomgen()
+    this.winner();
  //   this.delayfunc(100);
   //this.delayfunc(100+(7000*1));
     //this.delayfunc(100+(7000*2));
@@ -31,10 +32,15 @@ export class EntrypageComponent implements OnInit {
 
 
   clicked1:boolean;clicked2:boolean; banner=""
+  urlA:string;
 
   async mimicmidtermclick() {
     const expiration = new Date().valueOf()
     Cache.setItem('midtermenter', 'yes', {expires: expiration + 1800000});
+  }
+
+  async winner() {
+    Storage.get('c07d6cb2-3c35-433e-8437-5c3c91dc840ame2.jpg').then( res => {this.urlA=res});
   }
 
   //cookiestatus set to yes meaning permission is denied to store user info
