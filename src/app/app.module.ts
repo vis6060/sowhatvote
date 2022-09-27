@@ -95,8 +95,8 @@ import { GiftcardComponent } from './giftcard/giftcard.component';
     MatSnackBarModule,
   //  MatCarouselModule.forRoot()
   ],
- //providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
-  providers: [],
+ providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+ // providers: [],
   bootstrap: [AppComponent]
 })
 //@ts-ignore
