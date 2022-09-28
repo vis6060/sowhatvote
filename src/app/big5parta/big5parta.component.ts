@@ -307,7 +307,9 @@ locationreload() {  location.reload();}
     API.post("datingapitest4", "/userdbapiname", paramsp3).then(response3 => {
       console.log("success3 seccompleteA");
    if(Cache.getItem('midtermclicked')=="yes" || Cache.getItem('midtermenter')=="yes") {
-     this.router.navigate(['/Community1']) }
+   //  this.router.navigate(['/Community1'])
+     this.router.navigate(['/2022MidtermElections/USSenate'])
+   }
    if(Cache.getItem('meetupclicked')=="yes" || Cache.getItem('meetupenter')=="yes") {
      this.router.navigate(['/Meetup/Step3'])}
 
