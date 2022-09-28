@@ -1,5 +1,5 @@
 import {FlatTreeControl} from '@angular/cdk/tree';
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {Cache} from "aws-amplify";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
@@ -35,6 +35,13 @@ export class AllprofilesComponent implements OnInit {
     node => node.level,
     node => node.expandable,
   );
+
+  //@ts-ignore
+  @ViewChild('tree') tree;
+
+  ngAfterViewInit() {
+    this.tree.treeControl.expandAll();
+  }
 
   treeFlattener = new MatTreeFlattener(
     this._transformer,
