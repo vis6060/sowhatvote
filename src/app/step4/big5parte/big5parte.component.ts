@@ -1,13 +1,16 @@
 import {Component, Injectable, OnInit} from '@angular/core';
+//import Predictions, {AmazonAIPredictionsProvider} from '@aws-amplify/predictions';
 import Predictions from "@aws-amplify/predictions";
 import Amplify, {API, Auth, Cache} from "aws-amplify";
 import {DatePipe} from "@angular/common";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatStepperIntl} from "@angular/material/stepper";
-import {APIService} from "../API.service";
+import {APIService} from "../../API.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import awsExports from "../../aws-exports";
+import awsExports from "../../../aws-exports";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
+
+
 
 @Injectable()
 export class StepperIntl extends MatStepperIntl {

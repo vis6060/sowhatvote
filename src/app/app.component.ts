@@ -1,5 +1,7 @@
 //import {Component, OnInit, ViewEncapsulation, NgModule} from '@angular/core';
-import {Component,  ViewEncapsulation,} from '@angular/core';
+//import {Component,  ViewEncapsulation,} from '@angular/core';
+import {Component, } from '@angular/core';
+
 import {API, Auth, Cache} from "aws-amplify";
 import { Location } from '@angular/common';
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
@@ -11,7 +13,7 @@ import {CookiebannerComponent} from "./cookiebanner/cookiebanner.component";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None
+ // encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
 

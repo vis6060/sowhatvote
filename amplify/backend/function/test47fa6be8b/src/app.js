@@ -108,6 +108,9 @@ app.get(path + hashKeyPath, function(req, res) {
   });
 });
 
+
+
+
 /************************************
  * HTTP post method for insert object *
  *************************************/

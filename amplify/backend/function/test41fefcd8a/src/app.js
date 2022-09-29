@@ -105,6 +105,7 @@ app.get(path + hashKeyPath, function(req, res) {
   });
 });
 
+
 /*****************************************
  * HTTP Get method for get single object *
  *****************************************/
@@ -149,6 +150,7 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     }
   });
 });
+
 
 /************************************
  * HTTP put method for insert object *

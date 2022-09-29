@@ -55,6 +55,7 @@ const convertUrlType = (param, type) => {
   }
 }
 
+
 /*****************************************
  * HTTP Get method for get single object *
  *****************************************/

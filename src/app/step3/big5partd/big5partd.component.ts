@@ -9,8 +9,8 @@ import { DatePipe } from '@angular/common';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 
-import {APIService} from "../API.service";
-import awsExports from "../../aws-exports";
+import {APIService} from "../../API.service";
+import awsExports from "../../../aws-exports";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 export interface User {

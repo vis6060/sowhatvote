@@ -1,13 +1,13 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import Predictions, {AmazonAIPredictionsProvider} from '@aws-amplify/predictions';
-Amplify.addPluggable(new AmazonAIPredictionsProvider());
+//Amplify.addPluggable(new AmazonAIPredictionsProvider());
 import Amplify, {API, Auth, Cache, Storage} from "aws-amplify";
-import {APIService,DatinguserdbStaging} from "../API.service";
+import {APIService,DatinguserdbStaging} from "../../API.service";
 import {DatePipe} from "@angular/common";
 import {FormBuilder} from "@angular/forms";
 import {MatStepperIntl} from "@angular/material/stepper";
 import {ActivatedRoute, Router} from "@angular/router";
-import awsExports from "../../aws-exports";
+import awsExports from "../../../aws-exports";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 
 @Injectable()
@@ -69,6 +69,7 @@ export class Big5partfComponent implements OnInit {
   picm=''; sizebig=""; invalidfileextension="";
   url:string; urlflag="" //signed url to the image stored in s3
   async changeEvent(event:any) {const user = await Auth.currentAuthenticatedUser();
+    Amplify.addPluggable(new AmazonAIPredictionsProvider());
     this.userstore=user.attributes.sub;
     const { target: { files } } = event;
     const [file,] = files || [];

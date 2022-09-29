@@ -5,8 +5,8 @@ import awsExports from "src/aws-exports";
 import {API} from 'aws-amplify';
 import { CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 import {ActivatedRoute, Router} from '@angular/router';
-import {User} from "../big5parta/big5parta.component";
-import {APIService, DatinguserdbStaging} from "../API.service";
+import {User} from "../../step0/big5parta/big5parta.component";
+import {APIService, DatinguserdbStaging} from "../../API.service";
 import {MatDialog} from '@angular/material/dialog';
 import { Hub } from 'aws-amplify';
 

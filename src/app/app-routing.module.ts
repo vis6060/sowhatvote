@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginboxComponent } from './loginbox/loginbox.component';
-
-
-import { Big5partaComponent } from './big5parta/big5parta.component';
-import { Big5partdComponent } from './big5partd/big5partd.component';
-import { Big5parteComponent } from './big5parte/big5parte.component';
-import { Big5partfComponent } from './big5partf/big5partf.component';
-import { Big5partaeditComponent } from './big5partaedit/big5partaedit.component';
-
 import {EntrypageComponent} from "./entrypage/entrypage.component";
-import {TermsdialogboxComponent} from "./termsdialogbox/termsdialogbox.component";
-import {GiftcardComponent} from "./giftcard/giftcard.component";
+
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: EntrypageComponent },
-  { path: 'MyAccount', component: LoginboxComponent },
+  {
+    path: 'MyAccount',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
   {
     path: 'Community1',
     loadChildren: () =>
@@ -30,13 +24,42 @@ const routes: Routes = [
     loadChildren: () =>
       import('./community2/community2.module').then((m) => m.Community2Module),
   },
-  { path: 'Meetup/Step0', component: Big5partaComponent }, //insert canActivate here too, once you have created button to access Step0
-  { path: 'Meetup/Step0edit', component: Big5partaeditComponent, },//canActivate method will ensure ppl cannot directly access these routes.
-  { path: 'Meetup/Step3', component: Big5partdComponent},
-  { path: 'Meetup/Step4', component: Big5parteComponent,},
-  { path: 'Meetup/Step5', component: Big5partfComponent,},
-  { path: 'TermsPrivacy', component: TermsdialogboxComponent,},
-  { path: 'TermsGiftcard', component: GiftcardComponent,},
+  {
+    path: 'Meetup/Step0',
+    loadChildren: () =>
+      import('./step0/step0.module').then((m) => m.Step0Module),
+  },
+  {
+    path: 'Meetup/Step0edit',
+    loadChildren: () =>
+      import('./step0edit/step0edit.module').then((m) => m.Step0editModule),
+  },
+  {
+    path: 'Meetup/Step3',
+    loadChildren: () =>
+      import('./step3/step3.module').then((m) => m.Step3Module),
+  },
+  {
+    path: 'Meetup/Step4',
+    loadChildren: () =>
+      import('./step4/step4.module').then((m) => m.Step4Module),
+  },
+  {
+    path: 'Meetup/Step5',
+    loadChildren: () =>
+      import('./step5/step5.module').then((m) => m.Step5Module),
+  },
+  {
+    path: 'TermsPrivacy',
+    loadChildren: () =>
+      import('./privacy/privacy.module').then((m) => m.PrivacyModule),
+  },
+  {
+    path: 'TermsGiftcard',
+    loadChildren: () =>
+      import('./gift/gift.module').then((m) => m.GiftModule),
+  },
+
   {
     path: '2022MidtermElections/USSenate',
     loadChildren: () =>

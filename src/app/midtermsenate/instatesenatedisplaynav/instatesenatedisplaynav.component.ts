@@ -2,7 +2,7 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {APIService,CandNameOutArray} from "../../API.service";
-import Amplify, {API, Auth,Analytics, Storage, Cache} from "aws-amplify";
+import Amplify, {API, Auth, Storage, Cache} from "aws-amplify";
 import awsExports from "../../../aws-exports";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';

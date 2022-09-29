@@ -54,6 +54,7 @@ const convertUrlType = (param, type) => {
       return param;
   }
 }
+
 /********************************
  * HTTP Get method for list objects *
  ********************************/
