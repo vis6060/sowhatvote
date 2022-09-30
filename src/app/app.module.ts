@@ -67,11 +67,11 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     MatSnackBarModule,
     AmplifyAuthenticatorModule,
     MatTabsModule,
+    FlexLayoutModule,
 
  //   MatToolbarModule,
    // MatChipsModule,
   //  MatGridListModule,
- //   FlexLayoutModule,
   //  MatFormFieldModule,
   //  MatInputModule,
  //   MatCheckboxModule,

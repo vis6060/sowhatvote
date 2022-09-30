@@ -1,0 +1,28 @@
+
+
+<div class="class1" >
+</div>
+<div class="class2" >
+   <a class="ontop_class"></a>
+  <h1 style="text-align:center;"> <b> Contact Us
+    <a  *ngIf="(cookiedenied=='yes' && authenticator.route != 'authenticated') || (cookiedenied=='yes' && stateuserCA=='yes')">
+      <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+      <a id="GTM-TVJ45PB" >:</a>
+    </a>
+
+  </b></h1> <br>
+
+  <p> Reach us at: info@sowhatvote.org </p>
+
+  <br>  <br> <a style="text-align:center;">
+  <div *ngIf="authenticator.route != 'authenticated'">
+    <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started with SoWhat Vote!</b></button>
+  </div>
+  <div *ngIf="authenticator.route === 'authenticated'">
+    <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started with SoWhat Vote!</b></button>
+  </div>
+</a>
+
+</div>
+<div class="class3" >
+</div>

@@ -1,0 +1,42 @@
+
+<div class="class1" >
+</div>
+<div class="class2" >
+ <a class="ontop_class"></a>
+   <h1 style="text-align:center;"> <b> About Us
+     <a  *ngIf="(cookiedenied=='yes' && authenticator.route != 'authenticated') || (cookiedenied=='yes' && stateuserCA=='yes')">
+       <!--communicated to google tags that permission to store user info is denied since user is CA resident-->
+      <a id="GTM-TVJ45PB" >:</a>
+    </a>
+
+  </b></h1> <br>
+
+  <br> <br>
+  <div  fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+
+
+      <h2  style="line-height: 1.8"> We were inspired by the statewide amendment proposals that are on an election ballot. Based on
+        all the information the person has to choose a Yes or No.  We have replicated this simplicity of decision making with a Yea or a Nay.
+      </h2>
+
+
+  </div>
+
+ <br> <br> <div   fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+    <iframe class="embedded-video-16-9" src="https://www.youtube.com/embed/fBUoDQKc7C8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  </div>
+
+  <br> <br>
+ <a style="text-align:center;">
+  <div *ngIf="authenticator.route != 'authenticated'">
+    <button mat-button (click)="mimicmidtermclick()" routerLink="/MyAccount"><b>Get Started with SoWhat Vote!</b></button>
+  </div>
+  <div *ngIf="authenticator.route === 'authenticated'">
+    <button mat-button (click)="mimicmidtermclick()" routerLink="/2022MidtermElections/USSenate"><b>Get Started with SoWhat Vote!</b></button>
+  </div>
+</a>
+
+</div>
+<div class="class3" >
+</div>
