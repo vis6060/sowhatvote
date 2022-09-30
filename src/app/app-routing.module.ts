@@ -129,7 +129,12 @@ const routes: Routes = [
       import('./tab6/tab6.module').then(
         (m) => m.Tab6Module
       )
-  }
+  },
+  {
+    path: 'Blog/Texas',
+    loadChildren: () =>
+      import('./blog/texas/texas.module').then((m) => m.TexasModule),
+  },
 ];
 
 

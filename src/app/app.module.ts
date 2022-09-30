@@ -39,6 +39,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -68,22 +69,26 @@ import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
     AmplifyAuthenticatorModule,
     MatTabsModule,
     FlexLayoutModule,
+    MatMenuModule,
 
- //   MatToolbarModule,
-   // MatChipsModule,
-  //  MatGridListModule,
-  //  MatFormFieldModule,
-  //  MatInputModule,
- //   MatCheckboxModule,
-  //  MatRadioModule,
- //   MatStepperModule,
- //   MatSelectModule,
- //   MatAutocompleteModule,
-  //  MatButtonToggleModule,
-  //  FormsModule,
-  //  ReactiveFormsModule,
-  //  MatDialogModule,
+    MatToolbarModule,
+
+    MatChipsModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatButtonToggleModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    MatDialogModule,
   ],
+  
 // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   providers: [],
   bootstrap: [AppComponent]
