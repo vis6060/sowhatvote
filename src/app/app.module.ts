@@ -40,6 +40,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CookiebannerComponent } from './cookiebanner/cookiebanner.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import {MatMenuModule} from '@angular/material/menu';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
     MatCardModule,
     MatIconModule,
     MatDividerModule,
@@ -88,7 +89,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
     MatDialogModule,
   ],
-  
+
 // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   providers: [],
   bootstrap: [AppComponent]
