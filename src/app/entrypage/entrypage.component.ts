@@ -4,6 +4,7 @@ import {API, Auth, Cache, Storage} from "aws-amplify";
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CookiebannerComponent} from "../cookiebanner/cookiebanner.component";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
+import { Meta } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-entrypage',
@@ -12,9 +13,14 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 })
 export class EntrypageComponent implements OnInit {
 
-  constructor(public authenticator: AuthenticatorService, private _snackBar: MatSnackBar) {
+  constructor(public authenticator: AuthenticatorService, private _snackBar: MatSnackBar,private meta: Meta) {
   //  if(Cache.getItem('bannernoshow')=="yes") {this.banner="yes"}
     if(Cache.getItem('myaccountenter')=="yes") {Cache.removeItem("myaccountenter"); location.reload()}
+    this.meta.addTags([
+      { name: 'description', content: 'Make Your Voice Count! Vote on the Performance of 2022 Midterm Election Candidates – US Senators, House Reps, Governors and other elected officials' },
+      { name: 'keywords', content: 'Elections, Midterms, Senator, Congress, Governor, Guns, Abortion, Climate, Veterans, Crime, Farmer,Marco Rubio, Dr Oz, Stacey Abrams, Beto ORourke, Katie Porter,Ron DeSantis, Raphael Warnock, Greg Abbott, John Fetterman, Herschel Walker, Evan McMullin, Gretchen Whitmer, Mark Kelly,Kari Lake' }
+    ]);
+
   }
 
   ngOnInit(): void {
