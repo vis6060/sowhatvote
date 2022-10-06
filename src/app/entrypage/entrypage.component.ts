@@ -38,7 +38,7 @@ export class EntrypageComponent implements OnInit {
 
 
   clicked1:boolean;clicked2:boolean; banner=""
-  urlA:string;
+  urlA:string; urlB:string;
 
   async mimicmidtermclick() {
     const expiration = new Date().valueOf()
@@ -47,6 +47,7 @@ export class EntrypageComponent implements OnInit {
 
   async winner() {
     Storage.get('c07d6cb2-3c35-433e-8437-5c3c91dc840ame2.jpg').then( res => {this.urlA=res});
+    Storage.get('d2f7778c-2d94-4ca2-975c-bda6a87ef71eme.jpg').then( res => {this.urlB=res});
   }
 
   //cookiestatus set to yes meaning permission is denied to store user info
