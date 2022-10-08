@@ -71,6 +71,8 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
   cookiedenied="";stateuserCA="";  overalldisapper="";
 
+  I0show=""; I1show=""; I2show=""; I3show=""; I4show=""; I5show=""; I6show=""; I7show=""; I8show=""; I9show=""; I10show="";
+  I11show=""; I12show=""; I13show=""; I14show=""; I15show=""; I16show="";
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -585,7 +587,7 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
 
   async YEAclickI0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I0ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0sen');
+    data: {voteflag: 'I0ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0sen'); this.I0show="yes"
     this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I0ysen", "I0sen",100).then((event) => {});});}
   async NAYclickI0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
     data: {voteflag: 'I0nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0sen');
