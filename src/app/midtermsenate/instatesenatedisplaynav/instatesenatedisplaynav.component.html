@@ -579,14 +579,15 @@
         <mat-card-subtitle>{{CandName10}}'s <b> Performance </b> on the issue of <b> Abortion Rights </b> </mat-card-subtitle>
         <button mat-button (click)="YEAclickI0()"> <b> Vote YEA </b> for {{CandName10}} on <b> Abortion Rights</b> (100 points) </button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI0()"> <b>Vote NAY </b> for {{CandName10}} on <b> Abortion Rights</b> (100 points) </button></p> </a>
-    <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I0sen')"> <b>View Survey Results </b> of {{CandName10}} on <b> Abortion Rights</b> (50 points) </button> <br>
+    <!--  <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I0sen'); I0show='yes'"> <b>View Survey Results </b> of {{CandName10}} on <b> Abortion Rights</b> (50 points) </button> <br> -->
+    <button mat-button color="primary" (click)="loyaltyview()"  (click)="ConfclickIssResults('I0sen'); I0show='yes'"> <b>View Survey Results </b> of {{CandName10}} on <b> Abortion Rights</b> (50 points) </button> <br>
     <a *ngIf="I0show=='yes'">
-      <br>  <mat-card-title>{{CandName10}} performance on the issue of Abortion Rights:<br> {{IAbortionYea}} YEA and {{IAbortionNay}} NAY </mat-card-title>
-      <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet Result to @sowhat_vote</a>
-    </a>
+        <br>  <mat-card-title>{{CandName10}} performance on the issue of Abortion Rights:<br> {{IAbortionYea}} YEA and {{IAbortionNay}} NAY </mat-card-title>
+        <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet Result to @sowhat_vote</a>
+      </a>
 
-  </mat-card> <mat-divider></mat-divider>
-    <a class="iss1_class"></a> <mat-card class="example-card"> <!-- Issue 1 -->
+    </mat-card> <mat-divider></mat-divider>
+      <a class="iss1_class"></a> <mat-card class="example-card"> <!-- Issue 1 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[1]==-1">
         <mat-card-subtitle>{{CandName10}}'s <b> Performance </b> on the issue of <b> Gun Control & Public Safety</b> </mat-card-subtitle>
         <button mat-button (click)="YEAclickI1()"><b>Vote YEA </b> for {{CandName10}} on <b> Gun Control & Public Safety</b> (100 points) </button> &nbsp; &nbsp; &nbsp;
