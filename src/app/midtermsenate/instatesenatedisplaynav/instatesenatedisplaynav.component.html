@@ -585,7 +585,6 @@
         <br>  <mat-card-title>{{CandName10}} performance on the issue of Abortion Rights:<br> {{IAbortionYea}} YEA and {{IAbortionNay}} NAY </mat-card-title>
         <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet Result to @sowhat_vote</a>
       </a>
-
     </mat-card> <mat-divider></mat-divider>
       <a class="iss1_class"></a> <mat-card class="example-card"> <!-- Issue 1 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[1]==-1">
@@ -593,6 +592,10 @@
         <button mat-button (click)="YEAclickI1()"><b>Vote YEA </b> for {{CandName10}} on <b> Gun Control & Public Safety</b> (100 points) </button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI1()"><b>Vote NAY</b> for {{CandName10}} on <b> Gun Control & Public Safety</b> (100 points) </button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"   (click)="ConfclickIssResults('I1sen')"><b>View Survey Results </b> of {{CandName10}} on <b> Gun Control & Public Safety</b> (50 points)</button>
+    <a *ngIf="I1show=='yes'">
+      <br> <mat-card-title>{{CandName10}} performance on the issue of Gun Control & Public Safety:<br> {{IGunsYea}} YEA and {{IGunsNay}} NAY </mat-card-title>
+      <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet Result to @sowhat_vote</a>
+    </a>
   </mat-card> <mat-divider></mat-divider>
     <a class="iss2_class"></a> <mat-card class="example-card"> <!-- Issue 2 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[2]==-1">
@@ -600,6 +603,10 @@
         <button mat-button (click)="YEAclickI2()"><b>Vote YEA</b> for {{CandName10}} on<b> Jobs</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI2()"><b>Vote NAY</b> for {{CandName10}} on<b> Jobs </b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"   (click)="ConfclickIssResults('I2sen')"><b>View Survey Results</b> of {{CandName10}} on <b> Jobs</b> (50 points)</button>
+    <a *ngIf="I2show=='yes'">
+      <br> <mat-card-title>{{CandName10}} performance on the issue of Jobs:<br> {{IJobsYea}} YEA and {{IJobsNay}} NAY </mat-card-title>
+      <br> <a href="https://twitter.com/intent/tweet?screen_name=sowhat_vote&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet Result to @sowhat_vote</a>
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss3_class"></a> <mat-card class="example-card"> <!-- Issue 3 -->
     <a *ngIf="HOMEstate==statedropdown">   <p *ngIf="votedindexesissuecand10[3]==-1">
@@ -607,6 +614,9 @@
         <button mat-button (click)="YEAclickI3()"><b>Vote YEA</b> for {{CandName10}} on issues facing <b> Veterans</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI3()"><b>Vote NAY</b> for {{CandName10}} on issues facing <b> Veterans</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"   (click)="ConfclickIssResults('I3sen')"><b>View Survey Results</b> of {{CandName10}} on issues facing<b> Veterans</b> (50 points)</button>
+    <a *ngIf="I3show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss4_class"></a> <mat-card class="example-card"> <!-- Issue 4 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[4]==-1">
@@ -614,6 +624,9 @@
         <button mat-button (click)="YEAclickI4()"><b>Vote YEA</b> for {{CandName10}} on<b> Border Security & Immigration</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI4()"><b>Vote NAY</b> for {{CandName10}} on<b> Border Security & Immigration</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"   (click)="ConfclickIssResults('I4sen')"><b>View Survey Results</b> of {{CandName10}} on the issue of <b>Border Security & Immigration</b> (50 points)</button>
+    <a *ngIf="I4show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss5_class"></a> <mat-card class="example-card"> <!-- Issue 5 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[5]==-1">
@@ -621,6 +634,9 @@
         <button mat-button (click)="YEAclickI5()"><b>Vote YEA</b> for {{CandName10}} on issues facing<b> Farmers and Ranchers</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI5()"><b>Vote NAY</b> for {{CandName10}} on issues facing<b> Farmers and Ranchers</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I5sen')"><b>View Survey Results</b> of {{CandName10}} on the issues facing<b> Farmers and Ranchers</b> (50 points)</button>
+    <a *ngIf="I5show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss6_class"></a>  <mat-card class="example-card"> <!-- Issue 6 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[6]==-1">
@@ -628,6 +644,9 @@
         <button mat-button (click)="YEAclickI6()"><b>Vote YEA</b> for {{CandName10}} on<b> Climate Crisis</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI6()"><b>Vote NAY</b> for {{CandName10}} on<b> Climate Crisis</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I6sen')"><b>View Survey Results</b> of {{CandName10}} on the issue of<b> Climate Crisis</b> (50 points)</button>
+    <a *ngIf="I6show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss7_class"></a>  <mat-card class="example-card"> <!-- Issue 7 -->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[7]==-1">
@@ -635,6 +654,9 @@
         <button mat-button (click)="YEAclickI7()"><b>Vote YEA</b> for {{CandName10}} on the issues facing<b> Seniors</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI7()"><b>Vote NAY</b> for {{CandName10}} on the issues facing<b> Seniors</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I7sen')"><b>View Survey Results</b> of {{CandName10}} on the issues facing<b> Seniors</b> (50 points)</button>
+    <a *ngIf="I7show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss8_class"></a> <mat-card class="example-card"> <!-- Issue 8-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[8]==-1">
@@ -642,6 +664,9 @@
         <button mat-button (click)="YEAclickI8()"><b>Vote YEA</b> for {{CandName10}} on<b> Defense & National Security</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI8()"><b>Vote NAY</b> for {{CandName10}} on<b> Defense & National Security</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I8sen')"><b>View Survey Results</b> of {{CandName10}} on<b> Defense & National Security</b> (50 points)</button>
+    <a *ngIf="I8show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss9_class"></a> <mat-card class="example-card"> <!-- Issue 9-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[9]==-1">
@@ -649,6 +674,9 @@
         <button mat-button (click)="YEAclickI9()"><b>Vote YEA</b> for {{CandName10}} on<b> Energy</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI9()"><b>Vote NAY</b> for {{CandName10}} on<b> Energy</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I9sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Energy</b> (50 points)</button>
+    <a *ngIf="I9show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss10_class"></a> <mat-card class="example-card"> <!-- Issue 10-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[10]==-1">
@@ -656,6 +684,9 @@
         <button mat-button (click)="YEAclickI10()"><b>Vote YEA</b> for {{CandName10}} on <b>Infrastructure</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI10()"><b>Vote NAY</b> for {{CandName10}} on <b>Infrastructure</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I10sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Infrastructure</b> (50 points)</button>
+    <a *ngIf="I10show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss11_class"></a> <mat-card class="example-card"> <!-- Issue 11-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[11]==-1">
@@ -663,6 +694,9 @@
         <button mat-button (click)="YEAclickI11()"><b>Vote YEA</b> for {{CandName10}} on <b>Natural Resources</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI11()"><b>Vote NAY</b> for {{CandName10}} on <b>Natural Resources</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I11sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Natural Resources</b> (50 points)</button>
+    <a *ngIf="I11show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss12_class"></a> <mat-card class="example-card"> <!-- Issue 12-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[12]==-1">
@@ -670,6 +704,9 @@
         <button mat-button (click)="YEAclickI12()"><b>Vote YEA</b> for {{CandName10}} on <b>Manufacturing</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI12()"><b>Vote NAY</b> for {{CandName10}} on <b>Manufacturing</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I12sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Manufacturing</b> (50 points)</button>
+    <a *ngIf="I12show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss13_class"></a> <mat-card class="example-card"> <!-- Issue 13-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[13]==-1">
@@ -677,6 +714,9 @@
         <button mat-button (click)="YEAclickI13()"><b>Vote YEA</b> for {{CandName10}} on <b>Public Lands</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI13()"><b>Vote NAY</b> for {{CandName10}} on <b>Public Lands</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I13sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Public Lands</b> (50 points)</button>
+    <a *ngIf="I13show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss14_class"></a> <mat-card class="example-card"> <!-- Issue 14-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[14]==-1">
@@ -684,6 +724,9 @@
         <button mat-button (click)="YEAclickI14()"><b>Vote YEA</b> for {{CandName10}} on <b> COVID-19 Response, Drug Prices & Healthcare</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI14()"><b>Vote NAY</b> for {{CandName10}} on <b>COVID-19 Response, Drug Prices & Healthcare </b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I14sen')"><b>View Survey Results</b> of {{CandName10}} on <b>COVID-19 Response, Drug Prices & Healthcare</b> (50 points)</button>
+    <a *ngIf="I14show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss15_class"></a> <mat-card class="example-card"> <!-- Issue 15-->
     <a *ngIf="HOMEstate==statedropdown">  <p *ngIf="votedindexesissuecand10[15]==-1">
@@ -691,6 +734,9 @@
         <button mat-button (click)="YEAclickI15()"><b>Vote YEA</b> for {{CandName10}} on <b>Education</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI15()"><b>Vote NAY</b> for {{CandName10}} on<b> Education</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I15sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Education</b> (50 points)</button>
+    <a *ngIf="I15show=='yes'">
+
+    </a>
   </mat-card>  <mat-divider></mat-divider>
     <a class="iss16_class"></a> <mat-card class="example-card"> <!-- Issue 16-->
     <a *ngIf="HOMEstate==statedropdown">   <p *ngIf="votedindexesissuecand10[16]==-1">
@@ -698,6 +744,9 @@
         <button mat-button (click)="YEAclickI16()"><b>Vote YEA</b> for {{CandName10}} on<b> Inflation & Economy</b> (100 points)</button> &nbsp; &nbsp; &nbsp;
         <button mat-button (click)="NAYclickI16()"><b>Vote NAY</b> for {{CandName10}} on <b>Inflation & Economy</b> (100 points)</button></p> </a>
     <button mat-button color="primary" routerLink="/Community1" (click)="loyaltyview()"  (click)="ConfclickIssResults('I16sen')"><b>View Survey Results</b> of {{CandName10}} on <b>Inflation & Economy</b> (50 points)</button>
+    <a *ngIf="I16show=='yes'">
+
+    </a>
   </mat-card> <mat-divider></mat-divider>
 
     <!-- Next and back buttons-->
