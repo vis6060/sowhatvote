@@ -8,6 +8,7 @@ import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {CookiebannerComponent} from "./cookiebanner/cookiebanner.component";
 //import {Router} from "@angular/router";
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ import {CookiebannerComponent} from "./cookiebanner/cookiebanner.component";
 export class AppComponent {
 
   constructor(public authenticator: AuthenticatorService,private readonly location: Location,
-              private _snackBar: MatSnackBar) {}
+              private _snackBar: MatSnackBar, private titleService: Title, private metaService: Meta) {}
 
   ngOnInit(): void {
     this.level2tabRest()
@@ -48,6 +49,12 @@ export class AppComponent {
   //  console.log('newHeight cache', Cache.getItem('newHeight'))
   //  console.log('toggleBool7 cache', Cache.getItem('toggleBool7'))
  //   console.log('editstep5flag cache', Cache.getItem('editstep5flag'))
+    this.titleService.setTitle("SoWhat Vote!");
+    this.metaService.addTags([
+      {name: 'keywords', content: 'Elections, Midterms, Midterm Elections, Senator, Congress, Governor, Guns, Abortion, Climate, Veterans, Crime, Farmer,Marco Rubio, Dr Oz, Stacey Abrams, Beto ORourke, Katie Porter,Ron DeSantis, Raphael Warnock, Greg Abbott, John Fetterman, Herschel Walker, Evan McMullin, Gretchen Whitmer, Mark Kelly,Kari Lake'},
+      {name: 'description', content: 'Make Your Voice Count! Vote on the Performance of 2022 Midterm Election Candidates – US Senators, House Reps, Governors and elected officials of all 50 states'},
+     // {name: 'robots', content: 'index, follow'}
+    ]);
   }
 
   profilecompPartA="";profilecompPartD="";profilecompPartE=""; profilecompPartF="";

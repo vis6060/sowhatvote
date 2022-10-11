@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticatorService} from "@aws-amplify/ui-angular";
 import {APIService,CandNameOutArray} from "../../API.service";
@@ -6,7 +6,7 @@ import Amplify, {API, Auth, Storage, Cache} from "aws-amplify";
 import awsExports from "../../../aws-exports";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
-import {MatDialog,} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog,} from '@angular/material/dialog';
 import {ConfdialogsenateComponent} from "../confdialogsenate/confdialogsenate.component";
 
 
@@ -21,7 +21,9 @@ import {ConfdialogsenateComponent} from "../confdialogsenate/confdialogsenate.co
 export class InstatesenatedisplaynavComponent implements OnInit {
 
   router: Router;
-  constructor(public dialog: MatDialog, public authenticator: AuthenticatorService, private _formBuilder: FormBuilder, private api: APIService, private route: ActivatedRoute, _router: Router,private titlecasePipe:TitleCasePipe,private renderer: Renderer2) {
+  constructor(public dialog: MatDialog,
+              public authenticator: AuthenticatorService, private _formBuilder: FormBuilder, private api: APIService,
+              private route: ActivatedRoute, _router: Router,private titlecasePipe:TitleCasePipe,private renderer: Renderer2) {
     Amplify.configure(awsExports);
     this.router = _router;
 
@@ -71,11 +73,20 @@ export class InstatesenatedisplaynavComponent implements OnInit {
 
   cookiedenied="";stateuserCA="";  overalldisapper="";
 
- P0show=""; P1show=""; P2show="";P3show="";P4show="";P5show="";P6show="";P7show="";P8show="";P9show="";P10show="";P11show="";P12show="";
+  Futureshow="";P0show=""; P1show=""; P2show="";P3show="";P4show="";P5show="";P6show="";P7show="";P8show="";P9show="";P10show="";P11show="";P12show="";
   P13show="";P14show="";P15show="";P16show="";P17show="";P18show="";P19show=""; P20show="";P21show="";P22show=""; P23show="";
-
   I0show=""; I1show=""; I2show=""; I3show=""; I4show=""; I5show=""; I6show=""; I7show=""; I8show=""; I9show=""; I10show="";
   I11show=""; I12show=""; I13show=""; I14show=""; I15show=""; I16show="";
+
+  Futuredisable: boolean=false; P0disable: boolean=false;  P1disable: boolean=false; P2disable: boolean=false; P3disable: boolean=false;
+  P4disable: boolean=false; P5disable: boolean=false; P6disable: boolean=false; P7disable: boolean=false; P8disable: boolean=false;
+  P9disable: boolean=false; P10disable: boolean=false; P11disable: boolean=false; P12disable: boolean=false; P13disable: boolean=false;
+  P14disable: boolean=false; P15disable: boolean=false; P16disable: boolean=false; P17disable: boolean=false; P18disable: boolean=false;
+  P19disable: boolean=false; P20disable: boolean=false; P21disable: boolean=false; P22disable: boolean=false; P23disable: boolean=false;
+  I0disable: boolean=false; I1disable: boolean=false; I2disable: boolean=false; I3disable: boolean=false; I4disable: boolean=false;
+  I5disable: boolean=false; I6disable: boolean=false; I7disable: boolean=false; I8disable: boolean=false; I9disable: boolean=false;
+  I10disable: boolean=false; I11disable: boolean=false; I12disable: boolean=false; I13disable: boolean=false; I14disable: boolean=false;
+  I15disable: boolean=false; I16disable: boolean=false;
 
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -450,247 +461,247 @@ export class InstatesenatedisplaynavComponent implements OnInit {
  //   data: {voteflag: 'P0nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POsen');
  //   this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P0nsen", "P0sen",100).then((event) => {});});}
   async YEAclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P1ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1sen'); this.P1show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P1ysen", "P1sen",100).then((event) => {});});}
+    data: {voteflag: 'P1ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1sen'); this.P1show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P1ysen", "P1sen",100).then((event) => {});}});}
   async NAYclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P1nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1sen'); this.P1show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P1nsen", "P1sen",100).then((event) => {});});}
+    data: {voteflag: 'P1nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1sen'); this.P1show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P1nsen", "P1sen",100).then((event) => {});}});}
   async YEAclickP2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P2ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2sen');this.P2show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P2ysen", "P2sen",100).then((event) => {});});}
+    data: {voteflag: 'P2ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2sen');this.P2show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P2ysen", "P2sen",100).then((event) => {});}});}
   async NAYclickP2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P2nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2sen');this.P2show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P2nsen", "P2sen",100).then((event) => {});});}
+    data: {voteflag: 'P2nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2sen');this.P2show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P2nsen", "P2sen",100).then((event) => {});}});}
   async YEAclickP3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P3ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P3sen'); this.P3show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P3ysen", "P3sen",100).then((event) => {});});}
+    data: {voteflag: 'P3ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P3sen'); this.P3show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P3ysen", "P3sen",100).then((event) => {});}});}
   async NAYclickP3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P3nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P3sen'); this.P3show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P3nsen", "P3sen",100).then((event) => {});});}
+    data: {voteflag: 'P3nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P3sen'); this.P3show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P3nsen", "P3sen",100).then((event) => {});}});}
   async YEAclickP4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P4ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P4sen'); this.P4show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P4ysen", "P4sen",100).then((event) => {});});}
+    data: {voteflag: 'P4ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P4sen'); this.P4show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P4ysen", "P4sen",100).then((event) => {});}});}
   async NAYclickP4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P4nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P4sen');this.P4show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P4nsen", "P4sen",100).then((event) => {});});}
+    data: {voteflag: 'P4nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P4sen');this.P4show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P4nsen", "P4sen",100).then((event) => {});}});}
   async YEAclickP5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P5ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P5sen'); this.P5show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P5ysen", "P5sen",100).then((event) => {});});}
+    data: {voteflag: 'P5ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P5sen'); this.P5show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P5ysen", "P5sen",100).then((event) => {});}});}
   async NAYclickP5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P5nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P5sen'); this.P5show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P5nsen", "P5sen",100).then((event) => {});});}
+    data: {voteflag: 'P5nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P5sen'); this.P5show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P5nsen", "P5sen",100).then((event) => {});}});}
   async YEAclickP6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P6ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P6sen'); this.P6show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P6ysen", "P6sen",100).then((event) => {});});}
+    data: {voteflag: 'P6ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P6sen'); this.P6show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P6ysen", "P6sen",100).then((event) => {});}});}
   async NAYclickP6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P6nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P6sen');this.P6show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P6nsen", "P6sen",100).then((event) => {});});}
+    data: {voteflag: 'P6nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P6sen');this.P6show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P6nsen", "P6sen",100).then((event) => {});}});}
   async YEAclickP7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P7ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P7sen'); this.P7show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P7ysen", "P7sen",100).then((event) => {});});}
+    data: {voteflag: 'P7ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P7sen'); this.P7show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P7ysen", "P7sen",100).then((event) => {});}});}
   async NAYclickP7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P7nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P7sen'); this.P7show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P7nsen", "P7sen",100).then((event) => {});});}
+    data: {voteflag: 'P7nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P7sen'); this.P7show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P7nsen", "P7sen",100).then((event) => {});}});}
   async YEAclickP8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P8ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P8sen');this.P8show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P8ysen", "P8sen",100).then((event) => {});});}
+    data: {voteflag: 'P8ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P8sen');this.P8show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P8ysen", "P8sen",100).then((event) => {});}});}
   async NAYclickP8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P8nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P8sen'); this.P8show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P8nsen", "P8sen",100).then((event) => {});});}
+    data: {voteflag: 'P8nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P8sen'); this.P8show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P8nsen", "P8sen",100).then((event) => {});}});}
   async YEAclickP9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P9ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P9sen');this.P9show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P9ysen", "P9sen",100).then((event) => {});});}
+    data: {voteflag: 'P9ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P9sen');this.P9show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P9ysen", "P9sen",100).then((event) => {});}});}
   async NAYclickP9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P9nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P9sen');this.P9show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P9nsen", "P9sen",100).then((event) => {});});}
+    data: {voteflag: 'P9nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P9sen');this.P9show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P9nsen", "P9sen",100).then((event) => {});}});}
   async YEAclickP10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P10ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P10sen'); this.P10show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P10ysen", "P10sen",100).then((event) => {});});}
+    data: {voteflag: 'P10ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P10sen'); this.P10show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P10ysen", "P10sen",100).then((event) => {});}});}
   async NAYclickP10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P10nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1Osen');this.P10show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P10nsen", "P10sen",100).then((event) => {});});}
+    data: {voteflag: 'P10nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1Osen');this.P10show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P10nsen", "P10sen",100).then((event) => {});}});}
   async YEAclickP11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P11ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P11sen'); this.P11show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P11ysen", "P11sen",100).then((event) => {});});}
+    data: {voteflag: 'P11ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P11sen'); this.P11show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P11ysen", "P11sen",100).then((event) => {});}});}
   async NAYclickP11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P11nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P11sen');this.P11show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P11nsen", "P11sen",100).then((event) => {});});}
+    data: {voteflag: 'P11nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P11sen');this.P11show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P11nsen", "P11sen",100).then((event) => {});}});}
   async YEAclickP12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P12ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P12sen'); this.P12show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P12ysen", "P12sen",100).then((event) => {});});}
+    data: {voteflag: 'P12ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P12sen'); this.P12show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P12ysen", "P12sen",100).then((event) => {});}});}
   async NAYclickP12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P12nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P12sen'); this.P12show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P12nsen", "P12sen",100).then((event) => {});});}
+    data: {voteflag: 'P12nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P12sen'); this.P12show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P12nsen", "P12sen",100).then((event) => {});}});}
   async YEAclickP13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P13ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P13sen'); this.P13show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P13ysen", "P13sen",100).then((event) => {});});}
+    data: {voteflag: 'P13ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P13sen'); this.P13show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P13ysen", "P13sen",100).then((event) => {});}});}
   async NAYclickP13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P13nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P13sen');this.P13show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P13nsen", "P13sen",100).then((event) => {});});}
+    data: {voteflag: 'P13nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P13sen');this.P13show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P13nsen", "P13sen",100).then((event) => {});}});}
   async YEAclickP14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P14ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P14sen'); this.P14show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P14ysen", "P14sen",100).then((event) => {});});}
+    data: {voteflag: 'P14ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P14sen'); this.P14show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P14ysen", "P14sen",100).then((event) => {});}});}
   async NAYclickP14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P14nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P14sen');this.P14show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P14nsen", "P14sen",100).then((event) => {});});}
+    data: {voteflag: 'P14nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P14sen');this.P14show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P14nsen", "P14sen",100).then((event) => {});}});}
   async YEAclickP15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P15ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P15sen');this.P15show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P15ysen", "P15sen",100).then((event) => {});});}
+    data: {voteflag: 'P15ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P15sen');this.P15show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P15ysen", "P15sen",100).then((event) => {});}});}
   async NAYclickP15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P15nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P15sen');this.P15show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P15nsen", "P15sen",100).then((event) => {});});}
+    data: {voteflag: 'P15nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P15sen');this.P15show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P15nsen", "P15sen",100).then((event) => {});}});}
   async YEAclickP16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P16ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P16sen'); this.P16show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P16ysen", "P16sen",100).then((event) => {});});}
+    data: {voteflag: 'P16ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P16sen'); this.P16show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P16ysen", "P16sen",100).then((event) => {})};});}
   async NAYclickP16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P16nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P16sen');this.P16show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P16nsen", "P16sen",100).then((event) => {});});}
+    data: {voteflag: 'P16nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P16sen');this.P16show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P16nsen", "P16sen",100).then((event) => {});}});}
   async YEAclickP17() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P17ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P17sen'); this.P17show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P17ysen", "P17sen",100).then((event) => {});});}
+    data: {voteflag: 'P17ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P17sen'); this.P17show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P17ysen", "P17sen",100).then((event) => {});}});}
   async NAYclickP17() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P17nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P17sen');this.P17show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P17nsen", "P17sen",100).then((event) => {});});}
+    data: {voteflag: 'P17nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P17sen');this.P17show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P17nsen", "P17sen",100).then((event) => {});}});}
   async YEAclickP18() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P18ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P18sen'); this.P18show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P18ysen", "P18sen",100).then((event) => {});});}
+    data: {voteflag: 'P18ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P18sen'); this.P18show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P18ysen", "P18sen",100).then((event) => {});}});}
   async NAYclickP18() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P18nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P18sen');this.P18show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P18nsen", "P18sen",100).then((event) => {});});}
+    data: {voteflag: 'P18nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P18sen');this.P18show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P18nsen", "P18sen",100).then((event) => {});}});}
   async YEAclickP19() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P19ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P19sen'); this.P19show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P19ysen", "P19sen",100).then((event) => {});});}
+    data: {voteflag: 'P19ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P19sen'); this.P19show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P19ysen", "P19sen",100).then((event) => {});}});}
   async NAYclickP19() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P19nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P19sen');this.P19show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P19nsen", "P19sen",100).then((event) => {});});}
+    data: {voteflag: 'P19nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P19sen');this.P19show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P19nsen", "P19sen",100).then((event) => {});}});}
   async YEAclickP20() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P20ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P20sen'); this.P20show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P20ysen", "P20sen",100).then((event) => {});});}
+    data: {voteflag: 'P20ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P20sen'); this.P20show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P20ysen", "P20sen",100).then((event) => {});}});}
   async NAYclickP20() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P20nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2Osen');this.P20show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P20nsen", "P20sen",100).then((event) => {});});}
+    data: {voteflag: 'P20nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2Osen');this.P20show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P20nsen", "P20sen",100).then((event) => {});}});}
   async YEAclickP21() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P21ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P21sen'); this.P21show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P21ysen", "P21sen",100).then((event) => {});});}
+    data: {voteflag: 'P21ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P21sen'); this.P21show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P21ysen", "P21sen",100).then((event) => {});}});}
   async NAYclickP21() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P21nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P21sen');this.P21show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P21nsen", "P21sen",100).then((event) => {});});}
+    data: {voteflag: 'P21nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P21sen');this.P21show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P21nsen", "P21sen",100).then((event) => {});}});}
   async YEAclickP22() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P22ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P22sen'); this.P22show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P22ysen", "P22sen",100).then((event) => {});});}
+    data: {voteflag: 'P22ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P22sen'); this.P22show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P22ysen", "P22sen",100).then((event) => {});}});}
   async NAYclickP22() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P22nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P22sen');this.P22show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P22nsen", "P22sen",100).then((event) => {});});}
+    data: {voteflag: 'P22nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P22sen');this.P22show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P22nsen", "P22sen",100).then((event) => {});}});}
   async YEAclickP23() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P23ysen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P23sen'); this.P23show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P23ysen", "P23sen",100).then((event) => {});});}
+    data: {voteflag: 'P23ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P23sen'); this.P23show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P23ysen", "P23sen",100).then((event) => {});}});}
   async NAYclickP23() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'P23nsen'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P23sen');this.P23show="yes";
-    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P23nsen", "P23sen",100).then((event) => {});});}
+    data: {voteflag: 'P23nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P23sen');this.P23show="yes";
+    this.api.ComResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"P23nsen", "P23sen",100).then((event) => {});}});}
 
 
   async YEAclickI0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I0ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0sen'); this.I0show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I0ysen", "I0sen",100).then((event) => {});});}
+    data: {voteflag: 'I0ysen'},}).afterClosed().subscribe(result => { if(result.data=="Submit") {this.ConfclickIssResults('I0sen'); this.I0show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I0ysen", "I0sen",100).then((event) => {}) };});}
   async NAYclickI0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I0nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0sen');this.I0show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I0nsen", "I0sen",100).then((event) => {});});}
+    data: {voteflag: 'I0nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I0sen');this.I0show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I0nsen", "I0sen",100).then((event) => {}); }});}
   async YEAclickI1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I1ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I1sen'); this.I1show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I1ysen", "I1sen",100).then((event) => {});});}
+    data: {voteflag: 'I1ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I1sen'); this.I1show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I1ysen", "I1sen",100).then((event) => {});}});}
   async NAYclickI1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I1nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I1sen'); this.I1show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I1nsen", "I1sen",100).then((event) => {});});}
+    data: {voteflag: 'I1nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I1sen'); this.I1show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I1nsen", "I1sen",100).then((event) => {});}});}
   async YEAclickI2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I2ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I2sen'); this.I2show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I2ysen", "I2sen",100).then((event) => {});});}
+    data: {voteflag: 'I2ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I2sen'); this.I2show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I2ysen", "I2sen",100).then((event) => {});}});}
   async NAYclickI2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I2nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I2sen');this.I2show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I2nsen", "I2sen",100).then((event) => {});});}
+    data: {voteflag: 'I2nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I2sen');this.I2show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I2nsen", "I2sen",100).then((event) => {});}});}
   async YEAclickI3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I3ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I3sen'); this.I3show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I3ysen", "I3sen",100).then((event) => {});});}
+    data: {voteflag: 'I3ysen'},}).afterClosed().subscribe(result => { if(result.data=="Submit") {this.ConfclickIssResults('I3sen'); this.I3show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I3ysen", "I3sen",100).then((event) => {});} });}
   async NAYclickI3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I3nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I3sen');this.I3show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I3nsen", "I3sen",100).then((event) => {});});}
+    data: {voteflag: 'I3nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I3sen');this.I3show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I3nsen", "I3sen",100).then((event) => {});}});}
   async YEAclickI4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I4ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I4sen'); this.I4show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I4ysen", "I4sen",100).then((event) => {});});}
+    data: {voteflag: 'I4ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I4sen'); this.I4show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I4ysen", "I4sen",100).then((event) => {});}});}
   async NAYclickI4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I4nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I4sen');this.I4show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I4nsen", "I4sen",100).then((event) => {});});}
+    data: {voteflag: 'I4nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I4sen');this.I4show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I4nsen", "I4sen",100).then((event) => {});}});}
   async YEAclickI5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I5ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I5sen'); this.I5show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I5ysen", "I5sen",100).then((event) => {});});}
+    data: {voteflag: 'I5ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I5sen'); this.I5show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I5ysen", "I5sen",100).then((event) => {});}});}
   async NAYclickI5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I5nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I5sen');this.I5show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I5nsen", "I5sen",100).then((event) => {});});}
+    data: {voteflag: 'I5nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I5sen');this.I5show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I5nsen", "I5sen",100).then((event) => {});}});}
   async YEAclickI6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I6ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I6sen'); this.I6show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I6ysen", "I6sen",100).then((event) => {});});}
+    data: {voteflag: 'I6ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I6sen'); this.I6show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I6ysen", "I6sen",100).then((event) => {});}});}
   async NAYclickI6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I6nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I6sen');this.I6show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I6nsen", "I6sen",100).then((event) => {});});}
+    data: {voteflag: 'I6nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I6sen');this.I6show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I6nsen", "I6sen",100).then((event) => {});}});}
   async YEAclickI7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I7ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I7sen'); this.I7show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I7ysen", "I7sen",100).then((event) => {});});}
+    data: {voteflag: 'I7ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I7sen'); this.I7show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I7ysen", "I7sen",100).then((event) => {});}});}
   async NAYclickI7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I7nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I7sen');this.I7show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I7nsen", "I7sen",100).then((event) => {});});}
+    data: {voteflag: 'I7nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I7sen');this.I7show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I7nsen", "I7sen",100).then((event) => {});}});}
   async YEAclickI8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I8ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I8sen'); this.I8show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I8ysen", "I8sen",100).then((event) => {});});}
+    data: {voteflag: 'I8ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I8sen'); this.I8show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I8ysen", "I8sen",100).then((event) => {});}});}
   async NAYclickI8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I8nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I8sen');this.I8show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I8nsen", "I8sen",100).then((event) => {});});}
+    data: {voteflag: 'I8nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I8sen');this.I8show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I8nsen", "I8sen",100).then((event) => {});}});}
   async YEAclickI9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I9ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I9sen'); this.I9show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I9ysen", "I9sen",100).then((event) => {});});}
+    data: {voteflag: 'I9ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I9sen'); this.I9show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I9ysen", "I9sen",100).then((event) => {});}});}
   async NAYclickI9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I9nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I9sen');this.I9show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I9nsen", "I9sen",100).then((event) => {});});}
+    data: {voteflag: 'I9nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I9sen');this.I9show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I9nsen", "I9sen",100).then((event) => {});}});}
   async YEAclickI10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I10ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I10sen'); this.I10show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I10ysen", "I10sen",100).then((event) => {});});}
+    data: {voteflag: 'I10ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I10sen'); this.I10show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I10ysen", "I10sen",100).then((event) => {});}});}
   async NAYclickI10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I10nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I10sen');this.I10show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I10nsen", "I10sen",100).then((event) => {});});}
+    data: {voteflag: 'I10nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I10sen');this.I10show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I10nsen", "I10sen",100).then((event) => {});}});}
   async YEAclickI11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I11ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I11sen'); this.I11show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I11ysen", "I11sen",100).then((event) => {});});}
+    data: {voteflag: 'I11ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I11sen'); this.I11show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I11ysen", "I11sen",100).then((event) => {});}});}
   async NAYclickI11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I11nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I11sen');this.I11show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I11nsen", "I11sen",100).then((event) => {});});}
+    data: {voteflag: 'I11nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I11sen');this.I11show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I11nsen", "I11sen",100).then((event) => {});}});}
   async YEAclickI12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I12ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I12sen'); this.I12show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I12ysen", "I12sen",100).then((event) => {});});}
+    data: {voteflag: 'I12ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I12sen'); this.I12show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I12ysen", "I12sen",100).then((event) => {});}});}
   async NAYclickI12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I12nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I12sen');this.I12show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I12nsen", "I12sen",100).then((event) => {});});}
+    data: {voteflag: 'I12nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I12sen');this.I12show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I12nsen", "I12sen",100).then((event) => {});}});}
   async YEAclickI13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I13ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I13sen'); this.I13show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I13ysen", "I13sen",100).then((event) => {});});}
+    data: {voteflag: 'I13ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I13sen'); this.I13show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I13ysen", "I13sen",100).then((event) => {});}});}
   async NAYclickI13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I13nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I13sen'); this.I13show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I13nsen", "I13sen",100).then((event) => {});});}
+    data: {voteflag: 'I13nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I13sen'); this.I13show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I13nsen", "I13sen",100).then((event) => {});}});}
   async YEAclickI14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I14ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I14sen'); this.I14show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I14ysen", "I14sen",100).then((event) => {});});}
+    data: {voteflag: 'I14ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I14sen'); this.I14show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I14ysen", "I14sen",100).then((event) => {});}});}
   async NAYclickI14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I14nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I14sen');this.I14show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I14nsen", "I14sen",100).then((event) => {});});}
+    data: {voteflag: 'I14nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I14sen');this.I14show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I14nsen", "I14sen",100).then((event) => {});}});}
   async YEAclickI15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I15ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I15sen'); this.I15show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I15ysen", "I15sen",100).then((event) => {});});}
+    data: {voteflag: 'I15ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I15sen'); this.I15show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I15ysen", "I15sen",100).then((event) => {});}});}
   async NAYclickI15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I15nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I15sen');this.I15show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I15nsen", "I15sen",100).then((event) => {});});}
+    data: {voteflag: 'I15nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I15sen');this.I15show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I15nsen", "I15sen",100).then((event) => {});}});}
   async YEAclickI16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I16ysen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I16sen'); this.I16show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I16ysen", "I16sen",100).then((event) => {});});}
+    data: {voteflag: 'I16ysen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I16sen'); this.I16show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I16ysen", "I16sen",100).then((event) => {});}});}
   async NAYclickI16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogsenateComponent,{
-    data: {voteflag: 'I16nsen'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I16sen');this.I16show="yes";
-    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I16nsen", "I16sen",100).then((event) => {});});}
+    data: {voteflag: 'I16nsen'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I16sen');this.I16show="yes";
+    this.api.IssResultUpdatetabsenateinstate(this.CandName10,user.attributes.sub,"I16nsen", "I16sen",100).then((event) => {});}});}
 
   async loyaltyview() {
   const user = await Auth.currentAuthenticatedUser();

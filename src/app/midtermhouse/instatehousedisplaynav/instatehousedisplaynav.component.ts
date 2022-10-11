@@ -69,6 +69,21 @@ export class InstatehousedisplaynavComponent implements OnInit {
   statedropdown=''; HOMEstate=''
   cookiedenied="";stateuserCA=""; overalldisapper="";
 
+  Futureshow="";P0show=""; P1show=""; P2show="";P3show="";P4show="";P5show="";P6show="";P7show="";P8show="";P9show="";P10show="";P11show="";P12show="";
+  P13show="";P14show="";P15show="";P16show="";P17show="";P18show="";P19show=""; P20show="";P21show=""
+  I0show=""; I1show=""; I2show=""; I3show=""; I4show=""; I5show=""; I6show=""; I7show=""; I8show=""; I9show=""; I10show="";
+  I11show=""; I12show=""; I13show=""; I14show=""; I15show=""; I16show="";
+
+  Futuredisable: boolean=false; P0disable: boolean=false;  P1disable: boolean=false; P2disable: boolean=false; P3disable: boolean=false;
+  P4disable: boolean=false; P5disable: boolean=false; P6disable: boolean=false; P7disable: boolean=false; P8disable: boolean=false;
+  P9disable: boolean=false; P10disable: boolean=false; P11disable: boolean=false; P12disable: boolean=false; P13disable: boolean=false;
+  P14disable: boolean=false; P15disable: boolean=false; P16disable: boolean=false; P17disable: boolean=false; P18disable: boolean=false;
+  P19disable: boolean=false; P20disable: boolean=false; P21disable: boolean=false;
+  I0disable: boolean=false; I1disable: boolean=false; I2disable: boolean=false; I3disable: boolean=false; I4disable: boolean=false;
+  I5disable: boolean=false; I6disable: boolean=false; I7disable: boolean=false; I8disable: boolean=false; I9disable: boolean=false;
+  I10disable: boolean=false; I11disable: boolean=false; I12disable: boolean=false; I13disable: boolean=false; I14disable: boolean=false;
+  I15disable: boolean=false; I16disable: boolean=false;
+
 
 reloadComponent() {
     let currentUrl = this.router.url;
@@ -438,11 +453,11 @@ reloadComponent() {
     this.api.OverallResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"Overalln", "Overall",100)
   }
 
-  async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();
+  async YEAclickP0() {const user = await Auth.currentAuthenticatedUser(); this.P0show="yes";
     this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0y", "P0",100)
   }
 
-  async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();
+  async NAYclickP0() {const user = await Auth.currentAuthenticatedUser(); this.P0show="yes";
     this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0n", "P0",100)
   }
 
@@ -453,234 +468,234 @@ reloadComponent() {
   //  data: {voteflag: 'P0n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('PO');
    // this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P0n", "P0",100).then((event) => {});});}
   async YEAclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P1y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P1y", "P1",100).then((event) => {});});}
+    data: {voteflag: 'P1y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1'); this.P1show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P1y", "P1",100).then((event) => {});}});}
   async NAYclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P1n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P1n", "P1",100).then((event) => {});});}
+    data: {voteflag: 'P1n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1'); this.P1show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P1n", "P1",100).then((event) => {});}});}
   async YEAclickP2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P2y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P2y", "P2",100).then((event) => {});});}
+    data: {voteflag: 'P2y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2'); this.P2show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P2y", "P2",100).then((event) => {});}});}
   async NAYclickP2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P2n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P2n", "P2",100).then((event) => {});});}
+    data: {voteflag: 'P2n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2'); this.P2show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P2n", "P2",100).then((event) => {});}});}
   async YEAclickP3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P3y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P3');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P3y", "P3",100).then((event) => {});});}
+    data: {voteflag: 'P3y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P3'); this.P3show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P3y", "P3",100).then((event) => {});}});}
   async NAYclickP3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P3n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P3');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P3n", "P3",100).then((event) => {});});}
+    data: {voteflag: 'P3n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P3'); this.P3show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P3n", "P3",100).then((event) => {});}});}
   async YEAclickP4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P4y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P4');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P4y", "P4",100).then((event) => {});});}
+    data: {voteflag: 'P4y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P4'); this.P4show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P4y", "P4",100).then((event) => {});}});}
   async NAYclickP4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P4n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P4');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P4n", "P4",100).then((event) => {});});}
+    data: {voteflag: 'P4n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P4'); this.P4show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P4n", "P4",100).then((event) => {});}});}
   async YEAclickP5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P5y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P5');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P5y", "P5",100).then((event) => {});});}
+    data: {voteflag: 'P5y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P5'); this.P5show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P5y", "P5",100).then((event) => {});}});}
   async NAYclickP5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P5n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P5');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P5n", "P5",100).then((event) => {});});}
+    data: {voteflag: 'P5n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P5'); this.P5show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P5n", "P5",100).then((event) => {});}});}
   async YEAclickP6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P6y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P6');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P6y", "P6",100).then((event) => {});});}
+    data: {voteflag: 'P6y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P6'); this.P6show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P6y", "P6",100).then((event) => {});}});}
   async NAYclickP6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P6n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P6');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P6n", "P6",100).then((event) => {});});}
+    data: {voteflag: 'P6n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P6'); this.P6show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P6n", "P6",100).then((event) => {});}});}
   async YEAclickP7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P7y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P7');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P7y", "P7",100).then((event) => {});});}
+    data: {voteflag: 'P7y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P7'); this.P7show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P7y", "P7",100).then((event) => {});}});}
   async NAYclickP7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P7n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P7');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P7n", "P7",100).then((event) => {});});}
+    data: {voteflag: 'P7n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P7'); this.P7show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P7n", "P7",100).then((event) => {});}});}
   async YEAclickP8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P8y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P8');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P8y", "P8",100).then((event) => {});});}
+    data: {voteflag: 'P8y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P8'); this.P8show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P8y", "P8",100).then((event) => {});}});}
   async NAYclickP8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P8n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P8');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P8n", "P8",100).then((event) => {});});}
+    data: {voteflag: 'P8n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P8'); this.P8show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P8n", "P8",100).then((event) => {});}});}
   async YEAclickP9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P9y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P9');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P9y", "P9",100).then((event) => {});});}
+    data: {voteflag: 'P9y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P9'); this.P9show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P9y", "P9",100).then((event) => {});}});}
   async NAYclickP9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P9n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P9');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P9n", "P9",100).then((event) => {});});}
+    data: {voteflag: 'P9n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P9'); this.P9show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P9n", "P9",100).then((event) => {});}});}
   async YEAclickP10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P10y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P10');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P10y", "P10",100).then((event) => {});});}
+    data: {voteflag: 'P10y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P10'); this.P10show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P10y", "P10",100).then((event) => {})};});}
   async NAYclickP10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P10n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1O');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P10n", "P10",100).then((event) => {});});}
+    data: {voteflag: 'P10n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1O'); this.P10show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P10n", "P10",100).then((event) => {});}});}
   async YEAclickP11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P11y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P11');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P11y", "P11",100).then((event) => {});});}
+    data: {voteflag: 'P11y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P11'); this.P11show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P11y", "P11",100).then((event) => {});}});}
   async NAYclickP11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P11n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P11');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P11n", "P11",100).then((event) => {});});}
+    data: {voteflag: 'P11n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P11'); this.P11show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P11n", "P11",100).then((event) => {});}});}
   async YEAclickP12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P12y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P12');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P12y", "P12",100).then((event) => {});});}
+    data: {voteflag: 'P12y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P12'); this.P12show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P12y", "P12",100).then((event) => {});}});}
   async NAYclickP12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P12n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P12');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P12n", "P12",100).then((event) => {});});}
+    data: {voteflag: 'P12n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P12'); this.P12show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P12n", "P12",100).then((event) => {});}});}
   async YEAclickP13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P13y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P13');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P13y", "P13",100).then((event) => {});});}
+    data: {voteflag: 'P13y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P13'); this.P13show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P13y", "P13",100).then((event) => {});}});}
   async NAYclickP13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P13n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P13');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P13n", "P13",100).then((event) => {});});}
+    data: {voteflag: 'P13n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P13'); this.P13show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P13n", "P13",100).then((event) => {});}});}
   async YEAclickP14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P14y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P14');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P14y", "P14",100).then((event) => {});});}
+    data: {voteflag: 'P14y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P14'); this.P14show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P14y", "P14",100).then((event) => {});}});}
   async NAYclickP14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P14n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P14');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P14n", "P14",100).then((event) => {});});}
+    data: {voteflag: 'P14n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P14'); this.P14show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P14n", "P14",100).then((event) => {});}});}
   async YEAclickP15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P15y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P15');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P15y", "P15",100).then((event) => {});});}
+    data: {voteflag: 'P15y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P15'); this.P15show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P15y", "P15",100).then((event) => {});}});}
   async NAYclickP15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P15n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P15');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P15n", "P15",100).then((event) => {});});}
+    data: {voteflag: 'P15n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P15'); this.P15show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P15n", "P15",100).then((event) => {});}});}
   async YEAclickP16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P16y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P16');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P16y", "P16",100).then((event) => {});});}
+    data: {voteflag: 'P16y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P16'); this.P16show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P16y", "P16",100).then((event) => {});}});}
   async NAYclickP16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P16n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P16');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P16n", "P16",100).then((event) => {});});}
+    data: {voteflag: 'P16n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P16'); this.P16show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P16n", "P16",100).then((event) => {});}});}
   async YEAclickP17() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P17y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P17');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P17y", "P17",100).then((event) => {});});}
+    data: {voteflag: 'P17y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P17'); this.P17show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P17y", "P17",100).then((event) => {});}});}
   async NAYclickP17() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P17n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P17');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P17n", "P17",100).then((event) => {});});}
+    data: {voteflag: 'P17n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P17'); this.P17show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P17n", "P17",100).then((event) => {});}});}
   async YEAclickP18() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P18y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P18');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P18y", "P18",100).then((event) => {});});}
+    data: {voteflag: 'P18y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P18'); this.P18show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P18y", "P18",100).then((event) => {});}});}
   async NAYclickP18() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P18n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P18');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P18n", "P18",100).then((event) => {});});}
+    data: {voteflag: 'P18n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P18'); this.P18show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P18n", "P18",100).then((event) => {});}});}
   async YEAclickP19() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P19y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P19');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P19y", "P19",100).then((event) => {});});}
+    data: {voteflag: 'P19y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P19'); this.P19show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P19y", "P19",100).then((event) => {});}});}
   async NAYclickP19() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P19n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P19');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P19n", "P19",100).then((event) => {});});}
+    data: {voteflag: 'P19n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P19'); this.P19show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P19n", "P19",100).then((event) => {});}});}
   async YEAclickP20() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P20y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P20');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P20y", "P20",100).then((event) => {});});}
+    data: {voteflag: 'P20y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P20'); this.P20show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P20y", "P20",100).then((event) => {});}});}
   async NAYclickP20() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P20n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2O');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P20n", "P20",100).then((event) => {});});}
+    data: {voteflag: 'P20n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2O'); this.P20show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P20n", "P20",100).then((event) => {});}});}
   async YEAclickP21() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P21y'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P21');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P21y", "P21",100).then((event) => {});});}
+    data: {voteflag: 'P21y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P21'); this.P21show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P21y", "P21",100).then((event) => {});}});}
   async NAYclickP21() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'P21n'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P21');
-    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P21n", "P21",100).then((event) => {});});}
+    data: {voteflag: 'P21n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P21'); this.P21show="yes";
+    this.api.ComResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"P21n", "P21",100).then((event) => {});}});}
 
   async YEAclickI0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I0y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I0y", "I0",100).then((event) => {});});}
+    data: {voteflag: 'I0y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I0'); this.I0show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I0y", "I0",100).then((event) => {});}});}
   async NAYclickI0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I0n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I0');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I0n", "I0",100).then((event) => {});});}
+    data: {voteflag: 'I0n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I0'); this.I0show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I0n", "I0",100).then((event) => {});}});}
   async YEAclickI1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I1y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I1');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I1y", "I1",100).then((event) => {});});}
+    data: {voteflag: 'I1y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I1'); this.I1show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I1y", "I1",100).then((event) => {});}});}
   async NAYclickI1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I1n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I1');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I1n", "I1",100).then((event) => {});});}
+    data: {voteflag: 'I1n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I1'); this.I1show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I1n", "I1",100).then((event) => {});}});}
   async YEAclickI2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I2y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I2');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I2y", "I2",100).then((event) => {});});}
+    data: {voteflag: 'I2y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I2'); this.I2show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I2y", "I2",100).then((event) => {});}});}
   async NAYclickI2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I2n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I2');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I2n", "I2",100).then((event) => {});});}
+    data: {voteflag: 'I2n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I2'); this.I2show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I2n", "I2",100).then((event) => {});}});}
   async YEAclickI3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I3y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I3');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I3y", "I3",100).then((event) => {});});}
+    data: {voteflag: 'I3y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I3'); this.I3show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I3y", "I3",100).then((event) => {});}});}
   async NAYclickI3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I3n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I3');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I3n", "I3",100).then((event) => {});});}
+    data: {voteflag: 'I3n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I3'); this.I3show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I3n", "I3",100).then((event) => {});}});}
   async YEAclickI4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I4y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I4');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I4y", "I4",100).then((event) => {});});}
+    data: {voteflag: 'I4y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I4'); this.I4show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I4y", "I4",100).then((event) => {});}});}
   async NAYclickI4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I4n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I4');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I4n", "I4",100).then((event) => {});});}
+    data: {voteflag: 'I4n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I4'); this.I4show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I4n", "I4",100).then((event) => {});}});}
   async YEAclickI5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I5y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I5');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I5y", "I5",100).then((event) => {});});}
+    data: {voteflag: 'I5y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I5'); this.I5show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I5y", "I5",100).then((event) => {});}});}
   async NAYclickI5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I5n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I5');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I5n", "I5",100).then((event) => {});});}
+    data: {voteflag: 'I5n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I5'); this.I5show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I5n", "I5",100).then((event) => {});}});}
   async YEAclickI6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I6y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I6');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I6y", "I6",100).then((event) => {});});}
+    data: {voteflag: 'I6y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I6'); this.I6show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I6y", "I6",100).then((event) => {});}});}
   async NAYclickI6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I6n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I6');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I6n", "I6",100).then((event) => {});});}
+    data: {voteflag: 'I6n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I6'); this.I6show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I6n", "I6",100).then((event) => {});}});}
   async YEAclickI7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I7y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I7');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I7y", "I7",100).then((event) => {});});}
+    data: {voteflag: 'I7y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I7'); this.I7show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I7y", "I7",100).then((event) => {});}});}
   async NAYclickI7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I7n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I7');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I7n", "I7",100).then((event) => {});});}
+    data: {voteflag: 'I7n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I7'); this.I7show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I7n", "I7",100).then((event) => {});}});}
   async YEAclickI8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I8y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I8');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I8y", "I8",100).then((event) => {});});}
+    data: {voteflag: 'I8y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I8'); this.I8show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I8y", "I8",100).then((event) => {});}});}
   async NAYclickI8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I8n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I8');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I8n", "I8",100).then((event) => {});});}
+    data: {voteflag: 'I8n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I8'); this.I8show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I8n", "I8",100).then((event) => {});}});}
   async YEAclickI9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I9y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I9');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I9y", "I9",100).then((event) => {});});}
+    data: {voteflag: 'I9y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I9'); this.I9show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I9y", "I9",100).then((event) => {});}});}
   async NAYclickI9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I9n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I9');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I9n", "I9",100).then((event) => {});});}
+    data: {voteflag: 'I9n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I9'); this.I9show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I9n", "I9",100).then((event) => {});}});}
   async YEAclickI10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I10y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I10');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I10y", "I10",100).then((event) => {});});}
+    data: {voteflag: 'I10y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I10'); this.I10show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I10y", "I10",100).then((event) => {});}});}
   async NAYclickI10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I10n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I10');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I10n", "I10",100).then((event) => {});});}
+    data: {voteflag: 'I10n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I10'); this.I10show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I10n", "I10",100).then((event) => {});}});}
   async YEAclickI11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I11y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I11');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I11y", "I11",100).then((event) => {});});}
+    data: {voteflag: 'I11y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I11'); this.I11show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I11y", "I11",100).then((event) => {});}});}
   async NAYclickI11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I11n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I11');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I11n", "I11",100).then((event) => {});});}
+    data: {voteflag: 'I11n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I11'); this.I11show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I11n", "I11",100).then((event) => {});}});}
   async YEAclickI12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I12y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I12');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I12y", "I12",100).then((event) => {});});}
+    data: {voteflag: 'I12y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I12'); this.I12show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I12y", "I12",100).then((event) => {});}});}
   async NAYclickI12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I12n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I12');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I12n", "I12",100).then((event) => {});});}
+    data: {voteflag: 'I12n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I12'); this.I12show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I12n", "I12",100).then((event) => {});}});}
   async YEAclickI13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I13y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I13');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I13y", "I13",100).then((event) => {});});}
+    data: {voteflag: 'I13y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I13'); this.I13show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I13y", "I13",100).then((event) => {});}});}
   async NAYclickI13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I13n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I13');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I13n", "I13",100).then((event) => {});});}
+    data: {voteflag: 'I13n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I13'); this.I13show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I13n", "I13",100).then((event) => {});}});}
   async YEAclickI14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I14y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I14');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I14y", "I14",100).then((event) => {});});}
+    data: {voteflag: 'I14y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I14'); this.I14show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I14y", "I14",100).then((event) => {});}});}
   async NAYclickI14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I14n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I14');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I14n", "I14",100).then((event) => {});});}
+    data: {voteflag: 'I14n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I14'); this.I14show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I14n", "I14",100).then((event) => {});}});}
   async YEAclickI15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I15y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I15');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I15y", "I15",100).then((event) => {});});}
+    data: {voteflag: 'I15y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I15'); this.I15show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I15y", "I15",100).then((event) => {});}});}
   async NAYclickI15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I15n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I15');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I15n", "I15",100).then((event) => {});});}
+    data: {voteflag: 'I15n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I15'); this.I15show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I15n", "I15",100).then((event) => {});}});}
   async YEAclickI16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I16y'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I16');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I16y", "I16",100).then((event) => {});});}
+    data: {voteflag: 'I16y'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I16'); this.I16show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I16y", "I16",100).then((event) => {});}});}
   async NAYclickI16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialogComponent,{
-    data: {voteflag: 'I16n'},}).afterClosed().subscribe(result => {this.ConfclickIssResults('I16');
-    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I16n", "I16",100).then((event) => {});});}
+    data: {voteflag: 'I16n'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickIssResults('I16'); this.I16show="yes";
+    this.api.IssResultUpdatetabhouseinstate(this.CandName10,user.attributes.sub,"I16n", "I16",100).then((event) => {});}});}
 
   async loyaltyview() {
     const user = await Auth.currentAuthenticatedUser();

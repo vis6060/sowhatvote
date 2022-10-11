@@ -85,7 +85,9 @@
 </div>
 
 <mat-dialog-actions align="end">
-  <button mat-button  mat-dialog-close>Cancel</button>   &nbsp; &nbsp; &nbsp;
-  <button mat-button routerLink="/Community1" [mat-dialog-close]="data.voteflag" >Submit</button>
+  <!--  <button mat-button  mat-dialog-close>Cancel</button>   &nbsp; &nbsp; &nbsp; -->
+    <button mat-button (click)="locationreload()" (click)="Cancel()"  mat-dialog-close>Cancel</button>   &nbsp; &nbsp; &nbsp;
+  <!--  <button mat-button routerLink="/Community1" [mat-dialog-close]="data.voteflag" >Submit</button> -->
+    <button mat-button (click)="Submit()" [mat-dialog-close]="data.voteflag">Submit</button>
 
-</mat-dialog-actions>
+  </mat-dialog-actions>

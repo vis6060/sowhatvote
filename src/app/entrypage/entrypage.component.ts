@@ -18,7 +18,7 @@ export class EntrypageComponent implements OnInit {
     if(Cache.getItem('myaccountenter')=="yes") {Cache.removeItem("myaccountenter"); location.reload()}
     this.meta.addTags([
       { name: 'description', content: 'Make Your Voice Count! Vote on the Performance of 2022 Midterm Election Candidates – US Senators, House Reps, Governors and other elected officials' },
-      { name: 'keywords', content: 'Elections, Midterms, Senator, Congress, Governor, Guns, Abortion, Climate, Veterans, Crime, Farmer,Marco Rubio, Dr Oz, Stacey Abrams, Beto ORourke, Katie Porter,Ron DeSantis, Raphael Warnock, Greg Abbott, John Fetterman, Herschel Walker, Evan McMullin, Gretchen Whitmer, Mark Kelly,Kari Lake' }
+      { name: 'keywords', content: 'Elections, Midterms, Midterm Elections, Senator, Congress, Governor, Guns, Abortion, Climate, Veterans, Crime, Farmer,Marco Rubio, Dr Oz, Stacey Abrams, Beto ORourke, Katie Porter,Ron DeSantis, Raphael Warnock, Greg Abbott, John Fetterman, Herschel Walker, Evan McMullin, Gretchen Whitmer, Mark Kelly,Kari Lake' }
     ]);
 
   }

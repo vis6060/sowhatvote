@@ -62,6 +62,15 @@ export class InstategovernordisplaynavComponent implements OnInit {
 
   cookiedenied="";stateuserCA=""; overalldisapper="";
 
+  P0show=""; P1show=""; P2show="";P3show="";P4show="";P5show="";P6show="";P7show="";P8show="";P9show="";P10show="";P11show="";P12show="";
+  P13show="";P14show="";P15show="";P16show="";P17show="";P18show="";P19show=""; P20show="";P21show="";P22show=""; P23show=""; P24show=""; P25show="";
+
+  P0disable: boolean=false;  P1disable: boolean=false; P2disable: boolean=false; P3disable: boolean=false;
+  P4disable: boolean=false; P5disable: boolean=false; P6disable: boolean=false; P7disable: boolean=false; P8disable: boolean=false;
+  P9disable: boolean=false; P10disable: boolean=false; P11disable: boolean=false; P12disable: boolean=false; P13disable: boolean=false;
+  P14disable: boolean=false; P15disable: boolean=false; P16disable: boolean=false; P17disable: boolean=false; P18disable: boolean=false;
+  P19disable: boolean=false; P20disable: boolean=false; P21disable: boolean=false; P22disable: boolean=false; P23disable: boolean=false; P24disable: boolean=false; P25disable: boolean=false;
+
   reloadComponent() {
     let currentUrl = this.router.url;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -391,161 +400,161 @@ export class InstategovernordisplaynavComponent implements OnInit {
   }
 
   async YEAclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P0ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POgov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P0ygov", "P0gov",100).then((event) => {});});}
+    data: {voteflag: 'P0ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('POgov'); this.P0show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P0ygov", "P0gov",100).then((event) => {});}});}
   async NAYclickP0() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P0ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('POgov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P0ngov", "P0gov",100).then((event) => {});});}
+    data: {voteflag: 'P0ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('POgov'); this.P0show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P0ngov", "P0gov",100).then((event) => {});}});}
   async YEAclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P1ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P1ygov", "P1gov",100).then((event) => {});});}
+    data: {voteflag: 'P1ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1gov'); this.P1show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P1ygov", "P1gov",100).then((event) => {});}});}
   async NAYclickP1() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P1ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P1ngov", "P1gov",100).then((event) => {});});}
+    data: {voteflag: 'P1ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1gov'); this.P1show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P1ngov", "P1gov",100).then((event) => {});}});}
   async YEAclickP2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P2ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P2ygov", "P2gov",100).then((event) => {});});}
+    data: {voteflag: 'P2ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2gov');  this.P2show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P2ygov", "P2gov",100).then((event) => {});}});}
   async NAYclickP2() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P2ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P2ngov", "P2gov",100).then((event) => {});});}
+    data: {voteflag: 'P2ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2gov'); this.P2show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P2ngov", "P2gov",100).then((event) => {});}});}
   async YEAclickP3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P3ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P3gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P3ygov", "P3gov",100).then((event) => {});});}
+    data: {voteflag: 'P3ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P3gov'); this.P3show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P3ygov", "P3gov",100).then((event) => {});}});}
   async NAYclickP3() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P3ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P3gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P3ngov", "P3gov",100).then((event) => {});});}
+    data: {voteflag: 'P3ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P3gov'); this.P3show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P3ngov", "P3gov",100).then((event) => {});}});}
   async YEAclickP4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P4ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P4gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P4ygov", "P4gov",100).then((event) => {});});}
+    data: {voteflag: 'P4ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P4gov'); this.P4show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P4ygov", "P4gov",100).then((event) => {});}});}
   async NAYclickP4() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P4ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P4gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P4ngov", "P4gov",100).then((event) => {});});}
+    data: {voteflag: 'P4ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P4gov'); this.P4show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P4ngov", "P4gov",100).then((event) => {});}});}
   async YEAclickP5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P5ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P5gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P5ygov", "P5gov",100).then((event) => {});});}
+    data: {voteflag: 'P5ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P5gov'); this.P5show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P5ygov", "P5gov",100).then((event) => {});}});}
   async NAYclickP5() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P5ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P5gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P5ngov", "P5gov",100).then((event) => {});});}
+    data: {voteflag: 'P5ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P5gov'); this.P5show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P5ngov", "P5gov",100).then((event) => {});}});}
   async YEAclickP6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P6ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P6gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P6ygov", "P6gov",100).then((event) => {});});}
+    data: {voteflag: 'P6ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P6gov'); this.P6show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P6ygov", "P6gov",100).then((event) => {});}});}
   async NAYclickP6() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P6ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P6gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P6ngov", "P6gov",100).then((event) => {});});}
+    data: {voteflag: 'P6ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P6gov'); this.P6show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P6ngov", "P6gov",100).then((event) => {});}});}
   async YEAclickP7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P7ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P7gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P7ygov", "P7gov",100).then((event) => {});});}
+    data: {voteflag: 'P7ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P7gov'); this.P7show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P7ygov", "P7gov",100).then((event) => {});}});}
   async NAYclickP7() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P7ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P7gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P7ngov", "P7gov",100).then((event) => {});});}
+    data: {voteflag: 'P7ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P7gov'); this.P7show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P7ngov", "P7gov",100).then((event) => {});}});}
   async YEAclickP8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P8ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P8gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P8ygov", "P8gov",100).then((event) => {});});}
+    data: {voteflag: 'P8ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P8gov'); this.P8show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P8ygov", "P8gov",100).then((event) => {});}});}
   async NAYclickP8() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P8ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P8gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P8ngov", "P8gov",100).then((event) => {});});}
+    data: {voteflag: 'P8ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P8gov'); this.P8show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P8ngov", "P8gov",100).then((event) => {});}});}
   async YEAclickP9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P9ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P9gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P9ygov", "P9gov",100).then((event) => {});});}
+    data: {voteflag: 'P9ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P9gov'); this.P9show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P9ygov", "P9gov",100).then((event) => {});}});}
   async NAYclickP9() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P9ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P9gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P9ngov", "P9gov",100).then((event) => {});});}
+    data: {voteflag: 'P9ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P9gov'); this.P9show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P9ngov", "P9gov",100).then((event) => {});}});}
   async YEAclickP10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P10ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P10gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P10ygov", "P10gov",100).then((event) => {});});}
+    data: {voteflag: 'P10ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P10gov'); this.P10show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P10ygov", "P10gov",100).then((event) => {});}});}
   async NAYclickP10() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P10ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P1Ogov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P10ngov", "P10gov",100).then((event) => {});});}
+    data: {voteflag: 'P10ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P1Ogov'); this.P10show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P10ngov", "P10gov",100).then((event) => {});}});}
   async YEAclickP11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P11ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P11gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P11ygov", "P11gov",100).then((event) => {});});}
+    data: {voteflag: 'P11ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P11gov'); this.P11show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P11ygov", "P11gov",100).then((event) => {});}});}
   async NAYclickP11() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P11ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P11gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P11ngov", "P11gov",100).then((event) => {});});}
+    data: {voteflag: 'P11ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P11gov'); this.P11show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P11ngov", "P11gov",100).then((event) => {});}});}
   async YEAclickP12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P12ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P12gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P12ygov", "P12gov",100).then((event) => {});});}
+    data: {voteflag: 'P12ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P12gov'); this.P12show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P12ygov", "P12gov",100).then((event) => {});}});}
   async NAYclickP12() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P12ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P12gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P12ngov", "P12gov",100).then((event) => {});});}
+    data: {voteflag: 'P12ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P12gov'); this.P12show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P12ngov", "P12gov",100).then((event) => {});}});}
   async YEAclickP13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P13ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P13gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P13ygov", "P13gov",100).then((event) => {});});}
+    data: {voteflag: 'P13ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P13gov'); this.P13show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P13ygov", "P13gov",100).then((event) => {});}});}
   async NAYclickP13() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P13ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P13gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P13ngov", "P13gov",100).then((event) => {});});}
+    data: {voteflag: 'P13ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P13gov'); this.P13show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P13ngov", "P13gov",100).then((event) => {});}});}
   async YEAclickP14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P14ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P14gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P14ygov", "P14gov",100).then((event) => {});});}
+    data: {voteflag: 'P14ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P14gov'); this.P14show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P14ygov", "P14gov",100).then((event) => {});}});}
   async NAYclickP14() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P14ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P14gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P14ngov", "P14gov",100).then((event) => {});});}
+    data: {voteflag: 'P14ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P14gov'); this.P14show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P14ngov", "P14gov",100).then((event) => {});}});}
   async YEAclickP15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P15ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P15gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P15ygov", "P15gov",100).then((event) => {});});}
+    data: {voteflag: 'P15ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P15gov'); this.P15show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P15ygov", "P15gov",100).then((event) => {});}});}
   async NAYclickP15() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P15ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P15gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P15ngov", "P15gov",100).then((event) => {});});}
+    data: {voteflag: 'P15ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P15gov');this.P15show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P15ngov", "P15gov",100).then((event) => {});}});}
   async YEAclickP16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P16ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P16gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P16ygov", "P16gov",100).then((event) => {});});}
+    data: {voteflag: 'P16ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P16gov'); this.P16show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P16ygov", "P16gov",100).then((event) => {});}});}
   async NAYclickP16() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P16ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P16gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P16ngov", "P16gov",100).then((event) => {});});}
+    data: {voteflag: 'P16ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P16gov'); this.P16show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P16ngov", "P16gov",100).then((event) => {});}});}
   async YEAclickP17() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P17ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P17gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P17ygov", "P17gov",100).then((event) => {});});}
+    data: {voteflag: 'P17ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P17gov'); this.P17show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P17ygov", "P17gov",100).then((event) => {});}});}
   async NAYclickP17() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P17ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P17gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P17ngov", "P17gov",100).then((event) => {});});}
+    data: {voteflag: 'P17ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P17gov'); this.P17show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P17ngov", "P17gov",100).then((event) => {});}});}
   async YEAclickP18() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P18ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P18gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P18ygov", "P18gov",100).then((event) => {});});}
+    data: {voteflag: 'P18ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P18gov'); this.P18show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P18ygov", "P18gov",100).then((event) => {});}});}
   async NAYclickP18() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P18ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P18gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P18ngov", "P18gov",100).then((event) => {});});}
+    data: {voteflag: 'P18ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P18gov'); this.P18show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P18ngov", "P18gov",100).then((event) => {});}});}
   async YEAclickP19() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P19ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P19gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P19ygov", "P19gov",100).then((event) => {});});}
+    data: {voteflag: 'P19ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P19gov'); this.P19show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P19ygov", "P19gov",100).then((event) => {});}});}
   async NAYclickP19() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P19ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P19gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P19ngov", "P19gov",100).then((event) => {});});}
+    data: {voteflag: 'P19ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P19gov'); this.P19show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P19ngov", "P19gov",100).then((event) => {});}});}
   async YEAclickP20() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P20ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P20gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P20ygov", "P20gov",100).then((event) => {});});}
+    data: {voteflag: 'P20ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P20gov'); this.P20show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P20ygov", "P20gov",100).then((event) => {});}});}
   async NAYclickP20() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P20ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P2Ogov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P20ngov", "P20gov",100).then((event) => {});});}
+    data: {voteflag: 'P20ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P2Ogov'); this.P20show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P20ngov", "P20gov", 100).then((event) => {});}});}
   async YEAclickP21() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P21ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P21gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P21ygov", "P21gov",100).then((event) => {});});}
+    data: {voteflag: 'P21ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P21gov'); this.P21show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P21ygov", "P21gov",100).then((event) => {});}});}
   async NAYclickP21() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P21ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P21gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P21ngov", "P21gov",100).then((event) => {});});}
+    data: {voteflag: 'P21ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P21gov'); this.P21show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P21ngov", "P21gov",100).then((event) => {});}});}
   async YEAclickP22() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P22ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P22gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P22ygov", "P22gov",100).then((event) => {});});}
+    data: {voteflag: 'P22ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P22gov'); this.P22show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P22ygov", "P22gov",100).then((event) => {});}});}
   async NAYclickP22() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P22ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P22gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P22ngov", "P22gov",100).then((event) => {});});}
+    data: {voteflag: 'P22ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P22gov'); this.P22show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P22ngov", "P22gov",100).then((event) => {});}});}
   async YEAclickP23() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P23ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P23gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P23ygov", "P23gov",100).then((event) => {});});}
+    data: {voteflag: 'P23ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P23gov'); this.P23show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P23ygov", "P23gov",100).then((event) => {});}});}
   async NAYclickP23() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P23ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P23gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P23ngov", "P23gov",100).then((event) => {});});}
+    data: {voteflag: 'P23ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P23gov'); this.P23show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P23ngov", "P23gov",100).then((event) => {});}});}
   async YEAclickP24() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P24ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P24gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P24ygov", "P24gov",100).then((event) => {});});}
+    data: {voteflag: 'P24ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P24gov'); this.P24show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P24ygov", "P24gov",100).then((event) => {});}});}
   async NAYclickP24() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P24ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P24gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P24ngov", "P24gov",100).then((event) => {});});}
+    data: {voteflag: 'P24ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P24gov'); this.P24show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P24ngov", "P24gov",100).then((event) => {});}});}
   async YEAclickP25() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P25ygov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P25gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P25ygov", "P25gov",100).then((event) => {});});}
+    data: {voteflag: 'P25ygov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P25gov'); this.P25show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P25ygov", "P25gov",100).then((event) => {});}});}
   async NAYclickP25() {const user = await Auth.currentAuthenticatedUser();this.dialog.open(ConfdialoggovernComponent,{
-    data: {voteflag: 'P25ngov'},}).afterClosed().subscribe(result => {this.ConfclickComResults('P25gov');
-    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P25ngov", "P25gov",100).then((event) => {});});}
+    data: {voteflag: 'P25ngov'},}).afterClosed().subscribe(result => {if(result.data=="Submit") {this.ConfclickComResults('P25gov'); this.P25show="yes";
+    this.api.ComResultUpdatetabgoverninstate(this.CandName10,user.attributes.sub,"P25ngov", "P25gov",100).then((event) => {});}});}
 
   async loyaltyview() {
     const user = await Auth.currentAuthenticatedUser();

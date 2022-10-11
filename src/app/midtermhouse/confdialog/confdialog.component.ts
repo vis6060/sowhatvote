@@ -9,11 +9,23 @@ import {DialogData} from "../instatehousedisplaynav/instatehousedisplaynav.compo
 })
 export class ConfdialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData,
+              private dialogRef: MatDialogRef<ConfdialogComponent>,
+              ) { }
 
   ngOnInit(): void {
   }
 
+  locationreload() {  location.reload();}
 
+  Cancel() {
+    // closing itself and sending data to parent component
+    this.dialogRef.close({ data: 'Cancel' })
+  }
+
+  Submit() {
+    // closing itself and sending data to parent component
+    this.dialogRef.close({ data: 'Submit' })
+  }
 
 }
