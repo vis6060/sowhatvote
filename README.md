@@ -5,10 +5,10 @@ Provide the public an opportunity to participate in discussions, vote and view t
 
 Features: 
 
-a)	Registration with the platform page.
-b)	Vote: Vote on performance of current and candidates to the US Senate and candidates to the US House.  Specifically, vote on several current issues and several Senate/House committees that the person belongs to.  View real-time consolidated voting results for each person.
-c)	Discuss:  Post comments for each candidate.  
-d)	Meetup: Send connect request to SoWhat Vote members.  Search and monitor the status of your connect request.  View declined request.  Send re-connect request to members. 
+a)	Registration with the platform page. 
+b)	Vote: Vote on performance of current and candidates to the US Senate and candidates to the US House.  Specifically, vote on several current issues and several Senate/House committees that the person belongs to.  View real-time consolidated voting results for each person. 
+c)	Discuss:  Post comments for each candidate.   
+d)	Meetup: Send connect request to SoWhat Vote members.  Search and monitor the status of your connect request.  View declined request.  Send re-connect request to members.  
  
 
 ![Arc1](https://user-images.githubusercontent.com/75966773/234928264-ef0f9821-37ce-4cf1-917f-f793a311b3e7.png)
