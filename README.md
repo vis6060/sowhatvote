@@ -11,6 +11,18 @@ Make it easier for public to develop connections with similar political interest
 
 Here is a video on the user pain points: https://www.youtube.com/watch?v=fBUoDQKc7C8
 
+# Macro Trends
+
+a) Desire for Generation Z to be more involved in political discourse.  For example, the large demonnstration by high school students for gun rights for th victims of Parkland shooting in 2018. 
+
+b) 2020 election had the largest turnout in the history of 158 Million US Residents despite the COVID-19 pandemic.
+
+c) Ver expensive to run a door-to-door grassroots campaign due to rising labor costs.
+
+# Competition to SoWhat Vote Vision
+
+Due to the sensitivity around political events, major social media giants such as Facebook will not introduce poltical grassrooots voting feature.  Hence, this space is apt for a new niche social media platform.
+
 # UX
 
 Here is a video on the UX: https://www.youtube.com/watch?v=ymu52McDBLM&t=15s
