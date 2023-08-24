@@ -53,6 +53,9 @@ o) **Login questionnaire**:  mandatory for user to enter their date of birth to 
 
 a)	Deliver recommendation on similar candidates and similar regulations based on their past voting and based on people similar to them have voted.
 
+# Technical
+
+Back-end is implemented in AWS.  The MEAN (MongoDB, Express, Angular, Node.js) stack is used to develop full stack (DynamoDB of AWS is used instead of MongoDB). Code is here on this github project.
 
 # SoWhat Vote Back-end Architecture
 
